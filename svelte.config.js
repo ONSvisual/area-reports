@@ -1,5 +1,8 @@
 /** @type {import('@sveltejs/kit').Config} */
-import adapter from '@sveltejs/adapter-static';
+
+// import adapter from '@sveltejs/adapter-static';
+
+import adapter from '@sveltejs/adapter-netlify';
 
 const production =  process.env.NODE_ENV === 'production'; // false //
 
@@ -39,4 +42,13 @@ const config = {
 // 	}
 // };
 
-export default config;
+
+
+
+// export default config;
+
+export default {
+	kit: {
+	  adapter: adapter()
+	}
+  };
