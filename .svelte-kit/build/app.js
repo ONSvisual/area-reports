@@ -1,15 +1,15 @@
 
 import root from '__GENERATED__/root.svelte';
-import { respond } from '/Users/theojolliffe/Downloads/sk-whats-changed 2/.svelte-kit/runtime/server/index.js';
-import { set_paths, assets, base } from '/Users/theojolliffe/Downloads/sk-whats-changed 2/.svelte-kit/runtime/paths.js';
-import { set_prerendering } from '/Users/theojolliffe/Downloads/sk-whats-changed 2/.svelte-kit/runtime/env.js';
+import { respond } from '/Users/theojolliffe/Documents/area-reports/.svelte-kit/runtime/server/index.js';
+import { set_paths, assets, base } from '/Users/theojolliffe/Documents/area-reports/.svelte-kit/runtime/paths.js';
+import { set_prerendering } from '/Users/theojolliffe/Documents/area-reports/.svelte-kit/runtime/env.js';
 import * as user_hooks from "./hooks.js";
 
 const template = ({ head, body, assets, nonce }) => "<!DOCTYPE html>\n<html lang=\"en\">\n\t<head>\n\t\t<meta charset=\"utf-8\" />\n\t\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n\t\t" + head + "\n\t</head>\n\t<body>\n\t\t<div id=\"svelte\">" + body + "</div>\n\t</body>\n</html>\n";
 
 let read = null;
 
-set_paths({"base":"/sk-whats-changed2","assets":"https://theojolliffe.github.io/sk-whats-changed2"});
+set_paths({"base":"","assets":""});
 
 // this looks redundant, but the indirection allows us to access
 // named imports without triggering Rollup's missing import detection

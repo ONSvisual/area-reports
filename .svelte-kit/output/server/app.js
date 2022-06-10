@@ -1669,7 +1669,7 @@ var user_hooks = /* @__PURE__ */ Object.freeze({
 });
 const template = ({ head, body, assets: assets2, nonce }) => '<!DOCTYPE html>\n<html lang="en">\n	<head>\n		<meta charset="utf-8" />\n		<meta name="viewport" content="width=device-width, initial-scale=1" />\n		' + head + '\n	</head>\n	<body>\n		<div id="svelte">' + body + "</div>\n	</body>\n</html>\n";
 let read = null;
-set_paths({ "base": "/sk-whats-changed2", "assets": "https://theojolliffe.github.io/sk-whats-changed2" });
+set_paths({ "base": "", "assets": "" });
 const get_hooks = (hooks) => ({
   getSession: hooks.getSession || (() => ({})),
   handle: hooks.handle || (({ event, resolve: resolve2 }) => resolve2(event)),

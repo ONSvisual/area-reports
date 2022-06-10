@@ -1,6 +1,6 @@
 /** @type {import('@sveltejs/kit').Config} */
 
-// import adapter from '@sveltejs/adapter-static';
+import static_adapter from '@sveltejs/adapter-static';
 
 import adapter from '@sveltejs/adapter-netlify';
 
@@ -10,15 +10,21 @@ console.log('production', production)
 
 const config = {
 	kit: {
-		adapter: adapter({
-			pages: 'build',
-			assets: 'build',
-			fallback: null
-		}),
-		paths: {
-			assets: production ? 'https://theojolliffe.github.io/sk-whats-changed2' : '',
-			base: production ? '/sk-whats-changed2' : ''
-		}
+		adapter: static_adapter(),
+		//adapter: adapter(),
+
+		files: {
+			assets: 'static',
+		    lib: 'src/lib'
+		},
+
+		// hydrate the <div id="svelte"> element in src/app.html
+        paths: {
+            assets: production ? '' : '',
+            base: production ? '' : ''
+        },
+	    vite: {
+        }
 	}
 };
 
@@ -42,13 +48,4 @@ const config = {
 // 	}
 // };
 
-
-
-
-// export default config;
-
-export default {
-	kit: {
-	  adapter: adapter()
-	}
-  };
+export default config;
