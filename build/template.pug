@@ -1267,15 +1267,29 @@ mixin ethrel(i)
         else 
             | remained close to #[+val(data[s[i][0]].value[2011][bigChange])] between the last two censuses.
         if (pcnoprint(data[s[i][0]].perc[2001][bigChange]) == pcnoprint(data[s[i][0]].perc[2011][bigChange]))
-            | As a share of the total population, the percentage 
+            | As a share of 
+            if (s[i][0] == 'religion')
+                | those who chose to disclose information about their religious beliefs,
+            else
+                | the local population,
+            | the percentage 
             | remained close to #[+pc(data[s[i][0]].perc[2011][bigChange])].
         else
             if (Math.sign(data[s[i][0]].value[2011][bigChange]-data[s[i][0]].value[2001][bigChange])==Math.sign(data[s[i][0]].perc[2011][bigChange]-data[s[i][0]].perc[2001][bigChange]))
                 | This represents a change from 
                 | #[+pc(data[s[i][0]].perc[2001][bigChange])] 
-                | to #[+pc(data[s[i][0]].perc[2011][bigChange])] of the local population.
+                | to #[+pc(data[s[i][0]].perc[2011][bigChange])] of 
+                if (s[i][0] == 'religion')
+                    | those who chose to disclose information about their religious beliefs.
+                else
+                    | the local population.
             else
-                | however, as a percentage of the total population, this represented
+                | however, as a percentage of 
+                if (s[i][0] == 'religion')
+                    | those who chose to disclose information about their religious beliefs,
+                else
+                    | the local population,
+                | this represented
                 if ( (data[s[i][0]].perc[2011][bigChange] - data[s[i][0]].perc[2001][bigChange]) > 0 )
                     | an increase 
                 else
