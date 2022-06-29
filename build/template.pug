@@ -356,7 +356,6 @@ mixin sent2Perc(i, chain0_01, chain0_11, chain1_01, chain1_11)
         | compared with
         | #[+pc(chain0_01)]
         | in 2001. 
-    - console.log('chains', s[i][3], chains[s[i][3]])
     if (chains[s[i][3]].length>1)
         if (hasSaid('s2pA'))
             | , while
@@ -1253,49 +1252,73 @@ mixin pc(x)
     else 
         | #[+value((x/100), {'FORMAT': '0%'})] 
 
+mixin pcofrel(x, y)
+    - x = 100*(x/(100-data.religion.perc[y].Religionnotstated))
+    if (Math.abs(x)<10)
+        - var num = Math.round(x*10)/10
+        | #[+value((num/100), {'FORMAT': '0.0%'})]
+    else 
+        | #[+value((x/100), {'FORMAT': '0%'})] 
+
 mixin ethrel(i)
     - var obj = place.data[s[i][0]].perc.change
     - var bigChange = s[i][3]
     - function valnoprint(x) { return parseFloat(x.toPrecision(2)) }
-    p 
-        | The number of people in !{place.name} 
-        | #[+value(topics[s[i][0]][bigChange]['verb_er'])]
-        if (valnoprint(data[s[i][0]].value[2001][bigChange]) != valnoprint(data[s[i][0]].value[2011][bigChange]))
-            | #[+value(ud((data[s[i][0]].value[2011][bigChange] - data[s[i][0]].value[2001][bigChange]), 'increased', 'decreased'))]
-            | from #[+val(data[s[i][0]].value[2001][bigChange])] in 2001 
-            | to #[+val(data[s[i][0]].value[2011][bigChange])] in 2011.
-        else 
-            | remained close to #[+val(data[s[i][0]].value[2011][bigChange])] between the last two censuses.
-        if (pcnoprint(data[s[i][0]].perc[2001][bigChange]) == pcnoprint(data[s[i][0]].perc[2011][bigChange]))
-            | As a share of 
-            if (s[i][0] == 'religion')
-                | those who chose to disclose information about their religious beliefs,
-            else
-                | the local population,
-            | the percentage 
-            | remained close to #[+pc(data[s[i][0]].perc[2011][bigChange])].
-        else
-            if (Math.sign(data[s[i][0]].value[2011][bigChange]-data[s[i][0]].value[2001][bigChange])==Math.sign(data[s[i][0]].perc[2011][bigChange]-data[s[i][0]].perc[2001][bigChange]))
-                | This represents a change from 
-                | #[+pc(data[s[i][0]].perc[2001][bigChange])] 
-                | to #[+pc(data[s[i][0]].perc[2011][bigChange])] of 
-                if (s[i][0] == 'religion')
-                    | those who chose to disclose information about their religious beliefs.
-                else
-                    | the local population.
-            else
-                | however, as a percentage of 
-                if (s[i][0] == 'religion')
-                    | those who chose to disclose information about their religious beliefs,
-                else
-                    | the local population,
-                | this represented
-                if ( (data[s[i][0]].perc[2011][bigChange] - data[s[i][0]].perc[2001][bigChange]) > 0 )
-                    | an increase 
-                else
-                    | a decrease 
-                | from #[+pc(data[s[i][0]].perc[2001][bigChange])]
-                | to #[+pc(data[s[i][0]].perc[2011][bigChange])].
+    if (s[i][0]=='religion')
+        p 
+            | The 2011 Census asked a voluntary question about religion.
+            | Of those who chose to disclose their religious affiliation, 
+            | #[+pcofrel(data[s[i][0]].perc[2011][bigChange], 2011)]
+            | #[+value(topics[s[i][0]][bigChange]['verb_past_samp_er'])]. 
+            | #[+value(ud((data[s[i][0]].value[2011][bigChange] - data[s[i][0]].value[2001][bigChange]), 'An increase', 'A decrease'))]
+            | from #[+pcofrel(data[s[i][0]].perc[2001][bigChange], 2001)] in 2001 
+            | makes this the fastest-growing religious group in !{place.name}.
+    else
+        p 
+            | In 2011, #[+pc(data[s[i][0]].perc[2011][bigChange], 2011)]
+            | of the local population #[+value(topics[s[i][0]][bigChange]['verb_past_samp_er'])].
+            | #[+value(ud((data[s[i][0]].value[2011][bigChange] - data[s[i][0]].value[2001][bigChange]), 'An increase', 'A decrease'))]
+            | from #[+pc(data[s[i][0]].perc[2001][bigChange], 2001)] in 2001 
+            | makes this the fastest-growing ethnic group in !{place.name}.
+    //- p 
+    //-     | The number of people in !{place.name} 
+    //-     | #[+value(topics[s[i][0]][bigChange]['verb_er'])]
+    //-     if (valnoprint(data[s[i][0]].value[2001][bigChange]) != valnoprint(data[s[i][0]].value[2011][bigChange]))
+    //-         | #[+value(ud((data[s[i][0]].value[2011][bigChange] - data[s[i][0]].value[2001][bigChange]), 'increased', 'decreased'))]
+    //-         | from #[+val(data[s[i][0]].value[2001][bigChange])] in 2001 
+    //-         | to #[+val(data[s[i][0]].value[2011][bigChange])] in 2011.
+    //-     else 
+    //-         | remained close to #[+val(data[s[i][0]].value[2011][bigChange])] between the last two censuses.
+    //-     if (pcnoprint(data[s[i][0]].perc[2001][bigChange]) == pcnoprint(data[s[i][0]].perc[2011][bigChange]))
+    //-         | As a share of 
+    //-         if (s[i][0] == 'religion')
+    //-             | those who chose to disclose information about their religious affiliation,
+    //-         else
+    //-             | the local population,
+    //-         | the percentage 
+    //-         | remained close to #[+pc(data[s[i][0]].perc[2011][bigChange])].
+    //-     else
+    //-         if (Math.sign(data[s[i][0]].value[2011][bigChange]-data[s[i][0]].value[2001][bigChange])==Math.sign(data[s[i][0]].perc[2011][bigChange]-data[s[i][0]].perc[2001][bigChange]))
+    //-             | This represents a change from 
+    //-             | #[+pc(data[s[i][0]].perc[2001][bigChange])] 
+    //-             | to #[+pc(data[s[i][0]].perc[2011][bigChange])] of 
+    //-             if (s[i][0] == 'religion')
+    //-                 | those who chose to disclose information about their religious affiliation.
+    //-             else
+    //-                 | the local population.
+    //-         else
+    //-             | however, as a percentage of 
+    //-             if (s[i][0] == 'religion')
+    //-                 | those who chose to disclose information about their religious affiliation,
+    //-             else
+    //-                 | the local population,
+    //-             | this represented
+    //-             if ( (data[s[i][0]].perc[2011][bigChange] - data[s[i][0]].perc[2001][bigChange]) > 0 )
+    //-                 | an increase 
+    //-             else
+    //-                 | a decrease 
+    //-             | from #[+pc(data[s[i][0]].perc[2001][bigChange])]
+    //-             | to #[+pc(data[s[i][0]].perc[2011][bigChange])].
     p
         - var locDiff = Math.round(data[s[i][0]].perc[2011][bigChange] - data[s[i][0]].perc[2001][bigChange])
         - var regDiff = Math.round(rgn.data[s[i][0]].perc[2011][bigChange] - rgn.data[s[i][0]].perc[2001][bigChange])
@@ -1700,11 +1723,11 @@ mixin standfirst
             | #[+value(topics[sfi[0]].general_sf)]
         | .
 
--console.log("eng", eng)
--console.log("rgn", rgn)
--console.log("place", place)
+//- -console.log("eng", eng)
+//- -console.log("rgn", rgn)
+//- -console.log("place", place)
 
-// Start of th article \/
+// Start of the article
 p #[+standfirst]
 
 | #[+para(0)]
