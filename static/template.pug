@@ -1258,6 +1258,8 @@ mixin ethrel(i)
     - var bigChange = s[i][3]
     - function valnoprint(x) { return parseFloat(x.toPrecision(2)) }
     p 
+        | Census 2021 asked a voluntary question about people's religious affiliation. 
+    p 
         | The number of people in !{place.name} 
         | #[+value(topics[s[i][0]][bigChange]['verb_er'])]
         if (valnoprint(data[s[i][0]].value[2001][bigChange]) != valnoprint(data[s[i][0]].value[2011][bigChange]))
@@ -1269,7 +1271,7 @@ mixin ethrel(i)
         if (pcnoprint(data[s[i][0]].perc[2001][bigChange]) == pcnoprint(data[s[i][0]].perc[2011][bigChange]))
             | As a share of 
             if (s[i][0] == 'religion')
-                | those who chose to disclose information about their religious beliefs,
+                | those who chose to disclose information about their religious affiliation,
             else
                 | the local population,
             | the percentage 
@@ -1280,13 +1282,13 @@ mixin ethrel(i)
                 | #[+pc(data[s[i][0]].perc[2001][bigChange])] 
                 | to #[+pc(data[s[i][0]].perc[2011][bigChange])] of 
                 if (s[i][0] == 'religion')
-                    | those who chose to disclose information about their religious beliefs.
+                    | those who chose to disclose information about their religious affiliation.
                 else
                     | the local population.
             else
                 | however, as a percentage of 
                 if (s[i][0] == 'religion')
-                    | those who chose to disclose information about their religious beliefs,
+                    | those who chose to disclose information about their religious affiliation,
                 else
                     | the local population,
                 | this represented
