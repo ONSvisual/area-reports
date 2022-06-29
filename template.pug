@@ -1258,7 +1258,10 @@ mixin ethrel(i)
     - var bigChange = s[i][3]
     - function valnoprint(x) { return parseFloat(x.toPrecision(2)) }
     p 
-        | Census 2021 asked a voluntary question about people's religious affiliation. 
+        | Census 2011 asked a voluntary question about religion. Of those who chose to disclose their religious affiliation, 
+        | #[+pc(data[s[i][0]].perc[2011][bigChange])] 
+        | #[+value(topics[s[i][0]][bigChange]['verb_past_samp_er'])]. 
+        | The figure increased from #[+pc(data[s[i][0]].perc[2001][bigChange])] in 2001
     p 
         | The number of people in !{place.name} 
         | #[+value(topics[s[i][0]][bigChange]['verb_er'])]
