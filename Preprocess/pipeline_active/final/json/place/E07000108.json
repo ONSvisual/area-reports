@@ -1,0 +1,1609 @@
+{
+  "code": "E07000108",
+  "name": "Dover",
+  "type": "lad",
+  "area": 31485.09,
+  "count": 331,
+  "parents": [
+    {
+      "code": "E10000016",
+      "name": "Kent",
+      "type": "cty"
+    },
+    {
+      "code": "E12000008",
+      "name": "South East",
+      "type": "rgn"
+    },
+    {
+      "code": "E92000001",
+      "name": "England",
+      "type": "ctry"
+    },
+    {
+      "code": "K04000001",
+      "name": "England and Wales",
+      "type": "ew"
+    }
+  ],
+  "children": [
+    {
+      "code": "E02005041",
+      "name": "Dover 001",
+      "type": "msoa"
+    },
+    {
+      "code": "E02005042",
+      "name": "Dover 002",
+      "type": "msoa"
+    },
+    {
+      "code": "E02005043",
+      "name": "Dover 003",
+      "type": "msoa"
+    },
+    {
+      "code": "E02005044",
+      "name": "Dover 004",
+      "type": "msoa"
+    },
+    {
+      "code": "E02005045",
+      "name": "Dover 005",
+      "type": "msoa"
+    },
+    {
+      "code": "E02005046",
+      "name": "Dover 006",
+      "type": "msoa"
+    },
+    {
+      "code": "E02005047",
+      "name": "Dover 007",
+      "type": "msoa"
+    },
+    {
+      "code": "E02005048",
+      "name": "Dover 008",
+      "type": "msoa"
+    },
+    {
+      "code": "E02005049",
+      "name": "Dover 009",
+      "type": "msoa"
+    },
+    {
+      "code": "E02005050",
+      "name": "Dover 010",
+      "type": "msoa"
+    },
+    {
+      "code": "E02005051",
+      "name": "Dover 011",
+      "type": "msoa"
+    },
+    {
+      "code": "E02005052",
+      "name": "Dover 012",
+      "type": "msoa"
+    },
+    {
+      "code": "E02005053",
+      "name": "Dover 013",
+      "type": "msoa"
+    },
+    {
+      "code": "E02005054",
+      "name": "Dover 014",
+      "type": "msoa"
+    }
+  ],
+  "bounds": [
+    [
+      1.14275,
+      51.09719
+    ],
+    [
+      1.40616,
+      51.33238
+    ]
+  ],
+  "data": {
+    "population": {
+      "perc": {
+        "2001": {
+          "female": 51.88,
+          "male": 48.12
+        },
+        "2011": {
+          "female": 50.96,
+          "male": 49.04
+        },
+        "change": {
+          "female": -0.92,
+          "male": 0.92
+        }
+      },
+      "perc_rank": {
+        "2001": {
+          "female": 55.0,
+          "male": 275.0
+        },
+        "2011": {
+          "female": 141.0,
+          "male": 188.0
+        },
+        "change": {
+          "female": 284.0,
+          "male": 46.0
+        }
+      },
+      "value": {
+        "2001": {
+          "all": 104566.0,
+          "female": 54245.0,
+          "male": 50321.0
+        },
+        "2011": {
+          "all": 111674.0,
+          "female": 56909.0,
+          "male": 54765.0
+        },
+        "change": {
+          "all": 6.8,
+          "female": 4.91,
+          "male": 8.83
+        }
+      },
+      "value_rank": {
+        "2001": {
+          "all": 220.0,
+          "female": 218.0,
+          "male": 221.0
+        },
+        "2011": {
+          "all": 216.0,
+          "female": 216.0,
+          "male": 215.0
+        },
+        "change": {
+          "all": 151.0,
+          "female": 196.0,
+          "male": 111.0
+        }
+      }
+    },
+    "welsh": {
+      "perc": {
+        "2001": {
+          "AllOver3": NaN,
+          "SpeaksWelsh": NaN
+        },
+        "2011": {
+          "AllOver3": NaN,
+          "SpeaksWelsh": NaN
+        },
+        "change": {
+          "AllOver3": NaN,
+          "SpeaksWelsh": NaN
+        }
+      },
+      "perc_rank": {
+        "2001": {
+          "AllOver3": NaN,
+          "SpeaksWelsh": NaN
+        },
+        "2011": {
+          "AllOver3": NaN,
+          "SpeaksWelsh": NaN
+        },
+        "change": {
+          "AllOver3": NaN,
+          "SpeaksWelsh": NaN
+        }
+      },
+      "value": {
+        "2001": {
+          "AllOver3": NaN,
+          "SpeaksWelsh": NaN,
+          "all": NaN
+        },
+        "2011": {
+          "AllOver3": NaN,
+          "SpeaksWelsh": NaN,
+          "all": NaN
+        },
+        "change": {
+          "AllOver3": NaN,
+          "SpeaksWelsh": NaN,
+          "all": NaN
+        }
+      },
+      "value_rank": {
+        "2001": {
+          "AllOver3": NaN,
+          "SpeaksWelsh": NaN,
+          "all": NaN
+        },
+        "2011": {
+          "AllOver3": NaN,
+          "SpeaksWelsh": NaN,
+          "all": NaN
+        },
+        "change": {
+          "AllOver3": NaN,
+          "SpeaksWelsh": NaN,
+          "all": NaN
+        }
+      }
+    },
+    "care": {
+      "perc": {
+        "2001": {
+          "1to19hoursWeek": 7.02,
+          "20to49hoursWeek": 1.04,
+          "40PlushoursWeek": 2.26,
+          "noCare": 89.68
+        },
+        "2011": {
+          "1to19hoursWeek": 7.07,
+          "20to49hoursWeek": 1.41,
+          "40PlushoursWeek": 2.85,
+          "noCare": 88.67
+        },
+        "change": {
+          "1to19hoursWeek": 0.05,
+          "20to49hoursWeek": 0.37,
+          "40PlushoursWeek": 0.59,
+          "noCare": -1.01
+        }
+      },
+      "perc_rank": {
+        "2001": {
+          "1to19hoursWeek": 180.0,
+          "20to49hoursWeek": 156.0,
+          "40PlushoursWeek": 102.0,
+          "noCare": 189.0
+        },
+        "2011": {
+          "1to19hoursWeek": 132.0,
+          "20to49hoursWeek": 124.0,
+          "40PlushoursWeek": 81.0,
+          "noCare": 233.0
+        },
+        "change": {
+          "1to19hoursWeek": 78.0,
+          "20to49hoursWeek": 55.0,
+          "40PlushoursWeek": 33.0,
+          "noCare": 288.0
+        }
+      },
+      "value": {
+        "2001": {
+          "1to19hoursWeek": 7336.0,
+          "20to49hoursWeek": 1088.0,
+          "40PlushoursWeek": 2363.0,
+          "all": 104566.0,
+          "noCare": 93779.0
+        },
+        "2011": {
+          "1to19hoursWeek": 7892.0,
+          "20to49hoursWeek": 1579.0,
+          "40PlushoursWeek": 3183.0,
+          "all": 111674.0,
+          "noCare": 99020.0
+        },
+        "change": {
+          "1to19hoursWeek": 7.58,
+          "20to49hoursWeek": 45.13,
+          "40PlushoursWeek": 34.7,
+          "all": 6.8,
+          "noCare": 5.59
+        }
+      },
+      "value_rank": {
+        "2001": {
+          "1to19hoursWeek": 222.0,
+          "20to49hoursWeek": 198.0,
+          "40PlushoursWeek": 170.0,
+          "all": 220.0,
+          "noCare": 220.0
+        },
+        "2011": {
+          "1to19hoursWeek": 218.0,
+          "20to49hoursWeek": 185.0,
+          "40PlushoursWeek": 164.0,
+          "all": 216.0,
+          "noCare": 219.0
+        },
+        "change": {
+          "1to19hoursWeek": 91.0,
+          "20to49hoursWeek": 99.0,
+          "40PlushoursWeek": 89.0,
+          "all": 151.0,
+          "noCare": 173.0
+        }
+      }
+    },
+    "religion": {
+      "perc": {
+        "2001": {
+          "Buddhist": 0.17,
+          "Christian": 76.6,
+          "Hindu": 0.15,
+          "Jewish": 0.07,
+          "Muslim": 0.29,
+          "Noreligion": 14.18,
+          "Otherreligion": 0.28,
+          "Religionnotstated": 8.22,
+          "Sikh": 0.04
+        },
+        "2011": {
+          "Buddhist": 0.47,
+          "Christian": 64.06,
+          "Hindu": 0.61,
+          "Jewish": 0.09,
+          "Muslim": 0.47,
+          "Noreligion": 26.01,
+          "Otherreligion": 0.47,
+          "Religionnotstated": 7.78,
+          "Sikh": 0.04
+        },
+        "change": {
+          "Buddhist": 0.3,
+          "Christian": -12.54,
+          "Hindu": 0.46,
+          "Jewish": 0.02,
+          "Muslim": 0.18,
+          "Noreligion": 11.83,
+          "Otherreligion": 0.19,
+          "Religionnotstated": -0.44,
+          "Sikh": 0.0
+        }
+      },
+      "perc_rank": {
+        "2001": {
+          "Buddhist": 179.0,
+          "Christian": 115.0,
+          "Hindu": 209.0,
+          "Jewish": 206.0,
+          "Muslim": 217.0,
+          "Noreligion": 189.0,
+          "Otherreligion": 120.0,
+          "Religionnotstated": 58.0,
+          "Sikh": 235.0
+        },
+        "2011": {
+          "Buddhist": 80.0,
+          "Christian": 115.0,
+          "Hindu": 131.0,
+          "Jewish": 166.0,
+          "Muslim": 224.0,
+          "Noreligion": 156.0,
+          "Otherreligion": 89.0,
+          "Religionnotstated": 64.0,
+          "Sikh": 259.0
+        },
+        "change": {
+          "Buddhist": 27.0,
+          "Christian": 175.0,
+          "Hindu": 63.0,
+          "Jewish": 28.0,
+          "Muslim": 223.0,
+          "Noreligion": 130.0,
+          "Otherreligion": 50.0,
+          "Religionnotstated": 179.0,
+          "Sikh": 241.0
+        }
+      },
+      "value": {
+        "2001": {
+          "Buddhist": 178.0,
+          "Christian": 80093.0,
+          "Hindu": 159.0,
+          "Jewish": 78.0,
+          "Muslim": 308.0,
+          "Noreligion": 14823.0,
+          "Otherreligion": 288.0,
+          "Religionnotstated": 8598.0,
+          "Sikh": 41.0,
+          "all": 104566.0
+        },
+        "2011": {
+          "Buddhist": 523.0,
+          "Christian": 71541.0,
+          "Hindu": 682.0,
+          "Jewish": 97.0,
+          "Muslim": 521.0,
+          "Noreligion": 29047.0,
+          "Otherreligion": 525.0,
+          "Religionnotstated": 8688.0,
+          "Sikh": 50.0,
+          "all": 111674.0
+        },
+        "change": {
+          "Buddhist": 193.82,
+          "Christian": -10.68,
+          "Hindu": 328.93,
+          "Jewish": 24.36,
+          "Muslim": 69.16,
+          "Noreligion": 95.96,
+          "Otherreligion": 82.29,
+          "Religionnotstated": 1.05,
+          "Sikh": 21.95,
+          "all": 6.8
+        }
+      },
+      "value_rank": {
+        "2001": {
+          "Buddhist": 210.0,
+          "Christian": 214.0,
+          "Hindu": 227.0,
+          "Jewish": 230.0,
+          "Muslim": 234.0,
+          "Noreligion": 216.0,
+          "Otherreligion": 196.0,
+          "Religionnotstated": 187.0,
+          "Sikh": 252.0,
+          "all": 220.0
+        },
+        "2011": {
+          "Buddhist": 130.0,
+          "Christian": 212.0,
+          "Hindu": 146.0,
+          "Jewish": 201.0,
+          "Muslim": 233.0,
+          "Noreligion": 214.0,
+          "Otherreligion": 168.0,
+          "Religionnotstated": 192.0,
+          "Sikh": 254.0,
+          "all": 216.0
+        },
+        "change": {
+          "Buddhist": 11.0,
+          "Christian": 149.0,
+          "Hindu": 6.0,
+          "Jewish": 48.0,
+          "Muslim": 214.0,
+          "Noreligion": 109.0,
+          "Otherreligion": 104.0,
+          "Religionnotstated": 179.0,
+          "Sikh": 219.0,
+          "all": 151.0
+        }
+      }
+    },
+    "ethnicity": {
+      "perc": {
+        "2001": {
+          "asian": 0.6,
+          "black": 0.18,
+          "mixed": 0.55,
+          "other": 0.14,
+          "white": 98.52
+        },
+        "2011": {
+          "asian": 1.82,
+          "black": 0.35,
+          "mixed": 0.92,
+          "other": 0.23,
+          "white": 96.68
+        },
+        "change": {
+          "asian": 1.22,
+          "black": 0.17,
+          "mixed": 0.37,
+          "other": 0.09,
+          "white": -1.84
+        }
+      },
+      "perc_rank": {
+        "2001": {
+          "asian": 239.0,
+          "black": 215.0,
+          "mixed": 230.0,
+          "other": 187.0,
+          "white": 98.0
+        },
+        "2011": {
+          "asian": 191.0,
+          "black": 224.0,
+          "mixed": 243.0,
+          "other": 195.0,
+          "white": 123.0
+        },
+        "change": {
+          "asian": 171.0,
+          "black": 210.0,
+          "mixed": 259.0,
+          "other": 178.0,
+          "white": 141.0
+        }
+      },
+      "value": {
+        "2001": {
+          "all": 104566.0,
+          "asian": 626.0,
+          "black": 191.0,
+          "mixed": 579.0,
+          "other": 147.0,
+          "white": 103023.0
+        },
+        "2011": {
+          "all": 111674.0,
+          "asian": 2031.0,
+          "black": 386.0,
+          "mixed": 1029.0,
+          "other": 262.0,
+          "white": 107966.0
+        },
+        "change": {
+          "all": 6.8,
+          "asian": 224.44,
+          "black": 102.09,
+          "mixed": 77.72,
+          "other": 78.23,
+          "white": 4.8
+        }
+      },
+      "value_rank": {
+        "2001": {
+          "all": 220.0,
+          "asian": 248.0,
+          "black": 229.0,
+          "mixed": 241.0,
+          "other": 223.0,
+          "white": 213.0
+        },
+        "2011": {
+          "all": 216.0,
+          "asian": 212.0,
+          "black": 236.0,
+          "mixed": 247.0,
+          "other": 206.0,
+          "white": 209.0
+        },
+        "change": {
+          "all": 151.0,
+          "asian": 13.0,
+          "black": 178.0,
+          "mixed": 235.0,
+          "other": 170.0,
+          "white": 98.0
+        }
+      }
+    },
+    "health": {
+      "perc": {
+        "2001": {
+          "bad": 9.46,
+          "fair": 24.16,
+          "good": 66.38
+        },
+        "2011": {
+          "bad": 6.29,
+          "fair": 14.99,
+          "good": 78.72
+        },
+        "change": {
+          "bad": -3.17,
+          "fair": -9.17,
+          "good": 12.34
+        }
+      },
+      "perc_rank": {
+        "2001": {
+          "bad": 119.0,
+          "fair": 40.0,
+          "good": 248.0
+        },
+        "2011": {
+          "bad": 85.0,
+          "fair": 64.0,
+          "good": 255.0
+        },
+        "change": {
+          "bad": 140.0,
+          "fair": 210.0,
+          "good": 157.0
+        }
+      },
+      "value": {
+        "2001": {
+          "all": 104566.0,
+          "bad": 9892.0,
+          "fair": 25268.0,
+          "good": 69406.0
+        },
+        "2011": {
+          "all": 111674.0,
+          "bad": 7019.0,
+          "fair": 16745.0,
+          "good": 87910.0
+        },
+        "change": {
+          "all": 6.8,
+          "bad": -29.04,
+          "fair": -33.73,
+          "good": 26.66
+        }
+      },
+      "value_rank": {
+        "2001": {
+          "all": 220.0,
+          "bad": 178.0,
+          "fair": 185.0,
+          "good": 230.0
+        },
+        "2011": {
+          "all": 216.0,
+          "bad": 160.0,
+          "fair": 177.0,
+          "good": 224.0
+        },
+        "change": {
+          "all": 151.0,
+          "bad": 24.0,
+          "fair": 85.0,
+          "good": 139.0
+        }
+      }
+    },
+    "economic": {
+      "perc": {
+        "2001": {
+          "employee": 51.32,
+          "inactive": 35.43,
+          "self-employed": 8.05,
+          "student": 1.92,
+          "unemployed": 3.29
+        },
+        "2011": {
+          "employee": 50.74,
+          "inactive": 32.57,
+          "self-employed": 9.82,
+          "student": 2.42,
+          "unemployed": 4.46
+        },
+        "change": {
+          "employee": -0.58,
+          "inactive": -2.86,
+          "self-employed": 1.77,
+          "student": 0.5,
+          "unemployed": 1.17
+        }
+      },
+      "perc_rank": {
+        "2001": {
+          "employee": 209.0,
+          "inactive": 89.0,
+          "self-employed": 200.0,
+          "student": 266.0,
+          "unemployed": 126.0
+        },
+        "2011": {
+          "employee": 234.0,
+          "inactive": 79.0,
+          "self-employed": 175.0,
+          "student": 255.0,
+          "unemployed": 114.0
+        },
+        "change": {
+          "employee": 189.0,
+          "inactive": 179.0,
+          "self-employed": 54.0,
+          "student": 190.0,
+          "unemployed": 117.0
+        }
+      },
+      "value": {
+        "2001": {
+          "all": 73799.0,
+          "employee": 37870.0,
+          "inactive": 26146.0,
+          "self-employed": 5939.0,
+          "student": 1419.0,
+          "unemployed": 2425.0
+        },
+        "2011": {
+          "all": 80786.0,
+          "employee": 40988.0,
+          "inactive": 26308.0,
+          "self-employed": 7931.0,
+          "student": 1952.0,
+          "unemployed": 3607.0
+        },
+        "change": {
+          "all": 9.47,
+          "employee": 8.23,
+          "inactive": 0.62,
+          "self-employed": 33.54,
+          "student": 37.56,
+          "unemployed": 48.74
+        }
+      },
+      "value_rank": {
+        "2001": {
+          "all": 225.0,
+          "employee": 233.0,
+          "inactive": 185.0,
+          "self-employed": 245.0,
+          "student": 246.0,
+          "unemployed": 169.0
+        },
+        "2011": {
+          "all": 220.0,
+          "employee": 233.0,
+          "inactive": 182.0,
+          "self-employed": 221.0,
+          "student": 242.0,
+          "unemployed": 159.0
+        },
+        "change": {
+          "all": 117.0,
+          "employee": 151.0,
+          "inactive": 135.0,
+          "self-employed": 58.0,
+          "student": 161.0,
+          "unemployed": 152.0
+        }
+      }
+    },
+    "children": {
+      "perc": {
+        "2001": {
+          "Kids": 28.54,
+          "NoKids": 62.6,
+          "NonDepKids": 8.85
+        },
+        "2011": {
+          "Kids": 26.39,
+          "NoKids": 64.06,
+          "NonDepKids": 9.55
+        },
+        "change": {
+          "Kids": -2.15,
+          "NoKids": 1.46,
+          "NonDepKids": 0.7
+        }
+      },
+      "perc_rank": {
+        "2001": {
+          "Kids": 219.0,
+          "NoKids": 103.0,
+          "NonDepKids": 215.0
+        },
+        "2011": {
+          "Kids": 262.0,
+          "NoKids": 86.0,
+          "NonDepKids": 164.0
+        },
+        "change": {
+          "Kids": 275.0,
+          "NoKids": 98.0,
+          "NonDepKids": 67.0
+        }
+      },
+      "value": {
+        "2001": {
+          "Kids": 12649.0,
+          "NoKids": 27741.0,
+          "NonDepKids": 3924.0,
+          "all": 44314.0
+        },
+        "2011": {
+          "Kids": 12749.0,
+          "NoKids": 30948.0,
+          "NonDepKids": 4613.0,
+          "all": 48310.0
+        },
+        "change": {
+          "Kids": 0.79,
+          "NoKids": 11.56,
+          "NonDepKids": 17.56,
+          "all": 9.02
+        }
+      },
+      "value_rank": {
+        "2001": {
+          "Kids": 214.0,
+          "NoKids": 205.0,
+          "NonDepKids": 227.0,
+          "all": 210.0
+        },
+        "2011": {
+          "Kids": 224.0,
+          "NoKids": 200.0,
+          "NonDepKids": 211.0,
+          "all": 206.0
+        },
+        "change": {
+          "Kids": 247.0,
+          "NoKids": 89.0,
+          "NonDepKids": 49.0,
+          "all": 111.0
+        }
+      }
+    },
+    "household": {
+      "perc": {
+        "2001": {
+          "65andOver": 10.53,
+          "Cohabiting": 8.08,
+          "LoneParent": 9.86,
+          "Married": 36.56,
+          "OnePerson": 30.27,
+          "Other": 4.71
+        },
+        "2011": {
+          "65andOver": 9.77,
+          "Cohabiting": 10.11,
+          "LoneParent": 9.81,
+          "Married": 32.93,
+          "OnePerson": 31.62,
+          "Other": 5.76
+        },
+        "change": {
+          "65andOver": -0.76,
+          "Cohabiting": 2.03,
+          "LoneParent": -0.05,
+          "Married": -3.63,
+          "OnePerson": 1.35,
+          "Other": 1.05
+        }
+      },
+      "perc_rank": {
+        "2001": {
+          "65andOver": 95.0,
+          "Cohabiting": 186.0,
+          "LoneParent": 100.0,
+          "Married": 222.0,
+          "OnePerson": 98.0,
+          "Other": 218.0
+        },
+        "2011": {
+          "65andOver": 122.0,
+          "Cohabiting": 145.0,
+          "LoneParent": 165.0,
+          "Married": 224.0,
+          "OnePerson": 84.0,
+          "Other": 172.0
+        },
+        "change": {
+          "65andOver": 188.0,
+          "Cohabiting": 82.0,
+          "LoneParent": 319.0,
+          "Married": 142.0,
+          "OnePerson": 107.0,
+          "Other": 114.0
+        }
+      },
+      "value": {
+        "2001": {
+          "65andOver": 4667.0,
+          "Cohabiting": 3579.0,
+          "LoneParent": 4369.0,
+          "Married": 16200.0,
+          "OnePerson": 13413.0,
+          "Other": 2086.0,
+          "all": 44314.0
+        },
+        "2011": {
+          "65andOver": 4722.0,
+          "Cohabiting": 4882.0,
+          "LoneParent": 4740.0,
+          "Married": 15907.0,
+          "OnePerson": 15276.0,
+          "Other": 2783.0,
+          "all": 48310.0
+        },
+        "change": {
+          "65andOver": 1.18,
+          "Cohabiting": 36.41,
+          "LoneParent": 8.49,
+          "Married": -1.81,
+          "OnePerson": 13.89,
+          "Other": 33.41,
+          "all": 9.02
+        }
+      },
+      "value_rank": {
+        "2001": {
+          "65andOver": 177.0,
+          "Cohabiting": 224.0,
+          "LoneParent": 164.0,
+          "Married": 228.0,
+          "OnePerson": 189.0,
+          "Other": 226.0,
+          "all": 210.0
+        },
+        "2011": {
+          "65andOver": 178.0,
+          "Cohabiting": 205.0,
+          "LoneParent": 187.0,
+          "Married": 227.0,
+          "OnePerson": 185.0,
+          "Other": 212.0,
+          "all": 206.0
+        },
+        "change": {
+          "65andOver": 146.0,
+          "Cohabiting": 71.0,
+          "LoneParent": 313.0,
+          "Married": 147.0,
+          "OnePerson": 104.0,
+          "Other": 90.0,
+          "all": 111.0
+        }
+      }
+    },
+    "marital": {
+      "perc": {
+        "2001": {
+          "Married": 52.74,
+          "Seperated": 11.77,
+          "Single": 25.67,
+          "Widowed": 9.83
+        },
+        "2011": {
+          "Married": 48.52,
+          "Seperated": 13.71,
+          "Single": 29.46,
+          "Widowed": 8.31
+        },
+        "change": {
+          "Married": -4.22,
+          "Seperated": 1.94,
+          "Single": 3.79,
+          "Widowed": -1.52
+        }
+      },
+      "perc_rank": {
+        "2001": {
+          "Married": 196.0,
+          "Seperated": 50.0,
+          "Single": 204.0,
+          "Widowed": 39.0
+        },
+        "2011": {
+          "Married": 180.0,
+          "Seperated": 15.0,
+          "Single": 210.0,
+          "Widowed": 54.0
+        },
+        "change": {
+          "Married": 150.0,
+          "Seperated": 24.0,
+          "Single": 184.0,
+          "Widowed": 241.0
+        }
+      },
+      "value": {
+        "2001": {
+          "Married": 44012.0,
+          "Seperated": 9819.0,
+          "Single": 21419.0,
+          "Widowed": 8204.0,
+          "all": 83454.0
+        },
+        "2011": {
+          "Married": 44338.0,
+          "Seperated": 12530.0,
+          "Single": 26924.0,
+          "Widowed": 7590.0,
+          "all": 91382.0
+        },
+        "change": {
+          "Married": 0.74,
+          "Seperated": 27.61,
+          "Single": 25.7,
+          "Widowed": -7.48,
+          "all": 9.5
+        }
+      },
+      "value_rank": {
+        "2001": {
+          "Married": 227.0,
+          "Seperated": 175.0,
+          "Single": 213.0,
+          "Widowed": 165.0,
+          "all": 221.0
+        },
+        "2011": {
+          "Married": 227.0,
+          "Seperated": 164.0,
+          "Single": 214.0,
+          "Widowed": 168.0,
+          "all": 217.0
+        },
+        "change": {
+          "Married": 148.0,
+          "Seperated": 60.0,
+          "Single": 149.0,
+          "Widowed": 178.0,
+          "all": 124.0
+        }
+      }
+    },
+    "travel": {
+      "perc": {
+        "2001": {
+          "bicycle": 2.73,
+          "bus": 4.16,
+          "car_van": 67.17,
+          "foot": 12.37,
+          "home": 8.66,
+          "moto": 1.51,
+          "other": 0.58,
+          "taxi": 0.97,
+          "train_metro": 1.85
+        },
+        "2011": {
+          "bicycle": 2.15,
+          "bus": 3.63,
+          "car_van": 70.51,
+          "foot": 12.36,
+          "home": 5.33,
+          "moto": 0.87,
+          "other": 0.85,
+          "taxi": 0.49,
+          "train_metro": 3.81
+        },
+        "change": {
+          "bicycle": -0.58,
+          "bus": -0.53,
+          "car_van": 3.34,
+          "foot": -0.01,
+          "home": -3.33,
+          "moto": -0.64,
+          "other": 0.27,
+          "taxi": -0.48,
+          "train_metro": 1.96
+        }
+      },
+      "perc_rank": {
+        "2001": {
+          "bicycle": 149.0,
+          "bus": 182.0,
+          "car_van": 144.0,
+          "foot": 77.0,
+          "home": 230.0,
+          "moto": 38.0,
+          "other": 32.0,
+          "taxi": 24.0,
+          "train_metro": 114.0
+        },
+        "2011": {
+          "bicycle": 170.0,
+          "bus": 196.0,
+          "car_van": 141.0,
+          "foot": 92.0,
+          "home": 169.0,
+          "moto": 99.0,
+          "other": 42.0,
+          "taxi": 118.0,
+          "train_metro": 142.0
+        },
+        "change": {
+          "bicycle": 236.0,
+          "bus": 202.0,
+          "car_van": 154.0,
+          "foot": 154.0,
+          "home": 72.0,
+          "moto": 322.0,
+          "other": 120.0,
+          "taxi": 327.0,
+          "train_metro": 152.0
+        }
+      },
+      "value": {
+        "2001": {
+          "all": 44626.0,
+          "bicycle": 1218.0,
+          "bus": 1856.0,
+          "car_van": 29974.0,
+          "foot": 5520.0,
+          "home": 3864.0,
+          "moto": 674.0,
+          "other": 260.0,
+          "taxi": 433.0,
+          "train_metro": 827.0
+        },
+        "2011": {
+          "all": 50396.0,
+          "bicycle": 1086.0,
+          "bus": 1830.0,
+          "car_van": 35535.0,
+          "foot": 6227.0,
+          "home": 2685.0,
+          "moto": 439.0,
+          "other": 427.0,
+          "taxi": 245.0,
+          "train_metro": 1922.0
+        },
+        "change": {
+          "all": 12.93,
+          "bicycle": -10.84,
+          "bus": -1.4,
+          "car_van": 18.55,
+          "foot": 12.81,
+          "home": -30.51,
+          "moto": -34.87,
+          "other": 64.23,
+          "taxi": -43.42,
+          "train_metro": 132.41
+        }
+      },
+      "value_rank": {
+        "2001": {
+          "all": 210.0,
+          "bicycle": 188.0,
+          "bus": 192.0,
+          "car_van": 207.0,
+          "foot": 176.0,
+          "home": 268.0,
+          "moto": 130.0,
+          "other": 109.0,
+          "taxi": 91.0,
+          "train_metro": 144.0
+        },
+        "2011": {
+          "all": 234.0,
+          "bicycle": 216.0,
+          "bus": 209.0,
+          "car_van": 216.0,
+          "foot": 186.0,
+          "home": 240.0,
+          "moto": 189.0,
+          "other": 154.0,
+          "taxi": 176.0,
+          "train_metro": 184.0
+        },
+        "change": {
+          "all": 210.0,
+          "bicycle": 256.0,
+          "bus": 216.0,
+          "car_van": 174.0,
+          "foot": 221.0,
+          "home": 116.0,
+          "moto": 285.0,
+          "other": 273.0,
+          "taxi": 326.0,
+          "train_metro": 262.0
+        }
+      }
+    },
+    "hoursworked": {
+      "perc": {
+        "2001": {
+          "Female1-15": 6.84,
+          "Female16-30": 14.33,
+          "Female31-48": 21.37,
+          "Female49plus": 3.59,
+          "Male1-15": 1.79,
+          "Male16-30": 3.22,
+          "Male31-48": 33.4,
+          "Male49plus": 15.46
+        },
+        "2011": {
+          "Female1-15": 6.94,
+          "Female16-30": 15.48,
+          "Female31-48": 21.66,
+          "Female49plus": 3.14,
+          "Male1-15": 3.03,
+          "Male16-30": 5.44,
+          "Male31-48": 33.55,
+          "Male49plus": 10.76
+        },
+        "change": {
+          "Female1-15": 0.1,
+          "Female16-30": 1.15,
+          "Female31-48": 0.29,
+          "Female49plus": -0.45,
+          "Male1-15": 1.24,
+          "Male16-30": 2.22,
+          "Male31-48": 0.15,
+          "Male49plus": -4.7
+        }
+      },
+      "perc_rank": {
+        "2001": {
+          "Female1-15": 143.0,
+          "Female16-30": 90.0,
+          "Female31-48": 231.0,
+          "Female49plus": 81.0,
+          "Male1-15": 193.0,
+          "Male16-30": 145.0,
+          "Male31-48": 282.0,
+          "Male49plus": 75.0
+        },
+        "2011": {
+          "Female1-15": 147.0,
+          "Female16-30": 117.0,
+          "Female31-48": 241.0,
+          "Female49plus": 130.0,
+          "Male1-15": 122.0,
+          "Male16-30": 86.0,
+          "Male31-48": 217.0,
+          "Male49plus": 151.0
+        },
+        "change": {
+          "Female1-15": 163.0,
+          "Female16-30": 213.0,
+          "Female31-48": 147.0,
+          "Female49plus": 312.0,
+          "Male1-15": 80.0,
+          "Male16-30": 49.0,
+          "Male31-48": 9.0,
+          "Male49plus": 325.0
+        }
+      },
+      "value": {
+        "2001": {
+          "Female1-15": 3079.0,
+          "Female16-30": 6454.0,
+          "Female31-48": 9626.0,
+          "Female49plus": 1615.0,
+          "Male1-15": 808.0,
+          "Male16-30": 1451.0,
+          "Male31-48": 15043.0,
+          "Male49plus": 6964.0,
+          "all": 45040.0
+        },
+        "2011": {
+          "Female1-15": 3496.0,
+          "Female16-30": 7800.0,
+          "Female31-48": 10915.0,
+          "Female49plus": 1583.0,
+          "Male1-15": 1529.0,
+          "Male16-30": 2744.0,
+          "Male31-48": 16906.0,
+          "Male49plus": 5423.0,
+          "all": 50396.0
+        },
+        "change": {
+          "Female1-15": 13.54,
+          "Female16-30": 20.86,
+          "Female31-48": 13.39,
+          "Female49plus": -1.98,
+          "Male1-15": 89.23,
+          "Male16-30": 89.11,
+          "Male31-48": 12.38,
+          "Male49plus": -22.13,
+          "all": 11.89
+        }
+      },
+      "value_rank": {
+        "2001": {
+          "Female1-15": 235.0,
+          "Female16-30": 226.0,
+          "Female31-48": 242.0,
+          "Female49plus": 188.0,
+          "Male1-15": 243.0,
+          "Male16-30": 231.0,
+          "Male31-48": 254.0,
+          "Male49plus": 194.0,
+          "all": 238.0
+        },
+        "2011": {
+          "Female1-15": 226.0,
+          "Female16-30": 227.0,
+          "Female31-48": 240.0,
+          "Female49plus": 205.0,
+          "Male1-15": 217.0,
+          "Male16-30": 180.0,
+          "Male31-48": 240.0,
+          "Male49plus": 223.0,
+          "all": 234.0
+        },
+        "change": {
+          "Female1-15": 129.0,
+          "Female16-30": 173.0,
+          "Female31-48": 121.0,
+          "Female49plus": 287.0,
+          "Male1-15": 103.0,
+          "Male16-30": 54.0,
+          "Male31-48": 61.0,
+          "Male49plus": 292.0,
+          "all": 128.0
+        }
+      }
+    },
+    "tenure": {
+      "perc": {
+        "2001": {
+          "owned": 71.38,
+          "rent_free": 2.38,
+          "rented_private": 10.49,
+          "rented_social": 15.34,
+          "shared_ownership": 0.42
+        },
+        "2011": {
+          "owned": 66.53,
+          "rent_free": 1.67,
+          "rented_private": 17.09,
+          "rented_social": 14.21,
+          "shared_ownership": 0.51
+        },
+        "change": {
+          "owned": -4.85,
+          "rent_free": -0.71,
+          "rented_private": 6.6,
+          "rented_social": -1.13,
+          "shared_ownership": 0.09
+        }
+      },
+      "perc_rank": {
+        "2001": {
+          "owned": 196.0,
+          "rent_free": 85.0,
+          "rented_private": 101.0,
+          "rented_social": 160.0,
+          "shared_ownership": 230.0
+        },
+        "2011": {
+          "owned": 201.0,
+          "rent_free": 56.0,
+          "rented_private": 93.0,
+          "rented_social": 177.0,
+          "shared_ownership": 222.0
+        },
+        "change": {
+          "owned": 197.0,
+          "rent_free": 183.0,
+          "rented_private": 127.0,
+          "rented_social": 202.0,
+          "shared_ownership": 160.0
+        }
+      },
+      "value": {
+        "2001": {
+          "all": 44501.0,
+          "owned": 31763.0,
+          "rent_free": 1057.0,
+          "rented_private": 4668.0,
+          "rented_social": 6826.0,
+          "shared_ownership": 187.0
+        },
+        "2011": {
+          "all": 48310.0,
+          "owned": 32142.0,
+          "rent_free": 805.0,
+          "rented_private": 8254.0,
+          "rented_social": 6864.0,
+          "shared_ownership": 245.0
+        },
+        "change": {
+          "all": 8.56,
+          "owned": 1.19,
+          "rent_free": -23.84,
+          "rented_private": 76.82,
+          "rented_social": 0.56,
+          "shared_ownership": 31.02
+        }
+      },
+      "value_rank": {
+        "2001": {
+          "all": 210.0,
+          "owned": 217.0,
+          "rent_free": 159.0,
+          "rented_private": 159.0,
+          "rented_social": 192.0,
+          "shared_ownership": 243.0
+        },
+        "2011": {
+          "all": 206.0,
+          "owned": 219.0,
+          "rent_free": 143.0,
+          "rented_private": 164.0,
+          "rented_social": 199.0,
+          "shared_ownership": 246.0
+        },
+        "change": {
+          "all": 108.0,
+          "owned": 149.0,
+          "rent_free": 121.0,
+          "rented_private": 190.0,
+          "rented_social": 186.0,
+          "shared_ownership": 146.0
+        }
+      }
+    },
+    "density": {
+      "value": {
+        "2001": {
+          "all": 3.32
+        },
+        "2011": {
+          "all": 3.55
+        },
+        "change": {
+          "all": 6.93
+        }
+      },
+      "value_rank": {
+        "2001": {
+          "all": 209.0
+        },
+        "2011": {
+          "all": 207.0
+        },
+        "change": {
+          "all": 150.0
+        }
+      }
+    },
+    "age10yr": {
+      "perc": {
+        "2001": {
+          "0-9": 11.97,
+          "10-19": 13.02,
+          "20-29": 10.0,
+          "30-39": 13.76,
+          "40-49": 13.35,
+          "50-59": 13.73,
+          "60-69": 10.41,
+          "70-79": 4.53,
+          "80plus": 9.23
+        },
+        "2011": {
+          "0-9": 10.87,
+          "10-19": 12.23,
+          "20-29": 10.51,
+          "30-39": 10.8,
+          "40-49": 14.6,
+          "50-59": 13.47,
+          "60-69": 13.39,
+          "70-79": 4.65,
+          "80plus": 9.49
+        },
+        "change": {
+          "0-9": -1.1,
+          "10-19": -0.79,
+          "20-29": 0.51,
+          "30-39": -2.96,
+          "40-49": 1.25,
+          "50-59": -0.26,
+          "60-69": 2.98,
+          "70-79": 0.12,
+          "80plus": 0.26
+        }
+      },
+      "perc_rank": {
+        "2001": {
+          "0-9": 188.0,
+          "10-19": 106.0,
+          "20-29": 241.0,
+          "30-39": 281.0,
+          "40-49": 198.0,
+          "50-59": 122.0,
+          "60-69": 90.0,
+          "70-79": 76.0,
+          "80plus": 50.0
+        },
+        "2011": {
+          "0-9": 212.0,
+          "10-19": 132.0,
+          "20-29": 232.0,
+          "30-39": 264.0,
+          "40-49": 210.0,
+          "50-59": 69.0,
+          "60-69": 74.0,
+          "70-79": 91.0,
+          "80plus": 77.0
+        },
+        "change": {
+          "0-9": 247.0,
+          "10-19": 215.0,
+          "20-29": 176.0,
+          "30-39": 179.0,
+          "40-49": 191.0,
+          "50-59": 102.0,
+          "60-69": 66.0,
+          "70-79": 132.0,
+          "80plus": 202.0
+        }
+      },
+      "value": {
+        "2001": {
+          "0-9": 12513.0,
+          "10-19": 13617.0,
+          "20-29": 10459.0,
+          "30-39": 14388.0,
+          "40-49": 13956.0,
+          "50-59": 14357.0,
+          "60-69": 10889.0,
+          "70-79": 4732.0,
+          "80plus": 9655.0,
+          "all": 104566.0
+        },
+        "2011": {
+          "0-9": 12138.0,
+          "10-19": 13662.0,
+          "20-29": 11735.0,
+          "30-39": 12057.0,
+          "40-49": 16300.0,
+          "50-59": 15041.0,
+          "60-69": 14949.0,
+          "70-79": 5196.0,
+          "80plus": 10596.0,
+          "all": 111674.0
+        },
+        "change": {
+          "0-9": -3.0,
+          "10-19": 0.33,
+          "20-29": 12.2,
+          "30-39": -16.2,
+          "40-49": 16.8,
+          "50-59": 4.76,
+          "60-69": 37.29,
+          "70-79": 9.81,
+          "80plus": 9.75,
+          "all": 6.8
+        }
+      },
+      "value_rank": {
+        "2001": {
+          "0-9": 211.0,
+          "10-19": 207.0,
+          "20-29": 234.0,
+          "30-39": 239.0,
+          "40-49": 222.0,
+          "50-59": 218.0,
+          "60-69": 195.0,
+          "70-79": 188.0,
+          "80plus": 169.0,
+          "all": 220.0
+        },
+        "2011": {
+          "0-9": 221.0,
+          "10-19": 212.0,
+          "20-29": 223.0,
+          "30-39": 239.0,
+          "40-49": 221.0,
+          "50-59": 204.0,
+          "60-69": 169.0,
+          "70-79": 178.0,
+          "80plus": 176.0,
+          "all": 216.0
+        },
+        "change": {
+          "0-9": 219.0,
+          "10-19": 207.0,
+          "20-29": 170.0,
+          "30-39": 203.0,
+          "40-49": 173.0,
+          "50-59": 105.0,
+          "60-69": 73.0,
+          "70-79": 127.0,
+          "80plus": 209.0,
+          "all": 151.0
+        }
+      }
+    },
+    "agemed": {
+      "value": {
+        "2001": {
+          "all": 40.0
+        },
+        "2011": {
+          "all": 44.0
+        },
+        "change": {
+          "all": 10.0
+        }
+      },
+      "value_rank": {
+        "2001": {
+          "all": 84.0
+        },
+        "2011": {
+          "all": 56.0
+        },
+        "change": {
+          "all": 16.0
+        }
+      }
+    }
+  }
+}

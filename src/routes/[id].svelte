@@ -101,6 +101,9 @@
 	export let ladData;
 
 	console.log('topics', topics)
+	$: console.log('place', place)
+	$: console.log('rgn', rgn)
+	$: console.log('cou', cou)
   
 	var health, expand, props;
 
@@ -213,8 +216,6 @@
 			}
 		});
 
-		console.log('place')
-    
 
     let res = rosaenlg_en_US.render(template, {
     	language: 'en_UK',

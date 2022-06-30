@@ -4521,6 +4521,15 @@ const U5Bidu5D = create_ssr_component(($$result, $$props, $$bindings, slots) => 
   if ($$props.ladData === void 0 && $$bindings.ladData && ladData !== void 0)
     $$bindings.ladData(ladData);
   $$result.css.add(css);
+  {
+    console.log("place", place);
+  }
+  {
+    console.log("rgn", rgn);
+  }
+  {
+    console.log("cou", cou);
+  }
   return `${$$result.head += `${$$result.title = `<title>${escape(place.name)}</title>`, ""}<meta property="${"og:title"}"${add_attribute("content", place.name, 0)} data-svelte="svelte-yg0144"><meta property="${"og:description"}" content="${"This is a description of the page."}" data-svelte="svelte-yg0144"><meta name="${"description"}" content="${"This is a description of the page."}" data-svelte="svelte-yg0144"><script src="${"https://unpkg.com/rosaenlg@3.0.1/dist/rollup/rosaenlg_tiny_en_US_3.0.1_comp.js"}" data-svelte="svelte-yg0144"><\/script>`, ""}
 
 ${validate_component(Titleblock, "Titleblock").$$render($$result, {
