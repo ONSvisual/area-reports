@@ -1246,8 +1246,15 @@ mixin val(x)
     | #[+value(sig)]
 
 mixin pc(x, i, y, data)
-    if ((i)&&(s[i][0]=='religion')&&(s[i][3]!='Religionnotstated'))
+    if ((i)&&(s[i][0]=='religion'))
         - x = 100*(x/(100-data.religion.perc[y].Religionnotstated))
+    if (Math.abs(x)<10)
+        - var num = Math.round(x*10)/10
+        | #[+value((num/100), {'FORMAT': '0.0%'})]
+    else 
+        | #[+value((x/100), {'FORMAT': '0%'})] 
+
+mixin pcrns(x)
     if (Math.abs(x)<10)
         - var num = Math.round(x*10)/10
         | #[+value((num/100), {'FORMAT': '0.0%'})]
@@ -1262,23 +1269,43 @@ mixin ethrel(i)
         if (s[i][0]=='religion')
             | The 2011 Census asked a voluntary question about religion. 
             | Of those who chose to disclose their religious affiliation, 
-            | #[+pc(data[s[i][0]].perc[2011][bigChange], i, 2011, data)]
-            | #[+value(topics[s[i][0]][bigChange]['verb_past_samp_er'])]. 
+            | the largest percentage point increase in #[+value(place.name)] was among those who 
+            | #[+value(topics[s[i][0]][bigChange]['verb_past_samp_er'])], 
+            | rising #[+value(data[s[i][0]].perc['change'][bigChange], {'FORMAT': "0.0"})] points. 
+            p 
+                | In 2011,
+                | #[+pc(data[s[i][0]].perc[2011][bigChange], i, 2011, data)]
+                | of respondents in !{place.name} 
+                | gave this religion on the census compared with 
+                | #[+pc(data[s[i][0]].perc[2001][bigChange], i, 2001, data)]
+                | of those who answered in 2001.
         else
-            | In 2011, #[+pc(data[s[i][0]].perc[2011][bigChange])] of the local population 
-            | #[+value(topics[s[i][0]][bigChange]['verb_past_samp_er'])].
-        | An increase from #[+pc(data[s[i][0]].perc[2001][bigChange], i, 2001, data)] in 2001
-        | makes this the fastest-growing !{(s[i][0]=='religion')?'religious':'ethnic'} group in !{place.name}.
+            | In 2011, #[+pc(data[s[i][0]].perc[2011][bigChange])] of !{place.name} residents 
+            | #[+value(topics[s[i][0]][bigChange]['verb_past_samp_er'])], 
+            - var higheth = Object.keys(data[s[i][0]].perc[2011]).reduce((a, b) => obj[a] > obj[b] ? a : b)
+            if (higheth == bigChange)
+                | making it the most common ethnic group in the local authority area.
+                | The population from this group has increased from #[+pc(data[s[i][0]].perc[2001][bigChange], i, 2001, data)] in 2001.
+            else 
+                | up from from #[+pc(data[s[i][0]].perc[2001][bigChange], i, 2001, data)] in 2001.
     p
-        | Across !{parent}, the percentage of 
-        | #[+value(topics[s[i][0]][bigChange]['adj_noun_er'])]
-        | #[+value(ud((rgn.data[s[i][0]].perc[2011][bigChange] - rgn.data[s[i][0]].perc[2001][bigChange]), 'increased', 'fell'))]
-        | from #[+pc(rgn.data[s[i][0]].perc[2001][bigChange], i, 2001, rgn.data)] 
-        | to #[+pc(rgn.data[s[i][0]].perc[2011][bigChange], i, 2011, rgn.data)]
+        | Across !{parent}, the percentage of !{(s[i][0]=='religion')?'people who answered the question on religion':'people'}
+        | #[+value(topics[s[i][0]][bigChange]['verb_er'])] 
+        if (pcnoprint(rgn.data[s[i][0]].perc[2001][bigChange]) != pcnoprint(rgn.data[s[i][0]].perc[2011][bigChange]))
+            | #[+value(ud((rgn.data[s[i][0]].perc[2011][bigChange] - rgn.data[s[i][0]].perc[2001][bigChange]), 'increased', 'fell'))]
+            | from #[+pc(rgn.data[s[i][0]].perc[2001][bigChange], i, 2001, rgn.data)] 
+            | to #[+pc(rgn.data[s[i][0]].perc[2011][bigChange], i, 2011, rgn.data)]
+        else 
+            | remained close to #[+pc(rgn.data[s[i][0]].perc[2011][bigChange], i, 2011, rgn.data)]
         if (cou.name!='Wales')
-            | , while across !{cou.name} the percentage went from
-            | #[+pc(cou.data[s[i][0]].perc[2001][bigChange], i, 2001, cou.data)] to 
-            | #[+pc(cou.data[s[i][0]].perc[2011][bigChange], i, 2011, cou.data)].
+            | , while across !{cou.name} the percentage
+            if (pcnoprint(cou.data[s[i][0]].perc[2001][bigChange]) != pcnoprint(cou.data[s[i][0]].perc[2011][bigChange]))
+                | went from
+                | #[+pc(cou.data[s[i][0]].perc[2001][bigChange], i, 2001, cou.data)] to 
+                | #[+pc(cou.data[s[i][0]].perc[2011][bigChange], i, 2011, cou.data)]
+            else 
+                | remained close to #[+pc(cou.data[s[i][0]].perc[2011][bigChange], i, 2011, cou.data)]
+        |.
     p 
         - var objPerc = Object.assign({}, place.data[s[i][0]].perc[2011]) 
         - delete objPerc[bigChange]
@@ -1288,25 +1315,31 @@ mixin ethrel(i)
         - var bigPerc2 = Object.keys(objPerc).reduce((a, b) => (objPerc[a] > objPerc[b]) && (a != 'Religionnotstated') ? a : b)
         - delete objPerc[bigPerc2]
         - var bigPerc3 = Object.keys(objPerc).reduce((a, b) => (objPerc[a] > objPerc[b]) && (a != 'Religionnotstated') ? a : b)
-        | Around #[+pc(data[s[i][0]].perc[2011][bigPerc1], i, 2011, data)] of 
-        | !{(s[i][0]=='religion')?'those who disclosed their religion':'people'}
-        | in #[+value(place.name)] 
+        if (s[i][0]=='religion')
+            | Of those who disclosed their religion in Newham,
+            | #[+pc(data[s[i][0]].perc[2011][bigPerc1], i, 2011, data)] 
+        else 
+            | Around #[+pc(data[s[i][0]].perc[2011][bigPerc1], i, 2011, data)] 
+            | of people in !{place.name}
         | #[+value(topics[s[i][0]][bigPerc1]['verb_past_samp_er'])],
-        | #[+value(ud((data[s[i][0]].perc[2011][bigPerc1] - data[s[i][0]].perc[2001][bigPerc1]), 'up', 'down'))]
-        | from #[+pc(data[s[i][0]].perc[2001][bigPerc1], i, 2001, data)] in 2001.
+        | compared with #[+pc(data[s[i][0]].perc[2001][bigPerc1], i, 2001, data)] in 2001.
         | About #[+pc(data[s[i][0]].perc[2011][bigPerc2], i, 2011, data)] #[+value(topics[s[i][0]][bigPerc2]['verb_past_samp_er'])],
-        | #[+value(ud((data[s[i][0]].perc[2011][bigPerc2] - data[s[i][0]].perc[2001][bigPerc2]), 'up', 'down'))]
-        | from #[+pc(data[s[i][0]].perc[2001][bigPerc2], i, 2001, data)] 10 years prior.
+        | compared with #[+pc(data[s[i][0]].perc[2001][bigPerc2], i, 2001, data)] 10 years prior.
     p 
-        | The percentage of #[+value(topics[s[i][0]][bigPerc3]['adj_noun_er'])]
-        | #[+value(ud((data[s[i][0]].perc[2011][bigPerc3] - data[s[i][0]].perc[2001][bigPerc3]), 'rose', 'fell'))]
+        | The percentage of
+        | !{  (s[i][0]=='religion')? "people who disclosed a religious affiliation and" : "people who" }
+        | #[+value(topics[s[i][0]][bigPerc3]['verb_past_samp_er'])]
+        | #[+value(ud((data[s[i][0]].perc[2011][bigPerc3] - data[s[i][0]].perc[2001][bigPerc3]), 'increased', 'decreased'))]
         | from #[+pc(data[s[i][0]].perc[2001][bigPerc3], i, 2001, data)] to #[+pc(data[s[i][0]].perc[2011][bigPerc3], i, 2011, data)] between the last two censuses.
     if (s[i][0]=='religion')
         p
-            | In #[+value(place.name)], #[+pc(data[s[i][0]].perc[2011]['Religionnotstated'], i, 2011, data)] chose not to disclose their religious affiliation. 
-            | In #[+value(rgn.name)] the percentage was #[+pc(rgn.data[s[i][0]].perc[2011]['Religionnotstated'], i, 2011, data)]
-            | and across England the percentage was #[+pc(cou.data[s[i][0]].perc[2011]['Religionnotstated'], i, 2011, data)].
-
+            | In #[+value(place.name)], #[+pcrns(data[s[i][0]].perc[2011]['Religionnotstated'])] 
+            | chose not to answer the question on religious affiliation in 2011,
+            | compared with #[+pcrns(data[s[i][0]].perc[2001]['Religionnotstated'])] in 2001.
+            | In #[+value(rgn.name)], #[+pcrns(rgn.data[s[i][0]].perc[2011]['Religionnotstated'])]
+            | did not answer the voluntary question in 2011, compared with #[+pcrns(cou.data[s[i][0]].perc[2001]['Religionnotstated'])] in 2001.
+            | Across England, #[+pcrns(cou.data[s[i][0]].perc[2011]['Religionnotstated'])]
+            | of people did not answer in 2011, compared with #[+pcrns(cou.data[s[i][0]].perc[2001]['Religionnotstated'])] in 2001.
 
     //-     | The number of people in !{place.name} 
     //-     | #[+value(topics[s[i][0]][bigPerc1]['verb_er'])]
@@ -1398,15 +1431,20 @@ mixin ethrel(i)
 
 mixin headline(i)
     if ((findOne(stories[i].type, ['couBuck', 'regBuck']))&(!stories[i].type.includes('natRank')))
-        h2 #[+value(topic(i).subhead.buc)]
+        h2(id=s[i][0])
+            | #[+value(topic(i).subhead.buc)]
     else if ((cha(s, place, i)<-1)&(data[s[i][0]]['value'][2011][s[i][3]]<data[s[i][0]]['value'][2001][s[i][3]]))
-        h2 #[+value(topic(i).subhead.neg)]
+        h2(id=s[i][0])
+            | #[+value(topic(i).subhead.neg)]
     else if ((cha(s, place, i)>1)&(data[s[i][0]]['value'][2011][s[i][3]]>data[s[i][0]]['value'][2001][s[i][3]]))
-        h2 #[+value(topic(i).subhead.pos)]
+        h2(id=s[i][0])
+            | #[+value(topic(i).subhead.pos)]
     else if (findOne(stories[i].type, ['nearDiff', 'couDiff', 'regDiff', 'welsh']))
-        h2 #[+value(topic(i).subhead.sta)]
+        h2(id=s[i][0])
+            | #[+value(topic(i).subhead.sta)]
     else 
-        h2 #[+value(topic(i).subhead.neu)]
+        h2(id=s[i][0])
+            | #[+value(topic(i).subhead.neu)]
 
 mixin rank2nat(i)
     if (data[s[i][0]][s[i][1]+"_rank"].top_bottom[s[i][3]][1].change<0)
@@ -1519,12 +1557,14 @@ mixin percPara(i, chain0_01, chain0_11, chain1_01, chain1_11)
 mixin para(i)
     if (s[i][1] == 'value')
         if (s[i][0] == 'agemed')
-            h2 #[+subheadAge(i)]
-            | #[+sent1Age(i)]
+            h2(id=s[i][0])
+                | #[+subheadAge(i)]
+            p #[+sent1Age(i)]
             p #[+sent2Age(i)]
             p #[+sent3Age(i)]
         else
-            h2 #[+subheadVal(i)]
+            h2(id=s[i][0])
+                | #[+subheadVal(i)]
             p #[+sent1pop(i)]
             p #[+sent2pop(i)]
             if (s[i][0]=='population')
