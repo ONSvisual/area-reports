@@ -1274,7 +1274,8 @@ mixin ethrel(i)
         else
             | In 2011, #[+pc(data[s[i][0]].perc[2011][bigChange])] of !{place.name} residents 
             | #[+value(topics[s[i][0]][bigChange]['verb_past_samp_er'])], 
-            - var higheth = Object.keys(data[s[i][0]].perc[2011]).reduce((a, b) => obj[a] > obj[b] ? a : b)
+            - let higheth = Object.keys(data[s[i][0]].perc[2011]).reduce((a, b) => data[s[i][0]].perc[2011][a] > data[s[i][0]].perc[2011][b] ? a : b)
+            - console.log('higheth', higheth)
             if (higheth == bigChange)
                 | making it the most common ethnicity in this local authority area.
                 | The population from these groups has increased from #[+pc(data[s[i][0]].perc[2001][bigChange], i, 2001, data)] in 2001.
