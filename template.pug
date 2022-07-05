@@ -92,7 +92,7 @@ mixin sent2Age(i)
     - let agediff = data[s[i][0]][s[i][1]][2011][s[i][3]]-cou.data.agemed.value[2011].all
     - let agediff01 = data[s[i][0]][s[i][1]][2001][s[i][3]]-cou.data.agemed.value[2001].all
     if (country=="England")
-        | This #[+value((place.classification!='unk')?place.classification:'area')] had 
+        | This area had 
         if (Math.abs(lra)<4)
             | the #[+value(ud(lra, ord(lra) + "highest", ord(lra) + "lowest"))]
             | average age in #[+value(parent)] and 
@@ -108,7 +108,7 @@ mixin sent2Age(i)
             | #[+value(ud(agediff, 'older', 'younger'))] 
             | than the average local authority area across England (#[+value(eng.data.agemed.value[2011].all)] years of age).
     else
-        | This #[+value((place.classification!='unk')?place.classification:'area')] had
+        | This area had
         | a #[+value(adv(cur(s, place, i), cur(s, simi, i)))] 
         | #[+value(ud(cur(s, place, i)-cur(s, simi, i), 'higher', 'lower'))]
         | average age than #[+similarname] (#[+value(cur(s, simi, i))] years of age) and
@@ -891,8 +891,6 @@ mixin difference1Near(i)
         syn
             | here
         syn
-            | in this #[+value((place.classification!='unk')?place.classification:'area')]
-        syn
             | in this area
     if (Math.abs(cha(s, place, i))<1)
         | , while the proportion #[+value(ud(cha(s, near, i), 'increased', 'fell'))] in
@@ -917,8 +915,6 @@ mixin difference1Simi(i)
             | in #[+value(place.name)]
         syn
             | here
-        syn
-            | in this #[+value((place.classification!='unk')?place.classification:'area')]
         syn
             | in this area
     if (Math.abs(cha(s, place, i))<1)
@@ -946,8 +942,6 @@ mixin difference1Reg(i)
         syn
             | here
         syn
-            | in this #[+value((place.classification!='unk')?place.classification:'area')]
-        syn
             | in this area
     if (Math.abs(cha(s, place, i))<1)
         | , while the proportion #[+value(ud(cha(s, rgn, i), 'increased', 'fell'))] 
@@ -971,8 +965,6 @@ mixin difference1Cou(i)
             | in #[+value(place.name)]
         syn
             | here
-        syn
-            | in this #[+value((place.classification!='unk')?place.classification:'area')]
         syn
             | in this area
     if (Math.abs(cha(s, place, i))<1)
@@ -1083,8 +1075,6 @@ mixin buck(i, curBuck, chain0_01, chain0_11, chain1_01, chain1_11)
                 | in #[+value(place.name)]
             syn
                 | here
-            syn
-                | in this #[+value((place.classification!='unk')?place.classification:'area')]
             syn
                 | in this area
         | #[+value(ud(cha(s, place, i), ', while falling', ', while rising'))]
@@ -1672,7 +1662,7 @@ mixin chartTitle(i)
             | #[+chartTitleOther(i)]
 
 mixin tenYears
-  synz
+  synz {mode:'sequence'}
     syn
       | between the last two censuses
     syn
@@ -1692,13 +1682,15 @@ mixin coincide
             | At the same time there were changes in
 
 mixin standfirst
+    - let popchange = data.population.value[2011].all - data.population.value[2001].all
+    - console.log('popchange', popchange)
     p
-        | #[+value(topics[sf[0][0]].profile)]
+        if (popchange==0)
+            | The size of !{place.name}'s population remained relavtively stable
+        else
+            | !{place.name}'s population !{(popchange>0)? "increased":"decreased"} by about #[+value( Math.abs( Math.round(popchange/100)*100 ) )]
         | #[+tenYears].
-        | #[+coincide]
-        eachz sfi in sf.slice(1,) with { separator: ',', last_separator: 'and' }
-            | #[+value(topics[sfi[0]].general_sf)]
-        | .
+        | This semi-automated article highlights some of the key changes among the local population.
 
 //- -console.log("eng", eng)
 //- -console.log("rgn", rgn)
