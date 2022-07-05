@@ -1268,7 +1268,7 @@ mixin ethrel(i)
                 | In 2011,
                 | #[+pc(data[s[i][0]].perc[2011][bigChange], i, 2011, data)]
                 | of respondents in !{place.name} 
-                | gave this religion on the census compared with 
+                | gave this answer to the question on religion, compared with 
                 | #[+pc(data[s[i][0]].perc[2001][bigChange], i, 2001, data)]
                 | of those who answered in 2001.
         else
@@ -1309,7 +1309,7 @@ mixin ethrel(i)
         - delete objPerc[bigPerc2]
         - var bigPerc3 = Object.keys(objPerc).reduce((a, b) => (objPerc[a] > objPerc[b]) && (a != 'Religionnotstated') ? a : b)
         if (s[i][0]=='religion')
-            | Of those who disclosed their religion in Newham,
+            | Of those who disclosed their religion in !{place.name},
             | #[+pc(data[s[i][0]].perc[2011][bigPerc1], i, 2011, data)] 
         else 
             | Around #[+pc(data[s[i][0]].perc[2011][bigPerc1], i, 2011, data)] 
@@ -1328,11 +1328,22 @@ mixin ethrel(i)
         p
             | In #[+value(place.name)], #[+pcrns(data[s[i][0]].perc[2011]['Religionnotstated'])] 
             | chose not to answer the question on religious affiliation,
-            | compared with #[+pcrns(data[s[i][0]].perc[2001]['Religionnotstated'])] in 2001.
+            if (Math.round(data[s[i][0]].perc[2001]['Religionnotstated'] *10) == Math.round(data[s[i][0]].perc[2011]['Religionnotstated']*10))
+                | the same percentage as in 2001.
+            else
+                | compared with #[+pcrns(data[s[i][0]].perc[2001]['Religionnotstated'])] in 2001.
             | In #[+value(rgn.name)], #[+pcrns(rgn.data[s[i][0]].perc[2011]['Religionnotstated'])]
-            | did not answer the voluntary question, compared with #[+pcrns(cou.data[s[i][0]].perc[2001]['Religionnotstated'])] in 2001.
+            | did not answer the voluntary question, 
+            if (Math.round(rgn.data[s[i][0]].perc[2001]['Religionnotstated'] *10) == Math.round(rgn.data[s[i][0]].perc[2011]['Religionnotstated']*10))
+                | the same percentage as in 2001.
+            else
+                | compared with #[+pcrns(cou.data[s[i][0]].perc[2001]['Religionnotstated'])] in 2001.
             | Across England, #[+pcrns(cou.data[s[i][0]].perc[2011]['Religionnotstated'])]
-            | of people did not answer, compared with #[+pcrns(cou.data[s[i][0]].perc[2001]['Religionnotstated'])] in 2001.
+            | of people did not answer,
+            if (Math.round(cou.data[s[i][0]].perc[2001]['Religionnotstated'] *10) == Math.round(cou.data[s[i][0]].perc[2011]['Religionnotstated']*10))
+                | the same percentage as in 2001.
+            else
+                | compared with #[+pcrns(cou.data[s[i][0]].perc[2001]['Religionnotstated'])] in 2001.
 
     //-     | The number of people in !{place.name} 
     //-     | #[+value(topics[s[i][0]][bigPerc1]['verb_er'])]
