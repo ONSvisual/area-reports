@@ -1334,6 +1334,8 @@ mixin ethrel(i)
                 | the same percentage as in 2001.
             else
                 | compared with #[+pc(cou.data[s[i][0]].perc[2001]['Religionnotstated'])] in 2001.
+    a(href="")
+        | Read the full bulletin on the latest census data on !{ (s[i][0]=='religion')? 'religion' : 'ethnicity' }
 
 
 mixin headline(i)
