@@ -1270,7 +1270,9 @@ mixin ethrel(i)
                 | making it the most common ethnicity in this local authority area.
                 | The population from these groups has increased from #[+pc(data[s[i][0]].perc[2001][bigChange])] in 2001.
             else 
-                | up from from #[+pc(data[s[i][0]].perc[2001][bigChange])] in 2001.
+                | up from #[+pc(data[s[i][0]].perc[2001][bigChange])] in 2001.
+                | The #[+value( data[s[i][0]].perc['change'][bigChange] , {'FORMAT': "0.0"})]
+                | percentage point change was the largest increase among ethnic groups in this area.
     p
         | Across !{parent}, the percentage of !{(s[i][0]=='religion')?'people who answered the question on religion':'people'}
         | #[+value(topics[s[i][0]][bigChange]['verb_er'])] 
@@ -1293,11 +1295,13 @@ mixin ethrel(i)
         - var objPerc = Object.assign({}, place.data[s[i][0]].perc[2011]) 
         - delete objPerc[bigChange]
         - delete objPerc['all']
-        - var bigPerc1 = Object.keys(objPerc).reduce((a, b) => (objPerc[a] > objPerc[b]) && (a != 'Religionnotstated') ? a : b)
+        - delete objPerc['Religionnotstated']
+        - var bigPerc1 = Object.keys(objPerc).reduce((a, b) => (objPerc[a] > objPerc[b]) ? a : b)
         - delete objPerc[bigPerc1]
-        - var bigPerc2 = Object.keys(objPerc).reduce((a, b) => (objPerc[a] > objPerc[b]) && (a != 'Religionnotstated') ? a : b)
+        - var bigPerc2 = Object.keys(objPerc).reduce((a, b) => (objPerc[a] > objPerc[b]) ? a : b)
         - delete objPerc[bigPerc2]
-        - var bigPerc3 = Object.keys(objPerc).reduce((a, b) => (objPerc[a] > objPerc[b]) && (a != 'Religionnotstated') ? a : b)
+        - var bigPerc3 = Object.keys(objPerc).reduce((a, b) => (objPerc[a] > objPerc[b]) ? a : b)
+        - console.log('bigPerc3', bigPerc3)
         if (s[i][0]=='religion')
             | Of those who disclosed their religion in !{place.name},
             | #[+pc(data[s[i][0]].perc[2011][bigPerc1])] 
@@ -1307,7 +1311,7 @@ mixin ethrel(i)
         | #[+value(topics[s[i][0]][bigPerc1]['verb_past_samp_er'])],
         | compared with #[+pc(data[s[i][0]].perc[2001][bigPerc1])] in 2001.
         | About #[+pc(data[s[i][0]].perc[2011][bigPerc2])] #[+value(topics[s[i][0]][bigPerc2]['verb_past_samp_er'])],
-        | compared with #[+pc(data[s[i][0]].perc[2001][bigPerc2])] 10 years prior.
+        | compared with #[+pc(data[s[i][0]].perc[2001][bigPerc2])] a decade prior.
     p 
         | The percentage of
         | !{  (s[i][0]=='religion')? "people who disclosed a religious affiliation and" : "people who" }
@@ -1322,7 +1326,7 @@ mixin ethrel(i)
                 | the same percentage as in 2001.
             else
                 | compared with #[+pc(data[s[i][0]].perc[2001]['Religionnotstated'])] in 2001.
-            | In #[+value(rgn.name)], #[+pc(rgn.data[s[i][0]].perc[2011]['Religionnotstated'])]
+            | Across !{parent}, #[+pc(rgn.data[s[i][0]].perc[2011]['Religionnotstated'])]
             | did not answer the voluntary question, 
             if (Math.round(rgn.data[s[i][0]].perc[2001]['Religionnotstated'] *10) == Math.round(rgn.data[s[i][0]].perc[2011]['Religionnotstated']*10))
                 | the same percentage as in 2001.
@@ -1335,7 +1339,9 @@ mixin ethrel(i)
             else
                 | compared with #[+pc(cou.data[s[i][0]].perc[2001]['Religionnotstated'])] in 2001.
     a(href="")
-        | Read the full bulletin on the latest census data on !{ (s[i][0]=='religion')? 'religion' : 'ethnicity' }
+        | Read the full bulletin on !{ (s[i][0]=='religion')? 'religion' : 'ethnicity' } from Census 2011.
+    p 
+        | 
 
 
 mixin headline(i)
