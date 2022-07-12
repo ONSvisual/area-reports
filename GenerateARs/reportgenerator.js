@@ -647,7 +647,7 @@ async function load() {
         let topics_raw = fs.readFileSync( `/Users/theojolliffe/Documents/area-reports/static/data/topics.json` )
         let topics = JSON.parse(topics_raw);
     
-        let place_raw = fs.readFileSync(`../static/data/json/place/${id}.json`);
+        let place_raw = fs.readFileSync(`/Users/theojolliffe/Documents/area-reports/static/data/json/place/${id}.json`);
         let place = JSON.parse(place_raw);
         console.log('place.name', place.name)
         let s = place.stories.map(d => d.label.split("_"))

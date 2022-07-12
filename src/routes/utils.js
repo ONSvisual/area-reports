@@ -53,9 +53,9 @@ let chains = {
   'little': ['lot', 'notDisabled'],
 }
 
-let array = ['South East', 'South West', 'West Midlands', 'East Midlands', 'North East', 'North West']
+let array = ['South East', 'South West', 'West Midlands', 'East Midlands', 'North East', 'North West', 'East of England']
 function regionThe(place, nt) {
-  if (place=="East") { place = place + "of England"}
+  if (place=="East") { place = place + " of England"}
   return ((!array.includes(place))|(nt=="NT")) ? place : 'The ' + place;
 }
 

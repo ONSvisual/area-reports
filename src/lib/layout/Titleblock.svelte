@@ -44,7 +44,7 @@
 	{#if updated}
 	<Meta label="Last updated" value={updated} {background}/>
 	{/if}
-	{#if background == "none" && hr}
+	<!-- {#if background == "none" && hr}
 	<div class="wrapper">
 		<div class="col-wrap">
 			<div class="col">
@@ -52,5 +52,5 @@
 			</div>
 		</div>
 	</div>
-	{/if}
+	{/if} -->
 </div>

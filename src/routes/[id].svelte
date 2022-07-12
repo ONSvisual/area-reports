@@ -163,7 +163,7 @@
 		5: "fell"
 	};
 
-  var more = false;
+  var more = true;
 
 
   function fuzz(w1, w2) {
@@ -529,30 +529,17 @@
 	<script src="https://unpkg.com/rosaenlg@3.0.1/dist/rollup/rosaenlg_tiny_en_US_3.0.1_comp.js" on:load="{onRosaeNlgLoad()}"></script>
 </svelte:head>
 
+<div style="height: 50px;"></div>
 <Titleblock
   background="none"
-	breadcrumb="{[
-    {label: 'Home', url: `${base}/`},
-    {label: place.name, url: `${base}/`},
-    {label: 'Changes over time'}
-  ]}"
-  contents="{[
-    {label: 'Overview', url: '/'},
-    {label: 'Facts and figures', url: '/'},
-    {label: 'Changes over time'},
-    {label: 'Latest results and insights', url: '/'}
-  ]}">
-	<Headline>{place.name}</Headline>
-	<p style:margin="0 0 10px 0" style:padding={0}><strong>{ (place.parents[0].name == 'Wales')? "Unitary authority" : capitalise(place.gss.long)}: </strong>{capitalise(place.code)}</p>
+  >
+	<Headline>How life has changed in {place.name}</Headline>
+	<div style="height: 20px;"></div>
 	<Select items={options} mode="search" idKey="code" labelKey="name" placeholder="Find another area" on:select={gotoPlace} autoClear/>
 </Titleblock>
 
 <Article>
 	<Section backlink hr>
-    <!-- {#if wal} -->
-    <!-- {#if ladData} -->
-    <!-- {#if place} -->
-    <!-- {#if template} -->
     <div style="height: 50px"></div>
 
 	{#if !production}
