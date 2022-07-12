@@ -1312,13 +1312,14 @@ mixin ethrel(i)
         | compared with #[+pc(data[s[i][0]].perc[2001][bigPerc1])] in 2001.
         | About #[+pc(data[s[i][0]].perc[2011][bigPerc2])] #[+value(topics[s[i][0]][bigPerc2]['verb_past_samp_er'])],
         | compared with #[+pc(data[s[i][0]].perc[2001][bigPerc2])] a decade prior.
-    p 
-        | The percentage of
-        | !{  (s[i][0]=='religion')? "people who disclosed a religious affiliation and" : "people who" }
-        | #[+value(topics[s[i][0]][bigPerc3]['verb_past_samp_er'])]
-        | #[+value(ud((data[s[i][0]].perc[2011][bigPerc3] - data[s[i][0]].perc[2001][bigPerc3]), 'increased', 'decreased'))]
-        | from #[+pc(data[s[i][0]].perc[2001][bigPerc3])] to #[+pc(data[s[i][0]].perc[2011][bigPerc3])].
-    if (s[i][0]=='religion')
+    if (s[i][0]!='religion')
+        p
+            | The percentage of
+            | !{  (s[i][0]=='religion')? "people who disclosed a religious affiliation and" : "people who" }
+            | #[+value(topics[s[i][0]][bigPerc3]['verb_past_samp_er'])]
+            | #[+value(ud((data[s[i][0]].perc[2011][bigPerc3] - data[s[i][0]].perc[2001][bigPerc3]), 'increased', 'decreased'))]
+            | from #[+pc(data[s[i][0]].perc[2001][bigPerc3])] to #[+pc(data[s[i][0]].perc[2011][bigPerc3])].
+    else
         p
             | In #[+value(place.name)], #[+pc(data[s[i][0]].perc[2011]['Religionnotstated'])] 
             | chose not to answer the question on religious affiliation,
@@ -1332,12 +1333,12 @@ mixin ethrel(i)
                 | the same percentage as in 2001.
             else
                 | compared with #[+pc(cou.data[s[i][0]].perc[2001]['Religionnotstated'])] in 2001.
-            | Across England, #[+pc(cou.data[s[i][0]].perc[2011]['Religionnotstated'])]
-            | of people did not answer,
-            if (Math.round(cou.data[s[i][0]].perc[2001]['Religionnotstated'] *10) == Math.round(cou.data[s[i][0]].perc[2011]['Religionnotstated']*10))
-                | the same percentage as in 2001.
-            else
-                | compared with #[+pc(cou.data[s[i][0]].perc[2001]['Religionnotstated'])] in 2001.
+            //- | Across England, #[+pc(cou.data[s[i][0]].perc[2011]['Religionnotstated'])]
+            //- | of people did not answer,
+            //- if (Math.round(cou.data[s[i][0]].perc[2001]['Religionnotstated'] *10) == Math.round(cou.data[s[i][0]].perc[2011]['Religionnotstated']*10))
+            //-     | the same percentage as in 2001.
+            //- else
+            //-     | compared with #[+pc(cou.data[s[i][0]].perc[2001]['Religionnotstated'])] in 2001.
     a(href="")
         | Read the full bulletin on !{ (s[i][0]=='religion')? 'religion' : 'ethnicity' } from Census 2011.
     p 
