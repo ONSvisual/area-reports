@@ -663,7 +663,8 @@ mixin rankReg1(i)
             p #[+rankGen(i)]
             p #[+acrossRegion(i, rl)]
 
-//- This district saw England's second-largest fall in the proportion of people who describe themselves as Christian.
+
+
 mixin rank1nat(i)
     // In the rare occasion that the bottom rank was a positive change, vice versa
     if (Math.sign(data[s[i][0]][s[i][1]+'_rank'][s[i][2]][s[i][3]]) != Math.sign(cha(s, place, i)))
@@ -672,8 +673,8 @@ mixin rank1nat(i)
         p 
             | #[+value(place.name)] saw #[+value(cou.name)]'s 
             | #[+value(drop(data[s[i][0]][s[i][1]+'_rank'][s[i][2]][s[i][3]], 'largest fall', 'largest rise'))]
-            | in the proportion of #[+value(topic(i, s[i][3]).adj_noun)].
-        
+            | in the proportion of #[+value(topics[s[i][0]][s[i][3]].adj_noun)].
+
 
 mixin rankGen(i)
     | In 2011,
@@ -1248,23 +1249,22 @@ mixin rel(i)
     - var bigChange = s[i][3]
     - function valnoprint(x) { return parseFloat(x.toPrecision(2)) }
     p 
-        | The 2011 Census asked a voluntary question about religion. 
-        | Of those who chose to disclose their religious affiliation, 
-        | the largest percentage point increase in #[+value(place.name)] was among those who 
-        | #[+value(topics[s[i][0]][bigChange]['verb_past_samp_er'])], 
-        | rising #[+value( data[s[i][0]].perc['change'][bigChange] , {'FORMAT': "0.0"})] points. 
+        | Of those who chose to disclose their religious affiliation in #[+value(place.name)],
+        | the largest percentage point increase was among those who 
+        | #[+value(topics[s[i][0]][bigChange]['verb_past_samp_er'])],
+        | rising #[+value( data[s[i][0]].perc['change'][bigChange] , {'FORMAT': "0.0"})] points between 2001 and 2011.
+        | The census question about religion is voluntary, so varying response rates mean caution is needed when comparing figures between different areas or between censuses.
     p 
-        | In 2011,
-        | #[+pc(data[s[i][0]].perc[2011][bigChange])]
-        | of respondents in !{place.name} 
-        | gave this answer to the question on religion, compared with 
-        | #[+pc(data[s[i][0]].perc[2001][bigChange])]
-        | of those who answered in 2001.
+        | In 2011, #[+pc(data[s[i][0]].perc[2011][bigChange])]
+        | of respondents in !{place.name} #[+value(topics[s[i][0]][bigChange]['verb_past_samp_er'])],
+        | up from #[+pc(data[s[i][0]].perc[2001][bigChange])] in 2001.
     p
-        | Across !{parent}, the percentage of people who answered the question on religion
-        | #[+value(topics[s[i][0]][bigChange]['verb_er'])] 
+        | Across !{parent}, the percentage of #[+value(topics[s[i][0]][bigChange]['adj_noun_er'])]
         if (pcnoprint(rgn.data[s[i][0]].perc[2001][bigChange]) != pcnoprint(rgn.data[s[i][0]].perc[2011][bigChange]))
-            | #[+value(ud((rgn.data[s[i][0]].perc[2011][bigChange] - rgn.data[s[i][0]].perc[2001][bigChange]), 'increased', 'decreased'))]
+            if ( ( rgn.data[s[i][0]].perc[2011][bigChange] - rgn.data[s[i][0]].perc[2001][bigChange] ) > 0 )
+                | increased
+            else
+                | decreased
             | from #[+pc(rgn.data[s[i][0]].perc[2001][bigChange])] 
             | to #[+pc(rgn.data[s[i][0]].perc[2011][bigChange])]
         else 
@@ -1288,36 +1288,22 @@ mixin rel(i)
         - var bigPerc2 = Object.keys(objPerc).reduce((a, b) => (objPerc[a] > objPerc[b]) ? a : b)
         - delete objPerc[bigPerc2]
         - var bigPerc3 = Object.keys(objPerc).reduce((a, b) => (objPerc[a] > objPerc[b]) ? a : b)
-        - console.log('bigPerc3', bigPerc3)
-        | Of those who disclosed their religion in !{place.name},
-        | #[+pc(data[s[i][0]].perc[2011][bigPerc1])] 
-        | #[+value(topics[s[i][0]][bigPerc1]['verb_past_samp_er'])],
-        | compared with #[+pc(data[s[i][0]].perc[2001][bigPerc1])] in 2001.
+        | Around #[+pc(data[s[i][0]].perc[2011][bigPerc1])] of respondents in !{place.name}
+        | #[+value(topics[s[i][0]][bigPerc1]['verb_past_samp_er'])], 
+        | #[+value(ud((data[s[i][0]].perc[2011][bigPerc1] - data[s[i][0]].perc[2001][bigPerc1]), 'up', 'down'))]
+        | from #[+pc(data[s[i][0]].perc[2001][bigPerc1])] in 2001.
         | About #[+pc(data[s[i][0]].perc[2011][bigPerc2])] #[+value(topics[s[i][0]][bigPerc2]['verb_past_samp_er'])],
-        | compared with #[+pc(data[s[i][0]].perc[2001][bigPerc2])] a decade prior.
-    p
-        | In #[+value(place.name)], #[+pc(data[s[i][0]].perc[2011]['Religionnotstated'])] 
-        | chose not to answer the question on religious affiliation,
-        if (Math.round(data[s[i][0]].perc[2001]['Religionnotstated'] *10) == Math.round(data[s[i][0]].perc[2011]['Religionnotstated']*10))
-            | the same percentage as in 2001.
-        else
-            | compared with #[+pc(data[s[i][0]].perc[2001]['Religionnotstated'])] in 2001.
-        | Across !{parent}, #[+pc(rgn.data[s[i][0]].perc[2011]['Religionnotstated'])]
-        | did not answer the voluntary question, 
-        if (Math.round(rgn.data[s[i][0]].perc[2001]['Religionnotstated'] *10) == Math.round(rgn.data[s[i][0]].perc[2011]['Religionnotstated']*10))
-            | the same percentage as in 2001.
-        else
-            | compared with #[+pc(cou.data[s[i][0]].perc[2001]['Religionnotstated'])] in 2001.
+        | #[+value(ud((data[s[i][0]].perc[2011][bigPerc2] - data[s[i][0]].perc[2001][bigPerc2]), 'up', 'down'))] 
+        | from #[+pc(data[s[i][0]].perc[2001][bigPerc2])] a decade prior.
     p 
-        | There are many factors that can cause changes to the religious profile of an area, such as differing patterns of ageing or of moving to or from an area for work or education. Changes may also be caused by differences in the way individuals choose to self-identify between censuses.
+        | There are many factors that can cause changes to the religious profile of an area, such as differing patterns of ageing or relocating for work or education. Changes may also be caused by differences in the way individuals choose to self-identify between censuses.
     a(href="")
-        | Read the full bulletin on religion from Census 2011.
+        | A more detailed breakdown for England and Wales along with accompanying data can be found in our Census 2021 religion topic summary bulletin.
     p 
         | 
 
 mixin eth(i)
     - var obj = {'place1': {a: 1, b: 2},'place2': {a: 6, b: 3},'place3': {a: 4, b: 5}}
-    - console.log('obj', Object.keys(data).reduce(function(a, b){ return data[a]['a'] > data[b]['a'] ? a : b }))
     - var obj = place.data[s[i][0]].perc.change
     - var bigChange = s[i][3]
     - function valnoprint(x) { return parseFloat(x.toPrecision(2)) }
@@ -1360,7 +1346,6 @@ mixin eth(i)
         - var bigPerc2 = Object.keys(objPerc).reduce((a, b) => (objPerc[a] > objPerc[b]) ? a : b)
         - delete objPerc[bigPerc2]
         - var bigPerc3 = Object.keys(objPerc).reduce((a, b) => (objPerc[a] > objPerc[b]) ? a : b)
-        - console.log('bigPerc3', bigPerc3)
         | Around #[+pc(data[s[i][0]].perc[2011][bigPerc1])] 
         | of people in !{place.name}
         | #[+value(topics[s[i][0]][bigPerc1]['verb_past_samp_er'])],
@@ -1373,7 +1358,7 @@ mixin eth(i)
         | #[+value(ud((data[s[i][0]].perc[2011][bigPerc3] - data[s[i][0]].perc[2001][bigPerc3]), 'increased', 'decreased'))]
         | from #[+pc(data[s[i][0]].perc[2001][bigPerc3])] to #[+pc(data[s[i][0]].perc[2011][bigPerc3])].
     p 
-        | There are many factors that can cause changes to the ethnic profile of an area, such as differing patterns of ageing or of moving to or from an area for work or education. Changes may also be caused by differences in the way individuals choose to self-identify between censuses.
+        | There are many factors that can cause changes to the ethnic profile of an area, such as differing patterns of ageing or relocating for work or education. Changes may also be caused by differences in the way individuals choose to self-identify between censuses.
     a(href="")
         | Read the full bulletin on ethnicity from Census 2011.
     p 
@@ -1500,8 +1485,9 @@ mixin mainPerc(i)
         p #[+healthExplain]
 
 
+
 //- Deals with all percentage based variables
-mixin percPara(i, chain0_01, chain0_11, chain1_01, chain1_11)
+mixin percPara(i)
     | #[+headline(i)]
     if ((s[i][0] == 'religion')|(s[i][0] == 'ethnicity'))
         | #[+ethrel(i)]
@@ -1510,25 +1496,8 @@ mixin percPara(i, chain0_01, chain0_11, chain1_01, chain1_11)
     else
         | #[+mainPerc(i)]
 
-mixin para(i)
-    if (s[i][1] == 'value')
-        if (s[i][0] == 'agemed')
-            h2(id=s[i][0])
-                | #[+subheadAge(i)]
-            p #[+sent1Age(i)]
-            p #[+sent2Age(i)]
-            p #[+sent3Age(i)]
-        else
-            h2(id=s[i][0])
-                | #[+subheadVal(i)]
-            p #[+sent1pop(i)]
-            p #[+sent2pop(i)]
-            if (s[i][0]=='population')
-                p #[+density]
-            //- if ((data['density'][s[i][1]+'_rank'].overtake[s[i][3]].length>0)&(Math.abs(cur(s, place, i, "r"))<30))
-            //-     p #[+sent4Pop(i)]
-    if (s[i][1] == 'perc')
-        | #[+percPara(i)]
+
+
 
 mixin chartTitleSize(i)
     if (s[i][0]=="population")
@@ -1583,7 +1552,6 @@ mixin chartTitleBar(i)
             | #[+value(rgn.name)]
         | and #[+value(place.name)] 
         | by !{s[i][0]}, March 2001 and March 2011
-
 
 mixin chartTitleOther(i)
     if (s[i][0]=="population")
@@ -1647,76 +1615,92 @@ mixin coincide
 
 mixin standfirst
     - let popchange = data.population.value[2011].all - data.population.value[2001].all
-    - console.log('popchange', popchange)
     p
         if (popchange==0)
             | The size of !{place.name}'s population remained relavtively stable
         else
             | !{place.name}'s population !{(popchange>0)? "increased":"decreased"} by about #[+value( Math.abs( Math.round(popchange/100)*100 ) )]
         | #[+tenYears].
-        | This semi-automated article highlights some of the key changes among the local population.
+        | This semi-automated article 
+        | highlights some of the most notable changes among the local population.
 
 //- -console.log("eng", eng)
 //- -console.log("rgn", rgn)
 //- -console.log("place", place)
 
+
+mixin para(i)
+    if (s[i][1] == 'value')
+        if (s[i][0] == 'agemed')
+            h2(id=s[i][0])
+                | #[+subheadAge(i)]
+            p #[+sent1Age(i)]
+            p #[+sent2Age(i)]
+            p #[+sent3Age(i)]
+        else
+            h2(id=s[i][0])
+                | #[+subheadVal(i)]
+            p #[+sent1pop(i)]
+            p #[+sent2pop(i)]
+            if (s[i][0]=='population')
+                p #[+density]
+    if (s[i][1] == 'perc')
+        | #[+percPara(i)]
+    | #[+chartTitle(i)]
+    div#esc123
+
+
+
 // Start of the article
+
 p #[+standfirst]
 
-| #[+para(0)]
-| #[+chartTitle(0)]
-div#esc123
+each i in [...Array(13).keys()]
+    if (s.length>i)
+        | #[+para(i)]
 
-if (s.length>1)
-    | #[+para(1)]
-    | #[+chartTitle(1)]
-    div#esc123
 
-if (s.length>2)
-    | #[+para(2)]
-    | #[+chartTitle(2)]
-    div#esc123
 
-if (s.length>3)
-    | #[+para(3)]
-    | #[+chartTitle(3)]
-    div#esc123
 
-if (s.length>4)
-    | #[+para(4)]
-    | #[+chartTitle(4)]
-    div#esc123
 
-if (s.length>5)
-    | #[+para(5)]
-    | #[+chartTitle(5)]
+//- if (s.length>1)
+//-     | #[+para(1)]
+//-     div#esc123
 
-if (more==true)
-    if (s.length>6)
-        div#esc123
-        | #[+para(6)]
-        | #[+chartTitle(6)]
-    if (s.length>7)
-        div#esc123
-        | #[+para(7)]
-        | #[+chartTitle(7)]
-    if (s.length>8)
-        div#esc123
-        | #[+para(8)]
-        | #[+chartTitle(8)]
-    if (s.length>9)
-        div#esc123
-        | #[+para(9)]
-        | #[+chartTitle(9)]
-    if (s.length>10)
-        div#esc123
-        | #[+para(10)]
-        | #[+chartTitle(10)]
-    if (s.length>11)
-        div#esc123
-        | #[+para(11)]
-        | #[+chartTitle(11)]
-    if (s.length>12)
-        div#esc123
-        | #[+para(12)]
-        | #[+chartTitle(12)]
+//- if (s.length>2)
+//-     | #[+para(2)]
+//-     div#esc123
+
+//- if (s.length>3)
+//-     | #[+para(3)]
+//-     div#esc123
+
+//- if (s.length>4)
+//-     | #[+para(4)]
+//-     div#esc123
+
+//- if (s.length>5)
+//-     | #[+para(5)]
+
+//- if (more==true)
+//-     if (s.length>6)
+//-         div#esc123
+//-         | #[+para(6)]
+//-     if (s.length>7)
+//-         div#esc123
+//-         | #[+para(7)]
+//-     if (s.length>8)
+//-         div#esc123
+//-         | #[+para(8)]
+//-     if (s.length>9)
+//-         div#esc123
+//-         | #[+para(9)]
+//-     if (s.length>10)
+//-         div#esc123
+//-         | #[+para(10)]
+//-     if (s.length>11)
+//-         div#esc123
+//-         | #[+para(11)]
+//-     if (s.length>12)
+//-         div#esc123
+//-         | #[+para(12)]
