@@ -86,7 +86,7 @@
   
 	import robojournalist from 'robojournalist';
 	import pluralize from 'pluralize';
-	  import Fuse from 'fuse.js';
+	import Fuse from 'fuse.js';
   
 	export let options;
 	export let topics;
@@ -99,6 +99,7 @@
 	export let prodResults;
 	export let cou;
 	export let ladData;
+
 
 	console.log('topics', topics)
 	$: console.log('place', place)
@@ -216,7 +217,9 @@
 			}
 		});
 
+	console.log('s', s)
 
+	
     let res = rosaenlg_en_US.render(template, {
     	language: 'en_UK',
 		place: place,
@@ -583,10 +586,7 @@
     </button>
     {/if}
     <div style="height: 50px"></div>
-    <!-- {/if} -->
-    <!-- {/if}
-    {/if}
-    {/if} -->
+
   </Section>
 
   <Linkbox

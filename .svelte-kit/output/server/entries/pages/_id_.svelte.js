@@ -3653,9 +3653,7 @@ ${validate_component(Article, "Article").$$render($$result, {}, {}, {
 
     ${place.stories.length > 6 ? `<button class="${"svelte-9h2wls"}"><div class="${"triangle-container svelte-9h2wls"}"><svg height="${"25"}" width="${"50"}">${`<polygon points="${"25,10 15,20 25,10 35,20"}" class="${"triangle svelte-9h2wls"}"></polygon>`}</svg></div>
       ${escape("Read less")}</button>` : ``}
-    <div style="${"height: 50px"}"></div>
-    
-    `;
+    <div style="${"height: 50px"}"></div>`;
         }
       })}
 

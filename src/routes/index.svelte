@@ -1,5 +1,14 @@
 <script context="module">
-	import { base } from "$app/paths";
+	const prerender = true;
+	import { base, assets } from "$app/paths";
+	export async function load({ fetch }) {
+    let options_raw = await fetch(`${assets}/data/lad_list_2021.json`);
+    let options = await options_raw.json();
+
+    return {
+			props: { options }
+		}
+	}
 
 </script>
 
@@ -12,6 +21,10 @@
 	import items from "$lib/items.json";
 	import Header from "$lib/layout/Header.svelte";
 	import Dropdown from "$lib/dropdown/App.svelte";
+	import Content from "$lib/layout/Content.svelte";
+
+	export let options;
+
 
 	function doSelect(e) {
 		let selected = e.detail;
@@ -30,8 +43,9 @@
 
 	let animationOn = (function(){let mediaQuery = true; return !mediaQuery || mediaQuery.matches ? false : true;})();
 
-	let selected = false;
-	let showList = true;
+	let selected = null;
+	// let showList = true;
+	let showList = false;
 </script>
 
 
@@ -100,6 +114,15 @@
   
 </div>
 
+<hr>
+
+<Content>
+	<ul>
+		{#each options as option}
+		<li><a href="{base}/{option.code}">{option.name}</a></li>
+		{/each}
+	</ul>
+</Content>
 
 
 

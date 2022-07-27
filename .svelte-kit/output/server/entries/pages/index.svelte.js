@@ -1,5 +1,5 @@
 import { c as create_ssr_component, a as add_styles, h as merge_ssr_styles, e as escape, b as add_attribute, i as add_classes, j as createEventDispatcher, v as validate_component, d as each } from "../../chunks/index-128ceddb.js";
-import { b as base } from "../../chunks/paths-396f020f.js";
+import { a as assets, b as base } from "../../chunks/paths-396f020f.js";
 import { S as Select, a as Section } from "../../chunks/Select-5e542a35.js";
 var Icon_svelte_svelte_type_style_lang = "";
 const css$4 = {
@@ -2360,8 +2360,19 @@ const App = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   }, {}, {})}
 </form>`;
 });
-let selected = false;
+const Content = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  return `<div class="${"page-content margin-bottom--2"}"><div class="${"wrapper"}">${slots.default ? slots.default({}) : ``}</div></div>`;
+});
+async function load({ fetch }) {
+  let options_raw = await fetch(`${assets}/data/lad_list_2021.json`);
+  let options = await options_raw.json();
+  return { props: { options } };
+}
+let selected = null;
 const Routes = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  let { options } = $$props;
+  if ($$props.options === void 0 && $$bindings.options && options !== void 0)
+    $$bindings.options(options);
   return `${validate_component(Header, "Header").$$render($$result, {
     bgimage: base + "/img/bg-map.png",
     bgcolor: "#206095",
@@ -2396,13 +2407,13 @@ const Routes = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 	</h2>
 	<p>${validate_component(Icon, "Icon").$$render($$result, {
         type: "chevron",
-        rotation: 90
+        rotation: 0
       }, {}, {})}
-	  <button class="${"btn-text"}">${escape("Hide")} list of local authorities</button></p>`;
+	  <button class="${"btn-text"}">${escape("Show")} list of local authorities</button></p>`;
     }
   })}
 
-<div${add_classes("".trim())}>${validate_component(Media, "Media").$$render($$result, { col: "wide", grid: "narrow" }, {}, {
+<div${add_classes("visually-hidden".trim())}>${validate_component(Media, "Media").$$render($$result, { col: "wide", grid: "narrow" }, {}, {
     default: () => {
       return `${each([...regions].sort((a, b) => a.code.localeCompare(b.code)), (region) => {
         return `<div class="${"text-small"}"><strong>${escape(region.name)}</strong><br>
@@ -2414,6 +2425,15 @@ const Routes = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     }
   })}</div></div>
 
+<hr>
+
+${validate_component(Content, "Content").$$render($$result, {}, {}, {
+    default: () => {
+      return `<ul>${each(options, (option) => {
+        return `<li><a href="${escape(base) + "/" + escape(option.code)}">${escape(option.name)}</a></li>`;
+      })}</ul>`;
+    }
+  })}
 
 
 
@@ -2421,4 +2441,4 @@ const Routes = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 
 `;
 });
-export { Routes as default };
+export { Routes as default, load };
