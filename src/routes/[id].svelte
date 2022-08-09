@@ -83,7 +83,7 @@
 	  import AgeChart from '$lib/charts/small-multiple/AgeChart.svelte';
 	  import HBarChart from '$lib/charts/HBarChart/HBarChart.svelte';
 	  import DotPlotChart from '$lib/charts/DotPlotChart.svelte';
-  
+
 	import robojournalist from 'robojournalist';
 	import pluralize from 'pluralize';
 	import Fuse from 'fuse.js';
