@@ -24,41 +24,38 @@
     let topics = await topics_raw.json();
 
     let place_raw = await fetch(`${assets}/data/json/place/${id}.json`);
+	let place_raw_new = await fetch(`${assets}/data/json_new/place/${id}.json`);
+
     let place = await place_raw.json();
-    let s = place.stories.map(d => d.label.split("_"))
+	let place_new = await place_raw_new.json();
+
+    let s = place_new.stories.map(d => d.label.split("_"))
     s.forEach(e => {
       if (e.length>4) {
         e[3] = e[3]+"_"+e[4]
         e.pop()
       }
     });
-    let rgncd = place.parents[0].code
+    let rgncd = place_new.parent.code
+	// let rgncd = place.parents[0].code
     let rgn_raw = await fetch(`${assets}/data/json/place/${rgncd}.json`);
+    let rgn_raw_new = await fetch(`${assets}/data/json_new/place/${rgncd}.json`);
+	// console.log('rgn_raw_new', rgn_raw_new)
     let rgn = await rgn_raw.json();
-    let eng_raw = await fetch(`${assets}/data/json/place/E92000001.json`);
+	let rgn_new = await rgn_raw_new.json();
+    let eng_raw = await fetch(`${assets}/data/json_new/place/E92000001.json`);
     let eng = await eng_raw.json();
-    let wal_raw = await fetch(`${assets}/data/json/place/W92000004.json`);
+    let wal_raw = await fetch(`${assets}/data/json_new/place/W92000004.json`);
     let wal = await wal_raw.json();
 
 	let cou = place.parents[0].name=="Wales"?wal:eng
-
-	// var ladData
-	// // Data load functions
-	// console.log('getData', getData)
-	// getData("https://raw.githubusercontent.com/theojolliffe/census-data/main/laddata.csv").then(res => {
-	// 	res.forEach(d => {
-	// 		d.code = d[""];
-	// 		delete d[""];
-	// 	});
-	// 	ladData = res
-	// });
 
 	let ladData_raw = await fetch("https://raw.githubusercontent.com/theojolliffe/census-data/main/laddata.csv");
   	let ladData_string = await ladData_raw.text();
 	let ladData = await csvParse(ladData_string, autoType);
 
     return {
-			props: { options, topics, place, rgn, eng, wal, s, template, prodResults, cou, ladData }
+			props: { options, topics, place, place_new, rgn, rgn_new, eng, wal, s, template, prodResults, cou, ladData }
 		}
 	}
 </script>
@@ -92,8 +89,10 @@
 	export let topics;
 	export let template;
 	export let place;
+	export let place_new;
 	export let s;
 	export let rgn;
+	export let rgn_new;
 	export let eng;
 	export let wal;
 	export let prodResults;
@@ -103,6 +102,7 @@
 
 	console.log('topics', topics)
 	$: console.log('place', place)
+	$: console.log('place_new', place_new)
 	$: console.log('rgn', rgn)
 	$: console.log('cou', cou)
   
@@ -222,12 +222,12 @@
 	
     let res = rosaenlg_en_US.render(template, {
     	language: 'en_UK',
-		place: place,
-		data: place.data,
+		place: place_new,
+		data: place_new.data,
 		cou: cou,
 		// replace eng with country data (inc Wales)
 		eng: eng,
-		rgn: rgn,
+		rgn: rgn_new,
 		uncap1: uncap1,
 		regionThe: regionThe,
 		parent: uncap1(regionThe(place.parents[0].name)),
@@ -262,7 +262,7 @@
 		nuword: nuword,
 		sign: sign,
 		udord: udord, 
-		near: place.nearbyArea.nearTops,
+		near: place_new.near,
 		simi: place.similar,
 		adv: adv,
 		uds: uds,
@@ -326,8 +326,6 @@
 				swap(a, a.findIndex(findOther2), a.length-1);
 				}
 
-				
-				
 				return a
 			}
 			let chartData

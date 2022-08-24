@@ -1,4 +1,93 @@
 {
+    "national": {
+        "general_sf": "housing tenure",
+        "general": "housing tenure",
+        "synonym": "change in housing tenure for many in {plcname}",
+        "profile": "housing tenure in {plcname} changed substantially",
+        "BritishOnly": {
+            "clausal_modifier": "households in {plcname} that rented privately",
+            "verb_past": "that rented privately",
+            "verb_past_samp": "rented privately",
+            "adj_noun": "privately rented homes",
+            "verb": "of privately rented homes",
+            "subhead": {
+                "pos": "Rise in private renting",
+                "neg": "Fall in private renting",
+                "neu": "Change in {plcname} housing",
+                "buc": "{plcname} stood out from other areas for housing",
+                "sta": "Housing in {plcname}"
+            },
+            "sample": "private renting",
+            "adj_noun_s": "private renting"
+        },
+        "EnglishOnly": {
+            "clausal_modifier": "{plcname} households that rented through social housing schemes",
+            "verb_past": "that rented socially",
+            "verb_past_samp": "lived in social housing",
+            "adj_noun": "socially rented homes",
+            "verb": "of socially rented homes",
+            "subhead": {
+                "pos": "Rise in social renting",
+                "neg": "Fall in social renting",
+                "neu": "Change in {plcname} housing",
+                "buc": "{plcname} stood out from other areas for housing",
+                "sta": "Housing in {plcname}"
+            },
+            "sample": "the rate of social housing",
+            "adj_noun_s": "social housing"
+        },
+        "EnglishBritishOnly": {
+            "clausal_modifier": "{plcname} households that owned their home",
+            "verb_past": "that owned their home",
+            "verb_past_samp": "owned their home",
+            "adj_noun": "households that owned their home",
+            "verb": "of households that owned their home",
+            "subhead": {
+                "pos": "Rise in home ownership",
+                "neg": "Fall in home ownership",
+                "neu": "Change in {plcname} housing",
+                "buc": "{plcname} stood out from other areas for housing",
+                "sta": "Housing in {plcname}"
+            },
+            "sample": "the rate of home ownership",
+            "adj_noun_s": "home ownership"
+        },
+        "Othernon-UK": {
+            "clausal_modifier": "{plcname} households that owned their home",
+            "verb_past": "that owned their home",
+            "verb_past_samp": "owned their home",
+            "adj_noun": "households that owned their home",
+            "verb": "of households that owned their home",
+            "subhead": {
+                "pos": "Rise in home ownership",
+                "neg": "Fall in home ownership",
+                "neu": "Change in {plcname} housing",
+                "buc": "{plcname} stood out from other areas for housing",
+                "sta": "Housing in {plcname}"
+            },
+            "sample": "the rate of home ownership",
+            "adj_noun_s": "home ownership"
+        },
+        "OtherUK": {
+            "clausal_modifier": "{plcname} households that owned their home",
+            "verb_past": "that owned their home",
+            "verb_past_samp": "owned their home",
+            "adj_noun": "households that owned their home",
+            "verb": "of households that owned their home",
+            "subhead": {
+                "pos": "Rise in home ownership",
+                "neg": "Fall in home ownership",
+                "neu": "Change in {plcname} housing",
+                "buc": "{plcname} stood out from other areas for housing",
+                "sta": "Housing in {plcname}"
+            },
+            "sample": "the rate of home ownership",
+            "adj_noun_s": "home ownership"
+        },
+        "subtitle": "housing tenure",
+        "measure": "households",
+        "measure_s": "households"
+    },
     "tenure": {
         "general_sf": "housing tenure",
         "general": "housing tenure",
@@ -137,6 +226,7 @@
         "profile": "ethnicity in {plcname} changed substantially",
         "white": {
             "verb_past_samp_er": "said they were from one of the White ethnic groups",
+            "verb_past": "that said they were from one of the White ethnic groups",
             "adj_noun_er": "residents from one of the White ethnic groups",
             "verb_er": "from one of the White ethnic groups",
             "subhead": {
@@ -151,6 +241,7 @@
         },
         "black": {
             "verb_past_samp_er": "said they were from the Black, Black British, Caribbean or African ethnic groups",
+            "verb_past": "that said they were from the Black, Black British, Caribbean or African ethnic groups",
             "adj_noun_er": "residents from the Black, Black British, Caribbean or African ethnic groups",
             "verb_er": "from the Black, Black British, Caribbean or African ethnic groups",
             "subhead": {
@@ -166,6 +257,7 @@
         },
         "asian": {
             "verb_past_samp_er": "said they were from the Asian or Asian British ethnic groups",
+            "verb_past": "that said they were from the Asian or Asian British ethnic groups",
             "adj_noun_er": "residents from the Asian or Asian British ethnic groups",
             "verb_er": "from the Asian or Asian British ethnic groups",
             "subhead": {
@@ -181,6 +273,7 @@
         },
         "mixed": {
             "verb_past_samp_er": "said they were from Mixed/multiple ethnic groups (White and Asian, White and Black African, White and Black Caribbean or Other Mixed)",
+            "verb_past": "that said they were from Mixed/multiple ethnic groups (White and Asian, White and Black African, White and Black Caribbean or Other Mixed)",
             "adj_noun_er": "residents from Mixed/multiple ethnic groups (White and Asian, White and Black African, White and Black Caribbean or Other Mixed)",
             "verb_er": "from Mixed/multiple ethnic groups (White and Asian, White and Black African, White and Black Caribbean or Other Mixed)",
             "subhead": {
@@ -196,6 +289,7 @@
         },
         "other": {
             "verb_past_samp_er": "said they were from the Other ethnic groups (Arab or any other ethnic group)",
+            "verb_past": "that said they were from the Other ethnic groups (Arab or any other ethnic group)",
             "adj_noun_er": "residents from the Other ethnic groups (Arab or any other ethnic group)",
             "verb_er": "from the Other ethnic groups (Arab or any other ethnic group)",
             "subhead": {
@@ -380,6 +474,7 @@
         "profile": "the religious profile of {plcname} changed substantially",
         "Christian": {
             "verb_past_samp_er": "said they were Christian",
+            "verb_past": "that said they were Christian",
             "adj_noun_er": "respondents who described themselves as Christian",
             "verb_er": "and described themselves as Christian",
             "subhead": {
@@ -395,6 +490,7 @@
         },
         "Buddhist": {
             "verb_past_samp_er": "said they were Buddhist",
+            "verb_past": "that said they were Buddhist",
             "adj_noun_er": "respondents who described themselves as Buddhist",
             "verb_er": "and described themselves as Buddhist",
             "subhead": {
@@ -410,6 +506,7 @@
         },
         "Hindu": {
             "verb_past_samp_er": "said they were Hindu",
+            "verb_past": "that said they were Hindu",
             "adj_noun_er": "respondents who described themselves as Hindu",
             "verb_er": "and described themselves as Hindu",
             "subhead": {
@@ -425,6 +522,7 @@
         },
         "Sikh": {
             "verb_past_samp_er": "said they were Sikh",
+            "verb_past": "that said they were Sikh",
             "adj_noun_er": "respondents who described themselves as Sikh",
             "verb_er": "and described themselves as Sikh",
             "subhead": {
@@ -440,6 +538,7 @@
         },
         "Jewish": {
             "verb_past_samp_er": "said they were Jewish",
+            "verb_past": "that said they were Jewish",
             "adj_noun_er": "respondents who described themselves as Jewish",
             "verb_er": "and described themselves as Jewish",
             "subhead": {
@@ -455,6 +554,7 @@
         },
         "Muslim": {
             "verb_past_samp_er": "said they were Muslim",
+            "verb_past": "that said they were Muslim",
             "adj_noun_er": "respondents who described themselves as Muslim",
             "verb_er": "and described themselves as Muslim",
             "subhead": {
@@ -470,6 +570,7 @@
         },
         "Noreligion": {
             "verb_past_samp_er": "said they had no religion",
+            "verb_past": "that said they had no religion",
             "adj_noun_er": "respondents who described themselves as having no religion",
             "verb_er": "and described themselves as having no religion",
             "subhead": {
@@ -485,6 +586,7 @@
         },
         "Religionnotstated": {
             "verb_past_samp_er": "did not state their religion",
+            "verb_past": "that did not state their religion",
             "adj_noun_er": "respondents who did not disclose their religious affiliation",
             "verb_er": "and did not disclose their religious affiliation",
             "subhead": {
@@ -500,6 +602,7 @@
         },
         "Otherreligion": {
             "verb_past_samp_er": "said they identified with a religion other than Christianity, Islam, Hinduism, Judaism, Buddhism or Sikhism",
+            "verb_past": "that said they identified with a religion other than Christianity, Islam, Hinduism, Judaism, Buddhism or Sikhism",
             "adj_noun_er": "respondents who identified with a religion other than Christianity, Islam, Hinduism, Judaism, Buddhism or Sikhism",
             "verb_er": "and identified with a religion other than Christianity, Islam, Hinduism, Judaism, Buddhism or Sikhism",
             "subhead": {
@@ -556,7 +659,7 @@
             "adj_noun_s": "people providing between 20 and 49 hours of weekly unpaid care",
             "label": "20 to 49 hours of unpaid care"
         },
-        "40PlushoursWeek": {
+        "49plushoursWeek": {
             "clausal_modifier": "{plcname} residents that provided at least 50 hours of weekly unpaid care",
             "verb_past": "that reported providing at least 50 hours of unpaid care each week",
             "verb_past_samp": "reported providing at least 50 hours of unpaid care each week",
@@ -702,12 +805,12 @@
         "measure": "households",
         "measure_s": "households"
     },
-    "hoursworked": {
+    "hours": {
         "general_sf": "work life",
         "general": "work life",
         "synonym": "change in the working patterns of many in {plcname}",
         "profile": "work life changed for many in {plcname}",
-        "Female1-15": {
+        "1-15": {
             "clausal_modifier": "employees working less than 16 weekly hours",
             "verb_past": "that said they had worked less than 16 hours the week before completing the census",
             "verb_past_samp": "said they had worked less than 16 hours the previous week",
@@ -723,7 +826,7 @@
             "sample": "the proportion of people working less than 16 hours in a week",
             "adj_noun_s": "people working less than 16 hours"
         },
-        "Female49plus": {
+        "49plus": {
             "clausal_modifier": "employees working more than 49 hours in the week before the census",
             "verb_past": "that said they had worked over 49 hours the week before completing the census",
             "verb_past_samp": "said they had worked over 49 hours the week before completing the census",
@@ -732,38 +835,6 @@
             "subhead": {
                 "pos": "More worked long hours",
                 "neg": "Fewer people working long hours",
-                "neu": "Change in work hours",
-                "buc": "{plcname} stood out from other areas for working hours",
-                "sta": "Working hours in {plcname}"
-            },
-            "sample": "long hour working",
-            "adj_noun_s": "long hours workers"
-        },
-        "Male1-15": {
-            "clausal_modifier": "employed people in {plcname} working less than 16 hours",
-            "verb_past": "that said they had worked less than 16 hours the week before completing the census",
-            "verb_past_samp": "said they had worked less than 16 hours the previous week",
-            "adj_noun": "people working less than 16 hours in a week",
-            "verb": "that worked less than 16 hours in a week",
-            "subhead": {
-                "pos": "More people worked short hours",
-                "neg": "Fewer people worked short hours",
-                "neu": "Change in work hours",
-                "buc": "{plcname} stood out from other areas for working hours",
-                "sta": "Working hours in {plcname}"
-            },
-            "sample": "the proportion of people working less than 16 hours in a week",
-            "adj_noun_s": "people working less than 16 hours"
-        },
-        "Male49plus": {
-            "clausal_modifier": "employed people in {plcname} working more than 49 hours in the week before the census",
-            "verb_past": "that said they had worked over 49 hours the week before completing the census",
-            "verb_past_samp": "said they had worked over 49 hours the week before completing the census",
-            "adj_noun": "people working long hours",
-            "verb": "that worked over 49 hours in a week",
-            "subhead": {
-                "pos": "More worked long hours",
-                "neg": "Fewer people worked long hours",
                 "neu": "Change in work hours",
                 "buc": "{plcname} stood out from other areas for working hours",
                 "sta": "Working hours in {plcname}"

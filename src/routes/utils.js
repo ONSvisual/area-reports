@@ -44,14 +44,21 @@ let chains = {
   'Kids': ['NoKids', 'NonDepKids'],
   'NoKids': ['Kids', 'NonDepKids'],
   'NonDepKids': ['Kids', 'NoKids'],
-  'Male1-15': ['Male49plus'],
-  'Male49plus': ['Male1-15'],
-  'Female1-15': ['Female49plus'],
-  'Female49plus': ['Female1-15'],
+  '1-15': ['49plus'],
+  '49plus': ['1-15'],
+  'noCare': ['1to19hoursWeek', '20to49hoursWeek', '49PlushoursWeek'],
+  '1to19hoursWeek': ['20to49hoursWeek', '49PlushoursWeek', 'noCare'],
+  '20to49hoursWeek': ['49PlushoursWeek', '1to19hoursWeek', 'noCare'],
+  '49PlushoursWeek': ['20to49hoursWeek', '1to19hoursWeek', 'noCare'],
   'notDisabled': ['lot', 'little'],
   'lot': ['little', 'notDisabled'],
   'little': ['lot', 'notDisabled'],
+  'BritishOnly': ['EnglishOnly', 'EnglishBritishOnly', 'Othernon-UK', 'OtherUK'],
+  'EnglishOnly': ['BritishOnly', 'EnglishBritishOnly', 'Othernon-UK', 'OtherUK'],
+  'EnglishBritishOnly': ['EnglishOnly', 'BritishOnly', 'Othernon-UK', 'OtherUK'],
+  'Othernon-UK': ['EnglishOnly', 'BritishOnly', 'EnglishBritishOnly', 'OtherUK']
 }
+
 
 let array = ['South East', 'South West', 'West Midlands', 'East Midlands', 'North East', 'North West', 'East of England']
 function regionThe(place, nt) {
