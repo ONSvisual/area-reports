@@ -4,9 +4,6 @@
 
 	import { base, assets } from "$app/paths";
 
-	import { load as loadarch } from "archieml";
-
-
 	export async function load({ params, fetch }) {
     let id = params.id;
 
@@ -155,15 +152,6 @@
     goto(`${base}/${e.detail.code}`, {noscroll: true});
   }
 
-
-  let grewSyn = {
-		1: "expanded",
-		2: "grew",
-		3: "grew",
-		4: "remained relatively stable",
-		5: "fell"
-	};
-
   var more = true;
 
 
@@ -194,21 +182,22 @@
 		})
 	}
 
-  function results(place, rgn, topicsIn) {
-    var o = JSON.parse(JSON.stringify(topicsIn));
-    iterate(o, place.name)
+	function results(place, rgn, topicsIn) {
+		var o = JSON.parse(JSON.stringify(topicsIn));
+		iterate(o, place.name)
 
-    function topic(i, top) {
-      let ttop
-      if (top) {
-        ttop = top
-      } else {
-        ttop = s[i][3]
-      }
-      return o[s[i][0]][ttop]
-    }
+		function topic(i, top) {
+			
+			let ttop
+			if (top) {
+				ttop = top
+			} else {
+				ttop = s[i][3]
+			}
+			return o[s[i][0]][ttop]
+		}
 
-    let sf = []
+		let sf = []
 		let changeMag = 0
 		place.stories.forEach(e => {
 			if ((sf.length<4)&(Math.abs(e['value'])>3)) {
@@ -216,311 +205,60 @@
 				changeMag = changeMag+Math.abs(e['value'])
 			}
 		});
-
-	console.log('s', s)
-
-	
-    let res = rosaenlg_en_US.render(template, {
-    	language: 'en_UK',
-		place: place_new,
-		data: place_new.data,
-		cou: cou,
-		// replace eng with country data (inc Wales)
-		eng: eng,
-		rgn: rgn_new,
-		uncap1: uncap1,
-		regionThe: regionThe,
-		parent: uncap1(regionThe(place.parents[0].name)),
-		parentNT: uncap1(regionThe(place.parents[0].name, "NT")),
-		s: s,
-		sf: sf,
-		stories: place.stories,
-		priorities: place.Priorities,
-		grewSyn: grewSyn,
-		// locRankCha: locRankCha,
-		// natRankCha: natRankCha,
-		// locRankCur: locRankCur,
-		// natRankCur: natRankCur,
-		hiRank: place.hiRank,
-		topic: topic,
-		topics: o,
-		chains: chains,
-		country: place.parents[0].name=="Wales"?"Wales":"England",
-		get_word: get_word,
-		figs: figs,
-		otherEst: otherEst,
-		cur: cur,
-		cha: cha,
-		qui: qui,
-		// cap,cap,
-		otherRank: otherRank,
-		ud: ud,
-		drop, drop,
-		ord: ord,
-		ageBandLU: ageBandLU,
-		eq: eq,
-		nuword: nuword,
-		sign: sign,
-		udord: udord, 
-		near: place_new.near,
-		simi: place.similar,
-		adv: adv,
-		uds: uds,
-		more: more,
-		pluralize, pluralize,
-		countyLU: countyLU,
-		fuzz: fuzz,
-		prev: prev,
-		regionLU: regionLU,
-		findOne: findOne
-    })
-
-    return res.split(`<div id="esc123"></div>`)
-  }
-
-
-  function fbp(x) {
-		return Number.parseFloat(Number.parseFloat(0.714*x).toPrecision(2))
+		let res = rosaenlg_en_US.render(template, {
+			language: 'en_UK',
+			place: place_new,
+			data: place_new.data,
+			cou: cou,
+			eng: eng,
+			rgn: rgn_new,
+			uncap1: uncap1,
+			regionThe: regionThe,
+			parent: uncap1(regionThe(place.parent.name)),
+			parentNT: uncap1(regionThe(place.parent.name, "NT")),
+			s: s,
+			sf: sf,
+			stories: place_new.stories,
+			// grewSyn: grewSyn,
+			topic: topic,
+			topics: o,
+			chains: chains,
+			country: place.parent.name=="Wales"?"Wales":"England",
+			get_word: get_word,
+			figs: figs,
+			otherEst: otherEst,
+			cur: cur,
+			cha: cha,
+			qui: qui,
+			otherRank: otherRank,
+			ud: ud,
+			drop, drop,
+			ord: ord,
+			ageBandLU: ageBandLU,
+			eq: eq,
+			nuword: nuword,
+			sign: sign,
+			udord: udord, 
+			near: place_new.near,
+			simi: place_new.similar,
+			adv: adv,
+			uds: uds,
+			more: more,
+			pluralize, pluralize,
+			countyLU: countyLU,
+			fuzz: fuzz,
+			prev: prev,
+			regionLU: regionLU,
+			findOne: findOne
+		})
+		return res.split(`<div id="esc123"></div>`)
 	}
 
-  function swap(array, indexA, indexB) {
-    var tmp = array[indexA];
-    array[indexA] = array[indexB];
-    array[indexB] = tmp;
-  }
-
-	function makeProps(i) {
-		let s = place.stories[i].label.split("_")
-			if (s.length>4) {
-				s[3] = s[3]+"_"+s[4]
-				s.pop()
-			}
-		if (["religion", "agemed", "ethnicity", "care", "disability"].includes(s[0])) {
-
-			function dtrans(d, g) {
-				let a = []
-				let t
-				if (s[0]=='agemed') {
-					t = 'age10yr'
-				} else {
-					t = s[0]
-				}
-				Object.keys(d.data[t].perc[g]).forEach(e => {
-					a.push({'x': e, 'y': d.data[t].perc[g][e], 'g': g})
-				});
-
-        		if (s[0]=='religion') {
-	
-				// filter out religion not stated
-				a = a.filter(d => d['x'] != "Religionnotstated")
-
-				// move 'Other' to the end of the list
-				const findOther = (e) => e['x'] == 'Otherreligion';
-				swap(a, a.findIndex(findOther), a.length-1);
-				}
-
-				if (s[0]=='ethnicity') {
-	
-				// move 'Other' to the end of the list
-				const findOther2 = (e) => e['x'] == 'other';
-				swap(a, a.findIndex(findOther2), a.length-1);
-				}
-
-				return a
-			}
-			let chartData
-			if (rgn.name == 'Wales') {
-				chartData = [
-					[dtrans(cou, 2001), dtrans(cou, 2011)],
-					[dtrans(place.nearbyArea.nearTops, 2001), dtrans(place.nearbyArea.nearTops, 2011)],
-					[dtrans(place, 2001), dtrans(place, 2011)],
-				]
-			}
-			else {
-				chartData = [
-					[dtrans(cou, 2001), dtrans(cou, 2011)],
-					[dtrans(rgn, 2001), dtrans(rgn, 2011)],
-					[dtrans(place, 2001), dtrans(place, 2011)],
-				]
-			}
-
-			let xTickCal = Math.round((Math.max(...chartData.flat().flat().map(d => d.y))-5)/10)*10
-			let xMax = Math.round((Math.max(...chartData.flat().flat().map(d => d.y))-5)/10)*10
-			let props = {
-						legend: true,
-						height: 120,
-						chartData: chartData,
-						labels: (rgn.name == 'Wales') ? [cou.name, place.nearbyArea.nearTops.name, place.name] : [cou.name, rgn.name, place.name],
-						xKey: "value",
-						yKey: "year",
-						xTickCal: xTickCal,
-						xMax: xMax,
-						topics: topics[s[0]]
-					}
-			return props
-		}
-		else if (["care"].includes(s[0])) {
-			let datrev = {2011: 2001, 2001: 2011}
-			let chartData = []
-			let dates = [2001, 2011]
-			dates.forEach(d => {
-				let tar = []
-				if (d != 'change') {
-					Object.keys(place.data[s[0]].perc[d]).forEach(e => {
-						if ((e != 'all') & (e != 'noCare')) {
-							// if ((place.data[s[0]].perc[d][e] > 1)|(place.data[s[0]].perc[datrev[d]][e] > 1)) {
-								tar.push({g: +d, x: topics[s[0]][e]['label'], y: place.data[s[0]].perc[d][e]})
-							// }
-						}
-					})
-					chartData.push(tar)
-				}
-			})
-			let props = {
-						legend: true,
-						height: 120,
-						data: chartData,
-						labels: [cou.name, rgn.name, place.name],
-						xKey: "year",
-						yKey: "value",
-						zKey: "group"
-					}
-			return props
-		}
-		else if (place.stories[i].type.includes('size')) {
-			if (s[0]=="population") {
-				if (rgn.name != 'Wales') {
-					return {
-						height: 120,
-						data: [
-							{label: eng.name, 2001: fbp(eng.data.density.value[2001].all), 2011: fbp(eng.data.density.value[2011].all)},
-							{label: rgn.name, 2001: fbp(rgn.data.density.value[2001].all), 2011: fbp(rgn.data.density.value[2011].all)},
-							{label: place.name, 2001: fbp(place.data.density.value[2001].all), 2011: fbp(place.data.density.value[2011].all)},
-						],
-					}
-				} else {
-					return {
-						height: 120,
-						data: [
-							{label: rgn.name, 2001: fbp(rgn.data.density.value[2001].all), 2011: fbp(rgn.data.density.value[2011].all)},
-							{label: place.nearbyArea.nearTops.name, 2001: fbp(place.nearbyArea.nearTops.data.density.value[2001].all), 2011: fbp(place.nearbyArea.nearTops.name.data.density.value[2011].all)},
-							{label: place.name, 2001: fbp(place.data.density.value[2001].all), 2011: fbp(place.data.density.value[2011].all)},
-						],
-					}
-				}
-			}
-			else {
-				if (rgn.name == 'Wales') {
-					return {
-						legend: true,
-						height: 120,
-						data: [
-							{
-								label: rgn.name, 
-								2001: rgn.data[s[0]][s[1]][2001][s[3]],
-								2011: rgn.data[s[0]][s[1]][2011][s[3]]
-							},
-							{
-								label: place.nearbyArea.nearTops.name, 
-								2001: place.nearbyArea.nearTops.data[s[0]][s[1]][2001][s[3]], 
-								2011: place.nearbyArea.nearTops.data[s[0]][s[1]][2011][s[3]],
-							},
-							{
-								label: place.name, 
-								2001: place.data[s[0]][s[1]][2001][s[3]],
-								2011: place.data[s[0]][s[1]][2011][s[3]]
-							},
-						],
-					}
-				} else {
-					return {
-						legend: true,
-						height: 120,
-						data: [
-							{
-								label: eng.name, 
-								2001: eng.data[s[0]][s[1]][2001][s[3]], 
-								2011: eng.data[s[0]][s[1]][2011][s[3]],
-							},
-							{
-								label: place.parents[0].name,
-								2001: rgn.data[s[0]][s[1]][2001][s[3]], 
-								2011: rgn.data[s[0]][s[1]][2011][s[3]]
-							},
-							{
-								label: place.name, 
-								2001: place.data[s[0]][s[1]][2001][s[3]], 
-								2011: place.data[s[0]][s[1]][2011][s[3]]
-							},
-						],
-					}
-				}
-			}
-		}
-		else {
-			// ScatterChart
-			var chartdata
-			if (s[0]=="population") {
-				s[0] = 'density';
-				s[3] = 'all';
-			}
-			chartdata = ladData.filter(d => (d['parent']==place.parents[0].name)&(d.topic == s[0]+"_"+s[3]))
-
-			chartdata = chartdata.map(d => ({ 'change': d['change'], 'value': (s[0]=="density")? 0.714*parseFloat(d[2011]) : parseFloat(d[2011]), 'unique': d['lad'], 'id': d['parent']}))
-			chartdata.forEach((item, i) => {
-				if (item.unique==place.name) {
-					item.id = place.name
-				} else if (item.id == place.parents[0].name) {
-					item.id = "Rest of "+uncap1(regionThe(place.parents[0].name))
-				} else {
-					item.id = "Rest of England"
-				}
-			})
-			chartdata.push({
-				change: +cou.data[s[0]][s[1]]['change'][s[3]],
-				value: +cou.data[s[0]][s[1]]['2011'][s[3]],
-				unique: 'Average across ' + cou.name, 
-				id: 'Average across ' + cou.name, 
-			})
-
-			return props = {
-				mode: "stacked",
-				line: false,
-				legend: true,
-				data: chartdata,
-				xKey: "value",
-				yKey: null,
-				rKey: "change",
-				r: [3, 9],
-				zKey: "id",
-			}
-		}
-	}
-	function chartType(i) {
-		let s = place.stories[i].label.split("_")
-		if (s.length>4) {
-			s[3] = s[3]+"_"+s[4]
-			s.pop()
-		}
-		if (["religion", "agemed", "ethnicity", "care", "disability"].includes(s[0])) {
-			return AgeChart
-		} else if (["care"].includes(s[0])) {
-			return HBarChart
-		}
-		else if (place.stories[i].type.includes('size')) {
-			return DotPlotChart
-		} else {
-			// LINECHART
-			return ScatterChart
-		}
-	}
-
-
-  function readMore() {
+	function readMore() {
 		more = !more
 		results = results
 	}
-  </script>
+</script>
 
 <svelte:head>
 	<title>{place.name}</title>
@@ -545,26 +283,18 @@
 
 	{#if !production}
 		{#if loaded}
-			{#each results(place, rgn, topics) as res, i (i)}
+			{#each results(place_new, rgn, topics) as res, i (i)}
 				{@html res}
-				<div style="width: 100%">
-					{#if i < place.stories.length}
-						{#if makeProps(i)}
-							<svelte:component this="{chartType(i)}" {...makeProps(i)}/>
-						{/if}
-					{/if}
+				<div style="width: 100%; height: 200px; background: lightgrey; padding: 20px">
+					<h4>CHART PLACEHOLDER</h4>
 				</div>
 			{/each}
 		{/if}
 	{:else}
 		{#each prodResults as res, i (i)}
 			{@html res}
-			<div style="width: 100%">
-				{#if i < place.stories.length}
-					{#if makeProps(i)}
-						<svelte:component this="{chartType(i)}" {...makeProps(i)}/>
-					{/if}
-				{/if}
+			<div style="width: 100%; height: 200px; background: lightgrey; padding: 20px">
+				<h4>CHART PLACEHOLDER</h4>
 			</div>
 		{/each}
 	{/if}
@@ -628,5 +358,12 @@ button {
 }
 button:active{
     background-color: transparent;
+}
+h2 {
+    font-size: 30px;
+    margin: 32px 0;
+    padding: 24px 0 0;
+    font-weight: 700;
+    line-height: 40px;
 }
 </style>

@@ -1,99 +1,147 @@
 {
     "national": {
-        "general_sf": "housing tenure",
-        "general": "housing tenure",
-        "synonym": "change in housing tenure for many in {plcname}",
-        "profile": "housing tenure in {plcname} changed substantially",
-        "BritishOnly": {
-            "clausal_modifier": "households in {plcname} that rented privately",
-            "verb_past": "that rented privately",
-            "verb_past_samp": "rented privately",
-            "adj_noun": "privately rented homes",
-            "verb": "of privately rented homes",
+        "general_sf": "national identity",
+        "general": "national identity",
+        "synonym": "change in national identity of many in {plcname}",
+        "profile": "national identity in {plcname} changed substantially",
+        "British only identity": {
+            "clausal_modifier": "respondents in {plcname} that identify only as British",
+            "verb_past": "that identify only as British",
+            "verb_past_samp": "identified as British (and no other nationality)",
+            "adj_noun": "people who identify only as British",
+            "verb": "that identified as British only",
             "subhead": {
-                "pos": "Rise in private renting",
-                "neg": "Fall in private renting",
-                "neu": "Change in {plcname} housing",
-                "buc": "{plcname} stood out from other areas for housing",
-                "sta": "Housing in {plcname}"
+                "pos": "Rise in British identity",
+                "neg": "Fall in British identity",
+                "neu": "British identity in {plcname}",
+                "buc": "British identity in {plcname}",
+                "sta": "British identity in {plcname}"
             },
-            "sample": "private renting",
-            "adj_noun_s": "private renting"
+            "sample": "the proportion of people who identify only as British",
+            "adj_noun_s": "people who identify only as British"
         },
-        "EnglishOnly": {
-            "clausal_modifier": "{plcname} households that rented through social housing schemes",
-            "verb_past": "that rented socially",
-            "verb_past_samp": "lived in social housing",
-            "adj_noun": "socially rented homes",
-            "verb": "of socially rented homes",
+        "English only identity": {
+            "clausal_modifier": "respondents in {plcname} that identify only as English",
+            "verb_past": "that identify only as English",
+            "verb_past_samp": "identified as English (and no other nationality)",
+            "adj_noun": "people who identify only as English",
+            "verb": "that identified as English only",
             "subhead": {
-                "pos": "Rise in social renting",
-                "neg": "Fall in social renting",
-                "neu": "Change in {plcname} housing",
-                "buc": "{plcname} stood out from other areas for housing",
-                "sta": "Housing in {plcname}"
+                "pos": "Rise in English identity",
+                "neg": "Fall in English identity",
+                "neu": "English identity in {plcname}",
+                "buc": "English identity in {plcname}",
+                "sta": "English identity in {plcname}"
             },
-            "sample": "the rate of social housing",
-            "adj_noun_s": "social housing"
+            "sample": "the proportion of people who identify only as English",
+            "adj_noun_s": "people who identify only as English"
         },
-        "EnglishBritishOnly": {
-            "clausal_modifier": "{plcname} households that owned their home",
-            "verb_past": "that owned their home",
-            "verb_past_samp": "owned their home",
-            "adj_noun": "households that owned their home",
-            "verb": "of households that owned their home",
+        "Welsh only identity": {
+            "clausal_modifier": "respondents in {plcname} that identify only as Welsh",
+            "verb_past": "that identify only as Welsh",
+            "verb_past_samp": "identified as Welsh (and no other nationality)",
+            "adj_noun": "people who identify only as Welsh",
+            "verb": "that identified as Welsh only",
             "subhead": {
-                "pos": "Rise in home ownership",
-                "neg": "Fall in home ownership",
-                "neu": "Change in {plcname} housing",
-                "buc": "{plcname} stood out from other areas for housing",
-                "sta": "Housing in {plcname}"
+                "pos": "Rise in Welsh identity",
+                "neg": "Fall in Welsh identity",
+                "neu": "Welsh identity in {plcname}",
+                "buc": "Welsh identity in {plcname}",
+                "sta": "Welsh identity in {plcname}"
             },
-            "sample": "the rate of home ownership",
-            "adj_noun_s": "home ownership"
+            "sample": "the proportion of people who identify only as Welsh",
+            "adj_noun_s": "people who identify only as Welsh"
         },
-        "Othernon-UK": {
-            "clausal_modifier": "{plcname} households that owned their home",
-            "verb_past": "that owned their home",
-            "verb_past_samp": "owned their home",
-            "adj_noun": "households that owned their home",
-            "verb": "of households that owned their home",
+        "English and British only identity": {
+            "clausal_modifier": "respondents in {plcname} that identify as both English and British",
+            "verb_past": "that identify as English and British (but no other nationality)",
+            "verb_past_samp": "described themselves as both English and British",
+            "adj_noun": "people who identify as British and English",
+            "verb": "that identified as British and English",
             "subhead": {
-                "pos": "Rise in home ownership",
-                "neg": "Fall in home ownership",
-                "neu": "Change in {plcname} housing",
-                "buc": "{plcname} stood out from other areas for housing",
-                "sta": "Housing in {plcname}"
+                "pos": "Rise in English and British identity",
+                "neg": "Fall in English and British identity",
+                "neu": "National identity in {plcname}",
+                "buc": "National identity in {plcname}",
+                "sta": "National identity in {plcname}"
             },
-            "sample": "the rate of home ownership",
-            "adj_noun_s": "home ownership"
+            "sample": "the proportion of people who identify as British and English",
+            "adj_noun_s": "people who identify as British and English"
         },
-        "OtherUK": {
-            "clausal_modifier": "{plcname} households that owned their home",
-            "verb_past": "that owned their home",
-            "verb_past_samp": "owned their home",
-            "adj_noun": "households that owned their home",
-            "verb": "of households that owned their home",
+        "Welsh and British only identity": {
+            "clausal_modifier": "respondents in {plcname} that identify as both Welsh and British",
+            "verb_past": "that identify as Welsh and British (but no other nationality)",
+            "verb_past_samp": "described themselves as both Welsh and British",
+            "adj_noun": "people who identify as British and Welsh",
+            "verb": "that identified as British and Welsh",
             "subhead": {
-                "pos": "Rise in home ownership",
-                "neg": "Fall in home ownership",
-                "neu": "Change in {plcname} housing",
-                "buc": "{plcname} stood out from other areas for housing",
-                "sta": "Housing in {plcname}"
+                "pos": "Rise in Welsh and British identity",
+                "neg": "Fall in Welsh and British identity",
+                "neu": "National identity in {plcname}",
+                "buc": "National identity in {plcname}",
+                "sta": "National identity in {plcname}"
             },
-            "sample": "the rate of home ownership",
-            "adj_noun_s": "home ownership"
+            "sample": "the proportion of people who identify as British and Welsh",
+            "adj_noun_s": "people who identify as British and Welsh"
         },
-        "subtitle": "housing tenure",
-        "measure": "households",
-        "measure_s": "households"
+        "Non-UK identity only": {
+            "clausal_modifier": "respondents in {plcname} that do not identify with any UK nationality",
+            "verb_past": "that do not identify with any UK nationality",
+            "verb_past_samp": "did not identify with any nationality associated with the UK",
+            "adj_noun": "people who do not identify with a UK nationality",
+            "verb": "that did not identified with any UK natinality",
+            "subhead": {
+                "pos": "Rise in non-UK national identity",
+                "neg": "Fall in non-UK national identity",
+                "neu": "National identity in {plcname}",
+                "buc": "National identity in {plcname}",
+                "sta": "National identity in {plcname}"
+            },
+            "sample": "the proportion of people who do not identify with a UK nationality",
+            "adj_noun_s": "people who do not identify with a UK nationality"
+        },
+        "UK identity and non-UK identity": {
+            "clausal_modifier": "respondents in {plcname} that identify with a UK and non-UK nationality",
+            "verb_past": "that identify with a UK and non-UK nationality",
+            "verb_past_samp": "did identify with a UK and non-UK nationality",
+            "adj_noun": "people who identify with a UK and non-UK nationality",
+            "verb": "that identify with a UK and non-UK nationality",
+            "subhead": {
+                "pos": "National identity in {plcname}",
+                "neg": "National identity in {plcname}",
+                "neu": "National identity in {plcname}",
+                "buc": "National identity in {plcname}",
+                "sta": "National identity in {plcname}"
+            },
+            "sample": "the proportion of people who identify with a UK and non-UK nationality",
+            "adj_noun_s": "people who identify with a UK and non-UK nationality"
+        },
+        "Any other combination of only UK identities": {
+            "clausal_modifier": "respondents in {plcname} that identify with another UK nationality",
+            "verb_past": "that identify with another UK nationality (or some combination including a UK nationality)",
+            "verb_past_samp": "identified with some other UK nationality",
+            "adj_noun": "people who identify with some other UK nationality",
+            "verb": "that identified with another UK natinality",
+            "subhead": {
+                "pos": "Rise in other UK national identity",
+                "neg": "Rise in other UK national identity",
+                "neu": "National identity in {plcname}",
+                "buc": "National identity in {plcname}",
+                "sta": "National identity in {plcname}"
+            },
+            "sample": "the proportion of people who identify with another UK natioality",
+            "adj_noun_s": "people who identify with another UK natioality"
+        },
+        "subtitle": "national identity",
+        "measure": "usual residents",
+        "measure_s": "residents"
     },
     "tenure": {
         "general_sf": "housing tenure",
         "general": "housing tenure",
         "synonym": "change in housing tenure for many in {plcname}",
         "profile": "housing tenure in {plcname} changed substantially",
-        "rented_private": {
+        "Private rented": {
             "clausal_modifier": "households in {plcname} that rented privately",
             "verb_past": "that rented privately",
             "verb_past_samp": "rented privately",
@@ -109,10 +157,10 @@
             "sample": "private renting",
             "adj_noun_s": "private renting"
         },
-        "rented_social": {
-            "clausal_modifier": "{plcname} households that rented through social housing schemes",
-            "verb_past": "that rented socially",
-            "verb_past_samp": "lived in social housing",
+        "Rented from council or Local Authority": {
+            "clausal_modifier": "{plcname} households that rented from a council or local authority",
+            "verb_past": "that rented from a council or local authority",
+            "verb_past_samp": "lived in council or local authority housing",
             "adj_noun": "socially rented homes",
             "verb": "of socially rented homes",
             "subhead": {
@@ -125,8 +173,8 @@
             "sample": "the rate of social housing",
             "adj_noun_s": "social housing"
         },
-        "owned": {
-            "clausal_modifier": "{plcname} households that owned their home",
+        "Owns outright or with a mortgage or loan": {
+            "clausal_modifier": "{plcname} households that owned their home (outright or with a mortgage or loan)",
             "verb_past": "that owned their home",
             "verb_past_samp": "owned their home",
             "adj_noun": "households that owned their home",
@@ -149,7 +197,7 @@
         "general_sf": "knowledge of the Welsh language",
         "general": "knowledge of the Welsh language",
         "profile": "the use of welsh changed substantially in {plcname}",
-        "SpeaksWelsh": {
+        "Can speak Welsh": {
             "verb_past": "that said they could speak Welsh",
             "verb_past_samp": "said they could speak Welsh",
             "subhead": {
@@ -169,7 +217,7 @@
         "general": "health",
         "synonym": "change in the local population's well-being",
         "profile": "health {health} substantially in {plcname}",
-        "good": {
+        "Very good or good health": {
             "clausal_modifier": "{plcname} residents that described their health as good or very good",
             "verb_past": "that said their health was good or very good",
             "verb_past_samp": "said their health was good or very good",
@@ -185,7 +233,7 @@
             "sample": "the percentage of people in ’good’ or ’very good’ health",
             "adj_noun_s": "people describing their health as good or very good"
         },
-        "fair": {
+        "Fair health": {
             "clausal_modifier": "{plcname} residents that described their health as fair",
             "verb_past": "that said their health was fair",
             "verb_past_samp": "said their health was fair",
@@ -201,7 +249,7 @@
             "sample": "the percentage of people in ’fair’ health",
             "adj_noun_s": "people describing their health as fair"
         },
-        "bad": {
+        "Very bad or bad health": {
             "clausal_modifier": "{plcname} residents that described their health as bad or very bad",
             "verb_past": "said their health was bad or very bad",
             "verb_past_samp": "said their health was bad or very bad",
@@ -221,10 +269,11 @@
         "measure": "usual residents",
         "measure_s": ""
     },
+
     "ethnicity": {
         "general_sf": "ethnicity",
         "profile": "ethnicity in {plcname} changed substantially",
-        "white": {
+        "White": {
             "verb_past_samp_er": "said they were from one of the White ethnic groups",
             "verb_past": "that said they were from one of the White ethnic groups",
             "adj_noun_er": "residents from one of the White ethnic groups",
@@ -239,7 +288,7 @@
             "sample_title": "the population from one of the White ethnic groups",
             "label": "White"
         },
-        "black": {
+        "Black, Black British, Black Welsh, Caribbean or African": {
             "verb_past_samp_er": "said they were from the Black, Black British, Caribbean or African ethnic groups",
             "verb_past": "that said they were from the Black, Black British, Caribbean or African ethnic groups",
             "adj_noun_er": "residents from the Black, Black British, Caribbean or African ethnic groups",
@@ -255,7 +304,7 @@
             "adj_noun_s": "people from the Black, Black British, Caribbean or African ethnic groups",
             "label": "Black/Black British/Caribbean/African"
         },
-        "asian": {
+        "Asian, Asian British or Asian Welsh": {
             "verb_past_samp_er": "said they were from the Asian or Asian British ethnic groups",
             "verb_past": "that said they were from the Asian or Asian British ethnic groups",
             "adj_noun_er": "residents from the Asian or Asian British ethnic groups",
@@ -271,7 +320,7 @@
             "adj_noun_s": "people from the Asian or Asian British ethnic groups",
             "label": "Asian/Asian British"
         },
-        "mixed": {
+        "Mixed or Multiple ethnic groups": {
             "verb_past_samp_er": "said they were from Mixed/multiple ethnic groups (White and Asian, White and Black African, White and Black Caribbean or Other Mixed)",
             "verb_past": "that said they were from Mixed/multiple ethnic groups (White and Asian, White and Black African, White and Black Caribbean or Other Mixed)",
             "adj_noun_er": "residents from Mixed/multiple ethnic groups (White and Asian, White and Black African, White and Black Caribbean or Other Mixed)",
@@ -287,7 +336,7 @@
             "adj_noun_s": "people from Mixed/multiple ethnic groups (White and Asian, White and Black African, White and Black Caribbean or Other Mixed)",
             "label": "Mixed/Multiple"
         },
-        "other": {
+        "Other ethnic group": {
             "verb_past_samp_er": "said they were from the Other ethnic groups (Arab or any other ethnic group)",
             "verb_past": "that said they were from the Other ethnic groups (Arab or any other ethnic group)",
             "adj_noun_er": "residents from the Other ethnic groups (Arab or any other ethnic group)",
@@ -307,16 +356,17 @@
         "measure": "usual residents",
         "measure_s": ""
     },
+
     "economic": {
         "general_sf": "jobs",
         "general": "jobs",
         "synonym": "change in the employment status of many here",
         "profile": "work life changed for many in {plcname}",
-        "employee": {
-            "clausal_modifier": "{plcname} residents that were employed",
+        "Economically active (excluding full-time students): In employment": {
+            "clausal_modifier": "employed {plcname} residents (excluding full-time students)",
             "verb_past": "that said they were employed",
             "verb_past_samp": "said they were employed",
-            "adj_noun": "employed people",
+            "adj_noun": "employed people (excluding students)",
             "verb": "that were employed",
             "subhead": {
                 "pos": "Rise in rate of employment",
@@ -328,11 +378,11 @@
             "sample": "the rate of employment",
             "adj_noun_s": "employed people"
         },
-        "inactive": {
-            "clausal_modifier": "{plcname} residents that were not working or actively seeking work",
+        "Economically inactive (excluding full-time students)": {
+            "clausal_modifier": "economoically inactive {plcname} residents (excluding full-time students)",
             "verb_past": "that said they were not working or actively seeking work",
             "verb_past_samp": "said they were not working or actively seeking work",
-            "adj_noun": "people who were not working or actively seeking work",
+            "adj_noun": "people who were not working or actively seeking work (excluding students)",
             "verb": "that were not working or actively seeking work",
             "subhead": {
                 "pos": "More people not working or actively seeking work",
@@ -344,27 +394,11 @@
             "sample": "the proportion of people not working or actively seeking work",
             "adj_noun_s": "people who were not working or actively seeking work"
         },
-        "self-employed": {
-            "clausal_modifier": "{plcname} residents that were self-employed",
-            "verb_past": "that said they were self-employed",
-            "verb_past_samp": "said they were self-employed",
-            "adj_noun": "self-employed people",
-            "verb": "that were self-employed",
-            "subhead": {
-                "pos": "Rise in rate of self-employment",
-                "neg": "Fall in rate of self-employment",
-                "neu": "Changing work life",
-                "buc": "{plcname} stood out from other areas for jobs",
-                "sta": "Self-employment in {plcname}"
-            },
-            "sample": "the rate of self-employment",
-            "adj_noun_s": "self-employed people"
-        },
-        "unemployed": {
-            "clausal_modifier": "{plcname} residents that were unemployed",
+        "Economically active (excluding full-time students): Unemployed": {
+            "clausal_modifier": "unemployed {plcname} residents (excluding full-time students)",
             "verb_past": "that said they were unemployed",
             "verb_past_samp": "said they were unemployed",
-            "adj_noun": "unemployed people",
+            "adj_noun": "unemployed people (excluding students)",
             "verb": "that were unemployed",
             "subhead": {
                 "pos": "Rise in rate of unemployment",
@@ -376,11 +410,11 @@
             "sample": "the rate of unemployment",
             "adj_noun_s": "unemployed people"
         },
-        "student": {
-            "clausal_modifier": "{plcname} residents that were studying",
+        "Economically inactive and a full-time student": {
+            "clausal_modifier": "{plcname} residents that were studying (and not employed or seeking work)",
             "verb_past": "that said they were in education",
             "verb_past_samp": "said they were in education",
-            "adj_noun": "students",
+            "adj_noun": "students (including only those not employed or seeking work)",
             "verb": "that were students",
             "subhead": {
                 "pos": "More students",
@@ -396,60 +430,61 @@
         "measure": "usual residents aged 16 to 74",
         "measure_s": "people aged 16 to 74"
     },
+    
     "household": {
-        "general_sf": "relationships",
-        "general": "relationships",
+        "general_sf": "family",
+        "general": "family",
         "synonym": "change in family life for many in {plcname}",
-        "profile": "housing in {plcname} changed substantially",
-        "Cohabiting": {
-            "clausal_modifier": "households in {plcname}, which comprised a cohabiting couple,",
-            "verb_past": "that had an unmarried couple",
-            "verb_past_samp": "had an unmarried couple",
-            "adj_noun": "households with an unmarried couple",
-            "verb": "of households comprising an unmarried couple",
+        "profile": "family structure changed substantially in {plcname}",
+        "Single family household: Married or civil partnership couple: No children": {
+            "clausal_modifier": "single family households with a married or legally partnered couple and no children",
+            "verb_past": "that had a legally partnered couple and no children",
+            "verb_past_samp": "had a legally partnered couple and no children",
+            "adj_noun": "households with a legally partnered couple and no children",
+            "verb": "of households comprising a legally partnered couple and no children",
             "subhead": {
-                "pos": "More people cohabiting",
-                "neg": "Fewer people cohabiting",
-                "neu": "Changing household dynamics",
-                "buc": "{plcname} stood out from other areas for cohabiting",
-                "sta": "Cohabiting in {plcname}"
+                "pos": "More households married without children",
+                "neg": "Fewer households married without children",
+                "neu": "Changing family dynamics",
+                "buc": "Family in {plcname}",
+                "sta": "Family in {plcname}"
             },
             "sample": "the percentage of households with a cohabiting couple",
             "adj_noun_s": "cohabiting households"
         },
-        "LoneParent": {
-            "clausal_modifier": "households in {plcname}, which comprised a single parent,",
-            "verb_past": "that had a single parent",
-            "verb_past_samp": "had a single parent",
-            "adj_noun": "single-parent households",
-            "verb": "of households comprising a single parent",
+        "Single family household: Cohabiting couple family : No children": {
+            "clausal_modifier": "single family households with a cohabiting couple and no children",
+            "verb_past": "that had an unmarried couple and no children",
+            "verb_past_samp": "had an unmarried couple and no children",
+            "adj_noun": "households with an unmarried couple and no children",
+            "verb": "of households comprising an unmarried couple and no children",
             "subhead": {
-                "pos": "More single parents",
-                "neg": "Fewer single parents",
-                "neu": "Changing household dynamics",
-                "buc": "{plcname} stood out from other areas for single parenting",
-                "sta": "Single parents in {plcname}"
+                "pos": "More households cohabiting without children",
+                "neg": "Fewer households cohabiting without children",
+                "neu": "Changing family dynamics",
+                "buc": "Family in {plcname}",
+                "sta": "Family in {plcname}"
             },
-            "sample": "the percentage of households with a single-parent",
-            "adj_noun_s": "single-parent households"
+            "sample": "the percentage of households with a cohabiting couple",
+            "adj_noun_s": "cohabiting households"
         },
-        "OnePerson": {
-            "clausal_modifier": "households in {plcname}, which comprised one person,",
-            "verb_past": "that comprised only one person",
-            "verb_past_samp": "had only one person",
-            "adj_noun": "one-person households",
-            "verb": "of households comprising just one person",
+        "Single family household: Married or civil partnership couple: Dependent children": {
+            "clausal_modifier": "households in {plcname} which comprised a married or legally partnered couple with children",
+            "verb_past": "that had a legally partnered couple with at least one dependent child",
+            "verb_past_samp": "had a legally partnered couple with children",
+            "adj_noun": "households with a legally partnered couple and one or more children",
+            "verb": "of households comprising a legally partnered couple with children",
             "subhead": {
-                "pos": "More people living alone",
-                "neg": "Fewer people living alone",
+                "pos": "The percentage of married people increased",
+                "neg": "Fewer married people",
                 "neu": "Changing household dynamics",
-                "buc": "{plcname} stood out from other areas for one-person households",
-                "sta": "Living alone in {plcname}"
+                "buc": "{plcname} stood out from other areas for married couples",
+                "sta": "Married couples in {plcname}"
             },
-            "sample": "the percentage of households with only one person",
-            "adj_noun_s": "one-person households"
+            "sample": "the percentage of households with a married couple",
+            "adj_noun_s": "married households"
         },
-        "Married": {
+        "Single family household: Cohabiting couple family : With dependent children": {
             "clausal_modifier": "households in {plcname} which comprised a married couple (with or without children)",
             "verb_past": "that had a married couple",
             "verb_past_samp": "had a married couple",
@@ -465,10 +500,27 @@
             "sample": "the percentage of households with a married couple",
             "adj_noun_s": "married households"
         },
+        "Single family household: Lone parent family : With dependent children": {
+            "clausal_modifier": "households in {plcname}, which comprised a single parent,",
+            "verb_past": "that had a single parent",
+            "verb_past_samp": "had a single parent",
+            "adj_noun": "single-parent households",
+            "verb": "of households comprising a single parent",
+            "subhead": {
+                "pos": "More single parents",
+                "neg": "Fewer single parents",
+                "neu": "Changing household dynamics",
+                "buc": "{plcname} stood out from other areas for single parenting",
+                "sta": "Single parents in {plcname}"
+            },
+            "sample": "the percentage of households with a single-parent",
+            "adj_noun_s": "single-parent households"
+        },
         "subtitle": "household type",
         "measure": "households",
         "measure_s": "households"
     },
+
     "religion": {
         "general_sf": "religion",
         "profile": "the religious profile of {plcname} changed substantially",
@@ -568,7 +620,7 @@
             "adj_noun_s": "people who identified as Muslim",
             "label": "Muslim"
         },
-        "Noreligion": {
+        "No religion": {
             "verb_past_samp_er": "said they had no religion",
             "verb_past": "that said they had no religion",
             "adj_noun_er": "respondents who described themselves as having no religion",
@@ -584,7 +636,7 @@
             "adj_noun_s": "people who said they had no religion",
             "label": "No religion"
         },
-        "Religionnotstated": {
+        "Not answered": {
             "verb_past_samp_er": "did not state their religion",
             "verb_past": "that did not state their religion",
             "adj_noun_er": "respondents who did not disclose their religious affiliation",
@@ -600,7 +652,7 @@
             "adj_noun_s": "people that did not state their religion",
             "label": "Religion not stated"
         },
-        "Otherreligion": {
+        "Other religion": {
             "verb_past_samp_er": "said they identified with a religion other than Christianity, Islam, Hinduism, Judaism, Buddhism or Sikhism",
             "verb_past": "that said they identified with a religion other than Christianity, Islam, Hinduism, Judaism, Buddhism or Sikhism",
             "adj_noun_er": "respondents who identified with a religion other than Christianity, Islam, Hinduism, Judaism, Buddhism or Sikhism",
@@ -620,12 +672,13 @@
         "measure": "usual residents who answered the voluntary question on religion",
         "measure_s": ""
     },
+
     "care": {
         "general_sf": "unpaid care provision",
         "general": "unpaid care provision",
         "synonym": "change in the amount of unpaid care provided here",
         "profile": "unpaid care provision changed in {plcname}",
-        "1to19hoursWeek": {
+        "Provides 19 or less hours unpaid care a week": {
             "clausal_modifier": "{plcname} residents that provided up to 19 hours of weekly unpaid care",
             "verb_past": "that reported providing up to 19 hours of unpaid care each week",
             "verb_past_samp": "reported providing up to 19 hours of unpaid care each week",
@@ -642,7 +695,7 @@
             "adj_noun_s": "people providing up to 19 hours of weekly unpaid care",
             "label": "1 to 19 hours of unpaid care"
         },
-        "20to49hoursWeek": {
+        "Provides 20 to 49 hours unpaid care a week": {
             "clausal_modifier": "{plcname} residents that provided between 20 and 49 hours of weekly unpaid care",
             "verb_past": "that reported providing between 20 and 49 hours of unpaid care each week",
             "verb_past_samp": "reported providing between 20 and 49 hours of unpaid care each week",
@@ -659,7 +712,7 @@
             "adj_noun_s": "people providing between 20 and 49 hours of weekly unpaid care",
             "label": "20 to 49 hours of unpaid care"
         },
-        "49plushoursWeek": {
+        "Provides 50 or more hours unpaid care a week": {
             "clausal_modifier": "{plcname} residents that provided at least 50 hours of weekly unpaid care",
             "verb_past": "that reported providing at least 50 hours of unpaid care each week",
             "verb_past_samp": "reported providing at least 50 hours of unpaid care each week",
@@ -676,7 +729,12 @@
             "adj_noun_s": "people providing 50 hours, or more, of weekly unpaid care",
             "label": "50 or more hours of unpaid care"
         },
-        "noCare": {
+        "Provides no unpaid care": {
+            "clausal_modifier": "{plcname} residents that don't provide weekly unpaid care",
+            "verb_past": "that reported that they don't provide unpaid care each week",
+            "verb_past_samp": "reported providing no unpaid care each week",
+            "adj_noun": "people not providing weekly unpaid care",
+            "verb": "that provided no weekly unpaid care",
             "subhead": {
                 "pos": "Decrease in unpaid care provision",
                 "neg": "Rise in unpaid care provision",
@@ -684,17 +742,20 @@
                 "buc": "{plcname} stood out from other areas for unpaid care provision",
                 "sta": "Unpaid care in {plcname}"
             },
+            "sample": "the proportion of people that don't provide weekly unpaid care",
+            "adj_noun_s": "people that don't provide weekly unpaid care",
             "label": "No care provided"
         },
         "measure": "usual residents",
         "measure_s": ""
     },
+
     "disability": {
         "general_sf": "disability",
         "general": "disability",
         "synonym": "change in the proportion of disabled people here",
         "profile": "the amount of people with disabilities changed in {plcname}",
-        "notDisabled": {
+        "Not disabled under the Equality Act": {
             "clausal_modifier": "{plcname} residents whose day-to-day activities are not limited by a long-term health problem or disability",
             "verb_past": "that reported not being limited in their day-to-day activities",
             "verb_past_samp": "reported not being limited in their day-to-day activities",
@@ -711,7 +772,7 @@
             "adj_noun_s": "people who aren't limited by a long-term health problem or disability",
             "label": "Day-to-day activities not limited"
         },
-        "little": {
+        "Disabled under the Equality Act: Day-to-day activities limited a little": {
             "clausal_modifier": "{plcname} residents whose day-to-day activities are limited a little by a long-term health problem or disability",
             "verb_past": "that reported being slightly limited in their day-to-day activities",
             "verb_past_samp": "reported being limited a little in their day-to-day activities",
@@ -728,7 +789,7 @@
             "adj_noun_s": "people who are limited a little by a long-term health problem or disability",
             "label": "Day-to-day activities limited a little"
         },
-        "lot": {
+        "Disabled under the Equality Act: Day-to-day activities limited a lot": {
             "clausal_modifier": "{plcname} residents whose day-to-day activities are limited a lot by a long-term health problem or disability",
             "verb_past": "that reported being considerably limited in their day-to-day activities",
             "verb_past_samp": "reported being limited a lot in their day-to-day activities",
@@ -748,69 +809,13 @@
         "measure": "usual residents",
         "measure_s": ""
     },
-    "children": {
-        "general_sf": "family life",
-        "general": "family life",
-        "synonym": "change in family life for many in {plcname}",
-        "profile": "family life changed for many in {plcname}",
-        "Kids": {
-            "clausal_modifier": "households in {plcname} with children",
-            "verb_past": "with at least one dependent child",
-            "verb_past_samp": "had at least one dependent child",
-            "adj_noun": "households with children",
-            "verb": "with at least one child",
-            "subhead": {
-                "pos": "More homes with children",
-                "neg": "Fewer homes with children",
-                "neu": "Changes in family structure",
-                "buc": "{plcname} stood out from other areas for children",
-                "sta": "Families in {plcname}"
-            },
-            "sample": "the proportion of households with children",
-            "adj_noun_s": "households with children"
-        },
-        "NoKids": {
-            "clausal_modifier": "households in {plcname} without children",
-            "verb_past": "without children",
-            "verb_past_samp": "had no children",
-            "adj_noun": "households without children",
-            "verb": "with no children",
-            "subhead": {
-                "pos": "More homes without children",
-                "neg": "Fewer homes without children",
-                "neu": "Changes in family structure",
-                "buc": "{plcname} stood out from other areas for children",
-                "sta": "Families in {plcname}"
-            },
-            "sample": "the proportion of households without children",
-            "adj_noun_s": "households without children"
-        },
-        "NonDepKids": {
-            "clausal_modifier": "households in {plcname} with only adult children living with their parents",
-            "verb_past": "where a parent lived with their adult children",
-            "verb_past_samp": "had only adult children living with their parents",
-            "adj_noun": "households with adult children living with their parents",
-            "verb": "that includes an adult living with parents",
-            "subhead": {
-                "pos": "More homes with adult children living with their parents",
-                "neg": "Fewer homes with adult children living with their parents",
-                "neu": "Changes in family structure",
-                "buc": "{plcname} stood out from other areas for children",
-                "sta": "Families in {plcname}"
-            },
-            "sample": "the proportion of households with only adult children living with their parents",
-            "adj_noun_s": "households with only adult children living with their parents"
-        },
-        "subtitle": "child occupancy",
-        "measure": "households",
-        "measure_s": "households"
-    },
+
     "hours": {
         "general_sf": "work life",
         "general": "work life",
         "synonym": "change in the working patterns of many in {plcname}",
         "profile": "work life changed for many in {plcname}",
-        "1-15": {
+        "Part-time: 15 hours or less worked": {
             "clausal_modifier": "employees working less than 16 weekly hours",
             "verb_past": "that said they had worked less than 16 hours the week before completing the census",
             "verb_past_samp": "said they had worked less than 16 hours the previous week",
@@ -826,7 +831,7 @@
             "sample": "the proportion of people working less than 16 hours in a week",
             "adj_noun_s": "people working less than 16 hours"
         },
-        "49plus": {
+        "Full-time: 49 or more hours worked": {
             "clausal_modifier": "employees working more than 49 hours in the week before the census",
             "verb_past": "that said they had worked over 49 hours the week before completing the census",
             "verb_past_samp": "said they had worked over 49 hours the week before completing the census",
@@ -842,16 +847,33 @@
             "sample": "long hour working",
             "adj_noun_s": "long hours workers"
         },
+        "Full-time: 31 to 48 hours worked": {
+            "clausal_modifier": "employees working 31 to 48 hours in the week before the census",
+            "verb_past": "that said they had worked 31 to 48 hours the week before completing the census",
+            "verb_past_samp": "said they had worked 31 to 48 hours the week before completing the census",
+            "adj_noun": "people working regular full-time hours",
+            "verb": "that worked 31 to 48 hours in a week",
+            "subhead": {
+                "pos": "More worked regular full-time hours",
+                "neg": "Fewer people working regular full-time hours",
+                "neu": "Change in work hours",
+                "buc": "{plcname} stood out from other areas for working hours",
+                "sta": "Working hours in {plcname}"
+            },
+            "sample": "full-time working",
+            "adj_noun_s": "full-time workers"
+        },
         "subtitle": "weekly hours worked",
         "measure": "usual residents aged 16 to 74 (in employment the week before the Census 2011)",
         "measure_s": "people aged 16 to 74 (in employment the week before the Census 2011)"
     },
+
     "marital": {
         "general_sf": "marriage",
         "general": "marriage",
         "synonym": "change in the relationships of many here",
         "profile": "family life changed for many in {plcname}",
-        "Single": {
+        "Never married and never registered a civil partnership": {
             "clausal_modifier": "single people in {plcname}",
             "verb_past": "that said they were single",
             "verb_past_samp": "said they were single",
@@ -867,7 +889,7 @@
             "sample": "the proportion of people who had never married or entered a civil partnership",
             "adj_noun_s": "single people"
         },
-        "Married": {
+        "Married or in a registered civil partnership": {
             "clausal_modifier": "adults in {plcname} that were married",
             "verb_past": "that said they were married",
             "verb_past_samp": "said they were married",
@@ -883,7 +905,7 @@
             "sample": "the proportion of married people",
             "adj_noun_s": "married people"
         },
-        "Seperated": {
+        "Divorced or civil partnership dissolved": {
             "clausal_modifier": "adults in {plcname} that had divorced or separated from a married or civil partner",
             "verb_past": "that said they had divorced or broken up with a married or civil partner",
             "verb_past_samp": "said they had divorced or broken up with a married or civil partner",
@@ -891,7 +913,7 @@
             "verb": "that said they had divorced or separated from a married or civil partner",
             "subhead": {
                 "pos": "More adults are separated from partners",
-                "neg": "Fewer adults are seperated from partners",
+                "neg": "Fewer adults are separated from partners",
                 "neu": "Changing relationships in {plcname}",
                 "buc": "{plcname} stood out from other areas for relationships",
                 "sta": "Relationships in {plcname}"
@@ -903,6 +925,7 @@
         "measure": "usual residents aged 16 and over",
         "measure_s": "people aged 16 and over"
     },
+
     "population": {
         "general_sf": "population size",
         "general": "population size",
