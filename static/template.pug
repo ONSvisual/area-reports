@@ -1192,20 +1192,20 @@ mixin welsh(i)
                 | This was the 
                 | #[+value(drop(data[s[i][0]][s[i][1]+'_rank_local']['change'][s[i][3]], 'largest decline', 'largest increase'))]
                 | in the proportion of Welsh speakers of any local authority area in the country.
-            if (data.welsh.perc_rank_local.top_bottom.SpeaksWelsh[1].name!=place.name)
+            if (data.welsh.perc_rank_local.top_bottom['Can speak Welsh'][1].name!=place.name)
                 | Of the few areas where knowledge of the Welsh language increased, 
-                | !{data.welsh.perc_rank_local.top_bottom.SpeaksWelsh[1].name} saw the largest change
+                | !{data.welsh.perc_rank_local.top_bottom['Can speak Welsh'][1].name} saw the largest change
                 | (from 
-                | #[+pc((data.welsh.perc_rank_local.top_bottom.SpeaksWelsh[1][2011]))]
+                | #[+pc((data.welsh.perc_rank_local.top_bottom['Can speak Welsh'][1][2011]))]
                 | to 
-                | #[+pc((data.welsh.perc_rank_local.top_bottom.SpeaksWelsh[1][2021]))]).
+                | #[+pc((data.welsh.perc_rank_local.top_bottom['Can speak Welsh'][1][2021]))]).
             else 
-                | The next largest increase was seen in !{data.welsh.perc_rank_local.top_bottom.SpeaksWelsh[2].name} 
-                | (from #[+pc((data.welsh.perc_rank_local.top_bottom.SpeaksWelsh[2][2011]))] in 2011 to 
-                | #[+pc((data.welsh.perc_rank_local.top_bottom.SpeaksWelsh[2][2021]))] in 2021), 
-                | while !{data.welsh.perc_rank_local.top_bottom.SpeaksWelsh["-1"].name} saw the largest decline
-                | (from #[+pc((data.welsh.perc_rank_local.top_bottom.SpeaksWelsh["-1"][2011]))] to 
-                | #[+pc((data.welsh.perc_rank_local.top_bottom.SpeaksWelsh["-1"][2021]))]).
+                | The next largest increase was seen in !{data.welsh.perc_rank_local.top_bottom['Can speak Welsh'][2].name} 
+                | (from #[+pc((data.welsh.perc_rank_local.top_bottom['Can speak Welsh'][2][2011]))] in 2011 to 
+                | #[+pc((data.welsh.perc_rank_local.top_bottom['Can speak Welsh'][2][2021]))] in 2021), 
+                | while !{data.welsh.perc_rank_local.top_bottom['Can speak Welsh']["-1"].name} saw the largest decline
+                | (from #[+pc((data.welsh.perc_rank_local.top_bottom['Can speak Welsh']["-1"][2011]))] to 
+                | #[+pc((data.welsh.perc_rank_local.top_bottom['Can speak Welsh']["-1"][2021]))]).
     p 
         - let v11speak = place.data[s[i][0]]['value'][2021][s[i][3]]
         - let v01speak = place.data[s[i][0]]['value'][2011][s[i][3]]
@@ -1245,16 +1245,16 @@ mixin welsh(i)
         | to #[+pc((rgn.data[s[i][0]][s[i][1]][2021][s[i][3]]))].
     if (Math.abs(place.data[s[i][0]][s[i][1]+'_rank_local'][2021][s[i][3]])>3) & (Math.abs(place.data[s[i][0]][s[i][1]+'_rank_local']['change'][s[i][3]])>3)
         p
-            | !{data.welsh.perc_rank_local.top_bottom.SpeaksWelsh[1].name} 
+            | !{data.welsh.perc_rank_local.top_bottom['Can speak Welsh'][1].name} 
             | was one of the few areas that saw an increase in the proportion of Welsh speakers (from 
-            | #[+pc((data.welsh.perc_rank_local.top_bottom.SpeaksWelsh[1][2011]))] 
+            | #[+pc((data.welsh.perc_rank_local.top_bottom['Can speak Welsh'][1][2011]))] 
             | in 2011 to 
-            | #[+pc((data.welsh.perc_rank_local.top_bottom.SpeaksWelsh[1][2021]))] 
+            | #[+pc((data.welsh.perc_rank_local.top_bottom['Can speak Welsh'][1][2021]))] 
             | in 2021)
-            | , while !{data.welsh.perc_rank_local.top_bottom.SpeaksWelsh["-1"].name} saw the largest fall (from 
-            | #[+pc((data.welsh.perc_rank_local.top_bottom.SpeaksWelsh["-1"][2011]))] 
+            | , while !{data.welsh.perc_rank_local.top_bottom['Can speak Welsh']["-1"].name} saw the largest fall (from 
+            | #[+pc((data.welsh.perc_rank_local.top_bottom['Can speak Welsh']["-1"][2011]))] 
             | to 
-            | #[+pc((data.welsh.perc_rank_local.top_bottom.SpeaksWelsh["-1"][2021]))]
+            | #[+pc((data.welsh.perc_rank_local.top_bottom['Can speak Welsh']["-1"][2021]))]
             | ). 
 
 mixin val(x)
@@ -1427,6 +1427,7 @@ mixin headline(i)
             | #[+value(topic(i).subhead.sta)]
     else 
         h2(id=s[i][0])
+        - console.log('i', s[i])
             | #[+value(topic(i).subhead.neu)]
 
 mixin rank2nat(i)
