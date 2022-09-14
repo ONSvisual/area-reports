@@ -37,7 +37,6 @@
 	// let rgncd = place.parents[0].code
     let rgn_raw = await fetch(`${assets}/data/json/place/${rgncd}.json`);
     let rgn_raw_new = await fetch(`${assets}/data/json_new/place/${rgncd}.json`);
-	// console.log('rgn_raw_new', rgn_raw_new)
     let rgn = await rgn_raw.json();
 	let rgn_new = await rgn_raw_new.json();
     let eng_raw = await fetch(`${assets}/data/json_new/place/E92000001.json`);
@@ -97,8 +96,6 @@
 	export let ladData;
 
 
-	console.log('topics', topics)
-	$: console.log('place', place)
 	$: console.log('place_new', place_new)
 	$: console.log('rgn', rgn)
 	$: console.log('cou', cou)
@@ -140,6 +137,7 @@
 			countyLU[d['LAD21NM']] = d['CTY21NM'];
 		});
 	});
+
 
   const findOne = (haystack, arr) => {
 		return arr.some(v => haystack.includes(v));
@@ -267,6 +265,21 @@
 	<meta name="description" content="This is a description of the page." />
 	<script src="https://unpkg.com/rosaenlg@3.0.1/dist/rollup/rosaenlg_tiny_en_US_3.0.1_comp.js" on:load="{onRosaeNlgLoad()}"></script>
 </svelte:head>
+
+
+
+<!-- TBA TBA TBA -->
+<div class="promo__background--plum-gradient">
+	<div class="wrapper">
+		<div class="banner--half-padding">
+			<p class="margin-top--0 margin-bottom--0 padding-bottom--0 padding-top--0 flex flex-wrap-wrap banner--vertical-center">
+				<a class="flex" href="/census"><img src="https://cdn.ons.gov.uk/assets/images/census-logo/logo-census-2021-white-landscape.svg" title="Census 2021" alt="" class="header__svg-logo margin-right--1" focusable="false" width="167" height="32" viewbox="0 0 242 44" aria-labelledby="census-logo-banner"></a>
+				<a class="margin-top--0 text--white font-size--18 underline-link" href="/census">Data and analysis from Census 2021</a>
+			</p>
+		</div>
+	</div>
+</div>
+<!-- TBA TBA TBA -->
 
 <div style="height: 50px;"></div>
 <Titleblock

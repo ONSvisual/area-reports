@@ -15,6 +15,7 @@ let chains = {
   'Very bad or bad health': [
     'Very good or good health', 'Fair health'
   ],
+
   'White': [
     'Black, Black British, Black Welsh, Caribbean or African', 'Asian, Asian British or Asian Welsh'
   ],
@@ -24,6 +25,7 @@ let chains = {
   'Asian, Asian British or Asian Welsh': [
     'White', 'Black, Black British, Black Welsh, Caribbean or African'
   ],
+
   'Private rented': [
     'Rented from council or Local Authority', 'Owns outright or with a mortgage or loan'
   ],
@@ -33,6 +35,7 @@ let chains = {
   'Owns outright or with a mortgage or loan': [
     'Private rented', 'Rented from council or Local Authority'
   ],
+
   'Economically inactive and a full-time student': [
     'Economically active and a full-time student: In employment', 'Economically active and a full-time student: Unemployed', 'Economically inactive (excluding full-time students)'
   ],
@@ -45,6 +48,7 @@ let chains = {
   'Economically active (excluding full-time students): Unemployed': [
     'Economically active (excluding full-time students): In employment', 'Economically inactive (excluding full-time students)', 'Economically inactive and a full-time student'
   ],
+
   'Single family household: Married or civil partnership couple: No children': [
     'Single family household: Cohabiting couple family : No children', 'Single family household: Married or civil partnership couple: Dependent children'
   ],
@@ -59,6 +63,7 @@ let chains = {
   'Single family household: Lone parent family : With dependent children': [
     'Single family household: Married or civil partnership couple: Dependent children', 'Single family household: Cohabiting couple family : With dependent children'
   ],
+
   'Never married and never registered a civil partnership': [
     'Married or in a registered civil partnership', 'Divorced or civil partnership dissolved'
   ],
@@ -68,6 +73,7 @@ let chains = {
   'Divorced or civil partnership dissolved': [
     'Married or in a registered civil partnership', 'Never married and never registered a civil partnership'
   ],
+
   'Provides 50 or more hours unpaid care a week': [
     'Provides 20 to 49 hours unpaid care a week', 'Provides no unpaid care'
   ],
@@ -78,18 +84,18 @@ let chains = {
     'Provides 20 to 49 hours unpaid care a week', 'Provides 50 or more hours unpaid care a week'
   ],
 
-
   'Part-time: 15 hours or less worked': [
     'Full-time: 49 or more hours worked', 'Full-time: 31 to 48 hours worked'
   ],
   'Full-time: 49 or more hours worked': [
     'Part-time: 15 hours or less worked', 'Full-time: 31 to 48 hours worked'
   ],
-  'Disabled under the Equality Act: Day-to-day activities limited a lot': [
-    'Disabled under the Equality Act: Day-to-day activities limited a little', 'Not disabled under the Equality Act'
+
+  'Disabled under the Equality Act': [
+    'Not disabled under the Equality Act'
   ],
-  'Disabled under the Equality Act: Day-to-day activities limited a little': [
-    'Disabled under the Equality Act: Day-to-day activities limited a lot', 'Not disabled under the Equality Act'
+  'Not disabled under the Equality Act': [
+    'Disabled under the Equality Act'
   ],
 
   'British only identity': [

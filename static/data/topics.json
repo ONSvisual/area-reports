@@ -6,9 +6,9 @@
         "profile": "national identity in {plcname} changed substantially",
         "British only identity": {
             "clausal_modifier": "respondents in {plcname} that identify only as British",
-            "verb_past": "that identify only as British",
+            "verb_past": "that identify as only British",
             "verb_past_samp": "identified as British (and no other nationality)",
-            "adj_noun": "people who identify only as British",
+            "adj_noun": "people who identify as only British",
             "verb": "that identified as British only",
             "subhead": {
                 "pos": "Rise in British identity",
@@ -22,9 +22,9 @@
         },
         "English only identity": {
             "clausal_modifier": "respondents in {plcname} that identify only as English",
-            "verb_past": "that identify only as English",
+            "verb_past": "that identify as only English",
             "verb_past_samp": "identified as English (and no other nationality)",
-            "adj_noun": "people who identify only as English",
+            "adj_noun": "people who identify as only English",
             "verb": "that identified as English only",
             "subhead": {
                 "pos": "Rise in English identity",
@@ -38,9 +38,9 @@
         },
         "Welsh only identity": {
             "clausal_modifier": "respondents in {plcname} that identify only as Welsh",
-            "verb_past": "that identify only as Welsh",
+            "verb_past": "that identify as only Welsh",
             "verb_past_samp": "identified as Welsh (and no other nationality)",
-            "adj_noun": "people who identify only as Welsh",
+            "adj_noun": "people who identify as only Welsh",
             "verb": "that identified as Welsh only",
             "subhead": {
                 "pos": "Rise in Welsh identity",
@@ -49,8 +49,8 @@
                 "buc": "Welsh identity in {plcname}",
                 "sta": "Welsh identity in {plcname}"
             },
-            "sample": "the proportion of people who identify only as Welsh",
-            "adj_noun_s": "people who identify only as Welsh"
+            "sample": "the proportion of people who identify as only Welsh",
+            "adj_noun_s": "people who identify as only Welsh"
         },
         "English and British only identity": {
             "clausal_modifier": "respondents in {plcname} that identify as both English and British",
@@ -379,7 +379,7 @@
             "adj_noun_s": "employed people"
         },
         "Economically inactive (excluding full-time students)": {
-            "clausal_modifier": "economoically inactive {plcname} residents (excluding full-time students)",
+            "clausal_modifier": "economically inactive {plcname} residents (excluding full-time students)",
             "verb_past": "that said they were not working or actively seeking work",
             "verb_past_samp": "said they were not working or actively seeking work",
             "adj_noun": "people who were not working or actively seeking work (excluding students)",
@@ -410,21 +410,53 @@
             "sample": "the rate of unemployment",
             "adj_noun_s": "unemployed people"
         },
+        "Economically active and a full-time student: In employment": {
+            "clausal_modifier": "{plcname} residents that were studying and in employment",
+            "verb_past": "that said they were employed students",
+            "verb_past_samp": "said they were employed students",
+            "adj_noun": "students (in employment)",
+            "verb": "that were employed students",
+            "subhead": {
+                "pos": "Students in {plcname}",
+                "neg": "Students in {plcname}",
+                "neu": "Students in {plcname}",
+                "buc": "{plcname} stood out from other areas for students",
+                "sta": "Students in {plcname}"
+            },
+            "sample": "the percentage of employed students",
+            "adj_noun_s": "employed students"
+        },
+        "Economically active and a full-time student: Unemployed": {
+            "clausal_modifier": "{plcname} residents that were studying and unemployed but seeking work",
+            "verb_past": "that said they were unemployed students",
+            "verb_past_samp": "said they were unemployed students",
+            "adj_noun": "students (seeking employment)",
+            "verb": "that were unemployed students",
+            "subhead": {
+                "pos": "Students in {plcname}",
+                "neg": "Students in {plcname}",
+                "neu": "Students in {plcname}",
+                "buc": "{plcname} stood out from other areas for students",
+                "sta": "Students in {plcname}"
+            },
+            "sample": "the percentage of unemployed students",
+            "adj_noun_s": "unemployed students"
+        },
         "Economically inactive and a full-time student": {
             "clausal_modifier": "{plcname} residents that were studying (and not employed or seeking work)",
             "verb_past": "that said they were in education",
             "verb_past_samp": "said they were in education",
             "adj_noun": "students (including only those not employed or seeking work)",
-            "verb": "that were students",
+            "verb": "that were economically inactive students",
             "subhead": {
-                "pos": "More students",
-                "neg": "Fewer students",
-                "neu": "Changing work life",
+                "pos": "Students in {plcname}",
+                "neg": "Students in {plcname}",
+                "neu": "Students in {plcname}",
                 "buc": "{plcname} stood out from other areas for students",
                 "sta": "Students in {plcname}"
             },
-            "sample": "the percentage of students",
-            "adj_noun_s": "students"
+            "sample": "the percentage of economically inactive students",
+            "adj_noun_s": "economically inactive students"
         },
         "subtitle": "economic status",
         "measure": "usual residents aged 16 to 74",
@@ -756,11 +788,11 @@
         "synonym": "change in the proportion of disabled people here",
         "profile": "the amount of people with disabilities changed in {plcname}",
         "Not disabled under the Equality Act": {
-            "clausal_modifier": "{plcname} residents whose day-to-day activities are not limited by a long-term health problem or disability",
-            "verb_past": "that reported not being limited in their day-to-day activities",
-            "verb_past_samp": "reported not being limited in their day-to-day activities",
+            "clausal_modifier": "{plcname} residents who are not disabled under the Equality Act",
+            "verb_past": "that reported not being disabled under the Equality Act",
+            "verb_past_samp": "reported not being disabled",
             "adj_noun": "people who aren't limited by a long-term health problem or disability",
-            "verb": "who aren't limited by a long-term health problem or disability",
+            "verb": "who aren't disabled under the Equality Act",
             "subhead": {
                 "pos": "Lower proportion of people with disabilities",
                 "neg": "Higher proportion of people with disabilities",
@@ -772,42 +804,25 @@
             "adj_noun_s": "people who aren't limited by a long-term health problem or disability",
             "label": "Day-to-day activities not limited"
         },
-        "Disabled under the Equality Act: Day-to-day activities limited a little": {
-            "clausal_modifier": "{plcname} residents whose day-to-day activities are limited a little by a long-term health problem or disability",
-            "verb_past": "that reported being slightly limited in their day-to-day activities",
-            "verb_past_samp": "reported being limited a little in their day-to-day activities",
-            "adj_noun": "people who are slightly limited by a long-term health problem or disability",
-            "verb": "who are slightly limited by a long-term health problem or disability",
+        "Disabled under the Equality Act": {
+            "clausal_modifier": "{plcname} residents who are disabled under the Equality Act",
+            "verb_past": "that reported being disabled under the Equality Act",
+            "verb_past_samp": "reported being disabled",
+            "adj_noun": "people who are disabled",
+            "verb": "who are disabled",
             "subhead": {
-                "pos": "Rise in slightly limiting disability",
-                "neg": "Fall in slightly limiting disability",
+                "pos": "Rise in disability",
+                "neg": "Fall in disability",
                 "neu": "Disability in {plcname}",
                 "buc": "{plcname} stood out from other areas for disability",
                 "sta": "Disability in {plcname}"
             },
-            "sample": "the proportion of people who are limited a little by a long-term health problem or disability",
-            "adj_noun_s": "people who are limited a little by a long-term health problem or disability",
-            "label": "Day-to-day activities limited a little"
-        },
-        "Disabled under the Equality Act: Day-to-day activities limited a lot": {
-            "clausal_modifier": "{plcname} residents whose day-to-day activities are limited a lot by a long-term health problem or disability",
-            "verb_past": "that reported being considerably limited in their day-to-day activities",
-            "verb_past_samp": "reported being limited a lot in their day-to-day activities",
-            "adj_noun": "people who are considerably limited by a long-term health problem or disability",
-            "verb": "who are considerably limited by a long-term health problem or disability",
-            "subhead": {
-                "pos": "Rise in considerably limiting disability",
-                "neg": "Fall in considerably limiting disability",
-                "neu": "Disability in {plcname}",
-                "buc": "{plcname} stood out from other areas for disability",
-                "sta": "Disability in {plcname}"
-            },
-            "sample": "the proportion of people who are limited a lot by a long-term health problem or disability",
-            "adj_noun_s": "people who are limited a lot by a long-term health problem or disability",
-            "label": "Day-to-day activities limited a lot"
+            "sample": "the proportion of people who are disabled under the Equality Act",
+            "adj_noun_s": "people who are disabled under the Equality Act",
+            "label": "Disabled under the Equality Act"
         },
         "measure": "usual residents",
-        "measure_s": ""
+        "measure_s": "residents"
     },
 
     "hours": {
@@ -939,7 +954,7 @@
             "sample": "the population"
         },
         "measure": "usual residents",
-        "measure_s": ""
+        "measure_s": "residents"
     },
     "agemed": {
         "general_sf": "average age",
