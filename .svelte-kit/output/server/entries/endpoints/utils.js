@@ -7,48 +7,140 @@ async function getData(url) {
   return data;
 }
 let chains = {
-  "good": ["bad", "fair"],
-  "bad": ["good", "fair"],
-  "white": ["black", "asian"],
-  "black": ["white", "asian"],
-  "asian": ["white", "black"],
-  "rented_private": ["rented_social", "owned"],
-  "rented_social": ["rented_private", "owned"],
-  "owned": ["rented_private", "rented_social"],
-  "student": ["employee", "unemployed", "self-employed"],
-  "self-employed": ["employee", "unemployed", "student"],
-  "employee": ["unemployed", "self-employed", "student"],
-  "unemployed": ["employee", "self-employed", "student"],
-  "car_van": ["bus", "train_metro", "foot", "home"],
-  "bus": ["car_van", "train_metro", "foot", "home"],
-  "train_metro": ["bus", "car_van", "foot", "home"],
-  "foot": ["bus", "train_metro", "car_van", "home"],
-  "home": ["bus", "train_metro", "foot", "car_van"],
-  "OnePerson": ["Cohabiting", "Married"],
-  "Cohabiting": ["OnePerson", "Married"],
-  "LoneParent": ["Married", "Cohabiting"],
-  "Christian": ["Muslim", "Noreligion"],
-  "Muslim": ["Christian", "Noreligion"],
-  "Noreligion": ["Christian", "Muslim"],
-  "Buddhist": ["Hindu", "Sikh"],
-  "Hindu": ["Sikh", "Buddhist"],
-  "Jewish": ["Christian", "Muslim"],
-  "Sikh": ["Hindu", "Buddhist"],
-  "Single": ["Married", "Seperated"],
-  "Married": ["Single", "Seperated"],
-  "Seperated": ["Married", "Single"],
-  "40PlushoursWeek": ["20to49hoursWeek"],
-  "20to49hoursWeek": ["40PlushoursWeek"],
-  "Kids": ["NoKids", "NonDepKids"],
-  "NoKids": ["Kids", "NonDepKids"],
-  "NonDepKids": ["Kids", "NoKids"],
-  "Male1-15": ["Male49plus"],
-  "Male49plus": ["Male1-15"],
-  "Female1-15": ["Female49plus"],
-  "Female49plus": ["Female1-15"],
-  "notDisabled": ["lot", "little"],
-  "lot": ["little", "notDisabled"],
-  "little": ["lot", "notDisabled"]
+  "Very good or good health": [
+    "Very bad or bad health",
+    "Fair health"
+  ],
+  "Very bad or bad health": [
+    "Very good or good health",
+    "Fair health"
+  ],
+  "White": [
+    "Black, Black British, Black Welsh, Caribbean or African",
+    "Asian, Asian British or Asian Welsh"
+  ],
+  "Black, Black British, Black Welsh, Caribbean or African": [
+    "White",
+    "Asian, Asian British or Asian Welsh"
+  ],
+  "Asian, Asian British or Asian Welsh": [
+    "White",
+    "Black, Black British, Black Welsh, Caribbean or African"
+  ],
+  "Private rented": [
+    "Rented from council or Local Authority",
+    "Owns outright or with a mortgage or loan"
+  ],
+  "Rented from council or Local Authority": [
+    "Private rented",
+    "Owns outright or with a mortgage or loan"
+  ],
+  "Owns outright or with a mortgage or loan": [
+    "Private rented",
+    "Rented from council or Local Authority"
+  ],
+  "Economically inactive and a full-time student": [
+    "Economically active and a full-time student: In employment",
+    "Economically active and a full-time student: Unemployed",
+    "Economically inactive (excluding full-time students)"
+  ],
+  "Economically inactive (excluding full-time students)": [
+    "Economically active (excluding full-time students): In employment",
+    "Economically active (excluding full-time students): Unemployed",
+    "Economically inactive and a full-time student"
+  ],
+  "Economically active (excluding full-time students): In employment": [
+    "Economically active (excluding full-time students): Unemployed",
+    "Economically inactive (excluding full-time students)",
+    "Economically inactive and a full-time student"
+  ],
+  "Economically active (excluding full-time students): Unemployed": [
+    "Economically active (excluding full-time students): In employment",
+    "Economically inactive (excluding full-time students)",
+    "Economically inactive and a full-time student"
+  ],
+  "Single family household: Married or civil partnership couple: No children": [
+    "Single family household: Cohabiting couple family : No children",
+    "Single family household: Married or civil partnership couple: Dependent children"
+  ],
+  "Single family household: Cohabiting couple family : No children": [
+    "Single family household: Married or civil partnership couple: No children",
+    "Single family household: Cohabiting couple family : With dependent children"
+  ],
+  "Single family household: Married or civil partnership couple: Dependent children": [
+    "Single family household: Cohabiting couple family : With dependent children",
+    "Single family household: Married or civil partnership couple: No children"
+  ],
+  "Single family household: Cohabiting couple family : With dependent children": [
+    "Single family household: Married or civil partnership couple: Dependent children",
+    "Single family household: Cohabiting couple family : No children"
+  ],
+  "Single family household: Lone parent family : With dependent children": [
+    "Single family household: Married or civil partnership couple: Dependent children",
+    "Single family household: Cohabiting couple family : With dependent children"
+  ],
+  "Never married and never registered a civil partnership": [
+    "Married or in a registered civil partnership",
+    "Divorced or civil partnership dissolved"
+  ],
+  "Married or in a registered civil partnership": [
+    "Never married and never registered a civil partnership",
+    "Divorced or civil partnership dissolved"
+  ],
+  "Divorced or civil partnership dissolved": [
+    "Married or in a registered civil partnership",
+    "Never married and never registered a civil partnership"
+  ],
+  "Provides 50 or more hours unpaid care a week": [
+    "Provides 20 to 49 hours unpaid care a week",
+    "Provides no unpaid care"
+  ],
+  "Provides 20 to 49 hours unpaid care a week": [
+    "Provides 50 or more hours unpaid care a week",
+    "Provides no unpaid care"
+  ],
+  "Provides 19 or less hours unpaid care a week": [
+    "Provides 20 to 49 hours unpaid care a week",
+    "Provides 50 or more hours unpaid care a week"
+  ],
+  "Part-time: 15 hours or less worked": [
+    "Full-time: 49 or more hours worked",
+    "Full-time: 31 to 48 hours worked"
+  ],
+  "Full-time: 49 or more hours worked": [
+    "Part-time: 15 hours or less worked",
+    "Full-time: 31 to 48 hours worked"
+  ],
+  "Disabled under the Equality Act": [
+    "Not disabled under the Equality Act"
+  ],
+  "Not disabled under the Equality Act": [
+    "Disabled under the Equality Act"
+  ],
+  "British only identity": [
+    "English only identity",
+    "English and British only identity"
+  ],
+  "Welsh only identity": [
+    "Welsh and British only identity",
+    "British only identity"
+  ],
+  "Welsh and British only identity": [
+    "Welsh only identity",
+    "British only identity"
+  ],
+  "English only identity": [
+    "English and British only identity",
+    "British only identity"
+  ],
+  "English and British only identity": [
+    "English only identity",
+    "British only identity"
+  ],
+  "Non-UK identity only": [
+    "UK identity and non-UK identity",
+    "British only identity"
+  ]
 };
 let array = ["South East", "South West", "West Midlands", "East Midlands", "North East", "North West", "East of England"];
 function regionThe(place, nt) {
@@ -101,14 +193,10 @@ function figs(x, f) {
   if (f != 3) {
     f = 2;
   }
-  let sigfig;
-  if (x < 1e3) {
-    sigfig = Number.parseFloat(Number.parseFloat(x).toPrecision(1));
-  } else {
-    sigfig = Number.parseFloat(Number.parseFloat(x).toPrecision(f));
-  }
-  let text = "about";
-  if (Math.abs(x) < Math.abs(sigfig)) {
+  let digits = Math.pow(10, f);
+  let rounded = Math.abs(Math.round(x / digits) * digits);
+  let text = "around";
+  if (Math.abs(x) < Math.abs(rounded)) {
     if (Math.round(Math.random()) == 1) {
       text = "almost ";
     } else {
@@ -121,7 +209,7 @@ function figs(x, f) {
       text = "just over ";
     }
   }
-  return [text, sigfig];
+  return [text, rounded];
 }
 function prev(s, place, i, type) {
   if (type == "rl") {

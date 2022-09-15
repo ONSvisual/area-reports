@@ -12,7 +12,7 @@
 
 	let reports_raw = await fetch(`${assets}/areareportsprgen.json`);
     let reports = await reports_raw.json();
-	let prodResults = reports[id].split(`<div id="esc123"></div>`)
+	// let prodResults = reports[id].split(`<div id="esc123"></div>`)
 
 	let template_raw = await fetch(`${assets}/template.pug`)
 	let template = await template_raw.text();
@@ -51,7 +51,7 @@
 	let ladData = await csvParse(ladData_string, autoType);
 
     return {
-			props: { options, topics, place, place_new, rgn, rgn_new, eng, wal, s, template, prodResults, cou, ladData }
+			props: { options, topics, place, place_new, rgn, rgn_new, eng, wal, s, template, cou, ladData }
 		}
 	}
 </script>
@@ -91,7 +91,7 @@
 	export let rgn_new;
 	export let eng;
 	export let wal;
-	export let prodResults;
+	// export let prodResults;
 	export let cou;
 	export let ladData;
 
@@ -273,8 +273,8 @@
 	<div class="wrapper">
 		<div class="banner--half-padding">
 			<p class="margin-top--0 margin-bottom--0 padding-bottom--0 padding-top--0 flex flex-wrap-wrap banner--vertical-center">
-				<a class="flex" href="/census"><img src="https://cdn.ons.gov.uk/assets/images/census-logo/logo-census-2021-white-landscape.svg" title="Census 2021" alt="" class="header__svg-logo margin-right--1" focusable="false" width="167" height="32" viewbox="0 0 242 44" aria-labelledby="census-logo-banner"></a>
-				<a class="margin-top--0 text--white font-size--18 underline-link" href="/census">Data and analysis from Census 2021</a>
+				<a class="flex" href="https://www.ons.gov.uk/census"><img src="https://cdn.ons.gov.uk/assets/images/census-logo/logo-census-2021-white-landscape.svg" title="Census 2021" alt="" class="header__svg-logo margin-right--1" focusable="false" width="167" height="32" viewbox="0 0 242 44" aria-labelledby="census-logo-banner"></a>
+				<a class="margin-top--0 text--white font-size--18 underline-link" href="https://www.ons.gov.uk/census">Data and analysis from Census 2021</a>
 			</p>
 		</div>
 	</div>
@@ -294,7 +294,7 @@
 	<Section backlink hr>
     <div style="height: 50px"></div>
 
-	{#if !production}
+	<!-- {#if !production} -->
 		{#if loaded}
 			{#each results(place_new, rgn, topics) as res, i (i)}
 				{@html res}
@@ -303,14 +303,14 @@
 				</div>
 			{/each}
 		{/if}
-	{:else}
+	<!-- {:else}
 		{#each prodResults as res, i (i)}
 			{@html res}
 			<div style="width: 100%; height: 200px; background: lightgrey; padding: 20px">
 				<h4>CHART PLACEHOLDER</h4>
 			</div>
 		{/each}
-	{/if}
+	{/if} -->
 
     {#if place.stories.length>6}
     <button on:click={readMore}>

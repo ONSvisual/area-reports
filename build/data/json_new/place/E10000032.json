@@ -1,0 +1,906 @@
+{
+    "name": "South East",
+    "parent": {
+        "name": "England",
+        "code": "E92000001"
+    },
+    "country": "England",
+    "code": "E10000032",
+    "type": "Region",
+    "data": {
+        "care": {
+            "value": {
+                "2011": {
+                    "Notacarer": 93830,
+                    "Yes,9hoursaweekorless": 65976,
+                    "Yes,10to19hoursaweek": 57451,
+                    "Yes,20to34hoursaweek": 82393,
+                    "Yes,35to49hoursaweek": 31210,
+                    "Yes,50ormorehoursaweek": 29809
+                },
+                "2021": {
+                    "Notacarer": 137558,
+                    "Yes,9hoursaweekorless": 62921,
+                    "Yes,10to19hoursaweek": 42208,
+                    "Yes,20to34hoursaweek": 130268,
+                    "Yes,35to49hoursaweek": 22217,
+                    "Yes,50ormorehoursaweek": 20063
+                },
+                "change": {
+                    "Notacarer": 43728,
+                    "Yes,9hoursaweekorless": -3055,
+                    "Yes,10to19hoursaweek": -15243,
+                    "Yes,20to34hoursaweek": 47875,
+                    "Yes,35to49hoursaweek": -8993,
+                    "Yes,50ormorehoursaweek": -9746
+                }
+            },
+            "perc": {
+                "2011": {
+                    "Notacarer": 0.26016,
+                    "Yes,9hoursaweekorless": 0.18293,
+                    "Yes,10to19hoursaweek": 0.15929,
+                    "Yes,20to34hoursaweek": 0.22844,
+                    "Yes,35to49hoursaweek": 0.08653,
+                    "Yes,50ormorehoursaweek": 0.08265
+                },
+                "2021": {
+                    "Notacarer": 0.33128,
+                    "Yes,9hoursaweekorless": 0.15153,
+                    "Yes,10to19hoursaweek": 0.10165,
+                    "Yes,20to34hoursaweek": 0.31372,
+                    "Yes,35to49hoursaweek": 0.0535,
+                    "Yes,50ormorehoursaweek": 0.04832
+                },
+                "change": {
+                    "Notacarer": 0.07112,
+                    "Yes,9hoursaweekorless": -0.0314,
+                    "Yes,10to19hoursaweek": -0.05764,
+                    "Yes,20to34hoursaweek": 0.08528,
+                    "Yes,35to49hoursaweek": -0.03303,
+                    "Yes,50ormorehoursaweek": -0.03433
+                }
+            }
+        },
+        "religion": {
+            "value": {
+                "2011": {
+                    "Noreligion": 17766,
+                    "Christian": 70418,
+                    "Buddhist": 54717,
+                    "Hindu": 77422,
+                    "Jewish": 70687,
+                    "Muslim": 69585,
+                    "Sikh": 11849,
+                    "Otherreligion": 79152,
+                    "Notstated": 10579
+                },
+                "2021": {
+                    "Noreligion": 12318,
+                    "Christian": 85638,
+                    "Buddhist": 36690,
+                    "Hindu": 58444,
+                    "Jewish": 84800,
+                    "Muslim": 109134,
+                    "Sikh": 13583,
+                    "Otherreligion": 81907,
+                    "Notstated": 6654
+                },
+                "change": {
+                    "Noreligion": -5448,
+                    "Christian": 15220,
+                    "Buddhist": -18027,
+                    "Hindu": -18978,
+                    "Jewish": 14113,
+                    "Muslim": 39549,
+                    "Sikh": 1734,
+                    "Otherreligion": 2755,
+                    "Notstated": -3925
+                }
+            },
+            "perc": {
+                "2011": {
+                    "Noreligion": 0.03844,
+                    "Christian": 0.15236,
+                    "Buddhist": 0.11839,
+                    "Hindu": 0.16752,
+                    "Jewish": 0.15294,
+                    "Muslim": 0.15056,
+                    "Sikh": 0.02564,
+                    "Otherreligion": 0.17126,
+                    "Notstated": 0.02289
+                },
+                "2021": {
+                    "Noreligion": 0.02518,
+                    "Christian": 0.17507,
+                    "Buddhist": 0.075,
+                    "Hindu": 0.11948,
+                    "Jewish": 0.17336,
+                    "Muslim": 0.2231,
+                    "Sikh": 0.02777,
+                    "Otherreligion": 0.16744,
+                    "Notstated": 0.0136
+                },
+                "change": {
+                    "Noreligion": -0.01326,
+                    "Christian": 0.02271,
+                    "Buddhist": -0.04339,
+                    "Hindu": -0.04804,
+                    "Jewish": 0.02042,
+                    "Muslim": 0.07254,
+                    "Sikh": 0.00213,
+                    "Otherreligion": -0.00382,
+                    "Notstated": -0.00929
+                }
+            }
+        },
+        "ethnicity": {
+            "value": {
+                "2011": {
+                    "Asian,AsianBritishorAsianWelsh": 77957,
+                    "Black,BlackBritish,BlackWelsh,CarribeanorAfrican": 19845,
+                    "MixedorMultipleethnicgroups": 83833,
+                    "White": 65112,
+                    "Otherethnicgroup": 85298
+                },
+                "2021": {
+                    "Asian,AsianBritishorAsianWelsh": 81470,
+                    "Black,BlackBritish,BlackWelsh,CarribeanorAfrican": 18587,
+                    "MixedorMultipleethnicgroups": 72587,
+                    "White": 73495,
+                    "Otherethnicgroup": 123499
+                },
+                "change": {
+                    "Asian,AsianBritishorAsianWelsh": 3513,
+                    "Black,BlackBritish,BlackWelsh,CarribeanorAfrican": -1258,
+                    "MixedorMultipleethnicgroups": -11246,
+                    "White": 8383,
+                    "Otherethnicgroup": 38201
+                }
+            },
+            "perc": {
+                "2011": {
+                    "Asian,AsianBritishorAsianWelsh": 0.23478,
+                    "Black,BlackBritish,BlackWelsh,CarribeanorAfrican": 0.05977,
+                    "MixedorMultipleethnicgroups": 0.25247,
+                    "White": 0.19609,
+                    "Otherethnicgroup": 0.25689
+                },
+                "2021": {
+                    "Asian,AsianBritishorAsianWelsh": 0.2204,
+                    "Black,BlackBritish,BlackWelsh,CarribeanorAfrican": 0.05028,
+                    "MixedorMultipleethnicgroups": 0.19637,
+                    "White": 0.19883,
+                    "Otherethnicgroup": 0.33411
+                },
+                "change": {
+                    "Asian,AsianBritishorAsianWelsh": -0.01438,
+                    "Black,BlackBritish,BlackWelsh,CarribeanorAfrican": -0.00949,
+                    "MixedorMultipleethnicgroups": -0.0561,
+                    "White": 0.00274,
+                    "Otherethnicgroup": 0.07722
+                }
+            }
+        },
+        "health": {
+            "value": {
+                "2011": {
+                    "Verygoodhealth": 85662,
+                    "Goodhealth": 38477,
+                    "Fairhealth": 74865,
+                    "Badhealth": 99718,
+                    "Verybadhealth": 6635
+                },
+                "2021": {
+                    "Verygoodhealth": 107278,
+                    "Goodhealth": 51640,
+                    "Fairhealth": 111713,
+                    "Badhealth": 87342,
+                    "Verybadhealth": 4045
+                },
+                "change": {
+                    "Verygoodhealth": 21616,
+                    "Goodhealth": 13163,
+                    "Fairhealth": 36848,
+                    "Badhealth": -12376,
+                    "Verybadhealth": -2590
+                }
+            },
+            "perc": {
+                "2011": {
+                    "Verygoodhealth": 0.28053,
+                    "Goodhealth": 0.12601,
+                    "Fairhealth": 0.24517,
+                    "Badhealth": 0.32656,
+                    "Verybadhealth": 0.02173
+                },
+                "2021": {
+                    "Verygoodhealth": 0.29633,
+                    "Goodhealth": 0.14264,
+                    "Fairhealth": 0.30858,
+                    "Badhealth": 0.24126,
+                    "Verybadhealth": 0.01117
+                },
+                "change": {
+                    "Verygoodhealth": 0.0158,
+                    "Goodhealth": 0.01663,
+                    "Fairhealth": 0.06341,
+                    "Badhealth": -0.0853,
+                    "Verybadhealth": -0.01056
+                }
+            }
+        },
+        "economic": {
+            "value": {
+                "2011": {
+                    "Economicallyactive(excludingfull-timestudents):Inemployment:Employee:Part-time": 42807,
+                    "Economicallyactive(excludingfull-timestudents):Inemployment:Employee:Full-time": 73917,
+                    "Economicallyactive(excludingfull-timestudents):Inemployment:Self-employed:Part-time": 45404,
+                    "Economicallyactive(excludingfull-timestudents):Inemployment:Self-employed:Full-time": 48500,
+                    "Economicallyactive:Unemployed:Notafull-timestudent": 77463,
+                    "Economicallyactive:Full-timestudent": 56039,
+                    "Economicallyinactive:Retired": 16133,
+                    "Economicallyinactive(includingfull-timestudents):Student": 32766,
+                    "Economicallyinactive:Lookingafterhomeorfamily": 48075,
+                    "Economicallyinactive:Long-termsickordisabled": 5720,
+                    "Economicallyinactive:Other": 45259
+                },
+                "2021": {
+                    "Economicallyactive(excludingfull-timestudents):Inemployment:Employee:Part-time": 47121,
+                    "Economicallyactive(excludingfull-timestudents):Inemployment:Employee:Full-time": 75685,
+                    "Economicallyactive(excludingfull-timestudents):Inemployment:Self-employed:Part-time": 45202,
+                    "Economicallyactive(excludingfull-timestudents):Inemployment:Self-employed:Full-time": 53427,
+                    "Economicallyactive:Unemployed:Notafull-timestudent": 118247,
+                    "Economicallyactive:Full-timestudent": 87808,
+                    "Economicallyinactive:Retired": 12123,
+                    "Economicallyinactive(includingfull-timestudents):Student": 50311,
+                    "Economicallyinactive:Lookingafterhomeorfamily": 42372,
+                    "Economicallyinactive:Long-termsickordisabled": 8360,
+                    "Economicallyinactive:Other": 57690
+                },
+                "change": {
+                    "Economicallyactive(excludingfull-timestudents):Inemployment:Employee:Part-time": 4314,
+                    "Economicallyactive(excludingfull-timestudents):Inemployment:Employee:Full-time": 1768,
+                    "Economicallyactive(excludingfull-timestudents):Inemployment:Self-employed:Part-time": -202,
+                    "Economicallyactive(excludingfull-timestudents):Inemployment:Self-employed:Full-time": 4927,
+                    "Economicallyactive:Unemployed:Notafull-timestudent": 40784,
+                    "Economicallyactive:Full-timestudent": 31769,
+                    "Economicallyinactive:Retired": -4010,
+                    "Economicallyinactive(includingfull-timestudents):Student": 17545,
+                    "Economicallyinactive:Lookingafterhomeorfamily": -5703,
+                    "Economicallyinactive:Long-termsickordisabled": 2640,
+                    "Economicallyinactive:Other": 12431
+                }
+            },
+            "perc": {
+                "2011": {
+                    "Economicallyactive(excludingfull-timestudents):Inemployment:Employee:Part-time": 0.08699,
+                    "Economicallyactive(excludingfull-timestudents):Inemployment:Employee:Full-time": 0.15021,
+                    "Economicallyactive(excludingfull-timestudents):Inemployment:Self-employed:Part-time": 0.09227,
+                    "Economicallyactive(excludingfull-timestudents):Inemployment:Self-employed:Full-time": 0.09856,
+                    "Economicallyactive:Unemployed:Notafull-timestudent": 0.15742,
+                    "Economicallyactive:Full-timestudent": 0.11388,
+                    "Economicallyinactive:Retired": 0.03279,
+                    "Economicallyinactive(includingfull-timestudents):Student": 0.06659,
+                    "Economicallyinactive:Lookingafterhomeorfamily": 0.0977,
+                    "Economicallyinactive:Long-termsickordisabled": 0.01162,
+                    "Economicallyinactive:Other": 0.09197
+                },
+                "2021": {
+                    "Economicallyactive(excludingfull-timestudents):Inemployment:Employee:Part-time": 0.07875,
+                    "Economicallyactive(excludingfull-timestudents):Inemployment:Employee:Full-time": 0.12649,
+                    "Economicallyactive(excludingfull-timestudents):Inemployment:Self-employed:Part-time": 0.07554,
+                    "Economicallyactive(excludingfull-timestudents):Inemployment:Self-employed:Full-time": 0.08929,
+                    "Economicallyactive:Unemployed:Notafull-timestudent": 0.19762,
+                    "Economicallyactive:Full-timestudent": 0.14675,
+                    "Economicallyinactive:Retired": 0.02026,
+                    "Economicallyinactive(includingfull-timestudents):Student": 0.08408,
+                    "Economicallyinactive:Lookingafterhomeorfamily": 0.07082,
+                    "Economicallyinactive:Long-termsickordisabled": 0.01397,
+                    "Economicallyinactive:Other": 0.09642
+                },
+                "change": {
+                    "Economicallyactive(excludingfull-timestudents):Inemployment:Employee:Part-time": -0.00824,
+                    "Economicallyactive(excludingfull-timestudents):Inemployment:Employee:Full-time": -0.02372,
+                    "Economicallyactive(excludingfull-timestudents):Inemployment:Self-employed:Part-time": -0.01673,
+                    "Economicallyactive(excludingfull-timestudents):Inemployment:Self-employed:Full-time": -0.00927,
+                    "Economicallyactive:Unemployed:Notafull-timestudent": 0.0402,
+                    "Economicallyactive:Full-timestudent": 0.03287,
+                    "Economicallyinactive:Retired": -0.01253,
+                    "Economicallyinactive(includingfull-timestudents):Student": 0.01749,
+                    "Economicallyinactive:Lookingafterhomeorfamily": -0.02688,
+                    "Economicallyinactive:Long-termsickordisabled": 0.00235,
+                    "Economicallyinactive:Other": 0.00445
+                }
+            }
+        },
+        "household": {
+            "value": {
+                "2011": {
+                    "Onepersonhousehold:Aged66yearsandover": 67704,
+                    "Onepersonhousehold:Other": 34297,
+                    "Singlefamilyhousehold:Allaged66yearsandover": 56007,
+                    "Singlefamilyhousehold:Marriedorcivilpartnershipcouple:Nochildren": 56144,
+                    "Singlefamilyhousehold:Marriedorcivilpartnershipcouple:Dependentchildren": 89282,
+                    "Singlefamilyhousehold:Marriedorcivilpartnershipcouple:Allchildrennon-dependent": 45955,
+                    "Singlefamilyhousehold:Cohabitingcouplefamily:Nochildren": 97022,
+                    "Singlefamilyhousehold:Cohabitingcouplefamily:Withdependentchildren": 14316,
+                    "Singlefamilyhousehold:Cohabitingcouplefamily:Allchildrennon-dependent": 71006,
+                    "Singlefamilyhousehold:Loneparentfamily:Withdependentchildren": 94453,
+                    "Singlefamilyhousehold:Loneparentfamily:Allchildrennon-dependent": 83484,
+                    "Singlefamilyhousehold:Othersinglefamilyhousehold:Otherfamilycomposition": 49699,
+                    "Multiple-familyhousehold:Withdependentchildren": 35654,
+                    "Multiple-FamilyHousehold:Other,includingallfull-timestudentsandallaged66yearsandover": 50682
+                },
+                "2021": {
+                    "Onepersonhousehold:Aged66yearsandover": 79726,
+                    "Onepersonhousehold:Other": 33659,
+                    "Singlefamilyhousehold:Allaged66yearsandover": 34209,
+                    "Singlefamilyhousehold:Marriedorcivilpartnershipcouple:Nochildren": 46121,
+                    "Singlefamilyhousehold:Marriedorcivilpartnershipcouple:Dependentchildren": 126238,
+                    "Singlefamilyhousehold:Marriedorcivilpartnershipcouple:Allchildrennon-dependent": 47131,
+                    "Singlefamilyhousehold:Cohabitingcouplefamily:Nochildren": 74074,
+                    "Singlefamilyhousehold:Cohabitingcouplefamily:Withdependentchildren": 20253,
+                    "Singlefamilyhousehold:Cohabitingcouplefamily:Allchildrennon-dependent": 71029,
+                    "Singlefamilyhousehold:Loneparentfamily:Withdependentchildren": 128037,
+                    "Singlefamilyhousehold:Loneparentfamily:Allchildrennon-dependent": 119350,
+                    "Singlefamilyhousehold:Othersinglefamilyhousehold:Otherfamilycomposition": 58566,
+                    "Multiple-familyhousehold:Withdependentchildren": 37049,
+                    "Multiple-FamilyHousehold:Other,includingallfull-timestudentsandallaged66yearsandover": 74494
+                },
+                "change": {
+                    "Onepersonhousehold:Aged66yearsandover": 12022,
+                    "Onepersonhousehold:Other": -638,
+                    "Singlefamilyhousehold:Allaged66yearsandover": -21798,
+                    "Singlefamilyhousehold:Marriedorcivilpartnershipcouple:Nochildren": -10023,
+                    "Singlefamilyhousehold:Marriedorcivilpartnershipcouple:Dependentchildren": 36956,
+                    "Singlefamilyhousehold:Marriedorcivilpartnershipcouple:Allchildrennon-dependent": 1176,
+                    "Singlefamilyhousehold:Cohabitingcouplefamily:Nochildren": -22948,
+                    "Singlefamilyhousehold:Cohabitingcouplefamily:Withdependentchildren": 5937,
+                    "Singlefamilyhousehold:Cohabitingcouplefamily:Allchildrennon-dependent": 23,
+                    "Singlefamilyhousehold:Loneparentfamily:Withdependentchildren": 33584,
+                    "Singlefamilyhousehold:Loneparentfamily:Allchildrennon-dependent": 35866,
+                    "Singlefamilyhousehold:Othersinglefamilyhousehold:Otherfamilycomposition": 8867,
+                    "Multiple-familyhousehold:Withdependentchildren": 1395,
+                    "Multiple-FamilyHousehold:Other,includingallfull-timestudentsandallaged66yearsandover": 23812
+                }
+            },
+            "perc": {
+                "2011": {
+                    "Onepersonhousehold:Aged66yearsandover": 0.08006,
+                    "Onepersonhousehold:Other": 0.04055,
+                    "Singlefamilyhousehold:Allaged66yearsandover": 0.06623,
+                    "Singlefamilyhousehold:Marriedorcivilpartnershipcouple:Nochildren": 0.06639,
+                    "Singlefamilyhousehold:Marriedorcivilpartnershipcouple:Dependentchildren": 0.10557,
+                    "Singlefamilyhousehold:Marriedorcivilpartnershipcouple:Allchildrennon-dependent": 0.05434,
+                    "Singlefamilyhousehold:Cohabitingcouplefamily:Nochildren": 0.11472,
+                    "Singlefamilyhousehold:Cohabitingcouplefamily:Withdependentchildren": 0.01693,
+                    "Singlefamilyhousehold:Cohabitingcouplefamily:Allchildrennon-dependent": 0.08396,
+                    "Singlefamilyhousehold:Loneparentfamily:Withdependentchildren": 0.11169,
+                    "Singlefamilyhousehold:Loneparentfamily:Allchildrennon-dependent": 0.09872,
+                    "Singlefamilyhousehold:Othersinglefamilyhousehold:Otherfamilycomposition": 0.05877,
+                    "Multiple-familyhousehold:Withdependentchildren": 0.04216,
+                    "Multiple-FamilyHousehold:Other,includingallfull-timestudentsandallaged66yearsandover": 0.05993
+                },
+                "2021": {
+                    "Onepersonhousehold:Aged66yearsandover": 0.08393,
+                    "Onepersonhousehold:Other": 0.03543,
+                    "Singlefamilyhousehold:Allaged66yearsandover": 0.03601,
+                    "Singlefamilyhousehold:Marriedorcivilpartnershipcouple:Nochildren": 0.04855,
+                    "Singlefamilyhousehold:Marriedorcivilpartnershipcouple:Dependentchildren": 0.13289,
+                    "Singlefamilyhousehold:Marriedorcivilpartnershipcouple:Allchildrennon-dependent": 0.04961,
+                    "Singlefamilyhousehold:Cohabitingcouplefamily:Nochildren": 0.07798,
+                    "Singlefamilyhousehold:Cohabitingcouplefamily:Withdependentchildren": 0.02132,
+                    "Singlefamilyhousehold:Cohabitingcouplefamily:Allchildrennon-dependent": 0.07477,
+                    "Singlefamilyhousehold:Loneparentfamily:Withdependentchildren": 0.13478,
+                    "Singlefamilyhousehold:Loneparentfamily:Allchildrennon-dependent": 0.12564,
+                    "Singlefamilyhousehold:Othersinglefamilyhousehold:Otherfamilycomposition": 0.06165,
+                    "Multiple-familyhousehold:Withdependentchildren": 0.039,
+                    "Multiple-FamilyHousehold:Other,includingallfull-timestudentsandallaged66yearsandover": 0.07842
+                },
+                "change": {
+                    "Onepersonhousehold:Aged66yearsandover": 0.00387,
+                    "Onepersonhousehold:Other": -0.00512,
+                    "Singlefamilyhousehold:Allaged66yearsandover": -0.03022,
+                    "Singlefamilyhousehold:Marriedorcivilpartnershipcouple:Nochildren": -0.01784,
+                    "Singlefamilyhousehold:Marriedorcivilpartnershipcouple:Dependentchildren": 0.02732,
+                    "Singlefamilyhousehold:Marriedorcivilpartnershipcouple:Allchildrennon-dependent": -0.00473,
+                    "Singlefamilyhousehold:Cohabitingcouplefamily:Nochildren": -0.03674,
+                    "Singlefamilyhousehold:Cohabitingcouplefamily:Withdependentchildren": 0.00439,
+                    "Singlefamilyhousehold:Cohabitingcouplefamily:Allchildrennon-dependent": -0.00919,
+                    "Singlefamilyhousehold:Loneparentfamily:Withdependentchildren": 0.02309,
+                    "Singlefamilyhousehold:Loneparentfamily:Allchildrennon-dependent": 0.02692,
+                    "Singlefamilyhousehold:Othersinglefamilyhousehold:Otherfamilycomposition": 0.00288,
+                    "Multiple-familyhousehold:Withdependentchildren": -0.00316,
+                    "Multiple-FamilyHousehold:Other,includingallfull-timestudentsandallaged66yearsandover": 0.01849
+                }
+            }
+        },
+        "marital": {
+            "value": {
+                "2011": {
+                    "Singlenevermarriedorinacivilpartnership": 79668,
+                    "Marriedorinaregisteredcivilpartnership": 24957,
+                    "Separated(butstilllegallymarriedorstilllegallyinacivilpartnership)": 59676,
+                    "Divorcedorcivilpartnershipdissolved": 27570,
+                    "Widowedorsurvivingcivilpartnershippartner": 99786
+                },
+                "2021": {
+                    "Singlenevermarriedorinacivilpartnership": 121074,
+                    "Marriedorinaregisteredcivilpartnership": 18037,
+                    "Separated(butstilllegallymarriedorstilllegallyinacivilpartnership)": 73527,
+                    "Divorcedorcivilpartnershipdissolved": 28461,
+                    "Widowedorsurvivingcivilpartnershippartner": 77801
+                },
+                "change": {
+                    "Singlenevermarriedorinacivilpartnership": 41406,
+                    "Marriedorinaregisteredcivilpartnership": -6920,
+                    "Separated(butstilllegallymarriedorstilllegallyinacivilpartnership)": 13851,
+                    "Divorcedorcivilpartnershipdissolved": 891,
+                    "Widowedorsurvivingcivilpartnershippartner": -21985
+                }
+            },
+            "perc": {
+                "2011": {
+                    "Singlenevermarriedorinacivilpartnership": 0.27316,
+                    "Marriedorinaregisteredcivilpartnership": 0.08557,
+                    "Separated(butstilllegallymarriedorstilllegallyinacivilpartnership)": 0.20461,
+                    "Divorcedorcivilpartnershipdissolved": 0.09453,
+                    "Widowedorsurvivingcivilpartnershippartner": 0.34213
+                },
+                "2021": {
+                    "Singlenevermarriedorinacivilpartnership": 0.37966,
+                    "Marriedorinaregisteredcivilpartnership": 0.05656,
+                    "Separated(butstilllegallymarriedorstilllegallyinacivilpartnership)": 0.23056,
+                    "Divorcedorcivilpartnershipdissolved": 0.08925,
+                    "Widowedorsurvivingcivilpartnershippartner": 0.24397
+                },
+                "change": {
+                    "Singlenevermarriedorinacivilpartnership": 0.1065,
+                    "Marriedorinaregisteredcivilpartnership": -0.02901,
+                    "Separated(butstilllegallymarriedorstilllegallyinacivilpartnership)": 0.02595,
+                    "Divorcedorcivilpartnershipdissolved": -0.00528,
+                    "Widowedorsurvivingcivilpartnershippartner": -0.09816
+                }
+            }
+        },
+        "hours": {
+            "value": {
+                "2011": {
+                    "Part-time:15hoursorlessworked": 36574,
+                    "Part-time:16to30hoursworked": 94213,
+                    "Full-time:31to48hoursworked": 67179,
+                    "Full-time:49ormorehoursworked": 50620
+                },
+                "2021": {
+                    "Part-time:15hoursorlessworked": 28276,
+                    "Part-time:16to30hoursworked": 113574,
+                    "Full-time:31to48hoursworked": 54032,
+                    "Full-time:49ormorehoursworked": 57478
+                },
+                "change": {
+                    "Part-time:15hoursorlessworked": -8298,
+                    "Part-time:16to30hoursworked": 19361,
+                    "Full-time:31to48hoursworked": -13147,
+                    "Full-time:49ormorehoursworked": 6858
+                }
+            },
+            "perc": {
+                "2011": {
+                    "Part-time:15hoursorlessworked": 0.14713,
+                    "Part-time:16to30hoursworked": 0.379,
+                    "Full-time:31to48hoursworked": 0.27024,
+                    "Full-time:49ormorehoursworked": 0.20363
+                },
+                "2021": {
+                    "Part-time:15hoursorlessworked": 0.1116,
+                    "Part-time:16to30hoursworked": 0.44827,
+                    "Full-time:31to48hoursworked": 0.21326,
+                    "Full-time:49ormorehoursworked": 0.22686
+                },
+                "change": {
+                    "Part-time:15hoursorlessworked": -0.03553,
+                    "Part-time:16to30hoursworked": 0.06927,
+                    "Full-time:31to48hoursworked": -0.05698,
+                    "Full-time:49ormorehoursworked": 0.02323
+                }
+            }
+        },
+        "tenure": {
+            "value": {
+                "2011": {
+                    "Owned:Ownsoutright": 37699,
+                    "Owned:Ownswithamortgageorloan": 5901,
+                    "Sharedownership:Sharedownership": 72647,
+                    "Socialrented:RentsfromcouncilorLocalAuthority": 82942,
+                    "Socialrented:Othersocialrented": 32419,
+                    "Privaterented:Privatelandlordorlettingagency": 54137,
+                    "Privaterented:Otherprivaterented": 12165,
+                    "Livesrentfree": 17218
+                },
+                "2021": {
+                    "Owned:Ownsoutright": 55488,
+                    "Owned:Ownswithamortgageorloan": 6316,
+                    "Sharedownership:Sharedownership": 101450,
+                    "Socialrented:RentsfromcouncilorLocalAuthority": 120628,
+                    "Socialrented:Othersocialrented": 47742,
+                    "Privaterented:Privatelandlordorlettingagency": 76369,
+                    "Privaterented:Otherprivaterented": 8048,
+                    "Livesrentfree": 22457
+                },
+                "change": {
+                    "Owned:Ownsoutright": 17789,
+                    "Owned:Ownswithamortgageorloan": 415,
+                    "Sharedownership:Sharedownership": 28803,
+                    "Socialrented:RentsfromcouncilorLocalAuthority": 37686,
+                    "Socialrented:Othersocialrented": 15323,
+                    "Privaterented:Privatelandlordorlettingagency": 22232,
+                    "Privaterented:Otherprivaterented": -4117,
+                    "Livesrentfree": 5239
+                }
+            },
+            "perc": {
+                "2011": {
+                    "Owned:Ownsoutright": 0.11963,
+                    "Owned:Ownswithamortgageorloan": 0.01873,
+                    "Sharedownership:Sharedownership": 0.23053,
+                    "Socialrented:RentsfromcouncilorLocalAuthority": 0.2632,
+                    "Socialrented:Othersocialrented": 0.10288,
+                    "Privaterented:Privatelandlordorlettingagency": 0.17179,
+                    "Privaterented:Otherprivaterented": 0.0386,
+                    "Livesrentfree": 0.05464
+                },
+                "2021": {
+                    "Owned:Ownsoutright": 0.12654,
+                    "Owned:Ownswithamortgageorloan": 0.0144,
+                    "Sharedownership:Sharedownership": 0.23136,
+                    "Socialrented:RentsfromcouncilorLocalAuthority": 0.27509,
+                    "Socialrented:Othersocialrented": 0.10888,
+                    "Privaterented:Privatelandlordorlettingagency": 0.17416,
+                    "Privaterented:Otherprivaterented": 0.01835,
+                    "Livesrentfree": 0.05121
+                },
+                "change": {
+                    "Owned:Ownsoutright": 0.00691,
+                    "Owned:Ownswithamortgageorloan": -0.00433,
+                    "Sharedownership:Sharedownership": 0.00083,
+                    "Socialrented:RentsfromcouncilorLocalAuthority": 0.01189,
+                    "Socialrented:Othersocialrented": 0.006,
+                    "Privaterented:Privatelandlordorlettingagency": 0.00237,
+                    "Privaterented:Otherprivaterented": -0.02025,
+                    "Livesrentfree": -0.00343
+                }
+            }
+        },
+        "disability": {
+            "value": {
+                "2011": {
+                    "DisabledundertheEqualityAct:Day-to-dayactivitieslimitedalot": 28528,
+                    "DisabledundertheEqualityAct:Day-to-dayactivitieslimitedalittle": 21258,
+                    "NotdisabledundertheEqualityAct:Haslongtermphysicalormentalhealthconditionbutday-to-dayactivitiesarenotlimited": 51261,
+                    "NotdisabledundertheEqualityAct:Nolongtermphysicalormentalhealthconditions": 44048
+                },
+                "2021": {
+                    "DisabledundertheEqualityAct:Day-to-dayactivitieslimitedalot": 31747,
+                    "DisabledundertheEqualityAct:Day-to-dayactivitieslimitedalittle": 17469,
+                    "NotdisabledundertheEqualityAct:Haslongtermphysicalormentalhealthconditionbutday-to-dayactivitiesarenotlimited": 33891,
+                    "NotdisabledundertheEqualityAct:Nolongtermphysicalormentalhealthconditions": 67108
+                },
+                "change": {
+                    "DisabledundertheEqualityAct:Day-to-dayactivitieslimitedalot": 3219,
+                    "DisabledundertheEqualityAct:Day-to-dayactivitieslimitedalittle": -3789,
+                    "NotdisabledundertheEqualityAct:Haslongtermphysicalormentalhealthconditionbutday-to-dayactivitiesarenotlimited": -17370,
+                    "NotdisabledundertheEqualityAct:Nolongtermphysicalormentalhealthconditions": 23060
+                }
+            },
+            "perc": {
+                "2011": {
+                    "DisabledundertheEqualityAct:Day-to-dayactivitieslimitedalot": 0.19662,
+                    "DisabledundertheEqualityAct:Day-to-dayactivitieslimitedalittle": 0.14651,
+                    "NotdisabledundertheEqualityAct:Haslongtermphysicalormentalhealthconditionbutday-to-dayactivitiesarenotlimited": 0.35329,
+                    "NotdisabledundertheEqualityAct:Nolongtermphysicalormentalhealthconditions": 0.30358
+                },
+                "2021": {
+                    "DisabledundertheEqualityAct:Day-to-dayactivitieslimitedalot": 0.21134,
+                    "DisabledundertheEqualityAct:Day-to-dayactivitieslimitedalittle": 0.11629,
+                    "NotdisabledundertheEqualityAct:Haslongtermphysicalormentalhealthconditionbutday-to-dayactivitiesarenotlimited": 0.22562,
+                    "NotdisabledundertheEqualityAct:Nolongtermphysicalormentalhealthconditions": 0.44675
+                },
+                "change": {
+                    "DisabledundertheEqualityAct:Day-to-dayactivitieslimitedalot": 0.01472,
+                    "DisabledundertheEqualityAct:Day-to-dayactivitieslimitedalittle": -0.03022,
+                    "NotdisabledundertheEqualityAct:Haslongtermphysicalormentalhealthconditionbutday-to-dayactivitiesarenotlimited": -0.12767,
+                    "NotdisabledundertheEqualityAct:Nolongtermphysicalormentalhealthconditions": 0.14317
+                }
+            }
+        },
+        "national": {
+            "value": {
+                "2011": {
+                    "Britishonlyidentity": 22598,
+                    "Englishonlyidentity": 93809,
+                    "EnglishandBritishonlyidentity": 921,
+                    "Welshonlyidentity": 47795,
+                    "WelshandBritishonlyidentity": 32784,
+                    "Scottishonlyidentity": 16786,
+                    "ScottishandBritishonlyidentity": 51830,
+                    "NorthernIrishonlyidentity": 8750,
+                    "NorthernIrishandBritishonlyidentity": 70806,
+                    "Cornishonlyidentity": 37963,
+                    "CornishandBritishonlyidentity": 26660,
+                    "AnyothercombinationofUKidentities(UKonly)": 98681,
+                    "Irishonlyidentity": 89496,
+                    "IrishandatleastoneUKidentity": 95842,
+                    "Otheridentityonly": 23179,
+                    "OtheridentityandatleastoneUKidentity": 92220
+                },
+                "2021": {
+                    "Britishonlyidentity": 31244,
+                    "Englishonlyidentity": 64310,
+                    "EnglishandBritishonlyidentity": 587,
+                    "Welshonlyidentity": 70570,
+                    "WelshandBritishonlyidentity": 30577,
+                    "Scottishonlyidentity": 22937,
+                    "ScottishandBritishonlyidentity": 51944,
+                    "NorthernIrishonlyidentity": 13511,
+                    "NorthernIrishandBritishonlyidentity": 53735,
+                    "Cornishonlyidentity": 56010,
+                    "CornishandBritishonlyidentity": 33796,
+                    "AnyothercombinationofUKidentities(UKonly)": 127479,
+                    "Irishonlyidentity": 102785,
+                    "IrishandatleastoneUKidentity": 119309,
+                    "Otheridentityonly": 36301,
+                    "OtheridentityandatleastoneUKidentity": 58614
+                },
+                "change": {
+                    "Britishonlyidentity": 8646,
+                    "Englishonlyidentity": -29499,
+                    "EnglishandBritishonlyidentity": -334,
+                    "Welshonlyidentity": 22775,
+                    "WelshandBritishonlyidentity": -2207,
+                    "Scottishonlyidentity": 6151,
+                    "ScottishandBritishonlyidentity": 114,
+                    "NorthernIrishonlyidentity": 4761,
+                    "NorthernIrishandBritishonlyidentity": -17071,
+                    "Cornishonlyidentity": 18047,
+                    "CornishandBritishonlyidentity": 7136,
+                    "AnyothercombinationofUKidentities(UKonly)": 28798,
+                    "Irishonlyidentity": 13289,
+                    "IrishandatleastoneUKidentity": 23467,
+                    "Otheridentityonly": 13122,
+                    "OtheridentityandatleastoneUKidentity": -33606
+                }
+            },
+            "perc": {
+                "2011": {
+                    "Britishonlyidentity": 0.02789,
+                    "Englishonlyidentity": 0.1158,
+                    "EnglishandBritishonlyidentity": 0.00114,
+                    "Welshonlyidentity": 0.059,
+                    "WelshandBritishonlyidentity": 0.04047,
+                    "Scottishonlyidentity": 0.02072,
+                    "ScottishandBritishonlyidentity": 0.06398,
+                    "NorthernIrishonlyidentity": 0.0108,
+                    "NorthernIrishandBritishonlyidentity": 0.0874,
+                    "Cornishonlyidentity": 0.04686,
+                    "CornishandBritishonlyidentity": 0.03291,
+                    "AnyothercombinationofUKidentities(UKonly)": 0.12181,
+                    "Irishonlyidentity": 0.11047,
+                    "IrishandatleastoneUKidentity": 0.11831,
+                    "Otheridentityonly": 0.02861,
+                    "OtheridentityandatleastoneUKidentity": 0.11383
+                },
+                "2021": {
+                    "Britishonlyidentity": 0.03576,
+                    "Englishonlyidentity": 0.07361,
+                    "EnglishandBritishonlyidentity": 0.00067,
+                    "Welshonlyidentity": 0.08077,
+                    "WelshandBritishonlyidentity": 0.035,
+                    "Scottishonlyidentity": 0.02625,
+                    "ScottishandBritishonlyidentity": 0.05945,
+                    "NorthernIrishonlyidentity": 0.01546,
+                    "NorthernIrishandBritishonlyidentity": 0.0615,
+                    "Cornishonlyidentity": 0.06411,
+                    "CornishandBritishonlyidentity": 0.03868,
+                    "AnyothercombinationofUKidentities(UKonly)": 0.14591,
+                    "Irishonlyidentity": 0.11764,
+                    "IrishandatleastoneUKidentity": 0.13655,
+                    "Otheridentityonly": 0.04155,
+                    "OtheridentityandatleastoneUKidentity": 0.06709
+                },
+                "change": {
+                    "Britishonlyidentity": 0.00787,
+                    "Englishonlyidentity": -0.04219,
+                    "EnglishandBritishonlyidentity": -0.00047,
+                    "Welshonlyidentity": 0.02177,
+                    "WelshandBritishonlyidentity": -0.00547,
+                    "Scottishonlyidentity": 0.00553,
+                    "ScottishandBritishonlyidentity": -0.00453,
+                    "NorthernIrishonlyidentity": 0.00466,
+                    "NorthernIrishandBritishonlyidentity": -0.0259,
+                    "Cornishonlyidentity": 0.01725,
+                    "CornishandBritishonlyidentity": 0.00577,
+                    "AnyothercombinationofUKidentities(UKonly)": 0.0241,
+                    "Irishonlyidentity": 0.00717,
+                    "IrishandatleastoneUKidentity": 0.01824,
+                    "Otheridentityonly": 0.01294,
+                    "OtheridentityandatleastoneUKidentity": -0.04674
+                }
+            }
+        },
+        "welsh": {
+            "value": {
+                "2011": {
+                    "SpeaksWelsh": 85753,
+                    "Doesn'tspeakWelsh": 26822
+                },
+                "2021": {
+                    "SpeaksWelsh": 115919,
+                    "Doesn'tspeakWelsh": 22821
+                },
+                "change": {
+                    "SpeaksWelsh": 30166,
+                    "Doesn'tspeakWelsh": -4001
+                }
+            },
+            "perc": {
+                "2011": {
+                    "SpeaksWelsh": 0.76174,
+                    "Doesn'tspeakWelsh": 0.23826
+                },
+                "2021": {
+                    "SpeaksWelsh": 0.83551,
+                    "Doesn'tspeakWelsh": 0.16449
+                },
+                "change": {
+                    "SpeaksWelsh": 0.07377,
+                    "Doesn'tspeakWelsh": -0.07377
+                }
+            }
+        },
+        "population": {
+            "value": {
+                "2011": {
+                    "Population": 29778
+                },
+                "2021": {
+                    "Population": 18999
+                },
+                "change": {
+                    "Population": -10779
+                }
+            },
+            "perc": {
+                "2011": {
+                    "Population": 1
+                },
+                "2021": {
+                    "Population": 1
+                },
+                "change": {
+                    "Population": 0
+                }
+            }
+        },
+        "density": {
+            "value": {
+                "2011": {
+                    "Density": 68407
+                },
+                "2021": {
+                    "Density": 50283
+                },
+                "change": {
+                    "Density": -18124
+                }
+            },
+            "perc": {
+                "2011": {
+                    "Density": 1
+                },
+                "2021": {
+                    "Density": 1
+                },
+                "change": {
+                    "Density": 0
+                }
+            }
+        },
+        "age10yr": {
+            "value": {
+                "2011": {
+                    "0-9": 40551,
+                    "10-19": 65821,
+                    "20-29": 63840,
+                    "30-39": 45852,
+                    "40-49": 39430,
+                    "50-59": 23673,
+                    "60-69": 7947,
+                    "70-79": 61909,
+                    "80plus": 35020
+                },
+                "2021": {
+                    "0-9": 58864,
+                    "10-19": 80142,
+                    "20-29": 65312,
+                    "30-39": 38159,
+                    "40-49": 24860,
+                    "50-59": 20642,
+                    "60-69": 9863,
+                    "70-79": 97082,
+                    "80plus": 49141
+                },
+                "change": {
+                    "0-9": 18313,
+                    "10-19": 14321,
+                    "20-29": 1472,
+                    "30-39": -7693,
+                    "40-49": -14570,
+                    "50-59": -3031,
+                    "60-69": 1916,
+                    "70-79": 35173,
+                    "80plus": 14121
+                }
+            },
+            "perc": {
+                "2011": {
+                    "0-9": 0.10559,
+                    "10-19": 0.17139,
+                    "20-29": 0.16623,
+                    "30-39": 0.11939,
+                    "40-49": 0.10267,
+                    "50-59": 0.06164,
+                    "60-69": 0.02069,
+                    "70-79": 0.1612,
+                    "80plus": 0.09119
+                },
+                "2021": {
+                    "0-9": 0.13256,
+                    "10-19": 0.18047,
+                    "20-29": 0.14708,
+                    "30-39": 0.08593,
+                    "40-49": 0.05598,
+                    "50-59": 0.04648,
+                    "60-69": 0.02221,
+                    "70-79": 0.21862,
+                    "80plus": 0.11066
+                },
+                "change": {
+                    "0-9": 0.02697,
+                    "10-19": 0.00908,
+                    "20-29": -0.01915,
+                    "30-39": -0.03346,
+                    "40-49": -0.04669,
+                    "50-59": -0.01516,
+                    "60-69": 0.00152,
+                    "70-79": 0.05742,
+                    "80plus": 0.01947
+                }
+            }
+        },
+        "agemed": {
+            "value": {
+                "2011": {
+                    "MedianAge": 31852
+                },
+                "2021": {
+                    "MedianAge": 24002
+                },
+                "change": {
+                    "MedianAge": -7850
+                }
+            },
+            "perc": {
+                "2011": {
+                    "MedianAge": 1
+                },
+                "2021": {
+                    "MedianAge": 1
+                },
+                "change": {
+                    "MedianAge": 0
+                }
+            }
+        }
+    }
+}

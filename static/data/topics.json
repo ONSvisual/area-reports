@@ -5,7 +5,7 @@
         "synonym": "change in national identity of many in {plcname}",
         "profile": "national identity in {plcname} changed substantially",
         "British only identity": {
-            "clausal_modifier": "respondents in {plcname} that identify only as British",
+            "clausal_modifier": "respondents in {plcname} that identify as only British",
             "verb_past": "that identify as only British",
             "verb_past_samp": "identified as British (and no other nationality)",
             "adj_noun": "people who identify as only British",
@@ -17,11 +17,11 @@
                 "buc": "British identity in {plcname}",
                 "sta": "British identity in {plcname}"
             },
-            "sample": "the proportion of people who identify only as British",
-            "adj_noun_s": "people who identify only as British"
+            "sample": "the proportion of people who identify as only British",
+            "adj_noun_s": "people who identify as only British"
         },
         "English only identity": {
-            "clausal_modifier": "respondents in {plcname} that identify only as English",
+            "clausal_modifier": "respondents in {plcname} that identify as only English",
             "verb_past": "that identify as only English",
             "verb_past_samp": "identified as English (and no other nationality)",
             "adj_noun": "people who identify as only English",
@@ -33,11 +33,11 @@
                 "buc": "English identity in {plcname}",
                 "sta": "English identity in {plcname}"
             },
-            "sample": "the proportion of people who identify only as English",
-            "adj_noun_s": "people who identify only as English"
+            "sample": "the proportion of people who identify as only English",
+            "adj_noun_s": "people who identify as only English"
         },
         "Welsh only identity": {
-            "clausal_modifier": "respondents in {plcname} that identify only as Welsh",
+            "clausal_modifier": "respondents in {plcname} that identify as only Welsh",
             "verb_past": "that identify as only Welsh",
             "verb_past_samp": "identified as Welsh (and no other nationality)",
             "adj_noun": "people who identify as only Welsh",
@@ -267,7 +267,7 @@
         },
         "subtitle": "self-reported health",
         "measure": "usual residents",
-        "measure_s": ""
+        "measure_s": "residents"
     },
 
     "ethnicity": {
@@ -354,7 +354,7 @@
         },
         "subtitle": "ethnic group",
         "measure": "usual residents",
-        "measure_s": ""
+        "measure_s": "residents"
     },
 
     "economic": {
@@ -702,7 +702,7 @@
         },
         "subtitle": "religion",
         "measure": "usual residents who answered the voluntary question on religion",
-        "measure_s": ""
+        "measure_s": "residents"
     },
 
     "care": {
@@ -779,7 +779,7 @@
             "label": "No care provided"
         },
         "measure": "usual residents",
-        "measure_s": ""
+        "measure_s": "residents"
     },
 
     "disability": {
@@ -966,7 +966,7 @@
         "synonym": "change in the local population's average age",
         "profile": "{plcname}'s population grew older",
         "measure": "usual residents",
-        "measure_s": "",
+        "measure_s": "residents",
         "0-9": {
             "label": "0-9"
         },

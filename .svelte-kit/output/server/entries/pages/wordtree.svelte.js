@@ -1,4 +1,4 @@
-import { c as create_ssr_component } from "../../chunks/index-128ceddb.js";
+import { c as create_ssr_component } from "../../chunks/index-d26a41fd.js";
 const Wordtree = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   return `<div style="${"width: 80%; margin:auto;"}"><p>Click on a phrase type (e.g. &#39;clausal modifier&#39;) to see the various phrases used across different topics.
 	</p>

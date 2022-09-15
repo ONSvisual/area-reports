@@ -115,7 +115,7 @@ let chains = {
   ],
   'Non-UK identity only': [
     'UK identity and non-UK identity', 'British only identity'
-  ],
+  ]
 }
 
 
@@ -177,17 +177,18 @@ function figs(x, f) {
   if (f!=3) {
     f = 2
   }
-  let sigfig;
-  if (x<1000) {
-    sigfig = Number.parseFloat(Number.parseFloat(x).toPrecision(1))
-  }
-  else {
-    sigfig = Number.parseFloat(Number.parseFloat(x).toPrecision(f))
-  }
-  let text = 'about';
+  let digits = Math.pow(10, f)
+  let rounded = Math.abs( Math.round( x / digits ) * digits );
+  // if (x<1000) {
+  //   sigfig = Number.parseFloat(Number.parseFloat(x).toPrecision(1))
+  // }
+  // else {
+  //   sigfig = Number.parseFloat(Number.parseFloat(x).toPrecision(f))
+  // }
+  let text = 'around';
 
 
-  if ( Math.abs(x) < Math.abs(sigfig) ) {
+  if ( Math.abs(x) < Math.abs(rounded) ) {
     if (Math.round(Math.random())==1) {
       text = "almost "
     } else {
@@ -202,7 +203,7 @@ function figs(x, f) {
     }
   }
 
-  return [text, sigfig];
+  return [text, rounded];
 }
 
 

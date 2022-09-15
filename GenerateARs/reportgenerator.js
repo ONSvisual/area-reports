@@ -88,185 +88,181 @@ const possessive = s => {
 };
 
 const robojournalist = (template, dict) => {
-	// This is based on Douglas Crockford's old json_parse https://github.com/douglascrockford/JSON-js/blob/03157639c7a7cddd2e9f032537f346f1a87c0f6d/json_parse.js
+    // This is based on Douglas Crockford's old json_parse https://github.com/douglascrockford/JSON-js/blob/03157639c7a7cddd2e9f032537f346f1a87c0f6d/json_parse.js
 
-	if (typeof template !== 'string') {
-		throw new TypeError(`Expected a string, got ${typeof template}`);
-	}
+    if (typeof template !== 'string') {
+      throw new TypeError(`Expected a string, got ${typeof template}`);
+    }
 
-	let at = 1;
-	let ch = template.charAt(0);
+    let at = 1;
+    let ch = template.charAt(0);
 
-	const getCh = function () {
-		// Just to keep xo happy
-		return ch;
-	};
+    const getCh = function () {
+      // Just to keep xo happy
+      return ch;
+    };
 
-	const error = function (m) {
-		throw JSON.stringify({
-			name: 'Robo-journalist error',
-			message: m,
-			at,
-			text: template
-		});
-	};
+    const error = function (m) {
+      throw JSON.stringify({
+        name: 'Robo-journalist error',
+        message: m,
+        at,
+        text: template
+      });
+    };
 
-	const next = function (c) {
-		// If a c parameter is provided, verify that it matches the current character.
-		if (c && c !== ch) {
-			error('Expected \'' + c + '\' instead of \'' + ch + '\'');
-		}
+    const next = function (c) {
+      // If a c parameter is provided, verify that it matches the current character.
+      if (c && c !== ch) {
+        error('Expected \'' + c + '\' instead of \'' + ch + '\'');
+      }
 
-		// Get the next character. When there are no more characters,
-		// return the empty string.
-		ch = template.charAt(at);
-		at += 1;
-		return ch;
-	};
+      // Get the next character. When there are no more characters,
+      // return the empty string.
+      ch = template.charAt(at);
+      at += 1;
+      return ch;
+    };
 
-	const getValue = function (key) {
-		const parts = key.split('.');
-		let d = dict;
-		for (const part of parts) {
-			try {
-				d = d[part];
-			} catch {
-				error(`${key} is not in the data dictionary.`);
-			}
-		}
+    const getValue = function (key) {
+      const parts = key.split('.');
+      let d = dict;
+      for (const part of parts) {
+        try {
+          d = d[part];
+        } catch {
+          error(`${key} is not in the data dictionary.`);
+        }
+      }
 
-		return d;
-	};
+      return d;
+    };
 
-	const rpn = function (key) {
-		const tokens = key.split(' ');
-		const binaryOperators = {
-			'+': (a, b) => a + b,
-			'-': (a, b) => a - b,
-			'*': (a, b) => a * b,
-			'/': (a, b) => a / b,
-			'<': (a, b) => a < b,
-			'>': (a, b) => a > b,
-			'<=': (a, b) => a <= b,
-			'>=': (a, b) => a >= b,
-			'===': (a, b) => a === b
-		};
-		const unaryOperators = {
-			'\'': a => possessive(a),
-			',': a => numberWithCommas(a),
-			'.-2': a => (a / 100).toFixed(0) * 100,
-			'.-1': a => (a / 10).toFixed(0) * 10,
-			'.0': a => a.toFixed(0),
-			'.1': a => a.toFixed(1),
-			'.2': a => a.toFixed(2),
-			'~abs': a => Math.abs(a),
-			'~ord': a => ordinal(Number(a)),
-			'~ord\'': a => ordinalExcludingFirst(Number(a)),
-			'~word': a => numberWord(Number(a)),
-			'~aan': a => addAOrAn(a)
-		};
-		const stack = [];
-		for (const token of tokens) {
-			if (/^-?\d+$/.test(token)) {
-				// An integer literal
-				stack.push(Number(token));
-			} else if (token in binaryOperators) {
-				const b = Number(stack.pop());
-				const a = Number(stack.pop());
-				stack.push(binaryOperators[token](a, b));
-			} else if (token in unaryOperators) {
-				const a = stack.pop();
-				stack.push(unaryOperators[token](a));
-			} else if (token.charAt(0) === '^') {
-				stack[stack.length - 1] = getValue(token.slice(1))(stack[stack.length - 1]);
-			} else {
-				stack.push(getValue(token));
-			}
-		}
+    const rpn = function (key) {
+      const tokens = key.split(' ');
+      const binaryOperators = {
+        '+': (a, b) => a + b,
+        '-': (a, b) => a - b,
+        '*': (a, b) => a * b,
+        '/': (a, b) => a / b,
+        '<': (a, b) => a < b,
+        '>': (a, b) => a > b,
+        '<=': (a, b) => a <= b,
+        '>=': (a, b) => a >= b,
+        '===': (a, b) => a === b
+      };
+      const unaryOperators = {
+        '\'': a => possessive(a),
+        ',': a => numberWithCommas(a),
+        '.-2': a => (a / 100).toFixed(0) * 100,
+        '.-1': a => (a / 10).toFixed(0) * 10,
+        '.0': a => a.toFixed(0),
+        '.1': a => a.toFixed(1),
+        '.2': a => a.toFixed(2),
+        '~abs': a => Math.abs(a),
+        '~ord': a => ordinal(Number(a)),
+        '~ord\'': a => ordinalExcludingFirst(Number(a)),
+        '~word': a => numberWord(Number(a)),
+        '~aan': a => addAOrAn(a)
+      };
+      const stack = [];
+      for (const token of tokens) {
+        if (/^-?\d+$/.test(token)) {
+          // An integer literal
+          stack.push(Number(token));
+        } else if (token in binaryOperators) {
+          const b = Number(stack.pop());
+          const a = Number(stack.pop());
+          stack.push(binaryOperators[token](a, b));
+        } else if (token in unaryOperators) {
+          const a = stack.pop();
+          stack.push(unaryOperators[token](a));
+        } else if (token.charAt(0) === '^') {
+          stack[stack.length - 1] = getValue(token.slice(1))(stack[stack.length - 1]);
+        } else {
+          stack.push(getValue(token));
+        }
+      }
 
-		if (stack.length !== 1) {
-			error('Invalid RPN');
-		}
+      if (stack.length !== 1) {
+        error('Invalid RPN');
+      }
 
-		return stack[0];
-	};
+      return stack[0];
+    };
 
-	const eitherOr = function (which) {
-		next('?');
-		const first = parse();
-		next(':');
-		const second = parse();
-		next('}');
-		return which ? first : second;
-	};
+    const eitherOr = function (which) {
+      next('?');
+      const first = parse();
+      next(':');
+      const second = parse();
+      next('}');
+      return which ? first : second;
+    };
 
-	const braced = function () {
-		next('{');
-		if (ch === ':') {
-			// {:} adds a colon to the output
-			next(':');
-			next('}');
-			return ':';
-		}
+    const braced = function () {
+      next('{');
+      if (ch === ':') {
+        // {:} adds a colon to the output
+        next(':');
+        next('}');
+        return ':';
+      }
 
-		if (ch === '?') {
-			// {?} adds a colon to the output
-			next('?');
-			next('}');
-			return '?';
-		}
+      if (ch === '?') {
+        // {?} adds a colon to the output
+        next('?');
+        next('}');
+        return '?';
+      }
 
-		let varName = '';
-		while (getCh()) {
-			if (ch === '}') {
-				next('}');
-				return rpn(varName);
-			}
+      let varName = '';
+      while (getCh()) {
+        if (ch === '}') {
+          next('}');
+          return rpn(varName);
+        }
 
-			if (ch === '?') {
-				return eitherOr(rpn(varName));
-			}
+        if (ch === '?') {
+          return eitherOr(rpn(varName));
+        }
 
-			varName += ch;
-			next();
-		}
+        varName += ch;
+        next();
+      }
 
-		error('Braces not closed');
-	};
+      error('Braces not closed');
+    };
 
-	const parse = function () {
-		let result = '';
-		while (getCh()) {
-			if (ch === ':' || ch === '}') {
-				return result;
-			}
+    const parse = function () {
+      let result = '';
+      while (getCh()) {
+        if (ch === ':' || ch === '}') {
+          return result;
+        }
 
-			if (ch === '{') {
-				result += braced();
-				continue;
-			}
+        if (ch === '{') {
+          result += braced();
+          continue;
+        }
 
-			result += ch;
-			next();
-		}
+        result += ch;
+        next();
+      }
 
-		return result;
-	};
+      return result;
+    };
 
-	const result = parse();
-	if (ch !== '') {
-		error(`Didn't expect '${ch}'`);
-	}
+    const result = parse();
+    if (ch !== '') {
+      error(`Didn't expect '${ch}'`);
+    }
 
-	return result;
+    return result;
 };
 
-
-
 async function getData(url) {
-
     const d3dsv = await import("d3-dsv");
-
     let response = await fetch(url);
     let string = await response.text();
     let data = await d3dsv.csvParse(string, d3dsv.autoType);
@@ -274,49 +270,114 @@ async function getData(url) {
 }
 
   let chains = {
-    'good': ['bad', 'fair'],
-    'bad': ['good', 'fair'],
-    'white': ['black', 'asian'],
-    'black': ['white', 'asian'],
-    'asian': ['white', 'black'],
-    'rented_private': ['rented_social', 'owned'],
-    'rented_social': ['rented_private', 'owned'],
-    'owned': ['rented_private', 'rented_social'],
-    'student': ['employee', 'unemployed', 'self-employed'],
-    'self-employed': ['employee', 'unemployed', 'student'],
-    'employee': ['unemployed', 'self-employed', 'student',],
-    'unemployed': ['employee', 'self-employed', 'student'],
-    'car_van': ['bus', 'train_metro', 'foot', 'home'],
-    'bus': ['car_van', 'train_metro', 'foot', 'home'],
-    'train_metro': ['bus', 'car_van', 'foot', 'home'],
-    'foot': ['bus', 'train_metro', 'car_van', 'home'],
-    'home': ['bus', 'train_metro', 'foot', 'car_van'],
-    'OnePerson': ['Cohabiting', 'Married'],
-    'Cohabiting': ['OnePerson', 'Married'],
-    'LoneParent': ['Married', 'Cohabiting'],
-    'Christian': ['Muslim', 'Noreligion'],
-    'Muslim': ['Christian', 'Noreligion'],
-    'Noreligion': ['Christian', 'Muslim'],
-    'Buddhist': ['Hindu', 'Sikh'],
-    'Hindu': ['Sikh', 'Buddhist'],
-    'Jewish': ['Christian', 'Muslim'],
-    'Sikh': ['Hindu', 'Buddhist'],
-    'Single': ['Married', 'Seperated'],
-    'Married': ['Single', 'Seperated'],
-    'Seperated': ['Married', 'Single'],
-    '40PlushoursWeek': ['20to49hoursWeek'],
-    '20to49hoursWeek': ['40PlushoursWeek'],
-    'Kids': ['NoKids', 'NonDepKids'],
-    'NoKids': ['Kids', 'NonDepKids'],
-    'NonDepKids': ['Kids', 'NoKids'],
-    'Male1-15': ['Male49plus'],
-    'Male49plus': ['Male1-15'],
-    'Female1-15': ['Female49plus'],
-    'Female49plus': ['Female1-15'],
-    'notDisabled': ['lot', 'little'],
-    'lot': ['little', 'notDisabled'],
-    'little': ['lot', 'notDisabled'],
-  }
+    'Very good or good health': [
+      'Very bad or bad health', 'Fair health'
+    ],
+    'Very bad or bad health': [
+      'Very good or good health', 'Fair health'
+    ],
+  
+    'White': [
+      'Black, Black British, Black Welsh, Caribbean or African', 'Asian, Asian British or Asian Welsh'
+    ],
+    'Black, Black British, Black Welsh, Caribbean or African': [
+      'White', 'Asian, Asian British or Asian Welsh'
+    ],
+    'Asian, Asian British or Asian Welsh': [
+      'White', 'Black, Black British, Black Welsh, Caribbean or African'
+    ],
+  
+    'Private rented': [
+      'Rented from council or Local Authority', 'Owns outright or with a mortgage or loan'
+    ],
+    'Rented from council or Local Authority': [
+      'Private rented', 'Owns outright or with a mortgage or loan'
+    ],
+    'Owns outright or with a mortgage or loan': [
+      'Private rented', 'Rented from council or Local Authority'
+    ],
+  
+    'Economically inactive and a full-time student': [
+      'Economically active and a full-time student: In employment', 'Economically active and a full-time student: Unemployed', 'Economically inactive (excluding full-time students)'
+    ],
+    'Economically inactive (excluding full-time students)': [
+      'Economically active (excluding full-time students): In employment', 'Economically active (excluding full-time students): Unemployed', 'Economically inactive and a full-time student'
+    ],
+    'Economically active (excluding full-time students): In employment': [
+      'Economically active (excluding full-time students): Unemployed', 'Economically inactive (excluding full-time students)', 'Economically inactive and a full-time student'
+    ],
+    'Economically active (excluding full-time students): Unemployed': [
+      'Economically active (excluding full-time students): In employment', 'Economically inactive (excluding full-time students)', 'Economically inactive and a full-time student'
+    ],
+  
+    'Single family household: Married or civil partnership couple: No children': [
+      'Single family household: Cohabiting couple family : No children', 'Single family household: Married or civil partnership couple: Dependent children'
+    ],
+    'Single family household: Cohabiting couple family : No children': [
+      'Single family household: Married or civil partnership couple: No children', 'Single family household: Cohabiting couple family : With dependent children'
+    ],
+    'Single family household: Married or civil partnership couple: Dependent children': [
+      'Single family household: Cohabiting couple family : With dependent children', 'Single family household: Married or civil partnership couple: No children'
+    ],
+    'Single family household: Cohabiting couple family : With dependent children': ['Single family household: Married or civil partnership couple: Dependent children', 'Single family household: Cohabiting couple family : No children'
+    ],
+    'Single family household: Lone parent family : With dependent children': [
+      'Single family household: Married or civil partnership couple: Dependent children', 'Single family household: Cohabiting couple family : With dependent children'
+    ],
+  
+    'Never married and never registered a civil partnership': [
+      'Married or in a registered civil partnership', 'Divorced or civil partnership dissolved'
+    ],
+    'Married or in a registered civil partnership': [
+      'Never married and never registered a civil partnership', 'Divorced or civil partnership dissolved'
+    ],
+    'Divorced or civil partnership dissolved': [
+      'Married or in a registered civil partnership', 'Never married and never registered a civil partnership'
+    ],
+  
+    'Provides 50 or more hours unpaid care a week': [
+      'Provides 20 to 49 hours unpaid care a week', 'Provides no unpaid care'
+    ],
+    'Provides 20 to 49 hours unpaid care a week': [
+      'Provides 50 or more hours unpaid care a week', 'Provides no unpaid care'
+    ],
+    'Provides 19 or less hours unpaid care a week': [
+      'Provides 20 to 49 hours unpaid care a week', 'Provides 50 or more hours unpaid care a week'
+    ],
+  
+    'Part-time: 15 hours or less worked': [
+      'Full-time: 49 or more hours worked', 'Full-time: 31 to 48 hours worked'
+    ],
+    'Full-time: 49 or more hours worked': [
+      'Part-time: 15 hours or less worked', 'Full-time: 31 to 48 hours worked'
+    ],
+  
+    'Disabled under the Equality Act': [
+      'Not disabled under the Equality Act'
+    ],
+    'Not disabled under the Equality Act': [
+      'Disabled under the Equality Act'
+    ],
+  
+    'British only identity': [
+      'English only identity', 'English and British only identity'
+    ],
+    'Welsh only identity': [
+      'Welsh and British only identity', 'British only identity'
+    ],
+    'Welsh and British only identity': [
+      'Welsh only identity', 'British only identity'
+    ],
+    'English only identity': [
+      'English and British only identity', 'British only identity'
+    ],
+    'English and British only identity': [
+      'English only identity', 'British only identity'
+    ],
+    'Non-UK identity only': [
+      'UK identity and non-UK identity', 'British only identity'
+    ]
+}
   
   let array = ['South East', 'South West', 'West Midlands', 'East Midlands', 'North East', 'North West']
   function regionThe(place, nt) {
@@ -647,7 +708,7 @@ async function load() {
         let topics_raw = fs.readFileSync( `/Users/theojolliffe/Documents/area-reports/static/data/topics.json` )
         let topics = JSON.parse(topics_raw);
     
-        let place_raw = fs.readFileSync(`/Users/theojolliffe/Documents/area-reports/static/data/json/place/${id}.json`);
+        let place_raw = fs.readFileSync(`/Users/theojolliffe/Documents/area-reports/static/data/json_new/place/${id}.json`);
         let place = JSON.parse(place_raw);
         console.log('place.name', place.name)
         let s = place.stories.map(d => d.label.split("_"))
@@ -657,12 +718,12 @@ async function load() {
             e.pop()
         }
         });
-        let rgncd = place.parents[0].code
-        let rgn_raw = fs.readFileSync(`/Users/theojolliffe/Documents/area-reports/static/data/json/place/${rgncd}.json`);
+        let rgncd = place.parent.code
+        let rgn_raw = fs.readFileSync(`/Users/theojolliffe/Documents/area-reports/static/data/json_new/place/${rgncd}.json`);
         let rgn = JSON.parse(rgn_raw);
-        let eng_raw = fs.readFileSync(`/Users/theojolliffe/Documents/area-reports/static/data/json/place/E92000001.json`);
+        let eng_raw = fs.readFileSync(`/Users/theojolliffe/Documents/area-reports/static/data/json_new/place/E92000001.json`);
         let eng = JSON.parse(eng_raw);
-        let wal_raw = fs.readFileSync(`/Users/theojolliffe/Documents/area-reports/static/data/json/place/W92000004.json`);
+        let wal_raw = fs.readFileSync(`/Users/theojolliffe/Documents/area-reports/static/data/json_new/place/W92000004.json`);
         let wal = JSON.parse(wal_raw);
     
         var health, expand, cou, props;
@@ -749,7 +810,7 @@ async function load() {
                 }
             });
     
-        cou = place.parents[0].name=="Wales"?wal:eng
+        cou = place.parent.name=="Wales"?wal:eng
     
     
         let arearep = rosaenlgPug.renderFile('/Users/theojolliffe/Documents/area-reports/static/template.pug', {
@@ -762,8 +823,8 @@ async function load() {
             rgn: rgn,
             uncap1: uncap1,
             regionThe: regionThe,
-            parent: uncap1(regionThe(place.parents[0].name)),
-            parentNT: uncap1(regionThe(place.parents[0].name, "NT")),
+            parent: uncap1(regionThe(place.parent.name)),
+            parentNT: uncap1(regionThe(place.parent.name, "NT")),
             s: s,
             sf: sf,
             stories: place.stories,
@@ -777,7 +838,7 @@ async function load() {
             topic: topic,
             topics: o,
             chains: chains,
-            country: place.parents[0].name=="Wales"?"Wales":"England",
+            country: place.parent.name=="Wales"?"Wales":"England",
             get_word: get_word,
             figs: figs,
             otherEst: otherEst,
@@ -794,7 +855,7 @@ async function load() {
             nuword: nuword,
             sign: sign,
             udord: udord, 
-            near: place.nearbyArea.nearTops,
+            near: place.near,
             simi: place.similar,
             adv: adv,
             uds: uds,
