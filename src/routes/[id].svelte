@@ -20,10 +20,10 @@
 	let topics_raw = await fetch(`${assets}/data/topics.json`);
     let topics = await topics_raw.json();
 
-    let place_raw = await fetch(`${assets}/data/json/place/${id}.json`);
+    // let place_raw = await fetch(`${assets}/data/json/place/${id}.json`);
 	let place_raw_new = await fetch(`${assets}/data/json_new/place/${id}.json`);
 
-    let place = await place_raw.json();
+    // let place = await place_raw.json();
 	let place_new = await place_raw_new.json();
 
     let s = place_new.stories.map(d => d.label.split("_"))
@@ -35,25 +35,61 @@
     });
     let rgncd = place_new.parent.code
 	// let rgncd = place.parents[0].code
-    let rgn_raw = await fetch(`${assets}/data/json/place/${rgncd}.json`);
+    // let rgn_raw = await fetch(`${assets}/data/json/place/${rgncd}.json`);
     let rgn_raw_new = await fetch(`${assets}/data/json_new/place/${rgncd}.json`);
-    let rgn = await rgn_raw.json();
+    // let rgn = await rgn_raw.json();
 	let rgn_new = await rgn_raw_new.json();
     let eng_raw = await fetch(`${assets}/data/json_new/place/E92000001.json`);
     let eng = await eng_raw.json();
     let wal_raw = await fetch(`${assets}/data/json_new/place/W92000004.json`);
     let wal = await wal_raw.json();
 
-	let cou = place.parents[0].name=="Wales"?wal:eng
+	let cou = place_new.parent.name=="Wales"?wal:eng
 
 	let ladData_raw = await fetch("https://raw.githubusercontent.com/theojolliffe/census-data/main/laddata.csv");
   	let ladData_string = await ladData_raw.text();
 	let ladData = await csvParse(ladData_string, autoType);
 
-    return {
-			props: { options, topics, place, place_new, rgn, rgn_new, eng, wal, s, template, cou, ladData }
-		}
+
+
+	// TIM
+
+	//Establish what country we're in
+	let countryCd = id[0] == "E" ? "E92000001" : "W92000004";
+
+	//Get data for England and Wales
+	let ew_raw_new = await fetch(
+		`${assets}/data/json_new/place/K04000001.json`
+	);
+	let ewJson = await ew_raw_new.json();
+
+	let place = place_new.data
+	let region = rgn_new.data
+	let country = cou.data
+	let ew = ewJson.data
+
+	let placeJson = place_new
+	let regionJson = rgn_new
+	let countryJson = cou
+
+	let placeNm = placeJson.name;
+	let regionNm = regionJson.name;
+	let countryNm = countryJson.name;
+
+	// let 
+
+
+	// TIM
+
+
+
+	if (ewJson)
+		return {
+				props: { options, topics, place_new, rgn_new, eng, wal, s, template, cou, ladData, ewJson, place, region, country, ew, placeNm, regionNm, countryNm, placeJson, regionJson, countryJson }
+			}
 	}
+
+
 </script>
 
 
@@ -64,11 +100,11 @@
 	import { csvParse, autoType } from 'd3-dsv';
   
 	import Titleblock from "$lib/layout/Titleblock.svelte";
-	  import Headline from "$lib/layout/partial/Headline.svelte";
-	  import Section from "$lib/layout/Section.svelte";
-	  import Article from "$lib/layout/Article.svelte";
-	  import Figure from "$lib/layout/partial/Figure.svelte";
-	  import Linkbox from "$lib/layout/Linkbox.svelte";
+	import Headline from "$lib/layout/partial/Headline.svelte";
+	import Section from "$lib/layout/Section.svelte";
+	import Article from "$lib/layout/Article.svelte";
+	import Figure from "$lib/layout/partial/Figure.svelte";
+	import Linkbox from "$lib/layout/Linkbox.svelte";
 	import Select from "$lib/ui/Select.svelte";
   
 	  // // import { ScatterChart } from './@onsvisual/svelte-charts';
@@ -84,20 +120,20 @@
 	export let options;
 	export let topics;
 	export let template;
-	export let place;
 	export let place_new;
 	export let s;
-	export let rgn;
+	// export let rgn;
 	export let rgn_new;
 	export let eng;
-	export let wal;
+	export let wal, ewJson;
 	// export let prodResults;
 	export let cou;
 	export let ladData;
+	export let place, region, country, ew, placeNm, regionNm, countryNm, placeJson, regionJson, countryJson;
 
 
 	$: console.log('place_new', place_new)
-	$: console.log('rgn', rgn)
+	$: console.log('rgn', rgn_new)
 	$: console.log('cou', cou)
   
 	var health, expand, props;
@@ -106,19 +142,19 @@
 
 
   // Define the word to describe population change in standfirst
-  if (place.data.population.value.change.all>8) {
+  if (place_new.data.population.value.change.all>8) {
     expand = "expanded"
-  } else if (place.data.population.value.change.all>3) {
+  } else if (place_new.data.population.value.change.all>3) {
     expand = "grew"
-  } else if (place.data.population.value.change.all>0) {
+  } else if (place_new.data.population.value.change.all>0) {
     expand = "did not change much"
   } else {
     expand = "shrunk"
   } 
   // Define the word to describe health change in standfirst
-  if (place.data.health.perc.change.good>0) {
+  if (place_new.data.health.perc.change.good>0) {
     health = "improved"
-  } else if (place.data.health.perc.change.good<0) {
+  } else if (place_new.data.health.perc.change.good<0) {
     health = "deteriorated"
   }
 
@@ -180,9 +216,9 @@
 		})
 	}
 
-	function results(place, rgn, topicsIn) {
+	function results(place_new, rgn, topicsIn) {
 		var o = JSON.parse(JSON.stringify(topicsIn));
-		iterate(o, place.name)
+		iterate(o, place_new.name)
 
 		function topic(i, top) {
 			
@@ -197,7 +233,7 @@
 
 		let sf = []
 		let changeMag = 0
-		place.stories.forEach(e => {
+		place_new.stories.forEach(e => {
 			if ((sf.length<4)&(Math.abs(e['value'])>3)) {
 				sf.push(e['label'].split("_"))
 				changeMag = changeMag+Math.abs(e['value'])
@@ -212,8 +248,8 @@
 			rgn: rgn_new,
 			uncap1: uncap1,
 			regionThe: regionThe,
-			parent: uncap1(regionThe(place.parent.name)),
-			parentNT: uncap1(regionThe(place.parent.name, "NT")),
+			parent: uncap1(regionThe(place_new.parent.name)),
+			parentNT: uncap1(regionThe(place_new.parent.name, "NT")),
 			s: s,
 			sf: sf,
 			stories: place_new.stories,
@@ -221,7 +257,7 @@
 			topic: topic,
 			topics: o,
 			chains: chains,
-			country: place.parent.name=="Wales"?"Wales":"England",
+			country: place_new.parent.name=="Wales"?"Wales":"England",
 			get_word: get_word,
 			figs: figs,
 			otherEst: otherEst,
@@ -256,17 +292,46 @@
 		more = !more
 		results = results
 	}
+
+
+
+	// TIM
+
+
+	import Table from "./Table.svelte"; //This is where the tables get generated
+
+	//to provide the correct wording for subtitles
+		const subTitles = {
+		"care":['Proportion of residents of','providing unpaid care'],
+		"religion":['Proportion of residents of','identifying with a religion'],
+		"ethnicity":['Proportion of residents of','by ethnicity'],
+		"health":['Proportion of residents of','in different states of health'],
+		"economic":['Proportion of residents of','by economic activity'],
+		"household":['Proportion of households in','of different compositions'],
+		"marital":['Proportion of residents of','by marital status'],
+		"hours":['Number of hours worked by residents of',''],
+		"tenure":['Tenure of households in',''],
+		"disability":['Proportion of residents of','who are regiseterd disbled'],
+		"national":['Proportion of residents of','by the nationality they most identify with'],
+		"welsh":['Proportion of residents of','who can speak Welsh'],
+		"age10yr":['Proportion of residents of','of different age groups'],
+		"cob":['The top five countries of birth of residents of',''],
+	};
+
+	console.log('region', region['care'].perc)
+
+	// TIM
+
+
 </script>
 
 <svelte:head>
-	<title>{place.name}</title>
-	<meta property="og:title" content="{place.name}" />
+	<title>{place_new.name}</title>
+	<meta property="og:title" content="{place_new.name}" />
 	<meta property="og:description" content="This is a description of the page." />
 	<meta name="description" content="This is a description of the page." />
 	<script src="https://unpkg.com/rosaenlg@3.0.1/dist/rollup/rosaenlg_tiny_en_US_3.0.1_comp.js" on:load="{onRosaeNlgLoad()}"></script>
 </svelte:head>
-
-
 
 <!-- TBA TBA TBA -->
 <div class="promo__background--plum-gradient">
@@ -285,7 +350,7 @@
 <Titleblock
   background="none"
   >
-	<Headline>How life has changed in {place.name}</Headline>
+	<Headline>How life has changed in {place_new.name}: Census 2021</Headline>
 	<div style="height: 20px;"></div>
 	<Select items={options} mode="search" idKey="code" labelKey="name" placeholder="Find another area" on:select={gotoPlace} autoClear/>
 </Titleblock>
@@ -296,11 +361,73 @@
 
 	<!-- {#if !production} -->
 		{#if loaded}
-			{#each results(place_new, rgn, topics) as res, i (i)}
+			{#each results(place_new, rgn_new, topics) as res, i (i)}
 				{@html res}
-				<div style="width: 100%; height: 200px; background: lightgrey; padding: 20px">
-					<h4>CHART PLACEHOLDER</h4>
-				</div>
+
+				{#if true}
+
+					{#if !( ['population', 'agemed'].includes( (place_new['stories'][i]['label'].split("_")[0])) ) }
+
+					<div class="container">
+						<Table
+							rows={{
+								topic: place_new['stories'][i]['label'].split("_")[0],
+								title: place_new['stories'][i]['label'].split("_")[0],
+								keys: Object.keys(place[place_new['stories'][i]['label'].split("_")[0]].perc["2011"]),
+								here11: Object.values(place[place_new['stories'][i]['label'].split("_")[0]].perc["2011"]),
+								region11: Object.values(region[place_new['stories'][i]['label'].split("_")[0]].perc["2011"]),
+								country11: Object.values(country[place_new['stories'][i]['label'].split("_")[0]].perc["2011"]),
+								ew11: Object.values(ew[place_new['stories'][i]['label'].split("_")[0]].perc["2011"]),
+								here21: Object.values(place[place_new['stories'][i]['label'].split("_")[0]].perc["2021"]),
+								region21: Object.values(region[place_new['stories'][i]['label'].split("_")[0]].perc["2021"]),
+								country21: Object.values(country[place_new['stories'][i]['label'].split("_")[0]].perc["2021"]),
+								ew21: Object.values(ew[place_new['stories'][i]['label'].split("_")[0]].perc["2021"]),
+								hereC: Object.values(place[place_new['stories'][i]['label'].split("_")[0]].perc.change),
+								regionC: Object.values(region[place_new['stories'][i]['label'].split("_")[0]].perc.change),
+								countryC: Object.values(country[place_new['stories'][i]['label'].split("_")[0]].perc.change),
+								ewC: Object.values(ew[place_new['stories'][i]['label'].split("_")[0]].perc.change),
+								placeNm: placeNm,
+								regionNm: regionNm,
+								countryNm: countryNm,
+								subTitles: subTitles
+							}}
+						/>
+					</div>
+					<br /><br /><br />
+
+					{:else if ( ['agemed'].includes( (place_new['stories'][i]['label'].split("_")[0])) ) }
+
+					<div class="container">
+						<Table
+							rows={{
+								topic: 'age10yr',
+								title: 'age10yr',
+								keys: Object.keys(place['age10yr'].perc["2011"]),
+								here11: Object.values(place['age10yr'].perc["2011"]),
+								region11: Object.values(region['age10yr'].perc["2011"]),
+								country11: Object.values(country['age10yr'].perc["2011"]),
+								ew11: Object.values(ew['age10yr'].perc["2011"]),
+								here21: Object.values(place['age10yr'].perc["2021"]),
+								region21: Object.values(region['age10yr'].perc["2021"]),
+								country21: Object.values(country['age10yr'].perc["2021"]),
+								ew21: Object.values(ew['age10yr'].perc["2021"]),
+								hereC: Object.values(place['age10yr'].perc.change),
+								regionC: Object.values(region['age10yr'].perc.change),
+								countryC: Object.values(country['age10yr'].perc.change),
+								ewC: Object.values(ew['age10yr'].perc.change),
+								placeNm: placeNm,
+								regionNm: regionNm,
+								countryNm: countryNm,
+								subTitles: subTitles
+							}}
+						/>
+					</div>
+					<br /><br /><br />
+
+					{:else}
+					<img src="/map_images/E06000026.png" alt={ placeNm }/>
+					{/if}
+				{/if}
 			{/each}
 		{/if}
 	<!-- {:else}
@@ -312,7 +439,7 @@
 		{/each}
 	{/if} -->
 
-    {#if place.stories.length>6}
+    {#if place_new.stories.length>6}
     <button on:click={readMore}>
       <div class="triangle-container">
         <svg height="25" width="50">
@@ -379,4 +506,7 @@ h2 {
     font-weight: 700;
     line-height: 40px;
 }
+.container {
+		max-width: 800px; /*this can be adjusted to the graphic style of the page*/
+	}
 </style>

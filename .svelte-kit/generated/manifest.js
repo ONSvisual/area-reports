@@ -3,6 +3,7 @@ const c = [
 	() => import("../runtime/components/error.svelte"),
 	() => import("../../src/routes/index.svelte"),
 	() => import("../../src/routes/wordtree.svelte"),
+	() => import("../../src/routes/Table.svelte"),
 	() => import("../../src/routes/[id].svelte")
 ];
 
@@ -15,8 +16,11 @@ export const routes = [
 	// src/routes/wordtree.svelte
 	[/^\/wordtree\/?$/, [c[0], c[3]], [c[1]]],
 
+	// src/routes/Table.svelte
+	[/^\/Table\/?$/, [c[0], c[4]], [c[1]]],
+
 	// src/routes/[id].svelte
-	[/^\/([^/]+?)\/?$/, [c[0], c[4]], [c[1]], (m) => ({ id: d(m[1])})]
+	[/^\/([^/]+?)\/?$/, [c[0], c[5]], [c[1]], (m) => ({ id: d(m[1])})]
 ];
 
 // we import the root layout/error components eagerly, so that
