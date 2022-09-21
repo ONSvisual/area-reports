@@ -45,11 +45,26 @@
     let wal = await wal_raw.json();
 
 	let cou = place_new.parent.name=="Wales"?wal:eng
-
+/*
 	let ladData_raw = await fetch("https://raw.githubusercontent.com/theojolliffe/census-data/main/laddata.csv");
   	let ladData_string = await ladData_raw.text();
-	let ladData = await csvParse(ladData_string, autoType);
+	let ladData = await csvParse(ladData_string, autoType);*/
 
+	var regionLU = {};
+	// Data load functions
+	let raw_region = await fetch(`${assets}/data/csv/CorrespondingLocalAuthoritiesTable1.csv`)
+  	let string_region = await raw_region.text();
+	let data_region = csvParse(string_region, autoType).forEach(d => {
+			regionLU[d['Name']] = d['Region/Country'];
+		});
+
+	var countyLU = {};
+	// Data load functions
+	let raw_county = await fetch(`${assets}/data/csv/Local_Authority_District_to_County_(April_2021)_Lookup_in_England.csv.csv`)
+  	let string_county = await raw_county.text();
+	let data_county = csvParse(string_county, autoType).forEach(d => {
+			countyLU[d['LAD21NM']] = d['CTY21NM'];
+		});
 
 
 	// TIM
@@ -85,7 +100,7 @@
 
 	if (ewJson)
 		return {
-				props: { options, topics, place_new, rgn_new, eng, wal, s, template, cou, ladData, ewJson, place, region, country, ew, placeNm, regionNm, countryNm, placeJson, regionJson, countryJson }
+				props: { regionLU, countyLU, options, topics, place_new, rgn_new, eng, wal, s, template, cou, /*ladData,*/ ewJson, place, region, country, ew, placeNm, regionNm, countryNm, placeJson, regionJson, countryJson }
 			}
 	}
 
@@ -128,8 +143,8 @@
 	export let wal, ewJson;
 	// export let prodResults;
 	export let cou;
-	export let ladData;
-	export let place, region, country, ew, placeNm, regionNm, countryNm, placeJson, regionJson, countryJson;
+	//export let ladData; //OMITTED DUE TO NO USE
+	export let place, region, country, ew, placeNm, regionNm, countryNm, placeJson, regionJson, countryJson, regionLU, countyLU;
 
 
 	$: console.log('place_new', place_new)
@@ -158,21 +173,6 @@
     health = "deteriorated"
   }
 
-	var regionLU = {};
-	// Data load functions
-	getData("https://raw.githubusercontent.com/theojolliffe/census-data/main/csv/lists/Corresponding%20Local%20Authorities-Table%201.csv").then(res => {
-		res.forEach(d => {
-			regionLU[d['Name']] = d['Region/Country'];
-		});
-	});
-
-	var countyLU = {};
-	// Data load functions
-	getData("https://raw.githubusercontent.com/theojolliffe/census-data/main/csv/lists/Local_Authority_District_to_County_(April_2021)_Lookup_in_England.csv").then(res => {
-		res.forEach(d => {
-			countyLU[d['LAD21NM']] = d['CTY21NM'];
-		});
-	});
 
 
   const findOne = (haystack, arr) => {
