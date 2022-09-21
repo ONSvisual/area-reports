@@ -298,7 +298,7 @@
 	// TIM
 
 
-	import Table from "./Table.svelte"; //This is where the tables get generated
+	import Table from "$lib/Table.svelte"; //This is where the tables get generated
 
 	//to provide the correct wording for subtitles
 		const subTitles = {

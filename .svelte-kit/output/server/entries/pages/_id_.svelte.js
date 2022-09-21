@@ -339,9 +339,10 @@ var AxisX_svelte_svelte_type_style_lang = "";
 var AxisY_svelte_svelte_type_style_lang = "";
 var Legend_svelte_svelte_type_style_lang = "";
 var DotPlotChart_svelte_svelte_type_style_lang = "";
+var Table_svelte_svelte_type_style_lang = "";
 var _id__svelte_svelte_type_style_lang = "";
 const css = {
-  code: ".triangle.svelte-17aqbsc{fill:transparent;stroke:#206095;stroke-width:3;transition:all 0.8s ease-in-out}.triangle-container.svelte-17aqbsc{float:left}button.svelte-17aqbsc{color:#206095;background-color:transparent;outline:transparent;border:none;text-decoration:underline;font-weight:700;font-size:18px;margin-top:60px;cursor:pointer}button.svelte-17aqbsc:active{background-color:transparent}",
+  code: ".triangle.svelte-185vr89{fill:transparent;stroke:#206095;stroke-width:3;transition:all 0.8s ease-in-out}.triangle-container.svelte-185vr89{float:left}button.svelte-185vr89{color:#206095;background-color:transparent;outline:transparent;border:none;text-decoration:underline;font-weight:700;font-size:18px;margin-top:60px;cursor:pointer}button.svelte-185vr89:active{background-color:transparent}.container.svelte-185vr89{max-width:800px}",
   map: null
 };
 async function load({ params, fetch }) {
@@ -354,9 +355,7 @@ async function load({ params, fetch }) {
   let template = await template_raw.text();
   let topics_raw = await fetch(`${assets}/data/topics.json`);
   let topics = await topics_raw.json();
-  let place_raw = await fetch(`${assets}/data/json/place/${id}.json`);
   let place_raw_new = await fetch(`${assets}/data/json_new/place/${id}.json`);
-  let place = await place_raw.json();
   let place_new = await place_raw_new.json();
   let s = place_new.stories.map((d) => d.label.split("_"));
   s.forEach((e) => {
@@ -366,60 +365,80 @@ async function load({ params, fetch }) {
     }
   });
   let rgncd = place_new.parent.code;
-  let rgn_raw = await fetch(`${assets}/data/json/place/${rgncd}.json`);
   let rgn_raw_new = await fetch(`${assets}/data/json_new/place/${rgncd}.json`);
-  let rgn = await rgn_raw.json();
   let rgn_new = await rgn_raw_new.json();
   let eng_raw = await fetch(`${assets}/data/json_new/place/E92000001.json`);
   let eng = await eng_raw.json();
   let wal_raw = await fetch(`${assets}/data/json_new/place/W92000004.json`);
   let wal = await wal_raw.json();
-  let cou = place.parents[0].name == "Wales" ? wal : eng;
+  let cou = place_new.parent.name == "Wales" ? wal : eng;
   let ladData_raw = await fetch("https://raw.githubusercontent.com/theojolliffe/census-data/main/laddata.csv");
   let ladData_string = await ladData_raw.text();
   let ladData = await csvParse(ladData_string, autoType);
-  return {
-    props: {
-      options,
-      topics,
-      place,
-      place_new,
-      rgn,
-      rgn_new,
-      eng,
-      wal,
-      s,
-      template,
-      cou,
-      ladData
-    }
-  };
+  id[0] == "E" ? "E92000001" : "W92000004";
+  let ew_raw_new = await fetch(`${assets}/data/json_new/place/K04000001.json`);
+  let ewJson = await ew_raw_new.json();
+  let place = place_new.data;
+  let region = rgn_new.data;
+  let country = cou.data;
+  let ew = ewJson.data;
+  let placeJson = place_new;
+  let regionJson = rgn_new;
+  let countryJson = cou;
+  let placeNm = placeJson.name;
+  let regionNm = regionJson.name;
+  let countryNm = countryJson.name;
+  if (ewJson)
+    return {
+      props: {
+        options,
+        topics,
+        place_new,
+        rgn_new,
+        eng,
+        wal,
+        s,
+        template,
+        cou,
+        ladData,
+        ewJson,
+        place,
+        region,
+        country,
+        ew,
+        placeNm,
+        regionNm,
+        countryNm,
+        placeJson,
+        regionJson,
+        countryJson
+      }
+    };
 }
 const U5Bidu5D = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let { options } = $$props;
   let { topics } = $$props;
   let { template } = $$props;
-  let { place } = $$props;
   let { place_new } = $$props;
   let { s } = $$props;
-  let { rgn } = $$props;
   let { rgn_new } = $$props;
   let { eng } = $$props;
-  let { wal } = $$props;
+  let { wal, ewJson } = $$props;
   let { cou } = $$props;
   let { ladData } = $$props;
+  let { place, region, country, ew, placeNm, regionNm, countryNm, placeJson, regionJson, countryJson } = $$props;
   process.env.NODE_ENV === "production";
-  if (place.data.population.value.change.all > 8)
+  if (place_new.data.population.value.change.all > 8)
     ;
-  else if (place.data.population.value.change.all > 3)
+  else if (place_new.data.population.value.change.all > 3)
     ;
-  else if (place.data.population.value.change.all > 0)
+  else if (place_new.data.population.value.change.all > 0)
     ;
   else
     ;
-  if (place.data.health.perc.change.good > 0)
+  if (place_new.data.health.perc.change.good > 0)
     ;
-  else if (place.data.health.perc.change.good < 0)
+  else if (place_new.data.health.perc.change.good < 0)
     ;
   var regionLU = {};
   getData("https://raw.githubusercontent.com/theojolliffe/census-data/main/csv/lists/Corresponding%20Local%20Authorities-Table%201.csv").then((res) => {
@@ -433,43 +452,60 @@ const U5Bidu5D = create_ssr_component(($$result, $$props, $$bindings, slots) => 
       countyLU[d["LAD21NM"]] = d["CTY21NM"];
     });
   });
+  console.log("region", region["care"].perc);
   if ($$props.options === void 0 && $$bindings.options && options !== void 0)
     $$bindings.options(options);
   if ($$props.topics === void 0 && $$bindings.topics && topics !== void 0)
     $$bindings.topics(topics);
   if ($$props.template === void 0 && $$bindings.template && template !== void 0)
     $$bindings.template(template);
-  if ($$props.place === void 0 && $$bindings.place && place !== void 0)
-    $$bindings.place(place);
   if ($$props.place_new === void 0 && $$bindings.place_new && place_new !== void 0)
     $$bindings.place_new(place_new);
   if ($$props.s === void 0 && $$bindings.s && s !== void 0)
     $$bindings.s(s);
-  if ($$props.rgn === void 0 && $$bindings.rgn && rgn !== void 0)
-    $$bindings.rgn(rgn);
   if ($$props.rgn_new === void 0 && $$bindings.rgn_new && rgn_new !== void 0)
     $$bindings.rgn_new(rgn_new);
   if ($$props.eng === void 0 && $$bindings.eng && eng !== void 0)
     $$bindings.eng(eng);
   if ($$props.wal === void 0 && $$bindings.wal && wal !== void 0)
     $$bindings.wal(wal);
+  if ($$props.ewJson === void 0 && $$bindings.ewJson && ewJson !== void 0)
+    $$bindings.ewJson(ewJson);
   if ($$props.cou === void 0 && $$bindings.cou && cou !== void 0)
     $$bindings.cou(cou);
   if ($$props.ladData === void 0 && $$bindings.ladData && ladData !== void 0)
     $$bindings.ladData(ladData);
+  if ($$props.place === void 0 && $$bindings.place && place !== void 0)
+    $$bindings.place(place);
+  if ($$props.region === void 0 && $$bindings.region && region !== void 0)
+    $$bindings.region(region);
+  if ($$props.country === void 0 && $$bindings.country && country !== void 0)
+    $$bindings.country(country);
+  if ($$props.ew === void 0 && $$bindings.ew && ew !== void 0)
+    $$bindings.ew(ew);
+  if ($$props.placeNm === void 0 && $$bindings.placeNm && placeNm !== void 0)
+    $$bindings.placeNm(placeNm);
+  if ($$props.regionNm === void 0 && $$bindings.regionNm && regionNm !== void 0)
+    $$bindings.regionNm(regionNm);
+  if ($$props.countryNm === void 0 && $$bindings.countryNm && countryNm !== void 0)
+    $$bindings.countryNm(countryNm);
+  if ($$props.placeJson === void 0 && $$bindings.placeJson && placeJson !== void 0)
+    $$bindings.placeJson(placeJson);
+  if ($$props.regionJson === void 0 && $$bindings.regionJson && regionJson !== void 0)
+    $$bindings.regionJson(regionJson);
+  if ($$props.countryJson === void 0 && $$bindings.countryJson && countryJson !== void 0)
+    $$bindings.countryJson(countryJson);
   $$result.css.add(css);
   {
     console.log("place_new", place_new);
   }
   {
-    console.log("rgn", rgn);
+    console.log("rgn", rgn_new);
   }
   {
     console.log("cou", cou);
   }
-  return `${$$result.head += `${$$result.title = `<title>${escape(place.name)}</title>`, ""}<meta property="${"og:title"}"${add_attribute("content", place.name, 0)} data-svelte="svelte-yg0144"><meta property="${"og:description"}" content="${"This is a description of the page."}" data-svelte="svelte-yg0144"><meta name="${"description"}" content="${"This is a description of the page."}" data-svelte="svelte-yg0144"><script src="${"https://unpkg.com/rosaenlg@3.0.1/dist/rollup/rosaenlg_tiny_en_US_3.0.1_comp.js"}" data-svelte="svelte-yg0144"><\/script>`, ""}
-
-
+  return `${$$result.head += `${$$result.title = `<title>${escape(place_new.name)}</title>`, ""}<meta property="${"og:title"}"${add_attribute("content", place_new.name, 0)} data-svelte="svelte-1c2kqju"><meta property="${"og:description"}" content="${"This is a description of the page."}" data-svelte="svelte-1c2kqju"><meta name="${"description"}" content="${"This is a description of the page."}" data-svelte="svelte-1c2kqju"><script src="${"https://unpkg.com/rosaenlg@3.0.1/dist/rollup/rosaenlg_tiny_en_US_3.0.1_comp.js"}" data-svelte="svelte-1c2kqju"><\/script>`, ""}
 
 
 <div class="${"promo__background--plum-gradient"}"><div class="${"wrapper"}"><div class="${"banner--half-padding"}"><p class="${"margin-top--0 margin-bottom--0 padding-bottom--0 padding-top--0 flex flex-wrap-wrap banner--vertical-center"}"><a class="${"flex"}" href="${"https://www.ons.gov.uk/census"}"><img src="${"https://cdn.ons.gov.uk/assets/images/census-logo/logo-census-2021-white-landscape.svg"}" title="${"Census 2021"}" alt="${""}" class="${"header__svg-logo margin-right--1"}" focusable="${"false"}" width="${"167"}" height="${"32"}" viewBox="${"0 0 242 44"}" aria-labelledby="${"census-logo-banner"}"></a>
@@ -481,7 +517,7 @@ ${validate_component(Titleblock, "Titleblock").$$render($$result, { background: 
     default: () => {
       return `${validate_component(Headline, "Headline").$$render($$result, {}, {}, {
         default: () => {
-          return `How life has changed in ${escape(place.name)}`;
+          return `How life has changed in ${escape(place_new.name)}: Census 2021`;
         }
       })}
 	<div style="${"height: 20px;"}"></div>
@@ -506,7 +542,7 @@ ${validate_component(Article, "Article").$$render($$result, {}, {}, {
 		${``}
 	
 
-    ${place.stories.length > 6 ? `<button class="${"svelte-17aqbsc"}"><div class="${"triangle-container svelte-17aqbsc"}"><svg height="${"25"}" width="${"50"}">${`<polygon points="${"25,10 15,20 25,10 35,20"}" class="${"triangle svelte-17aqbsc"}"></polygon>`}</svg></div>
+    ${place_new.stories.length > 6 ? `<button class="${"svelte-185vr89"}"><div class="${"triangle-container svelte-185vr89"}"><svg height="${"25"}" width="${"50"}">${`<polygon points="${"25,10 15,20 25,10 35,20"}" class="${"triangle svelte-185vr89"}"></polygon>`}</svg></div>
       ${escape("Read less")}</button>` : ``}
     <div style="${"height: 50px"}"></div>`;
         }
