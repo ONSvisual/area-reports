@@ -27,6 +27,10 @@
 - var national_rank_change
 - var national_rank_2021
 
+- var other_1
+- var other_2
+- var other_national_rank_2021
+
 - var local_2011_other_variable1
 - var local_2021_other_variable1
 - var local_2011_other_variable2
@@ -374,13 +378,13 @@ mixin sent1Perc(i)
 
 // About one in eight people (13%) described their health as fair, compared with just over 23% in 2011. The percentage reporting their health as bad decreased from just under 13% to just over 7%.
 mixin sent2Perc(i)
-    - console.log(chains[s[i][3]][0], s[i][1], 'local_2011_other_variable1', local_2011_other_variable1)
-    - console.log(chains[s[i][3]][0], s[i][1], 'local_2021_other_variable1', local_2021_other_variable1)
+    - console.log(other_1, s[i][1], 'local_2011_other_variable1', local_2011_other_variable1)
+    - console.log(other_1, s[i][1], 'local_2021_other_variable1', local_2021_other_variable1)
     if (pcnoprint(local_2011_other_variable1)==pcnoprint(local_2021_other_variable1))
         recordSaid('s2pA')
         | The percentage 
         | #[+value((topics[s[i][0]].measure_s=='households')?'that':'who')] 
-        | #[+value(topic(i, chains[s[i][3]][0]).verb_past_samp)]
+        | #[+value(topic(i, other_1).verb_past_samp)]
         | remained close to #[+pc(local_2011_other_variable1)]
     else
         | In 2021,
@@ -392,17 +396,17 @@ mixin sent2Perc(i)
             | #[+value(get_word((local_2021_other_variable1)/100, 'frac')[1])]
             | #[+value(topics[s[i][0]].measure_s)]
             | (#[+pc(local_2021_other_variable1)])
-        | #[+value(topic(i, chains[s[i][3]][0]).verb_past_samp)],
+        | #[+value(topic(i, other_1).verb_past_samp)],
         | compared with
         | #[+pc(local_2011_other_variable1)]
         | in 2011. 
     if (chains[s[i][3]].length>1)
-        - console.log(chains[s[i][3]][1], s[i][1], 'local_2011_other_variable2', local_2011_other_variable2)
-        - console.log(chains[s[i][3]][1], s[i][1], 'local_2021_other_variable2', local_2021_other_variable2)
+        - console.log(other_2, s[i][1], 'local_2011_other_variable2', local_2011_other_variable2)
+        - console.log(other_2, s[i][1], 'local_2021_other_variable2', local_2021_other_variable2)
         if (hasSaid('s2pA'))
             | , while
         | the percentage of
-        | #[+value(topic(i, chains[s[i][3]][1]).clausal_modifier)]
+        | #[+value(topic(i, other_2).clausal_modifier)]
         | #[+updownrem('increased', 'decreased', local_2011_other_variable2, local_2021_other_variable2)]
         | .
         deleteSaid('s2pA')
@@ -596,16 +600,24 @@ mixin ordi(x)
 // This area had the country's highest proportion of private renters and the lowest proportion of homeowners.
 mixin nowHasCou(i)
     | this area had the country's 
-    if (Math.abs(data[s[i][0]][s[i][1]+'_rank']['2021'][s[i][3]])!=1)
-        | #[+value(Math.abs(data[s[i][0]][s[i][1]+'_rank']['2021'][s[i][3]]), {'ORDINAL_TEXTUAL':true})]
-    if (data[s[i][0]][s[i][1]+'_rank']['2021'][s[i][3]]<0)
+    if (Math.abs(national_rank_2021)!=1)
+        | #[+value(Math.abs(national_rank_2021), {'ORDINAL_TEXTUAL':true})]
+    if (national_rank_2021<0)
         | lowest
     else
         | highest 
     | proportion of 
     | #[+value(topic(i).adj_noun)] 
-    | and the 
-    | lowest proportion of homeowners
+    if (Math.abs(other_national_rank_2021) < 11)
+        | and the
+        if (Math.abs(other_national_rank_2021)!=1)
+            | #[+value(Math.abs(other_national_rank_2021), {'ORDINAL_TEXTUAL':true})]
+        if (other_national_rank_2021<0)
+            | lowest
+        else
+            | highest 
+        | proportion of 
+        | #[+value(topic(i, other_1).adj_noun)]
     | .
 
 // This area had the region’s highest proportion of private renters and the lowest proportion of homeowners.
@@ -751,17 +763,17 @@ mixin rankGen(i)
     | #[+pc(local_2011)]
     | in 2011. 
     | The percentage
-    | #[+value(topic(i, chains[s[i][3]][0]).verb)] 
-    if (pcnoprint(data[s[i][0]][s[i][1]][2011][chains[s[i][3]][0]]) == pcnoprint(data[s[i][0]][s[i][1]][2021][chains[s[i][3]][0]]))
+    | #[+value(topic(i, other_1).verb)] 
+    if (pcnoprint(data[s[i][0]][s[i][1]][2011][other_1]) == pcnoprint(data[s[i][0]][s[i][1]][2021][other_1]))
         | remained close 
     else
-        if (data[s[i][0]][s[i][1]][2011][chains[s[i][3]][0]]>data[s[i][0]][s[i][1]][2021][chains[s[i][3]][0]])
+        if (data[s[i][0]][s[i][1]][2011][other_1]>data[s[i][0]][s[i][1]][2021][other_1])
             | decreased 
         else
             | increased
         | from 
-        | #[+pc(data[s[i][0]][s[i][1]][2011][chains[s[i][3]][0]])]
-    | to #[+pc(data[s[i][0]][s[i][1]][2021][chains[s[i][3]][0]])]
+        | #[+pc(data[s[i][0]][s[i][1]][2011][other_1])]
+    | to #[+pc(data[s[i][0]][s[i][1]][2021][other_1])]
     | .
 
 mixin regional 
@@ -916,10 +928,10 @@ mixin ppoint
         | pp
 
 mixin sent2Diff(i)
-    - console.log(chains[s[i][3]][0], s[i][1], 'local_2011_other_variable1', local_2011_other_variable1)
-    - console.log(chains[s[i][3]][0], s[i][1], 'local_2021_other_variable1', local_2021_other_variable1)
+    - console.log(other_1, s[i][1], 'local_2011_other_variable1', local_2011_other_variable1)
+    - console.log(other_1, s[i][1], 'local_2021_other_variable1', local_2021_other_variable1)
     p 
-        | #[+value(topic(i, chains[s[i][3]][0]).sample)] in 
+        | #[+value(topic(i, other_1).sample)] in 
         | #[+value(place.name)]
         if (Math.round(local_2021_other_variable1)==Math.round(local_2011_other_variable1))
             | remained close to #[+pc((local_2021_other_variable1))]
@@ -930,9 +942,9 @@ mixin sent2Diff(i)
             | to 
             | #[+pc(local_2021_other_variable1)]
         if (chains[s[i][3]].length>1)
-            - console.log(chains[s[i][3]][1], s[i][1], 'local_2011_other_variable2', local_2011_other_variable2)
-            - console.log(chains[s[i][3]][1], s[i][1], 'local_2021_other_variable2', local_2021_other_variable2)
-            | , while #[+value(topic(i, chains[s[i][3]][1]).sample)] 
+            - console.log(other_2, s[i][1], 'local_2011_other_variable2', local_2011_other_variable2)
+            - console.log(other_2, s[i][1], 'local_2021_other_variable2', local_2021_other_variable2)
+            | , while #[+value(topic(i, other_2).sample)] 
             if (pcnoprint(local_2021_other_variable2)==pcnoprint(local_2011_other_variable2))
                 | remained close to #[+pc((local_2021_other_variable2))]
             else
@@ -1500,11 +1512,17 @@ mixin percSizeChange(i)
     p #[+sent3Perc(i)]
 
 mixin mainPercSection(i)
+    - other_1 = chains[s[i][3]][0]
+    - other_2 = chains[s[i][3]][1]
+
     //-  We create four variables which represent the data points for associated variables (2011 and 2021)
-    - local_2021_other_variable1 = data[s[i][0]][s[i][1]][2021][chains[s[i][3]][0]] 
-    - local_2011_other_variable1 = data[s[i][0]][s[i][1]][2011][chains[s[i][3]][0]] 
-    - local_2021_other_variable2 = data[s[i][0]][s[i][1]][2021][chains[s[i][3]][1]] 
-    - local_2011_other_variable2 = data[s[i][0]][s[i][1]][2011][chains[s[i][3]][1]] 
+    - local_2021_other_variable1 = data[s[i][0]][s[i][1]][2021][other_1] 
+    - local_2011_other_variable1 = data[s[i][0]][s[i][1]][2011][other_1] 
+    - other_national_rank_2021 = data[s[i][0]][s[i][1]+"_rank"]['2021'][other_1]
+
+    - local_2021_other_variable2 = data[s[i][0]][s[i][1]][2021][other_2] 
+    - local_2011_other_variable2 = data[s[i][0]][s[i][1]][2011][other_2] 
+
     //- Was this stories selection based on having a notably high or low national rank
     if (stories[i].type.includes('natRank'))
         | #[+nationalRankStory(i)]
@@ -1793,6 +1811,7 @@ mixin section(i)
 p #[+standfirst]
 
 each i in [...Array(13).keys()]
+
     - local_2011 = data[s[i][0]][s[i][1]]['2011'][s[i][3]]
     - local_2021 = data[s[i][0]][s[i][1]]['2021'][s[i][3]]
     - local_change = data[s[i][0]][s[i][1]]['change'][s[i][3]]
@@ -1826,5 +1845,6 @@ each i in [...Array(13).keys()]
         - console.log("  * * *    * * *    * * *  ")
         - console.log(s[i][0])
         - console.log("------------")
+        - console.log('Story', s[i])
         //-  All sections begin with the 'section'
         | #[+section(i)]

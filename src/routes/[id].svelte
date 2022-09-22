@@ -76,12 +76,8 @@
 	let regionNm = regionJson.name;
 	let countryNm = countryJson.name;
 
-	// let 
-
 
 	// TIM
-
-
 
 	if (ewJson)
 		return {
@@ -131,6 +127,198 @@
 	export let ladData;
 	export let place, region, country, ew, placeNm, regionNm, countryNm, placeJson, regionJson, countryJson;
 
+
+	let tables = {
+		'population': {
+			'table': 'population',
+			'variables': [
+				'Population'
+			]
+		},
+		'density': {
+			'table': 'density',
+			'variables': [
+				'Density'
+			]
+		},
+		'marital': {
+			'table': 'legal_partnership_status_6a',
+			'variables': [
+				'Never married and never registered a civil partnership',
+				'Married or in a registered civil partnership',
+				'Separated, but still legally married or still legally in a civil partnership',
+				'Divorced or civil partnership dissolved',
+				'Widowed or surviving civil partnership partner'
+			]
+		},
+		'household': {
+			'table': 'hh_family_composition_8a',
+			'variables': [
+				'One person household: Aged 66 years and over',
+				'One person household: Other',
+				'Single family household: Couple family household: No children',
+				'Single family household: Couple family household: Dependent children',
+				'Single family household: Couple family household: All children non-dependent',
+				'Single family household: Lone parent household',
+				'Other household types'
+			]
+		},
+		'agemed': {
+			'table': 'median_age',
+			'variables': [
+				'Median Age'
+			]
+		},
+		'ageband': {
+			'table': 'resident_age_11a',
+			'variables': [
+				'0 - 4',
+				'5 - 9',
+				'10 - 15',
+				'16 - 19',
+				'20 - 24',
+				'25 - 34',
+				'35 - 49',
+				'50 - 64',
+				'65 - 74',
+				'75 - 84',
+				'85 - 115'
+			]
+		},
+		'cob': {
+			'table': 'country_of_birth_25a',
+			'variables': [
+				'Europe: United Kingdom',
+				'Europe: Ireland',
+				'Europe: Other Europe: EU countries: Member countries in March 2001: France',
+				'Europe: Other Europe: EU countries: Member countries in March 2001: Germany',
+				'Europe: Other Europe: EU countries: Member countries in March 2001: Italy',
+				'Europe: Other Europe: EU countries: Member countries in March 2001: Portugal (including Madeira and the Azores)',
+				'Europe: Other Europe: EU countries: Member countries in March 2001: Other member countries in March 2001',
+				'Europe: Other Europe: EU countries: Countries that joined the EU between April 2001 and March 2011: Poland',
+				'Europe: Other Europe: EU countries: Countries that joined the EU between April 2001 and March 2011: Other EU  countries',
+				'Europe: Other Europe: EU countries: Countries that joined the EU between April 2011 and March 2021: Croatia',
+				'Europe: Other Europe: Rest of Europe',
+				'Africa: Nigeria',
+				'Africa: South Africa',
+				'Africa: Other',
+				'Middle East and Asia: China',
+				'Middle East and Asia: Bangladesh',
+				'Middle East and Asia: India',
+				'Middle East and Asia: Pakistan',
+				'Middle East and Asia: Other',
+				'The Americas and the Caribbean: Canada',
+				'The Americas and the Caribbean: United States',
+				'The Americas and the Caribbean: Jamaica',
+				'The Americas and the Caribbean: Other',
+				'Antarctica, Oceania and other',
+			]
+		},
+		'ethnicity': {
+			'table': 'ethnic_group_tb_6a',
+			'variables': [
+				'Asian, Asian British or Asian Welsh',
+				'Black, Black British, Black Welsh, Caribbean or African',
+				'Mixed or Multiple ethnic groups',
+				'White',
+				'Other ethnic group'
+			]
+		},
+		'national': {
+			'table': 'national_identity_all_9a',
+			'variables': [
+				'British only identity',
+				'Welsh only identity',
+				'Welsh and British only identity',
+				'English only identity',
+				'English and British only identity',
+				'Any other combination of only UK identities',
+				'Non-UK identity only',
+				'UK identity and non-UK identity'
+			]
+    	},
+		'religion': {
+			'table': 'religion_tb',
+			'variables': [
+				'No religion',
+				'Christian',
+				'Buddhist',
+				'Hindu',
+				'Jewish',
+				'Muslim',
+				'Sikh',
+				'Other religion',
+				'Not answered'
+			]
+		},
+		'welsh': {
+			'table': 'welsh_skills_speak',
+			'variables': [
+				'Can speak Welsh',
+				"Cannot speak Welsh"
+			]
+		},
+		'health': {
+			'table': 'health_in_general_4a',
+			'variables': [
+				'Very good or good health',
+				'Fair health',
+				'Very bad or bad health'
+			]
+		},
+		'disability': {
+			'table': 'disability_3a',
+			'variables': [
+				'Disabled under the Equality Act',
+				'Not disabled under the Equality Act'
+			]
+		},
+		'care': {
+			'table': 'is_carer_5a',
+			'variables': [
+				'Provides no unpaid care',
+				'Provides 19 or less hours unpaid care a week',
+				'Provides 20 to 49 hours unpaid care a week',
+				'Provides 50 or more hours unpaid care a week'
+			]
+			},
+		'tenure': {
+			'table': 'hh_tenure_7b',
+			'variables': [
+				'Owns outright or with a mortgage or loan',
+				'Shared ownership',
+				'Rented from council or Local Authority',
+				'Other social rented',
+				'Private rented',
+				'Lives rent free'
+			]
+		},
+		'economic': {
+			'table': 'economic_activity_status_7a',
+			'variables': [
+				'Economically active (including full-time students): In employment: Employee',
+				'Economically active (including full-time students): In employment: Self-employed',
+				'Economically active (including full-time students): Unemployed',
+				'Economically inactive: Retired',
+				'Economically inactive (including full-time students): Student',
+				'Economically inactive: Looking after home or family',
+				'Economically inactive: Long-term sick or disabled',
+				'Economically inactive: Other'
+			]
+		},
+		'hours': {
+			'table': 'Hours_Per_Week_Worked_5A',
+			'variables': [
+				'Part-time: 15 hours or less worked',
+				'Part-time: 16 to 30 hours worked',
+				'Full-time: 31 to 48 hours worked',
+				'Full-time: 49 or more hours worked'
+			]
+		}
+	}
+	Object.keys(tables).forEach(e => {
+		console.log('e', e)
+	});
 
 	$: console.log('place_new', place_new)
 	$: console.log('rgn', rgn_new)
@@ -299,6 +487,7 @@
 
 
 	import Table from "$lib/Table.svelte"; //This is where the tables get generated
+    import { each } from "svelte/internal";
 
 	//to provide the correct wording for subtitles
 		const subTitles = {
@@ -425,7 +614,7 @@
 					<br /><br /><br />
 
 					{:else}
-					<img src="/map_images/E06000026.png" alt={ placeNm }/>
+					<img src="/map_images/{place_new.code}.png" alt={ placeNm }/>
 					{/if}
 				{/if}
 			{/each}

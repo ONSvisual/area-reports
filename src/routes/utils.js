@@ -9,6 +9,9 @@ async function getData(url) {
 }
 
 let chains = {
+  // 'Population': ['', ''],
+  // 'Median Age': ['', ''],
+
   'Very good or good health': [
     'Very bad or bad health', 'Fair health'
   ],
@@ -36,33 +39,64 @@ let chains = {
     'Private rented', 'Rented from council or Local Authority'
   ],
 
-  'Economically inactive and a full-time student': [
-    'Economically active and a full-time student: In employment', 'Economically active and a full-time student: Unemployed', 'Economically inactive (excluding full-time students)'
+
+
+  'Economically active (including full-time students): In employment: Employee': [
+    'Economically active (including full-time students): Unemployed',
+    'Economically active (including full-time students): In employment: Self-employed'
   ],
-  'Economically inactive (excluding full-time students)': [
-    'Economically active (excluding full-time students): In employment', 'Economically active (excluding full-time students): Unemployed', 'Economically inactive and a full-time student'
+  'Economically active (including full-time students): In employment: Self-employed': [
+    'Economically active (including full-time students): In employment: Employee',
+    'Economically active (including full-time students): Unemployed'
   ],
-  'Economically active (excluding full-time students): In employment': [
-    'Economically active (excluding full-time students): Unemployed', 'Economically inactive (excluding full-time students)', 'Economically inactive and a full-time student'
+  'Economically active (including full-time students): Unemployed': [
+    'Economically active (including full-time students): In employment: Employee',
+    'Economically active (including full-time students): In employment: Self-employed'
   ],
-  'Economically active (excluding full-time students): Unemployed': [
-    'Economically active (excluding full-time students): In employment', 'Economically inactive (excluding full-time students)', 'Economically inactive and a full-time student'
+  'Economically inactive: Retired': [
+    'Economically active (including full-time students): In employment: Employee',
+    'Economically active (including full-time students): Unemployed'
+  ],
+  'Economically inactive (including full-time students): Student': [
+    'Economically active (including full-time students): In employment: Employee',
+    'Economically active (including full-time students): Unemployed'
   ],
 
-  'Single family household: Married or civil partnership couple: No children': [
-    'Single family household: Cohabiting couple family : No children', 'Single family household: Married or civil partnership couple: Dependent children'
+
+  'Single family household: Couple family household: No children': [
+    'Single family household: Couple family household: Dependent children', 
+    'Single family household: Couple family household: All children non-dependent',
+    'Single family household: Lone parent household'
   ],
-  'Single family household: Cohabiting couple family : No children': [
-    'Single family household: Married or civil partnership couple: No children', 'Single family household: Cohabiting couple family : With dependent children'
+  'Single family household: Couple family household: Dependent children': [
+    'Single family household: Couple family household: No children',
+    'Single family household: Couple family household: All children non-dependent'
   ],
-  'Single family household: Married or civil partnership couple: Dependent children': [
-    'Single family household: Cohabiting couple family : With dependent children', 'Single family household: Married or civil partnership couple: No children'
+  'Single family household: Couple family household: All children non-dependent': [
+    'Single family household: Couple family household: Dependent children',
+    'Single family household: Couple family household: No children'
   ],
-  'Single family household: Cohabiting couple family : With dependent children': ['Single family household: Married or civil partnership couple: Dependent children', 'Single family household: Cohabiting couple family : No children'
+  'Single family household: Lone parent household': [
+    'Single family household: Couple family household: Dependent children',
+    'Single family household: Couple family household: All children non-dependent'
   ],
-  'Single family household: Lone parent family : With dependent children': [
-    'Single family household: Married or civil partnership couple: Dependent children', 'Single family household: Cohabiting couple family : With dependent children'
-  ],
+
+
+
+  // 'Single family household: Married or civil partnership couple: No children': [
+  //   'Single family household: Cohabiting couple family : No children', 'Single family household: Married or civil partnership couple: Dependent children'
+  // ],
+  // 'Single family household: Cohabiting couple family : No children': [
+  //   'Single family household: Married or civil partnership couple: No children', 'Single family household: Cohabiting couple family : With dependent children'
+  // ],
+  // 'Single family household: Married or civil partnership couple: Dependent children': [
+  //   'Single family household: Cohabiting couple family : With dependent children', 'Single family household: Married or civil partnership couple: No children'
+  // ],
+  // 'Single family household: Cohabiting couple family : With dependent children': ['Single family household: Married or civil partnership couple: Dependent children', 'Single family household: Cohabiting couple family : No children'
+  // ],
+  // 'Single family household: Lone parent family : With dependent children': [
+  //   'Single family household: Married or civil partnership couple: Dependent children', 'Single family household: Cohabiting couple family : With dependent children'
+  // ],
 
   'Never married and never registered a civil partnership': [
     'Married or in a registered civil partnership', 'Divorced or civil partnership dissolved'

@@ -362,11 +362,11 @@
         "general": "jobs",
         "synonym": "change in the employment status of many here",
         "profile": "work life changed for many in {plcname}",
-        "Economically active (excluding full-time students): In employment": {
-            "clausal_modifier": "employed {plcname} residents (excluding full-time students)",
+        "Economically active (including full-time students): In employment: Employee": {
+            "clausal_modifier": "employed {plcname} residents",
             "verb_past": "that said they were employed",
             "verb_past_samp": "said they were employed",
-            "adj_noun": "employed people (excluding students)",
+            "adj_noun": "employed people",
             "verb": "that were employed",
             "subhead": {
                 "pos": "Rise in rate of employment",
@@ -378,27 +378,11 @@
             "sample": "the rate of employment",
             "adj_noun_s": "employed people"
         },
-        "Economically inactive (excluding full-time students)": {
-            "clausal_modifier": "economically inactive {plcname} residents (excluding full-time students)",
-            "verb_past": "that said they were not working or actively seeking work",
-            "verb_past_samp": "said they were not working or actively seeking work",
-            "adj_noun": "people who were not working or actively seeking work (excluding students)",
-            "verb": "that were not working or actively seeking work",
-            "subhead": {
-                "pos": "More people not working or actively seeking work",
-                "neg": "Fewer people not working or actively seeking work",
-                "neu": "Changing work life",
-                "buc": "{plcname} stood out from other areas for jobs",
-                "sta": "Economic inactivity in {plcname}"
-            },
-            "sample": "the proportion of people not working or actively seeking work",
-            "adj_noun_s": "people who were not working or actively seeking work"
-        },
-        "Economically active (excluding full-time students): Unemployed": {
-            "clausal_modifier": "unemployed {plcname} residents (excluding full-time students)",
+        "Economically active (including full-time students): Unemployed": {
+            "clausal_modifier": "unemployed {plcname} residents",
             "verb_past": "that said they were unemployed",
             "verb_past_samp": "said they were unemployed",
-            "adj_noun": "unemployed people (excluding students)",
+            "adj_noun": "unemployed people",
             "verb": "that were unemployed",
             "subhead": {
                 "pos": "Rise in rate of unemployment",
@@ -410,39 +394,39 @@
             "sample": "the rate of unemployment",
             "adj_noun_s": "unemployed people"
         },
-        "Economically active and a full-time student: In employment": {
-            "clausal_modifier": "{plcname} residents that were studying and in employment",
-            "verb_past": "that said they were employed students",
-            "verb_past_samp": "said they were employed students",
-            "adj_noun": "students (in employment)",
-            "verb": "that were employed students",
+        "Economically inactive: Retired": {
+            "clausal_modifier": "retired {plcname} residents",
+            "verb_past": "that said they were retired",
+            "verb_past_samp": "said they were retired",
+            "adj_noun": "people who were retired",
+            "verb": "that were retired",
             "subhead": {
-                "pos": "Students in {plcname}",
-                "neg": "Students in {plcname}",
-                "neu": "Students in {plcname}",
-                "buc": "{plcname} stood out from other areas for students",
-                "sta": "Students in {plcname}"
+                "pos": "More retired people",
+                "neg": "Fewer retired people",
+                "neu": "Changing work life",
+                "buc": "{plcname} stood out for retirees",
+                "sta": "Retirees in {plcname}"
             },
-            "sample": "the percentage of employed students",
-            "adj_noun_s": "employed students"
+            "sample": "the proportion of people who were retired",
+            "adj_noun_s": "people who were retired"
         },
-        "Economically active and a full-time student: Unemployed": {
-            "clausal_modifier": "{plcname} residents that were studying and unemployed but seeking work",
-            "verb_past": "that said they were unemployed students",
-            "verb_past_samp": "said they were unemployed students",
-            "adj_noun": "students (seeking employment)",
-            "verb": "that were unemployed students",
+        "Economically active (including full-time students): In employment: Self-employed": {
+            "clausal_modifier": "self-employed {plcname} residents",
+            "verb_past": "that said they were self-employed",
+            "verb_past_samp": "said they were self-employed",
+            "adj_noun": "self-employed people",
+            "verb": "that were self-employed",
             "subhead": {
-                "pos": "Students in {plcname}",
-                "neg": "Students in {plcname}",
-                "neu": "Students in {plcname}",
-                "buc": "{plcname} stood out from other areas for students",
-                "sta": "Students in {plcname}"
+                "pos": "Rise in rate of self-employment",
+                "neg": "Fall in rate of self-employment",
+                "neu": "Change in work life",
+                "buc": "{plcname} stood out for self-employment",
+                "sta": "Self-employment in {plcname}"
             },
-            "sample": "the percentage of unemployed students",
-            "adj_noun_s": "unemployed students"
+            "sample": "the rate of self-employment",
+            "adj_noun_s": "self-employed people"
         },
-        "Economically inactive and a full-time student": {
+        "Economically inactive (including full-time students): Student": {
             "clausal_modifier": "{plcname} residents that were studying (and not employed or seeking work)",
             "verb_past": "that said they were in education",
             "verb_past_samp": "said they were in education",
@@ -468,71 +452,55 @@
         "general": "family",
         "synonym": "change in family life for many in {plcname}",
         "profile": "family structure changed substantially in {plcname}",
-        "Single family household: Married or civil partnership couple: No children": {
-            "clausal_modifier": "single family households with a married or legally partnered couple and no children",
-            "verb_past": "that had a legally partnered couple and no children",
-            "verb_past_samp": "had a legally partnered couple and no children",
-            "adj_noun": "households with a legally partnered couple and no children",
-            "verb": "of households comprising a legally partnered couple and no children",
+        "Single family household: Couple family household: No children": {
+            "clausal_modifier": "single family households comprising a couple without children",
+            "verb_past": "that had a couple without any children",
+            "verb_past_samp": "had a couple but no children",
+            "adj_noun": "households with a couple but no children",
+            "verb": "of households comprising a couple without children",
             "subhead": {
-                "pos": "More households married without children",
-                "neg": "Fewer households married without children",
+                "pos": "More couples without children",
+                "neg": "Fewer couples without children",
                 "neu": "Changing family dynamics",
                 "buc": "Family in {plcname}",
                 "sta": "Family in {plcname}"
             },
-            "sample": "the percentage of households with a cohabiting couple",
-            "adj_noun_s": "cohabiting households"
+            "sample": "the percentage of households with a couple without children",
+            "adj_noun_s": "couple households without children"
         },
-        "Single family household: Cohabiting couple family : No children": {
-            "clausal_modifier": "single family households with a cohabiting couple and no children",
-            "verb_past": "that had an unmarried couple and no children",
-            "verb_past_samp": "had an unmarried couple and no children",
-            "adj_noun": "households with an unmarried couple and no children",
-            "verb": "of households comprising an unmarried couple and no children",
+        "Single family household: Couple family household: Dependent children": {
+            "clausal_modifier": "single family households comprising a couple with at least one dependent child",
+            "verb_past": "that had a couple with dependent children",
+            "verb_past_samp": "had a couple with dependent children",
+            "adj_noun": "households comprising a couple with dependent children",
+            "verb": "of households comprising a couple with dependent children",
             "subhead": {
-                "pos": "More households cohabiting without children",
-                "neg": "Fewer households cohabiting without children",
-                "neu": "Changing family dynamics",
+                "pos": "More couples with children",
+                "neg": "Fewer couples with children",
+                "neu": "Changing household dynamics",
                 "buc": "Family in {plcname}",
                 "sta": "Family in {plcname}"
             },
-            "sample": "the percentage of households with a cohabiting couple",
-            "adj_noun_s": "cohabiting households"
+            "sample": "the percentage of households with a couple and dependent children",
+            "adj_noun_s": "couples with dependent children"
         },
-        "Single family household: Married or civil partnership couple: Dependent children": {
-            "clausal_modifier": "households in {plcname} which comprised a married or legally partnered couple with children",
-            "verb_past": "that had a legally partnered couple with at least one dependent child",
-            "verb_past_samp": "had a legally partnered couple with children",
-            "adj_noun": "households with a legally partnered couple and one or more children",
-            "verb": "of households comprising a legally partnered couple with children",
+        "Single family household: Couple family household: All children non-dependent": {
+            "clausal_modifier": "single family households comprising a couple living with only non-dependent children",
+            "verb_past": "that had a couple living with non-dependent children",
+            "verb_past_samp": "had a couple with non-dependent children",
+            "adj_noun": "households comprising a couple with non-dependent children",
+            "verb": "of households comprising a couple with non-dependent children",
             "subhead": {
-                "pos": "The percentage of married people increased",
-                "neg": "Fewer married people",
+                "pos": "More couples with non-dependent",
+                "neg": "Fewer couples with non-dependent",
                 "neu": "Changing household dynamics",
-                "buc": "{plcname} stood out from other areas for married couples",
-                "sta": "Married couples in {plcname}"
+                "buc": "Family in {plcname}",
+                "sta": "Family in {plcname}"
             },
-            "sample": "the percentage of households with a married couple",
-            "adj_noun_s": "married households"
+            "sample": "the percentage of households with a couple and non-dependent children",
+            "adj_noun_s": "couples with non-dependent children"
         },
-        "Single family household: Cohabiting couple family : With dependent children": {
-            "clausal_modifier": "households in {plcname} which comprised a married couple (with or without children)",
-            "verb_past": "that had a married couple",
-            "verb_past_samp": "had a married couple",
-            "adj_noun": "households with a married couple",
-            "verb": "of households comprising a married couple",
-            "subhead": {
-                "pos": "The percentage of married people increased",
-                "neg": "Fewer married people",
-                "neu": "Changing household dynamics",
-                "buc": "{plcname} stood out from other areas for married couples",
-                "sta": "Married couples in {plcname}"
-            },
-            "sample": "the percentage of households with a married couple",
-            "adj_noun_s": "married households"
-        },
-        "Single family household: Lone parent family : With dependent children": {
+        "Single family household: Lone parent household": {
             "clausal_modifier": "households in {plcname}, which comprised a single parent,",
             "verb_past": "that had a single parent",
             "verb_past_samp": "had a single parent",
