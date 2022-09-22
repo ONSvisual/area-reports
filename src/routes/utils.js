@@ -4,9 +4,10 @@ import robojournalist from 'robojournalist';
 async function getData(url) {
   let response = await fetch(url);
   let string = await response.text();
-	let data = await csvParse(string, autoType);
+	let data = csvParse(string, autoType);
   return data;
 }
+
 
 let chains = {
   // 'Population': ['', ''],
