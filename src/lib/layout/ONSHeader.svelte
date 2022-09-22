@@ -112,15 +112,6 @@
 				</a>
 			</div>
 			<div class="col col--lg-two-thirds col--md-two-thirds hide--sm print--hide language--js__container">
-				<div class="language">
-					{#if lang =="en"}
-					<span>English (EN) | </span>
-					<a href="//cy.ons.gov.uk{path}" class="language__link" lang="cy">Cymraeg (CY)</a>
-					{:else}
-					<a href="//www.ons.gov.uk{path}" class="language__link" lang="en">English (EN)</a>
-					<span> | Cymraeg (EN)</span>
-					{/if}
-				</div>
 			</div>
 			<div class="secondary-nav col col--lg-two-thirds col--md-two-thirds print--hide">
 				<ul class="secondary-nav__list js-nav-clone__list">

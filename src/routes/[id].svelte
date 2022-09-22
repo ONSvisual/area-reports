@@ -52,7 +52,7 @@
 
 	var regionLU = {};
 	// Data load functions
-	let raw_region = await fetch(`${assets}/data/csv/CorrespondingLocalAuthoritiesTable1.csv`)
+	let raw_region = await fetch(`${assets}/data/csv/lists/Corresponding Local Authorities-Table 1.csv`)
   	let string_region = await raw_region.text();
 	let data_region = csvParse(string_region, autoType).forEach(d => {
 			regionLU[d['Name']] = d['Region/Country'];
@@ -60,7 +60,7 @@
 
 	var countyLU = {};
 	// Data load functions
-	let raw_county = await fetch(`${assets}/data/csv/Local_Authority_District_to_County_(April_2021)_Lookup_in_England.csv.csv`)
+	let raw_county = await fetch(`${assets}/data/csv/lists/Local_Authority_District_to_County_(April_2021)_Lookup_in_England.csv`)
   	let string_county = await raw_county.text();
 	let data_county = csvParse(string_county, autoType).forEach(d => {
 			countyLU[d['LAD21NM']] = d['CTY21NM'];

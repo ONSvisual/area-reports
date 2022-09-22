@@ -1,11 +1,10 @@
 import { c as create_ssr_component, e as escape, d as each, b as add_attribute, s as setContext, v as validate_component, g as getContext, p as null_to_empty, j as createEventDispatcher } from "../../chunks/index-d26a41fd.js";
 import { a as assets } from "../../chunks/paths-396f020f.js";
-import { getData } from "../endpoints/utils.js";
 import { csvParse, autoType } from "d3-dsv";
+import "robojournalist";
 import { S as Select, a as Section } from "../../chunks/Select-270fd6e3.js";
 import "d3-scale";
 import "d3-delaunay";
-import "robojournalist";
 import "pluralize";
 import "fuse.js";
 const Breadcrumb = create_ssr_component(($$result, $$props, $$bindings, slots) => {
@@ -372,9 +371,18 @@ async function load({ params, fetch }) {
   let wal_raw = await fetch(`${assets}/data/json_new/place/W92000004.json`);
   let wal = await wal_raw.json();
   let cou = place_new.parent.name == "Wales" ? wal : eng;
-  let ladData_raw = await fetch("https://raw.githubusercontent.com/theojolliffe/census-data/main/laddata.csv");
-  let ladData_string = await ladData_raw.text();
-  let ladData = await csvParse(ladData_string, autoType);
+  var regionLU = {};
+  let raw_region = await fetch(`${assets}/data/csv/lists/Corresponding Local Authorities-Table 1.csv`);
+  let string_region = await raw_region.text();
+  csvParse(string_region, autoType).forEach((d) => {
+    regionLU[d["Name"]] = d["Region/Country"];
+  });
+  var countyLU = {};
+  let raw_county = await fetch(`${assets}/data/csv/lists/Local_Authority_District_to_County_(April_2021)_Lookup_in_England.csv`);
+  let string_county = await raw_county.text();
+  csvParse(string_county, autoType).forEach((d) => {
+    countyLU[d["LAD21NM"]] = d["CTY21NM"];
+  });
   id[0] == "E" ? "E92000001" : "W92000004";
   let ew_raw_new = await fetch(`${assets}/data/json_new/place/K04000001.json`);
   let ewJson = await ew_raw_new.json();
@@ -391,6 +399,8 @@ async function load({ params, fetch }) {
   if (ewJson)
     return {
       props: {
+        regionLU,
+        countyLU,
         options,
         topics,
         place_new,
@@ -400,7 +410,6 @@ async function load({ params, fetch }) {
         s,
         template,
         cou,
-        ladData,
         ewJson,
         place,
         region,
@@ -425,8 +434,182 @@ const U5Bidu5D = create_ssr_component(($$result, $$props, $$bindings, slots) => 
   let { eng } = $$props;
   let { wal, ewJson } = $$props;
   let { cou } = $$props;
-  let { ladData } = $$props;
-  let { place, region, country, ew, placeNm, regionNm, countryNm, placeJson, regionJson, countryJson } = $$props;
+  let { place, region, country, ew, placeNm, regionNm, countryNm, placeJson, regionJson, countryJson, regionLU, countyLU } = $$props;
+  let tables = {
+    "population": {
+      "table": "population",
+      "variables": ["Population"]
+    },
+    "density": {
+      "table": "density",
+      "variables": ["Density"]
+    },
+    "marital": {
+      "table": "legal_partnership_status_6a",
+      "variables": [
+        "Never married and never registered a civil partnership",
+        "Married or in a registered civil partnership",
+        "Separated, but still legally married or still legally in a civil partnership",
+        "Divorced or civil partnership dissolved",
+        "Widowed or surviving civil partnership partner"
+      ]
+    },
+    "household": {
+      "table": "hh_family_composition_8a",
+      "variables": [
+        "One person household: Aged 66 years and over",
+        "One person household: Other",
+        "Single family household: Couple family household: No children",
+        "Single family household: Couple family household: Dependent children",
+        "Single family household: Couple family household: All children non-dependent",
+        "Single family household: Lone parent household",
+        "Other household types"
+      ]
+    },
+    "agemed": {
+      "table": "median_age",
+      "variables": ["Median Age"]
+    },
+    "ageband": {
+      "table": "resident_age_11a",
+      "variables": [
+        "0 - 4",
+        "5 - 9",
+        "10 - 15",
+        "16 - 19",
+        "20 - 24",
+        "25 - 34",
+        "35 - 49",
+        "50 - 64",
+        "65 - 74",
+        "75 - 84",
+        "85 - 115"
+      ]
+    },
+    "cob": {
+      "table": "country_of_birth_25a",
+      "variables": [
+        "Europe: United Kingdom",
+        "Europe: Ireland",
+        "Europe: Other Europe: EU countries: Member countries in March 2001: France",
+        "Europe: Other Europe: EU countries: Member countries in March 2001: Germany",
+        "Europe: Other Europe: EU countries: Member countries in March 2001: Italy",
+        "Europe: Other Europe: EU countries: Member countries in March 2001: Portugal (including Madeira and the Azores)",
+        "Europe: Other Europe: EU countries: Member countries in March 2001: Other member countries in March 2001",
+        "Europe: Other Europe: EU countries: Countries that joined the EU between April 2001 and March 2011: Poland",
+        "Europe: Other Europe: EU countries: Countries that joined the EU between April 2001 and March 2011: Other EU  countries",
+        "Europe: Other Europe: EU countries: Countries that joined the EU between April 2011 and March 2021: Croatia",
+        "Europe: Other Europe: Rest of Europe",
+        "Africa: Nigeria",
+        "Africa: South Africa",
+        "Africa: Other",
+        "Middle East and Asia: China",
+        "Middle East and Asia: Bangladesh",
+        "Middle East and Asia: India",
+        "Middle East and Asia: Pakistan",
+        "Middle East and Asia: Other",
+        "The Americas and the Caribbean: Canada",
+        "The Americas and the Caribbean: United States",
+        "The Americas and the Caribbean: Jamaica",
+        "The Americas and the Caribbean: Other",
+        "Antarctica, Oceania and other"
+      ]
+    },
+    "ethnicity": {
+      "table": "ethnic_group_tb_6a",
+      "variables": [
+        "Asian, Asian British or Asian Welsh",
+        "Black, Black British, Black Welsh, Caribbean or African",
+        "Mixed or Multiple ethnic groups",
+        "White",
+        "Other ethnic group"
+      ]
+    },
+    "national": {
+      "table": "national_identity_all_9a",
+      "variables": [
+        "British only identity",
+        "Welsh only identity",
+        "Welsh and British only identity",
+        "English only identity",
+        "English and British only identity",
+        "Any other combination of only UK identities",
+        "Non-UK identity only",
+        "UK identity and non-UK identity"
+      ]
+    },
+    "religion": {
+      "table": "religion_tb",
+      "variables": [
+        "No religion",
+        "Christian",
+        "Buddhist",
+        "Hindu",
+        "Jewish",
+        "Muslim",
+        "Sikh",
+        "Other religion",
+        "Not answered"
+      ]
+    },
+    "welsh": {
+      "table": "welsh_skills_speak",
+      "variables": ["Can speak Welsh", "Cannot speak Welsh"]
+    },
+    "health": {
+      "table": "health_in_general_4a",
+      "variables": ["Very good or good health", "Fair health", "Very bad or bad health"]
+    },
+    "disability": {
+      "table": "disability_3a",
+      "variables": ["Disabled under the Equality Act", "Not disabled under the Equality Act"]
+    },
+    "care": {
+      "table": "is_carer_5a",
+      "variables": [
+        "Provides no unpaid care",
+        "Provides 19 or less hours unpaid care a week",
+        "Provides 20 to 49 hours unpaid care a week",
+        "Provides 50 or more hours unpaid care a week"
+      ]
+    },
+    "tenure": {
+      "table": "hh_tenure_7b",
+      "variables": [
+        "Owns outright or with a mortgage or loan",
+        "Shared ownership",
+        "Rented from council or Local Authority",
+        "Other social rented",
+        "Private rented",
+        "Lives rent free"
+      ]
+    },
+    "economic": {
+      "table": "economic_activity_status_7a",
+      "variables": [
+        "Economically active (including full-time students): In employment: Employee",
+        "Economically active (including full-time students): In employment: Self-employed",
+        "Economically active (including full-time students): Unemployed",
+        "Economically inactive: Retired",
+        "Economically inactive (including full-time students): Student",
+        "Economically inactive: Looking after home or family",
+        "Economically inactive: Long-term sick or disabled",
+        "Economically inactive: Other"
+      ]
+    },
+    "hours": {
+      "table": "Hours_Per_Week_Worked_5A",
+      "variables": [
+        "Part-time: 15 hours or less worked",
+        "Part-time: 16 to 30 hours worked",
+        "Full-time: 31 to 48 hours worked",
+        "Full-time: 49 or more hours worked"
+      ]
+    }
+  };
+  Object.keys(tables).forEach((e) => {
+    console.log("e", e);
+  });
   process.env.NODE_ENV === "production";
   if (place_new.data.population.value.change.all > 8)
     ;
@@ -440,18 +623,6 @@ const U5Bidu5D = create_ssr_component(($$result, $$props, $$bindings, slots) => 
     ;
   else if (place_new.data.health.perc.change.good < 0)
     ;
-  var regionLU = {};
-  getData("https://raw.githubusercontent.com/theojolliffe/census-data/main/csv/lists/Corresponding%20Local%20Authorities-Table%201.csv").then((res) => {
-    res.forEach((d) => {
-      regionLU[d["Name"]] = d["Region/Country"];
-    });
-  });
-  var countyLU = {};
-  getData("https://raw.githubusercontent.com/theojolliffe/census-data/main/csv/lists/Local_Authority_District_to_County_(April_2021)_Lookup_in_England.csv").then((res) => {
-    res.forEach((d) => {
-      countyLU[d["LAD21NM"]] = d["CTY21NM"];
-    });
-  });
   console.log("region", region["care"].perc);
   if ($$props.options === void 0 && $$bindings.options && options !== void 0)
     $$bindings.options(options);
@@ -473,8 +644,6 @@ const U5Bidu5D = create_ssr_component(($$result, $$props, $$bindings, slots) => 
     $$bindings.ewJson(ewJson);
   if ($$props.cou === void 0 && $$bindings.cou && cou !== void 0)
     $$bindings.cou(cou);
-  if ($$props.ladData === void 0 && $$bindings.ladData && ladData !== void 0)
-    $$bindings.ladData(ladData);
   if ($$props.place === void 0 && $$bindings.place && place !== void 0)
     $$bindings.place(place);
   if ($$props.region === void 0 && $$bindings.region && region !== void 0)
@@ -495,6 +664,10 @@ const U5Bidu5D = create_ssr_component(($$result, $$props, $$bindings, slots) => 
     $$bindings.regionJson(regionJson);
   if ($$props.countryJson === void 0 && $$bindings.countryJson && countryJson !== void 0)
     $$bindings.countryJson(countryJson);
+  if ($$props.regionLU === void 0 && $$bindings.regionLU && regionLU !== void 0)
+    $$bindings.regionLU(regionLU);
+  if ($$props.countyLU === void 0 && $$bindings.countyLU && countyLU !== void 0)
+    $$bindings.countyLU(countyLU);
   $$result.css.add(css);
   {
     console.log("place_new", place_new);

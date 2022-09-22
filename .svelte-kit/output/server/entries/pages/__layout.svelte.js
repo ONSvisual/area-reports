@@ -508,9 +508,7 @@ const ONSHeader = create_ssr_component(($$result, $$props, $$bindings, slots) =>
   return `<header><a class="${"skiplink"}" href="${"#main"}" tabindex="${"0"}">${escape(i18n("Skip to main content", lang))}</a>
 	<div id="${"pagePath"}" class="${"hide"}">${escape(path)}</div>
 	<div class="${"wrapper"}"><div class="${"header col-wrap"}"><div class="${"col col--lg-one-third col--md-one-third"}"><a href="${escape(baseurl) + "/"}"><img class="${"logo"}" src="${"https://cdn.ons.gov.uk/assets/images/ons-logo/v2/ons-logo.svg"}"${add_attribute("alt", i18n("Office for National Statistics logo - Homepage", lang), 0)}></a></div>
-			<div class="${"col col--lg-two-thirds col--md-two-thirds hide--sm print--hide language--js__container"}"><div class="${"language"}">${lang == "en" ? `<span>English (EN) | </span>
-					<a href="${"//cy.ons.gov.uk" + escape(path)}" class="${"language__link"}" lang="${"cy"}">Cymraeg (CY)</a>` : `<a href="${"//www.ons.gov.uk" + escape(path)}" class="${"language__link"}" lang="${"en"}">English (EN)</a>
-					<span>| Cymraeg (EN)</span>`}</div></div>
+			<div class="${"col col--lg-two-thirds col--md-two-thirds hide--sm print--hide language--js__container"}"></div>
 			<div class="${"secondary-nav col col--lg-two-thirds col--md-two-thirds print--hide"}"><ul class="${"secondary-nav__list js-nav-clone__list"}">${each(menu.filter((d) => d.secondary), (item) => {
     return `<li class="${"secondary-nav__item"}"><a class="${"secondary-nav__link js-nav-clone__link"}" href="${escape(baseurl) + escape(item.url)}">${escape(item["label_" + lang])}</a>
 					</li>`;
