@@ -394,15 +394,27 @@ function ord(x) {
 }
 
 var ageBandLU = {
-  '0-9': ['children under the age of nine years', 'under nine years'],
-  '10-19': ['people between the ages of 10 and 19 years','between 10 and 19 years'],
-  '20-29': ['people between the ages of 20 and 29 years', 'between 20 and 29 years'],
-  '30-39': ['people between the ages of 30 and 39 years','between 30 and 39 years'],
-  '40-49': ['people between the ages of 40 and 49 years','between 40 and 49 years'],
-  '50-59': ['people between the ages of 50 and 59 years','between 50 and 59 years'],
-  '60-69': ['people between the ages of 60 and 69 years','between 60 and 69 years'],
-  '70-79': ['people between the ages of 70 and 79 years', 'between 70 and 79 years'],
-  '80plus': ['people aged 80 years or over', 'over the age of 80 years']
+  // '0-9': ['children under the age of nine years', 'under nine years'],
+  // '10-19': ['people between the ages of 10 and 19 years','between 10 and 19 years'],
+  // '20-29': ['people between the ages of 20 and 29 years', 'between 20 and 29 years'],
+  // '30-39': ['people between the ages of 30 and 39 years','between 30 and 39 years'],
+  // '40-49': ['people between the ages of 40 and 49 years','between 40 and 49 years'],
+  // '50-59': ['people between the ages of 50 and 59 years','between 50 and 59 years'],
+  // '60-69': ['people between the ages of 60 and 69 years','between 60 and 69 years'],
+  // '70-79': ['people between the ages of 70 and 79 years', 'between 70 and 79 years'],
+  // '80plus': ['people aged 80 years or over', 'over the age of 80 years'],
+
+  '0 - 4': ['children under the age of five years', 'under five years'],
+  '5 - 9': ['children between the ages of five and nine years', 'between five and nine years'],
+  '10 - 15': ['people between the ages of 10 and 15 years','between 10 and 15 years'],
+  '16 - 19': ['people between the ages of 16 and 19 years','between 16 and 19 years'],
+  '20 - 24': ['people between the ages of 20 and 24 years','between 20 and 24 years'],
+  '25 - 34': ['people between the ages of 25 and 34 years','between 25 and 34 years'],
+  '35 - 49': ['people between the ages of 35 and 49 years','between 35 and 49 years'],
+  '50 - 64': ['people between the ages of 50 and 64 years','between 50 and 64 years'],
+  '65 - 74': ['people between the ages of 65 and 74 years','between 65 and 74 years'],
+  '75 - 84': ['people between the ages of 75 and 84 years','between 75 and 84 years'],
+  '85 - 115': ['people between the ages of 85 and 115 years','between 85 and 115 years']
 }
 function eq(a, b) {
   return Array.isArray(a) &&

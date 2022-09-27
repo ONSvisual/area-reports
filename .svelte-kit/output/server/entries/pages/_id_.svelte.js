@@ -607,9 +607,7 @@ const U5Bidu5D = create_ssr_component(($$result, $$props, $$bindings, slots) => 
       ]
     }
   };
-  Object.keys(tables).forEach((e) => {
-    console.log("e", e);
-  });
+  console.log("tables", tables);
   process.env.NODE_ENV === "production";
   if (place_new.data.population.value.change.all > 8)
     ;
@@ -670,13 +668,13 @@ const U5Bidu5D = create_ssr_component(($$result, $$props, $$bindings, slots) => 
     $$bindings.countyLU(countyLU);
   $$result.css.add(css);
   {
-    console.log("place_new", place_new);
+    console.log("Local authority area data", place_new);
   }
   {
-    console.log("rgn", rgn_new);
+    console.log("Regional data", rgn_new);
   }
   {
-    console.log("cou", cou);
+    console.log("National data", cou);
   }
   return `${$$result.head += `${$$result.title = `<title>${escape(place_new.name)}</title>`, ""}<meta property="${"og:title"}"${add_attribute("content", place_new.name, 0)} data-svelte="svelte-1c2kqju"><meta property="${"og:description"}" content="${"This is a description of the page."}" data-svelte="svelte-1c2kqju"><meta name="${"description"}" content="${"This is a description of the page."}" data-svelte="svelte-1c2kqju"><script src="${"https://unpkg.com/rosaenlg@3.0.1/dist/rollup/rosaenlg_tiny_en_US_3.0.1_comp.js"}" data-svelte="svelte-1c2kqju"><\/script>`, ""}
 
@@ -690,7 +688,7 @@ ${validate_component(Titleblock, "Titleblock").$$render($$result, { background: 
     default: () => {
       return `${validate_component(Headline, "Headline").$$render($$result, {}, {}, {
         default: () => {
-          return `How life has changed in ${escape(place_new.name)}: Census 2021`;
+          return `How life has changed ${escape(place_new.preposition)} ${escape(place_new.name)}: Census 2021`;
         }
       })}
 	<div style="${"height: 20px;"}"></div>

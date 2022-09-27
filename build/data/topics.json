@@ -2,10 +2,10 @@
     "national": {
         "general_sf": "national identity",
         "general": "national identity",
-        "synonym": "change in national identity of many in {plcname}",
-        "profile": "national identity in {plcname} changed substantially",
+        "synonym": "change in national identity of many {preposition} {plcname}",
+        "profile": "national identity {preposition} {plcname} changed substantially",
         "British only identity": {
-            "clausal_modifier": "respondents in {plcname} that identify as only British",
+            "clausal_modifier": "respondents {preposition} {plcname} that identify as only British",
             "verb_past": "that identify as only British",
             "verb_past_samp": "identified as British (and no other nationality)",
             "adj_noun": "people who identify as only British",
@@ -13,15 +13,15 @@
             "subhead": {
                 "pos": "Rise in British identity",
                 "neg": "Fall in British identity",
-                "neu": "British identity in {plcname}",
-                "buc": "British identity in {plcname}",
-                "sta": "British identity in {plcname}"
+                "neu": "British identity {preposition} {plcname}",
+                "buc": "British identity {preposition} {plcname}",
+                "sta": "British identity {preposition} {plcname}"
             },
             "sample": "the proportion of people who identify as only British",
             "adj_noun_s": "people who identify as only British"
         },
         "English only identity": {
-            "clausal_modifier": "respondents in {plcname} that identify as only English",
+            "clausal_modifier": "respondents {preposition} {plcname} that identify as only English",
             "verb_past": "that identify as only English",
             "verb_past_samp": "identified as English (and no other nationality)",
             "adj_noun": "people who identify as only English",
@@ -29,15 +29,15 @@
             "subhead": {
                 "pos": "Rise in English identity",
                 "neg": "Fall in English identity",
-                "neu": "English identity in {plcname}",
-                "buc": "English identity in {plcname}",
-                "sta": "English identity in {plcname}"
+                "neu": "English identity {preposition} {plcname}",
+                "buc": "English identity {preposition} {plcname}",
+                "sta": "English identity {preposition} {plcname}"
             },
             "sample": "the proportion of people who identify as only English",
             "adj_noun_s": "people who identify as only English"
         },
         "Welsh only identity": {
-            "clausal_modifier": "respondents in {plcname} that identify as only Welsh",
+            "clausal_modifier": "respondents {preposition} {plcname} that identify as only Welsh",
             "verb_past": "that identify as only Welsh",
             "verb_past_samp": "identified as Welsh (and no other nationality)",
             "adj_noun": "people who identify as only Welsh",
@@ -45,15 +45,15 @@
             "subhead": {
                 "pos": "Rise in Welsh identity",
                 "neg": "Fall in Welsh identity",
-                "neu": "Welsh identity in {plcname}",
-                "buc": "Welsh identity in {plcname}",
-                "sta": "Welsh identity in {plcname}"
+                "neu": "Welsh identity {preposition} {plcname}",
+                "buc": "Welsh identity {preposition} {plcname}",
+                "sta": "Welsh identity {preposition} {plcname}"
             },
             "sample": "the proportion of people who identify as only Welsh",
             "adj_noun_s": "people who identify as only Welsh"
         },
         "English and British only identity": {
-            "clausal_modifier": "respondents in {plcname} that identify as both English and British",
+            "clausal_modifier": "respondents {preposition} {plcname} that identify as both English and British",
             "verb_past": "that identify as English and British (but no other nationality)",
             "verb_past_samp": "described themselves as both English and British",
             "adj_noun": "people who identify as British and English",
@@ -61,15 +61,15 @@
             "subhead": {
                 "pos": "Rise in English and British identity",
                 "neg": "Fall in English and British identity",
-                "neu": "National identity in {plcname}",
-                "buc": "National identity in {plcname}",
-                "sta": "National identity in {plcname}"
+                "neu": "National identity {preposition} {plcname}",
+                "buc": "National identity {preposition} {plcname}",
+                "sta": "National identity {preposition} {plcname}"
             },
             "sample": "the proportion of people who identify as British and English",
             "adj_noun_s": "people who identify as British and English"
         },
         "Welsh and British only identity": {
-            "clausal_modifier": "respondents in {plcname} that identify as both Welsh and British",
+            "clausal_modifier": "respondents {preposition} {plcname} that identify as both Welsh and British",
             "verb_past": "that identify as Welsh and British (but no other nationality)",
             "verb_past_samp": "described themselves as both Welsh and British",
             "adj_noun": "people who identify as British and Welsh",
@@ -77,15 +77,15 @@
             "subhead": {
                 "pos": "Rise in Welsh and British identity",
                 "neg": "Fall in Welsh and British identity",
-                "neu": "National identity in {plcname}",
-                "buc": "National identity in {plcname}",
-                "sta": "National identity in {plcname}"
+                "neu": "National identity {preposition} {plcname}",
+                "buc": "National identity {preposition} {plcname}",
+                "sta": "National identity {preposition} {plcname}"
             },
             "sample": "the proportion of people who identify as British and Welsh",
             "adj_noun_s": "people who identify as British and Welsh"
         },
         "Non-UK identity only": {
-            "clausal_modifier": "respondents in {plcname} that do not identify with any UK nationality",
+            "clausal_modifier": "respondents {preposition} {plcname} that do not identify with any UK nationality",
             "verb_past": "that do not identify with any UK nationality",
             "verb_past_samp": "did not identify with any nationality associated with the UK",
             "adj_noun": "people who do not identify with a UK nationality",
@@ -93,31 +93,31 @@
             "subhead": {
                 "pos": "Rise in non-UK national identity",
                 "neg": "Fall in non-UK national identity",
-                "neu": "National identity in {plcname}",
-                "buc": "National identity in {plcname}",
-                "sta": "National identity in {plcname}"
+                "neu": "National identity {preposition} {plcname}",
+                "buc": "National identity {preposition} {plcname}",
+                "sta": "National identity {preposition} {plcname}"
             },
             "sample": "the proportion of people who do not identify with a UK nationality",
             "adj_noun_s": "people who do not identify with a UK nationality"
         },
         "UK identity and non-UK identity": {
-            "clausal_modifier": "respondents in {plcname} that identify with a UK and non-UK nationality",
+            "clausal_modifier": "respondents {preposition} {plcname} that identify with a UK and non-UK nationality",
             "verb_past": "that identify with a UK and non-UK nationality",
             "verb_past_samp": "did identify with a UK and non-UK nationality",
             "adj_noun": "people who identify with a UK and non-UK nationality",
             "verb": "that identify with a UK and non-UK nationality",
             "subhead": {
-                "pos": "National identity in {plcname}",
-                "neg": "National identity in {plcname}",
-                "neu": "National identity in {plcname}",
-                "buc": "National identity in {plcname}",
-                "sta": "National identity in {plcname}"
+                "pos": "National identity {preposition} {plcname}",
+                "neg": "National identity {preposition} {plcname}",
+                "neu": "National identity {preposition} {plcname}",
+                "buc": "National identity {preposition} {plcname}",
+                "sta": "National identity {preposition} {plcname}"
             },
             "sample": "the proportion of people who identify with a UK and non-UK nationality",
             "adj_noun_s": "people who identify with a UK and non-UK nationality"
         },
         "Any other combination of only UK identities": {
-            "clausal_modifier": "respondents in {plcname} that identify with another UK nationality",
+            "clausal_modifier": "respondents {preposition} {plcname} that identify with another UK nationality",
             "verb_past": "that identify with another UK nationality (or some combination including a UK nationality)",
             "verb_past_samp": "identified with some other UK nationality",
             "adj_noun": "people who identify with some other UK nationality",
@@ -125,9 +125,9 @@
             "subhead": {
                 "pos": "Rise in other UK national identity",
                 "neg": "Rise in other UK national identity",
-                "neu": "National identity in {plcname}",
-                "buc": "National identity in {plcname}",
-                "sta": "National identity in {plcname}"
+                "neu": "National identity {preposition} {plcname}",
+                "buc": "National identity {preposition} {plcname}",
+                "sta": "National identity {preposition} {plcname}"
             },
             "sample": "the proportion of people who identify with another UK natioality",
             "adj_noun_s": "people who identify with another UK natioality"
@@ -139,10 +139,10 @@
     "tenure": {
         "general_sf": "housing tenure",
         "general": "housing tenure",
-        "synonym": "change in housing tenure for many in {plcname}",
-        "profile": "housing tenure in {plcname} changed substantially",
+        "synonym": "change in housing tenure for many {preposition} {plcname}",
+        "profile": "housing tenure {preposition} {plcname} changed substantially",
         "Private rented": {
-            "clausal_modifier": "households in {plcname} that rented privately",
+            "clausal_modifier": "households {preposition} {plcname} that rented privately",
             "verb_past": "that rented privately",
             "verb_past_samp": "rented privately",
             "adj_noun": "privately rented homes",
@@ -150,7 +150,7 @@
             "subhead": {
                 "pos": "Rise in private renting",
                 "neg": "Fall in private renting",
-                "neu": "Change in {plcname} housing",
+                "neu": "Change in housing {preposition} {plcname}",
                 "buc": "{plcname} stood out from other areas for housing",
                 "sta": "Housing in {plcname}"
             },
@@ -166,7 +166,7 @@
             "subhead": {
                 "pos": "Rise in social renting",
                 "neg": "Fall in social renting",
-                "neu": "Change in {plcname} housing",
+                "neu": "Change in housing {preposition} {plcname}",
                 "buc": "{plcname} stood out from other areas for housing",
                 "sta": "Housing in {plcname}"
             },
@@ -182,9 +182,9 @@
             "subhead": {
                 "pos": "Rise in home ownership",
                 "neg": "Fall in home ownership",
-                "neu": "Change in {plcname} housing",
+                "neu": "Change in housing {preposition} {plcname}",
                 "buc": "{plcname} stood out from other areas for housing",
-                "sta": "Housing in {plcname}"
+                "sta": "Housing {preposition} {plcname}"
             },
             "sample": "the rate of home ownership",
             "adj_noun_s": "home ownership"
@@ -196,7 +196,7 @@
     "welsh": {
         "general_sf": "knowledge of the Welsh language",
         "general": "knowledge of the Welsh language",
-        "profile": "the use of welsh changed substantially in {plcname}",
+        "profile": "the use of welsh changed substantially {preposition} {plcname}",
         "Can speak Welsh": {
             "verb_past": "that said they could speak Welsh",
             "verb_past_samp": "said they could speak Welsh",
@@ -205,7 +205,7 @@
                 "neg": "Fall in proportion of Welsh speakers",
                 "neu": "Change in number of Welsh language speakers",
                 "buc": "{plcname} stood out from other areas for Welsh language",
-                "sta": "Welsh language in {plcname}"
+                "sta": "Welsh language {preposition} {plcname}"
             },
             "sample": "The proportion of people who could speak Welsh"
         },
@@ -216,7 +216,7 @@
         "general_sf": "health",
         "general": "health",
         "synonym": "change in the local population's well-being",
-        "profile": "health {health} substantially in {plcname}",
+        "profile": "health {health} substantially {preposition} {plcname}",
         "Very good or good health": {
             "clausal_modifier": "{plcname} residents that described their health as good or very good",
             "verb_past": "that said their health was good or very good",
@@ -226,9 +226,9 @@
             "subhead": {
                 "pos": "Health improved",
                 "neg": "Health deteriorated",
-                "neu": "Change in health",
+                "neu": "Change in health {preposition} {plcname}",
                 "buc": "{plcname} stood out from other areas for health",
-                "sta": "Health in {plcname}"
+                "sta": "Health {preposition} {plcname}"
             },
             "sample": "the percentage of people in ’good’ or ’very good’ health",
             "adj_noun_s": "people describing their health as good or very good"
@@ -242,9 +242,9 @@
             "subhead": {
                 "pos": "More people in fair health",
                 "neg": "Fewer people in fair health",
-                "neu": "Change in health",
+                "neu": "Change in health {preposition} {plcname}",
                 "buc": "{plcname} stood out from other areas for health",
-                "sta": "Health in {plcname}"
+                "sta": "Health {preposition} {plcname}"
             },
             "sample": "the percentage of people in ’fair’ health",
             "adj_noun_s": "people describing their health as fair"
@@ -258,9 +258,9 @@
             "subhead": {
                 "pos": "Health deteriorated",
                 "neg": "Health improved",
-                "neu": "Change in health",
+                "neu": "Change in health {preposition} {plcname}",
                 "buc": "{plcname} stood out from other areas for health",
-                "sta": "Health in {plcname}"
+                "sta": "Health {preposition} {plcname}"
             },
             "sample": "the percentage of people in ’bad’ or ’very bad’ health",
             "adj_noun_s": "people describing their health as bad or very bad"
@@ -272,18 +272,18 @@
 
     "ethnicity": {
         "general_sf": "ethnicity",
-        "profile": "ethnicity in {plcname} changed substantially",
+        "profile": "ethnicity {preposition} {plcname} changed substantially",
         "White": {
             "verb_past_samp_er": "said they were from one of the White ethnic groups",
             "verb_past": "that said they were from one of the White ethnic groups",
             "adj_noun_er": "residents from one of the White ethnic groups",
             "verb_er": "from one of the White ethnic groups",
             "subhead": {
-                "pos": "Ethnicity in {plcname}",
-                "neg": "Ethnicity in {plcname}",
-                "neu": "Ethnicity in {plcname}",
-                "buc": "Ethnicity in {plcname}",
-                "sta": "Ethnicity in {plcname}"
+                "pos": "Ethnicity {preposition} {plcname}",
+                "neg": "Ethnicity {preposition} {plcname}",
+                "neu": "Ethnicity {preposition} {plcname}",
+                "buc": "Ethnicity {preposition} {plcname}",
+                "sta": "Ethnicity {preposition} {plcname}"
             },
             "sample_title": "the population from one of the White ethnic groups",
             "label": "White"
@@ -294,11 +294,11 @@
             "adj_noun_er": "residents from the Black, Black British, Caribbean or African ethnic groups",
             "verb_er": "from the Black, Black British, Caribbean or African ethnic groups",
             "subhead": {
-                "pos": "Ethnicity in {plcname}",
-                "neg": "Ethnicity in {plcname}",
-                "neu": "Ethnicity in {plcname}",
-                "buc": "Ethnicity in {plcname}",
-                "sta": "Ethnicity in {plcname}"
+                "pos": "Ethnicity {preposition} {plcname}",
+                "neg": "Ethnicity {preposition} {plcname}",
+                "neu": "Ethnicity {preposition} {plcname}",
+                "buc": "Ethnicity {preposition} {plcname}",
+                "sta": "Ethnicity {preposition} {plcname}"
             },
             "sample_title": "the population from the Black, Black British, Caribbean or African ethnic groups",
             "adj_noun_s": "people from the Black, Black British, Caribbean or African ethnic groups",
@@ -310,11 +310,11 @@
             "adj_noun_er": "residents from the Asian or Asian British ethnic groups",
             "verb_er": "from the Asian or Asian British ethnic groups",
             "subhead": {
-                "pos": "Ethnicity in {plcname}",
-                "neg": "Ethnicity in {plcname}",
-                "neu": "Ethnicity in {plcname}",
-                "buc": "Ethnicity in {plcname}",
-                "sta": "Ethnicity in {plcname}"
+                "pos": "Ethnicity {preposition} {plcname}",
+                "neg": "Ethnicity {preposition} {plcname}",
+                "neu": "Ethnicity {preposition} {plcname}",
+                "buc": "Ethnicity {preposition} {plcname}",
+                "sta": "Ethnicity {preposition} {plcname}"
             },
             "sample_title": "the population from the Asian or Asian British ethnic groups",
             "adj_noun_s": "people from the Asian or Asian British ethnic groups",
@@ -326,11 +326,11 @@
             "adj_noun_er": "residents from Mixed/multiple ethnic groups (White and Asian, White and Black African, White and Black Caribbean or Other Mixed)",
             "verb_er": "from Mixed/multiple ethnic groups (White and Asian, White and Black African, White and Black Caribbean or Other Mixed)",
             "subhead": {
-                "pos": "Ethnicity in {plcname}",
-                "neg": "Ethnicity in {plcname}",
-                "neu": "Ethnicity in {plcname}",
-                "buc": "Ethnicity in {plcname}",
-                "sta": "Ethnicity in {plcname}"
+                "pos": "Ethnicity {preposition} {plcname}",
+                "neg": "Ethnicity {preposition} {plcname}",
+                "neu": "Ethnicity {preposition} {plcname}",
+                "buc": "Ethnicity {preposition} {plcname}",
+                "sta": "Ethnicity {preposition} {plcname}"
             },
             "sample_title": "the population from Mixed/multiple ethnic groups (White and Asian, White and Black African, White and Black Caribbean or Other Mixed)",
             "adj_noun_s": "people from Mixed/multiple ethnic groups (White and Asian, White and Black African, White and Black Caribbean or Other Mixed)",
@@ -342,11 +342,11 @@
             "adj_noun_er": "residents from the Other ethnic groups (Arab or any other ethnic group)",
             "verb_er": "from the Other ethnic groups (Arab or any other ethnic group)",
             "subhead": {
-                "pos": "Ethnicity in {plcname}",
-                "neg": "Ethnicity in {plcname}",
-                "neu": "Ethnicity in {plcname}",
-                "buc": "Ethnicity in {plcname}",
-                "sta": "Ethnicity in {plcname}"
+                "pos": "Ethnicity {preposition} {plcname}",
+                "neg": "Ethnicity {preposition} {plcname}",
+                "neu": "Ethnicity {preposition} {plcname}",
+                "buc": "Ethnicity {preposition} {plcname}",
+                "sta": "Ethnicity {preposition} {plcname}"
             },
             "sample_title": "the population from the Other ethnic groups (Arab or any other ethnic group)",
             "adj_noun_s": "people from the Other ethnic groups (Arab or any other ethnic group)",
@@ -361,38 +361,38 @@
         "general_sf": "jobs",
         "general": "jobs",
         "synonym": "change in the employment status of many here",
-        "profile": "work life changed for many in {plcname}",
+        "profile": "work life changed for many {preposition} {plcname}",
         "Economically active (including full-time students): In employment: Employee": {
-            "clausal_modifier": "employed {plcname} residents",
-            "verb_past": "that said they were employed",
+            "clausal_modifier": "{plcname} residents who were employed",
+            "verb_past": "who said they were employed",
             "verb_past_samp": "said they were employed",
-            "adj_noun": "employed people",
-            "verb": "that were employed",
+            "adj_noun": "people who were employed",
+            "verb": "who were employed",
             "subhead": {
                 "pos": "Rise in rate of employment",
                 "neg": "Fall in rate of employment",
                 "neu": "Change in work life",
                 "buc": "{plcname} stood out from other areas for work life",
-                "sta": "Employment in {plcname}"
+                "sta": "Employment {preposition} {plcname}"
             },
             "sample": "the rate of employment",
-            "adj_noun_s": "employed people"
+            "adj_noun_s": "people who were employed"
         },
         "Economically active (including full-time students): Unemployed": {
-            "clausal_modifier": "unemployed {plcname} residents",
-            "verb_past": "that said they were unemployed",
+            "clausal_modifier": "{plcname} residents who were unemployed",
+            "verb_past": "who said they were unemployed",
             "verb_past_samp": "said they were unemployed",
-            "adj_noun": "unemployed people",
-            "verb": "that were unemployed",
+            "adj_noun": "people who were unemployed",
+            "verb": "who were unemployed",
             "subhead": {
                 "pos": "Rise in rate of unemployment",
                 "neg": "Fall in rate of unemployment",
                 "neu": "Changing work life",
                 "buc": "{plcname} stood out from other areas for jobs",
-                "sta": "Unemployment in {plcname}"
+                "sta": "Unemployment {preposition} {plcname}"
             },
             "sample": "the rate of unemployment",
-            "adj_noun_s": "unemployed people"
+            "adj_noun_s": "people unemployed"
         },
         "Economically inactive: Retired": {
             "clausal_modifier": "retired {plcname} residents",
@@ -405,42 +405,42 @@
                 "neg": "Fewer retired people",
                 "neu": "Changing work life",
                 "buc": "{plcname} stood out for retirees",
-                "sta": "Retirees in {plcname}"
+                "sta": "Retirees {preposition} {plcname}"
             },
             "sample": "the proportion of people who were retired",
             "adj_noun_s": "people who were retired"
         },
         "Economically active (including full-time students): In employment: Self-employed": {
-            "clausal_modifier": "self-employed {plcname} residents",
-            "verb_past": "that said they were self-employed",
+            "clausal_modifier": "{plcname} residents who were self-employed",
+            "verb_past": "who said they were self-employed",
             "verb_past_samp": "said they were self-employed",
-            "adj_noun": "self-employed people",
+            "adj_noun": "people who were self-employed",
             "verb": "that were self-employed",
             "subhead": {
                 "pos": "Rise in rate of self-employment",
                 "neg": "Fall in rate of self-employment",
                 "neu": "Change in work life",
                 "buc": "{plcname} stood out for self-employment",
-                "sta": "Self-employment in {plcname}"
+                "sta": "Self-employment {preposition} {plcname}"
             },
             "sample": "the rate of self-employment",
-            "adj_noun_s": "self-employed people"
+            "adj_noun_s": "people who were self-employed"
         },
         "Economically inactive (including full-time students): Student": {
-            "clausal_modifier": "{plcname} residents that were studying (and not employed or seeking work)",
+            "clausal_modifier": "{plcname} residents that were students (and not employed or seeking work)",
             "verb_past": "that said they were in education",
             "verb_past_samp": "said they were in education",
             "adj_noun": "students (including only those not employed or seeking work)",
             "verb": "that were economically inactive students",
             "subhead": {
-                "pos": "Students in {plcname}",
-                "neg": "Students in {plcname}",
-                "neu": "Students in {plcname}",
+                "pos": "Students {preposition} {plcname}",
+                "neg": "Students {preposition} {plcname}",
+                "neu": "Students {preposition} {plcname}",
                 "buc": "{plcname} stood out from other areas for students",
-                "sta": "Students in {plcname}"
+                "sta": "Students {preposition} {plcname}"
             },
-            "sample": "the percentage of economically inactive students",
-            "adj_noun_s": "economically inactive students"
+            "sample": "the percentage of students who were economically inactive",
+            "adj_noun_s": "students who were economically inactive"
         },
         "subtitle": "economic status",
         "measure": "usual residents aged 16 to 74",
@@ -450,8 +450,8 @@
     "household": {
         "general_sf": "family",
         "general": "family",
-        "synonym": "change in family life for many in {plcname}",
-        "profile": "family structure changed substantially in {plcname}",
+        "synonym": "change in family life for many {preposition} {plcname}",
+        "profile": "family structure changed substantially {preposition} {plcname}",
         "Single family household: Couple family household: No children": {
             "clausal_modifier": "single family households comprising a couple without children",
             "verb_past": "that had a couple without any children",
@@ -461,11 +461,11 @@
             "subhead": {
                 "pos": "More couples without children",
                 "neg": "Fewer couples without children",
-                "neu": "Changing family dynamics",
-                "buc": "Family in {plcname}",
-                "sta": "Family in {plcname}"
+                "neu": "Family {preposition} {plcname}",
+                "buc": "Family {preposition} {plcname}",
+                "sta": "Family {preposition} {plcname}"
             },
-            "sample": "the percentage of households with a couple without children",
+            "sample": "the percentage of households comprising a couple without children",
             "adj_noun_s": "couple households without children"
         },
         "Single family household: Couple family household: Dependent children": {
@@ -477,9 +477,9 @@
             "subhead": {
                 "pos": "More couples with children",
                 "neg": "Fewer couples with children",
-                "neu": "Changing household dynamics",
-                "buc": "Family in {plcname}",
-                "sta": "Family in {plcname}"
+                "neu": "Family {preposition} {plcname}",
+                "buc": "Family {preposition} {plcname}",
+                "sta": "Family {preposition} {plcname}"
             },
             "sample": "the percentage of households with a couple and dependent children",
             "adj_noun_s": "couples with dependent children"
@@ -493,15 +493,15 @@
             "subhead": {
                 "pos": "More couples with non-dependent",
                 "neg": "Fewer couples with non-dependent",
-                "neu": "Changing household dynamics",
-                "buc": "Family in {plcname}",
-                "sta": "Family in {plcname}"
+                "neu": "Family {preposition} {plcname}",
+                "buc": "Family {preposition} {plcname}",
+                "sta": "Family {preposition} {plcname}"
             },
             "sample": "the percentage of households with a couple and non-dependent children",
             "adj_noun_s": "couples with non-dependent children"
         },
         "Single family household: Lone parent household": {
-            "clausal_modifier": "households in {plcname}, which comprised a single parent,",
+            "clausal_modifier": "households {preposition} {plcname}, which comprised a single parent,",
             "verb_past": "that had a single parent",
             "verb_past_samp": "had a single parent",
             "adj_noun": "single-parent households",
@@ -509,9 +509,9 @@
             "subhead": {
                 "pos": "More single parents",
                 "neg": "Fewer single parents",
-                "neu": "Changing household dynamics",
-                "buc": "{plcname} stood out from other areas for single parenting",
-                "sta": "Single parents in {plcname}"
+                "neu": "Family {preposition} {plcname}",
+                "buc": "Family {preposition} {plcname}",
+                "sta": "Single parents {preposition} {plcname}"
             },
             "sample": "the percentage of households with a single-parent",
             "adj_noun_s": "single-parent households"
@@ -530,11 +530,11 @@
             "adj_noun_er": "respondents who described themselves as Christian",
             "verb_er": "and described themselves as Christian",
             "subhead": {
-                "pos": "Religion in {plcname}",
-                "neg": "Religion in {plcname}",
-                "neu": "Religion in {plcname}",
-                "buc": "Religion in {plcname}",
-                "sta": "Religion in {plcname}"
+                "pos": "Religion {preposition} {plcname}",
+                "neg": "Religion {preposition} {plcname}",
+                "neu": "Religion {preposition} {plcname}",
+                "buc": "Religion {preposition} {plcname}",
+                "sta": "Religion {preposition} {plcname}"
             },
             "sample_title": "the population who identified as Christian",
             "adj_noun_s": "people who identified as Christian",
@@ -546,11 +546,11 @@
             "adj_noun_er": "respondents who described themselves as Buddhist",
             "verb_er": "and described themselves as Buddhist",
             "subhead": {
-                "pos": "Religion in {plcname}",
-                "neg": "Religion in {plcname}",
-                "neu": "Religion in {plcname}",
-                "buc": "Religion in {plcname}",
-                "sta": "Religion in {plcname}"
+                "pos": "Religion {preposition} {plcname}",
+                "neg": "Religion {preposition} {plcname}",
+                "neu": "Religion {preposition} {plcname}",
+                "buc": "Religion {preposition} {plcname}",
+                "sta": "Religion {preposition} {plcname}"
             },
             "sample_title": "the population who identified as Buddhist",
             "adj_noun_s": "people who identified as Buddhist",
@@ -562,11 +562,11 @@
             "adj_noun_er": "respondents who described themselves as Hindu",
             "verb_er": "and described themselves as Hindu",
             "subhead": {
-                "pos": "Religion in {plcname}",
-                "neg": "Religion in {plcname}",
-                "neu": "Religion in {plcname}",
-                "buc": "Religion in {plcname}",
-                "sta": "Religion in {plcname}"
+                "pos": "Religion {preposition} {plcname}",
+                "neg": "Religion {preposition} {plcname}",
+                "neu": "Religion {preposition} {plcname}",
+                "buc": "Religion {preposition} {plcname}",
+                "sta": "Religion {preposition} {plcname}"
             },
             "sample_title": "the population who identified as Hindu",
             "adj_noun_s": "people who identified as Hindu",
@@ -578,11 +578,11 @@
             "adj_noun_er": "respondents who described themselves as Sikh",
             "verb_er": "and described themselves as Sikh",
             "subhead": {
-                "pos": "Religion in {plcname}",
-                "neg": "Religion in {plcname}",
-                "neu": "Religion in {plcname}",
-                "buc": "Religion in {plcname}",
-                "sta": "Religion in {plcname}"
+                "pos": "Religion {preposition} {plcname}",
+                "neg": "Religion {preposition} {plcname}",
+                "neu": "Religion {preposition} {plcname}",
+                "buc": "Religion {preposition} {plcname}",
+                "sta": "Religion {preposition} {plcname}"
             },
             "sample_title": "the population who identified as Sikh",
             "adj_noun_s": "people who identified as Sikh",
@@ -594,11 +594,11 @@
             "adj_noun_er": "respondents who described themselves as Jewish",
             "verb_er": "and described themselves as Jewish",
             "subhead": {
-                "pos": "Religion in {plcname}",
-                "neg": "Religion in {plcname}",
-                "neu": "Religion in {plcname}",
-                "buc": "Religion in {plcname}",
-                "sta": "Religion in {plcname}"
+                "pos": "Religion {preposition} {plcname}",
+                "neg": "Religion {preposition} {plcname}",
+                "neu": "Religion {preposition} {plcname}",
+                "buc": "Religion {preposition} {plcname}",
+                "sta": "Religion {preposition} {plcname}"
             },
             "sample_title": "the population who identified as Jewish",
             "adj_noun_s": "people who identified as Jewish",
@@ -610,11 +610,11 @@
             "adj_noun_er": "respondents who described themselves as Muslim",
             "verb_er": "and described themselves as Muslim",
             "subhead": {
-                "pos": "Religion in {plcname}",
-                "neg": "Religion in {plcname}",
-                "neu": "Religion in {plcname}",
-                "buc": "Religion in {plcname}",
-                "sta": "Religion in {plcname}"
+                "pos": "Religion {preposition} {plcname}",
+                "neg": "Religion {preposition} {plcname}",
+                "neu": "Religion {preposition} {plcname}",
+                "buc": "Religion {preposition} {plcname}",
+                "sta": "Religion {preposition} {plcname}"
             },
             "sample_title": "the population who identified as Muslim",
             "adj_noun_s": "people who identified as Muslim",
@@ -626,11 +626,11 @@
             "adj_noun_er": "respondents who described themselves as having no religion",
             "verb_er": "and described themselves as having no religion",
             "subhead": {
-                "pos": "Religion in {plcname}",
-                "neg": "Religion in {plcname}",
-                "neu": "Religion in {plcname}",
-                "buc": "Religion in {plcname}",
-                "sta": "Religion in {plcname}"
+                "pos": "Religion {preposition} {plcname}",
+                "neg": "Religion {preposition} {plcname}",
+                "neu": "Religion {preposition} {plcname}",
+                "buc": "Religion {preposition} {plcname}",
+                "sta": "Religion {preposition} {plcname}"
             },
             "sample_title": "the population that said they had no religion",
             "adj_noun_s": "people who said they had no religion",
@@ -642,11 +642,11 @@
             "adj_noun_er": "respondents who did not disclose their religious affiliation",
             "verb_er": "and did not disclose their religious affiliation",
             "subhead": {
-                "pos": "Religion in {plcname}",
-                "neg": "Religion in {plcname}",
-                "neu": "Religion in {plcname}",
-                "buc": "Religion in {plcname}",
-                "sta": "Religion in {plcname}"
+                "pos": "Religion {preposition} {plcname}",
+                "neg": "Religion {preposition} {plcname}",
+                "neu": "Religion {preposition} {plcname}",
+                "buc": "Religion {preposition} {plcname}",
+                "sta": "Religion {preposition} {plcname}"
             },
             "sample_title": "the percentage of the popultion that did not state their religion",
             "adj_noun_s": "people that did not state their religion",
@@ -658,11 +658,11 @@
             "adj_noun_er": "respondents who identified with a religion other than Christianity, Islam, Hinduism, Judaism, Buddhism or Sikhism",
             "verb_er": "and identified with a religion other than Christianity, Islam, Hinduism, Judaism, Buddhism or Sikhism",
             "subhead": {
-                "pos": "Religion in {plcname}",
-                "neg": "Religion in {plcname}",
-                "neu": "Religion in {plcname}",
-                "buc": "Religion in {plcname}",
-                "sta": "Religion in {plcname}"
+                "pos": "Religion {preposition} {plcname}",
+                "neg": "Religion {preposition} {plcname}",
+                "neu": "Religion {preposition} {plcname}",
+                "buc": "Religion {preposition} {plcname}",
+                "sta": "Religion {preposition} {plcname}"
             },
             "sample_title": "the population who identified with a religion other than Christianity, Islam, Hinduism, Judaism, Buddhism or Sikhism",
             "adj_noun_s": "people who identified with a religion other than Christianity, Islam, Hinduism, Judaism, Buddhism or Sikhism",
@@ -677,7 +677,7 @@
         "general_sf": "unpaid care provision",
         "general": "unpaid care provision",
         "synonym": "change in the amount of unpaid care provided here",
-        "profile": "unpaid care provision changed in {plcname}",
+        "profile": "unpaid care provision changed {preposition} {plcname}",
         "Provides 19 or less hours unpaid care a week": {
             "clausal_modifier": "{plcname} residents that provided up to 19 hours of weekly unpaid care",
             "verb_past": "that reported providing up to 19 hours of unpaid care each week",
@@ -689,7 +689,7 @@
                 "neg": "Fall in moderate hours unpaid care provision",
                 "neu": "Change in unpaid care provision",
                 "buc": "{plcname} stood out from other areas for unpaid care provision",
-                "sta": "Unpaid care in {plcname}"
+                "sta": "Unpaid care {preposition} {plcname}"
             },
             "sample": "the proportion of people providing up to 19 hours of weekly unpaid care",
             "adj_noun_s": "people providing up to 19 hours of weekly unpaid care",
@@ -706,7 +706,7 @@
                 "neg": "Fall in long hours unpaid care provision",
                 "neu": "Change in unpaid care",
                 "buc": "{plcname} stood out from other areas for unpaid care provision",
-                "sta": "Unpaid care in {plcname}"
+                "sta": "Unpaid care {preposition} {plcname}"
             },
             "sample": "the proportion of people providing between 20 and 49 hours of weekly unpaid care",
             "adj_noun_s": "people providing between 20 and 49 hours of weekly unpaid care",
@@ -723,7 +723,7 @@
                 "neg": "Fall in extremely long hours unpaid care",
                 "neu": "Change in unpaid care provision",
                 "buc": "{plcname} stood out from other areas for unpaid care",
-                "sta": "Unpaid care in {plcname}"
+                "sta": "Unpaid care {preposition} {plcname}"
             },
             "sample": "the proportion of people providing 50 hours, or more, of weekly unpaid care",
             "adj_noun_s": "people providing 50 hours, or more, of weekly unpaid care",
@@ -740,7 +740,7 @@
                 "neg": "Rise in unpaid care provision",
                 "neu": "Change in unpaid care provision",
                 "buc": "{plcname} stood out from other areas for unpaid care provision",
-                "sta": "Unpaid care in {plcname}"
+                "sta": "Unpaid care {preposition} {plcname}"
             },
             "sample": "the proportion of people that don't provide weekly unpaid care",
             "adj_noun_s": "people that don't provide weekly unpaid care",
@@ -754,39 +754,39 @@
         "general_sf": "disability",
         "general": "disability",
         "synonym": "change in the proportion of disabled people here",
-        "profile": "the amount of people with disabilities changed in {plcname}",
+        "profile": "the amount of people with disabilities changed {preposition} {plcname}",
         "Not disabled under the Equality Act": {
-            "clausal_modifier": "{plcname} residents who are not disabled under the Equality Act",
-            "verb_past": "that reported not being disabled under the Equality Act",
+            "clausal_modifier": "{plcname} residents who did not describe themselves as disabled",
+            "verb_past": "that reported not being disabled",
             "verb_past_samp": "reported not being disabled",
             "adj_noun": "people who aren't limited by a long-term health problem or disability",
-            "verb": "who aren't disabled under the Equality Act",
+            "verb": "who aren't disabled",
             "subhead": {
                 "pos": "Lower proportion of people with disabilities",
                 "neg": "Higher proportion of people with disabilities",
-                "neu": "Disability in {plcname}",
+                "neu": "Disability {preposition} {plcname}",
                 "buc": "{plcname} stood out from other areas for disability",
-                "sta": "Disability in {plcname}"
+                "sta": "Disability {preposition} {plcname}"
             },
             "sample": "the proportion of people who aren't limited by a long-term health problem or disability",
             "adj_noun_s": "people who aren't limited by a long-term health problem or disability",
             "label": "Day-to-day activities not limited"
         },
         "Disabled under the Equality Act": {
-            "clausal_modifier": "{plcname} residents who are disabled under the Equality Act",
-            "verb_past": "that reported being disabled under the Equality Act",
+            "clausal_modifier": "{plcname} residents who described themselves as disabled",
+            "verb_past": "that reported being disabled",
             "verb_past_samp": "reported being disabled",
             "adj_noun": "people who are disabled",
             "verb": "who are disabled",
             "subhead": {
                 "pos": "Rise in disability",
                 "neg": "Fall in disability",
-                "neu": "Disability in {plcname}",
+                "neu": "Disability {preposition} {plcname}",
                 "buc": "{plcname} stood out from other areas for disability",
-                "sta": "Disability in {plcname}"
+                "sta": "Disability {preposition} {plcname}"
             },
-            "sample": "the proportion of people who are disabled under the Equality Act",
-            "adj_noun_s": "people who are disabled under the Equality Act",
+            "sample": "the proportion of people who are disabled",
+            "adj_noun_s": "people who are disabled",
             "label": "Disabled under the Equality Act"
         },
         "measure": "usual residents",
@@ -796,8 +796,8 @@
     "hours": {
         "general_sf": "work life",
         "general": "work life",
-        "synonym": "change in the working patterns of many in {plcname}",
-        "profile": "work life changed for many in {plcname}",
+        "synonym": "change in the working patterns of many {preposition} {plcname}",
+        "profile": "work life changed for many {preposition} {plcname}",
         "Part-time: 15 hours or less worked": {
             "clausal_modifier": "employees working less than 16 weekly hours",
             "verb_past": "that said they had worked less than 16 hours the week before completing the census",
@@ -809,7 +809,7 @@
                 "neg": "Fewer people worked short hours",
                 "neu": "Change in work hours",
                 "buc": "{plcname} stood out from other areas for working hours",
-                "sta": "Working hours in {plcname}"
+                "sta": "Working hours {preposition} {plcname}"
             },
             "sample": "the proportion of people working less than 16 hours in a week",
             "adj_noun_s": "people working less than 16 hours"
@@ -825,7 +825,7 @@
                 "neg": "Fewer people working long hours",
                 "neu": "Change in work hours",
                 "buc": "{plcname} stood out from other areas for working hours",
-                "sta": "Working hours in {plcname}"
+                "sta": "Working hours {preposition} {plcname}"
             },
             "sample": "long hour working",
             "adj_noun_s": "long hours workers"
@@ -841,7 +841,7 @@
                 "neg": "Fewer people working regular full-time hours",
                 "neu": "Change in work hours",
                 "buc": "{plcname} stood out from other areas for working hours",
-                "sta": "Working hours in {plcname}"
+                "sta": "Working hours {preposition} {plcname}"
             },
             "sample": "full-time working",
             "adj_noun_s": "full-time workers"
@@ -855,41 +855,41 @@
         "general_sf": "marriage",
         "general": "marriage",
         "synonym": "change in the relationships of many here",
-        "profile": "family life changed for many in {plcname}",
+        "profile": "family life changed for many {preposition} {plcname}",
         "Never married and never registered a civil partnership": {
-            "clausal_modifier": "single people in {plcname}",
+            "clausal_modifier": "people who were single {preposition} {plcname}",
             "verb_past": "that said they were single",
             "verb_past_samp": "said they were single",
             "adj_noun": "people who had never been married or in a civil partnership",
             "verb": "that said they were single",
             "subhead": {
-                "pos": "More single people in {plcname}",
-                "neg": "Less single people in {plcname}",
-                "neu": "Changing relationships in {plcname}",
+                "pos": "More people who were single {preposition} {plcname}",
+                "neg": "Less people who were single {preposition} {plcname}",
+                "neu": "Changing relationships {preposition} {plcname}",
                 "buc": "{plcname} stood out from other areas for relationships",
-                "sta": "Relationships in {plcname}"
+                "sta": "Relationships {preposition} {plcname}"
             },
             "sample": "the proportion of people who had never married or entered a civil partnership",
-            "adj_noun_s": "single people"
+            "adj_noun_s": "People who were single"
         },
         "Married or in a registered civil partnership": {
-            "clausal_modifier": "adults in {plcname} that were married",
-            "verb_past": "that said they were married",
-            "verb_past_samp": "said they were married",
-            "adj_noun": "married people",
-            "verb": "that said they were married",
+            "clausal_modifier": "adults {preposition} {plcname} that were married or in a registered civil partnership",
+            "verb_past": "that said they were married or in a registered civil partnership",
+            "verb_past_samp": "said they were married or in a registered civil partnership",
+            "adj_noun": "married (or civil partnered) people",
+            "verb": "that said they were married (or in a civil partnership)",
             "subhead": {
-                "pos": "The percentage of married people increased",
-                "neg": "Fewer married people",
-                "neu": "Changing relationships in {plcname}",
-                "buc": "{plcname} stood out from other areas for relationships",
-                "sta": "Relationships in {plcname}"
+                "pos": "Mariage and civil partnership {preposition} {plcname}",
+                "neg": "Mariage and civil partnership {preposition} {plcname}",
+                "neu": "Mariage and civil partnership {preposition} {plcname}",
+                "buc": "Mariage and civil partnership {preposition} {plcname}",
+                "sta": "Mariage and civil partnership {preposition} {plcname}"
             },
             "sample": "the proportion of married people",
             "adj_noun_s": "married people"
         },
         "Divorced or civil partnership dissolved": {
-            "clausal_modifier": "adults in {plcname} that had divorced or separated from a married or civil partner",
+            "clausal_modifier": "adults {preposition} {plcname} that had divorced or separated from a married or civil partner",
             "verb_past": "that said they had divorced or broken up with a married or civil partner",
             "verb_past_samp": "said they had divorced or broken up with a married or civil partner",
             "adj_noun": "people who had divorced or separated from a married or civil partner",
@@ -897,9 +897,9 @@
             "subhead": {
                 "pos": "More adults are separated from partners",
                 "neg": "Fewer adults are separated from partners",
-                "neu": "Changing relationships in {plcname}",
+                "neu": "Changing relationships {preposition} {plcname}",
                 "buc": "{plcname} stood out from other areas for relationships",
-                "sta": "Relationships in {plcname}"
+                "sta": "Relationships {preposition} {plcname}"
             },
             "sample": "the proportion of people who had divorced or separated from a marriage or civil partner",
             "adj_noun_s": "people who had divorced or separated"
@@ -935,32 +935,75 @@
         "profile": "{plcname}'s population grew older",
         "measure": "usual residents",
         "measure_s": "residents",
-        "0-9": {
-            "label": "0-9"
+        "0 - 4": {
+            "label": "0 - 4",
+            "sample_title": "the population aged under five years"
         },
-        "10-19": {
-            "label": "10-19"
+        "5 - 9": {
+            "label": "5 - 9",
+            "sample_title": "the population aged between five and nine years"
         },
-        "20-29": {
-            "label": "20-29"
+        "10 - 15": {
+            "label": "10 - 15",
+            "sample_title": "the population aged between 10 and 15 years"
         },
-        "30-39": {
-            "label": "30-39"
+        "16 - 19": {
+            "label": "16 - 19",
+            "sample_title": "the population aged between 16 and 19 years"
         },
-        "40-49": {
-            "label": "40-49"
+        "20 - 24": {
+            "label": "20 - 24",
+            "sample_title": "the population aged between 20 and 24 years"
         },
-        "50-59": {
-            "label": "50-59"
+        "25 - 34": {
+            "label": "25 - 34",
+            "sample_title": "the population aged between 25 and 34 years"
         },
-        "60-69": {
-            "label": "60-69"
+        "35 - 49": {
+            "label": "35 - 49",
+            "sample_title": "the population aged between 35 and 49 years"
         },
-        "70-79": {
-            "label": "70-79"
+        "50 - 64": {
+            "label": "50 - 64",
+            "sample_title": "the population aged between 50 and 64 years"
         },
-        "80plus": {
-            "label": "80 and over"
+        "65 - 74": {
+            "label": "65 - 74",
+            "sample_title": "the population aged between 65 and 74 years"
+        },
+        "75 - 84": {
+            "label": "75 - 84",
+            "sample_title": "the population aged between 75 and 84 years"
+        },
+        "85 - 115": {
+            "label": "85 and over",
+            "sample_title": "the population aged over 85 years"
         }
+    },
+    "cob": {
+        "Europe: United Kingdom": "the United Kingdom",
+        "Europe: Ireland": "Ireland",
+        "Europe: Other Europe: EU countries: Member countries in March 2001: France": "France",
+        "Europe: Other Europe: EU countries: Member countries in March 2001: Germany": "Germany",
+        "Europe: Other Europe: EU countries: Member countries in March 2001: Italy": "Italy",
+        "Europe: Other Europe: EU countries: Member countries in March 2001: Portugal (including Madeira and the Azores)": "Portugal",
+        "Europe: Other Europe: EU countries: Member countries in March 2001: Other member countries in March 2001": "a 2001 EU member state",
+        "Europe: Other Europe: EU countries: Countries that joined the EU between April 2001 and March 2011: Poland": "Poland",
+        "Europe: Other Europe: EU countries: Countries that joined the EU between April 2001 and March 2011: Other EU  countries": "a 2001 EU member state",
+        "Europe: Other Europe: EU countries: Countries that joined the EU between April 2011 and March 2021: Croatia": "Croatia",
+        "Europe: Other Europe: Rest of Europe": "the rest of Europe",
+        "Africa: Nigeria": "Nigeria",
+        "Africa: South Africa": "South Africa",
+        "Africa: Other": "other African countries",
+        "Middle East and Asia: China": "China",
+        "Middle East and Asia: Bangladesh": "Bangladesh",
+        "Middle East and Asia: India": "India",
+        "Middle East and Asia: Pakistan": "Pakistan",
+        "Middle East and Asia: Other": "other Asian countries",
+        "The Americas and the Caribbean: Canada": "Canada",
+        "The Americas and the Caribbean: United States": "the United States",
+        "The Americas and the Caribbean: Jamaica": "Jamaica",
+        "The Americas and the Caribbean: Other": "other countries in the Americas and the Caribbean",
+        "Antarctica, Oceania and other": "Antarctica or Oceania"
     }
 }

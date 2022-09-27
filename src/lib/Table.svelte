@@ -5,8 +5,34 @@
     //this is the data for each chart passed from Theo's JSON objects
     export let rows;
 
+    //this is for filtering and sorting COUNTRY OF BIRTH into the top 5 (according to 2021 values):
+if (rows.topic=="cob"){
+    
+    let top5=[]
+    let ordered21 = JSON.parse(JSON.stringify(rows.here21)).sort((a,b)=>b-a).slice(0,6)
+    ordered21.forEach(e=>top5.push(rows.here21.indexOf(e)))
+
+    rows.here21=[rows.here21[top5[0]],rows.here21[top5[1]],rows.here21[top5[2]],rows.here21[top5[3]],rows.here21[top5[4]]]
+    rows.here11=[rows.here11[top5[0]],rows.here11[top5[1]],rows.here11[top5[2]],rows.here11[top5[3]],rows.here11[top5[4]]]
+    rows.hereC=[rows.hereC[top5[0]],rows.hereC[top5[1]],rows.hereC[top5[2]],rows.hereC[top5[3]],rows.hereC[top5[4]]]
+
+    rows.region21=[rows.region21[top5[0]],rows.region21[top5[1]],rows.region21[top5[2]],rows.region21[top5[3]],rows.region21[top5[4]]]
+    rows.region11=[rows.region11[top5[0]],rows.region11[top5[1]],rows.region11[top5[2]],rows.region11[top5[3]],rows.region11[top5[4]]]
+    rows.regionC=[rows.regionC[top5[0]],rows.regionC[top5[1]],rows.regionC[top5[2]],rows.regionC[top5[3]],rows.regionC[top5[4]]]
+
+    rows.country21=[rows.country21[top5[0]],rows.country21[top5[1]],rows.country21[top5[2]],rows.country21[top5[3]],rows.country21[top5[4]]]
+    rows.country11=[rows.country11[top5[0]],rows.country11[top5[1]],rows.country11[top5[2]],rows.country11[top5[3]],rows.country11[top5[4]]]
+    rows.countryC=[rows.countryC[top5[0]],rows.countryC[top5[1]],rows.countryC[top5[2]],rows.countryC[top5[3]],rows.countryC[top5[4]]] 
+
+    rows.ew21=[rows.ew21[top5[0]],rows.ew21[top5[1]],rows.ew21[top5[2]],rows.ew21[top5[3]],rows.ew21[top5[4]]]
+    rows.ew11=[rows.ew11[top5[0]],rows.ew11[top5[1]],rows.ew11[top5[2]],rows.ew11[top5[3]],rows.ew11[top5[4]]]
+    rows.ewC=[rows.ewC[top5[0]],rows.ewC[top5[1]],rows.ewC[top5[2]],rows.ewC[top5[3]],rows.ewC[top5[4]]] 
+
+    rows.keys=[rows.keys[top5[0]],rows.keys[top5[1]],rows.keys[top5[2]],rows.keys[top5[3]],rows.keys[top5[4]]]  
+}
+
     //these are the variables to set in the pipeline
-    export let current = "here21";
+    export let current;
     export let comparator = "none";
 
     //to match the comparative charts to the main dataset
@@ -42,14 +68,18 @@
     //to set the colours (RGB)
     let currentColours = {
         hereC: [246, 96, 104],
-        here21: [34, 208, 182],
+        _hereC: [198, 198, 198],
+        here21: [88, 175, 163],
+        _here21: [198, 198, 198],
         here11: [39, 160, 204],
+        _here11: [198, 198, 198]
     };
 
     //stores to animate the transition between selected radio buttons
     let bars = tweened(rows[current]);
     let strokes = tweened(rows[barsToStrokes[current][comparator]]);
     let colours = tweened(currentColours[current]);
+    let secondaryColours = tweened(currentColours["_" + current]);
     let origin = tweened(current == "hereC" ? 50 : 0);
 
     //to set the first suffix to the chart subtitle
@@ -67,6 +97,7 @@
             duration: 500,
         });
         colours.set(currentColours[current]);
+        secondaryColours.set(currentColours["_" + current]);
         strokes.set(rows[barsToStrokes[current][comparator]], {
             easing: cubicInOut,
             duration: 500,
@@ -93,17 +124,16 @@
 
     $: comparator && onChangeComparison();
     $: current && onChangeChart();
-
-    // $: console.log('rows', rows)
 </script>
 
 {#if rows}
-    <h2 class="title">
+<br>
+    <!-- <h2 class="title">
         {rows.title}
-    </h2>
-    <hr />
-    <span class="tag">census:</span>
-    <div class="controls">
+    </h2> -->
+    <!-- <hr /> -->
+    <!-- <span class="tag">census:</span> -->
+    <!-- <div class="controls">
         <div style="padding-top:-5px; padding-bottom:0px;">
             <div class="section-wrap">
                 <span class="cluster">
@@ -140,8 +170,8 @@
                 >
             </div>
         </div>
-    </div>
-    <span class="tag">comparison:</span>
+    </div> -->
+    <!-- <span class="tag">comparison:</span>
     <div class="controls">
         <div style="padding-top:-5px; padding-bottom:0px;">
             <div class="section-wrap">
@@ -191,9 +221,9 @@
                 >
             </div>
         </div>
-    </div>
-    <hr />
-    <p class="subTitle">
+    </div> -->
+    <!-- <hr /> -->
+    <!-- <p class="subTitle">
         {rows.subTitles[rows.title][0]}
         {rows.placeNm}
         {rows.subTitles[rows.title][1]}{currentWords(current)}
@@ -202,7 +232,7 @@
               comparisons[comparator] +
               ")</span>"
             : ""}
-    </p>
+    </p> -->
     <span
         ><div
             class="circ"
@@ -210,7 +240,14 @@
             style:display="inline-block"
         />
         {rows.placeNm}</span
-    >
+    >    <span
+    ><div
+        class="circ"
+        style:background-color={"rgb(" + $secondaryColours.join(",") + ")"}
+        style:display={comparator == "none"?"none":"inline-block"}
+    />
+    {comparisons[comparator]}</span
+>
     <table>
         <tr class="row hide-element ">
             <th>Classification</th>
@@ -249,6 +286,7 @@
                 <td class="bar"
                     ><div
                         class="inner"
+                        style:height={comparator == "none" ? "60px" : "30px"}
                         style:width={current == "hereC"
                             ? +(
                                   Math.abs($bars[i]) /
@@ -306,19 +344,7 @@
                             class="comparison"
                             style:margin-left={current == "hereC"
                                 ? $strokes[i] > 0
-                                    ? $origin +
-                                      (Math.abs($strokes[i]) /
-                                          Math.max(
-                                              ...$strokes
-                                                  .map((e) => Math.abs(e))
-                                                  .concat(
-                                                      $bars.map((el) =>
-                                                          Math.abs(el)
-                                                      )
-                                                  )
-                                          )) *
-                                          $origin +
-                                      "%"
+                                    ? "50%"
                                     : $origin -
                                       (Math.abs($strokes[i]) /
                                           Math.max(
@@ -332,6 +358,25 @@
                                           )) *
                                           50 +
                                       "%"
+                                : 0}
+                            style:background-color={"rgb(" +
+                                $secondaryColours.join(",") +
+                                ")"}
+                            style:width={current == "hereC"
+                                ? +(
+                                      Math.abs($strokes[i]) /
+                                      Math.max(
+                                          ...$strokes
+                                              .map((e) => Math.abs(e))
+                                              .concat(
+                                                  $bars.map((el) =>
+                                                      Math.abs(el)
+                                                  )
+                                              )
+                                      )
+                                  ) *
+                                      $origin +
+                                  "%"
                                 : +(
                                       $strokes[i] /
                                       Math.max(
@@ -362,8 +407,8 @@
     }
     .circ {
         background: #f00;
-        width: 30px;
-        height: 30px;
+        width: 15px;
+        height: 15px;
         border-radius: 50%;
     }
     .invisible {
@@ -416,31 +461,37 @@
         padding-right: 1em;
     }
     .bar {
-        background-color: #ececec;
+        /* background-color: #ececec; */
         width: 50%;
         max-height: 60px;
         padding: 0;
         overflow: hidden;
+        border-radius: 2px;
     }
     .inner {
         width: 50%;
         height: 60px;
         background-color: #206095;
+        position: relative;
+        top: 0;
+        border-radius: 2px;
     }
     .comparison_container {
         position: relative;
         width: 100%;
         height: 60px;
-        margin-top: -60px;
+        margin-top: -30px;
         border-right: 2px solid white;
         border-left: 2px solid white;
     }
     .comparison {
         width: 4px;
-        height: 40px;
+        height: 30px;
         background-color: black;
-        transform: translate(-2px, 10px);
+        transform: translate(0, 30px);
         border-radius: 2px;
+        position: absolute;
+        top: 0;
     }
     .hide-element {
         border: 0;

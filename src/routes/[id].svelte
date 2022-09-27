@@ -331,13 +331,14 @@
 			]
 		}
 	}
-	Object.keys(tables).forEach(e => {
-		console.log('e', e)
-	});
+	console.log('tables', tables)
+	// Object.keys(tables).forEach(e => {
+	// 	console.log('e', e)
+	// });
 
-	$: console.log('place_new', place_new)
-	$: console.log('rgn', rgn_new)
-	$: console.log('cou', cou)
+	$: console.log('Local authority area data', place_new)
+	$: console.log('Regional data', rgn_new)
+	$: console.log('National data', cou)
   
 	var health, expand, props;
 
@@ -390,15 +391,16 @@
 		}
 	}
 
-  function iterate(obj, pname) {
+  function iterate(obj, pname, prepo="in") {
 		Object.keys(obj).forEach(key => {
 			if (typeof obj[key] === 'object') {
-				iterate(obj[key], pname)
+				iterate(obj[key], pname, prepo)
 			} else {
 				obj[key] = robojournalist(obj[key], {
 					health, health,
 					expanded: expand,
 					plcname: pname,
+					preposition: prepo
 				})
 			}
 		})
@@ -406,7 +408,7 @@
 
 	function results(place_new, rgn, topicsIn) {
 		var o = JSON.parse(JSON.stringify(topicsIn));
-		iterate(o, place_new.name)
+		iterate(o, place_new.name, place_new.preposition)
 
 		function topic(i, top) {
 			
@@ -473,6 +475,7 @@
 			regionLU: regionLU,
 			findOne: findOne
 		})
+		// console.log(res)
 		return res.split(`<div id="esc123"></div>`)
 	}
 
@@ -503,7 +506,7 @@
 		"disability":['Proportion of residents of','who are regiseterd disbled'],
 		"national":['Proportion of residents of','by the nationality they most identify with'],
 		"welsh":['Proportion of residents of','who can speak Welsh'],
-		"age10yr":['Proportion of residents of','of different age groups'],
+		"ageband":['Proportion of residents of','of different age groups'],
 		"cob":['The top five countries of birth of residents of',''],
 	};
 
@@ -539,7 +542,7 @@
 <Titleblock
   background="none"
   >
-	<Headline>How life has changed in {place_new.name}: Census 2021</Headline>
+	<Headline>How life has changed {place_new.preposition} {place_new.name}: Census 2021</Headline>
 	<div style="height: 20px;"></div>
 	<Select items={options} mode="search" idKey="code" labelKey="name" placeholder="Find another area" on:select={gotoPlace} autoClear/>
 </Titleblock>
@@ -551,70 +554,70 @@
 	<!-- {#if !production} -->
 		{#if loaded}
 			{#each results(place_new, rgn_new, topics) as res, i (i)}
-				{@html res}
+				{#if (place_new['stories'].length > i)}
+					{@html res}
 
-				{#if true}
+					{#if true}
 
-					{#if !( ['population', 'agemed'].includes( (place_new['stories'][i]['label'].split("_")[0])) ) }
+						{#if !( ['population', 'agemed'].includes( (place_new['stories'][i]['label'].split("_")[0])) ) }
 
-					<div class="container">
-						<Table
-							rows={{
-								topic: place_new['stories'][i]['label'].split("_")[0],
-								title: place_new['stories'][i]['label'].split("_")[0],
-								keys: Object.keys(place[place_new['stories'][i]['label'].split("_")[0]].perc["2011"]),
-								here11: Object.values(place[place_new['stories'][i]['label'].split("_")[0]].perc["2011"]),
-								region11: Object.values(region[place_new['stories'][i]['label'].split("_")[0]].perc["2011"]),
-								country11: Object.values(country[place_new['stories'][i]['label'].split("_")[0]].perc["2011"]),
-								ew11: Object.values(ew[place_new['stories'][i]['label'].split("_")[0]].perc["2011"]),
-								here21: Object.values(place[place_new['stories'][i]['label'].split("_")[0]].perc["2021"]),
-								region21: Object.values(region[place_new['stories'][i]['label'].split("_")[0]].perc["2021"]),
-								country21: Object.values(country[place_new['stories'][i]['label'].split("_")[0]].perc["2021"]),
-								ew21: Object.values(ew[place_new['stories'][i]['label'].split("_")[0]].perc["2021"]),
-								hereC: Object.values(place[place_new['stories'][i]['label'].split("_")[0]].perc.change),
-								regionC: Object.values(region[place_new['stories'][i]['label'].split("_")[0]].perc.change),
-								countryC: Object.values(country[place_new['stories'][i]['label'].split("_")[0]].perc.change),
-								ewC: Object.values(ew[place_new['stories'][i]['label'].split("_")[0]].perc.change),
-								placeNm: placeNm,
-								regionNm: regionNm,
-								countryNm: countryNm,
-								subTitles: subTitles
-							}}
-						/>
-					</div>
-					<br /><br /><br />
+						<div class="container">
+							<Table current={place_new['stories'][i]['current']} comparator={'region'}
+								rows={{
+									topic: place_new['stories'][i]['label'].split("_")[0],
+									title: place_new['stories'][i]['label'].split("_")[0],
+									keys: Object.keys(place[place_new['stories'][i]['label'].split("_")[0]].perc["2011"]),
+									here11: Object.values(place[place_new['stories'][i]['label'].split("_")[0]].perc["2011"]),
+									region11: Object.values(region[place_new['stories'][i]['label'].split("_")[0]].perc["2011"]),
+									country11: Object.values(country[place_new['stories'][i]['label'].split("_")[0]].perc["2011"]),
+									ew11: Object.values(ew[place_new['stories'][i]['label'].split("_")[0]].perc["2011"]),
+									here21: Object.values(place[place_new['stories'][i]['label'].split("_")[0]].perc["2021"]),
+									region21: Object.values(region[place_new['stories'][i]['label'].split("_")[0]].perc["2021"]),
+									country21: Object.values(country[place_new['stories'][i]['label'].split("_")[0]].perc["2021"]),
+									ew21: Object.values(ew[place_new['stories'][i]['label'].split("_")[0]].perc["2021"]),
+									hereC: Object.values(place[place_new['stories'][i]['label'].split("_")[0]].perc.change),
+									regionC: Object.values(region[place_new['stories'][i]['label'].split("_")[0]].perc.change),
+									countryC: Object.values(country[place_new['stories'][i]['label'].split("_")[0]].perc.change),
+									ewC: Object.values(ew[place_new['stories'][i]['label'].split("_")[0]].perc.change),
+									placeNm: placeNm,
+									regionNm: regionNm,
+									countryNm: countryNm,
+									subTitles: subTitles
+								}}
+							/>
+						</div>
 
-					{:else if ( ['agemed'].includes( (place_new['stories'][i]['label'].split("_")[0])) ) }
+						{:else if ( ['agemed'].includes( (place_new['stories'][i]['label'].split("_")[0])) ) }
 
-					<div class="container">
-						<Table
-							rows={{
-								topic: 'age10yr',
-								title: 'age10yr',
-								keys: Object.keys(place['age10yr'].perc["2011"]),
-								here11: Object.values(place['age10yr'].perc["2011"]),
-								region11: Object.values(region['age10yr'].perc["2011"]),
-								country11: Object.values(country['age10yr'].perc["2011"]),
-								ew11: Object.values(ew['age10yr'].perc["2011"]),
-								here21: Object.values(place['age10yr'].perc["2021"]),
-								region21: Object.values(region['age10yr'].perc["2021"]),
-								country21: Object.values(country['age10yr'].perc["2021"]),
-								ew21: Object.values(ew['age10yr'].perc["2021"]),
-								hereC: Object.values(place['age10yr'].perc.change),
-								regionC: Object.values(region['age10yr'].perc.change),
-								countryC: Object.values(country['age10yr'].perc.change),
-								ewC: Object.values(ew['age10yr'].perc.change),
-								placeNm: placeNm,
-								regionNm: regionNm,
-								countryNm: countryNm,
-								subTitles: subTitles
-							}}
-						/>
-					</div>
-					<br /><br /><br />
+						<div class="container">
+							<Table current={'hereC'} comparator={'region'}
+								rows={{
+									topic: 'ageband',
+									title: 'ageband',
+									keys: Object.keys(place['ageband'].perc["2011"]),
+									here11: Object.values(place['ageband'].perc["2011"]),
+									region11: Object.values(region['ageband'].perc["2011"]),
+									country11: Object.values(country['ageband'].perc["2011"]),
+									ew11: Object.values(ew['ageband'].perc["2011"]),
+									here21: Object.values(place['ageband'].perc["2021"]),
+									region21: Object.values(region['ageband'].perc["2021"]),
+									country21: Object.values(country['ageband'].perc["2021"]),
+									ew21: Object.values(ew['ageband'].perc["2021"]),
+									hereC: Object.values(place['ageband'].perc.change),
+									regionC: Object.values(region['ageband'].perc.change),
+									countryC: Object.values(country['ageband'].perc.change),
+									ewC: Object.values(ew['ageband'].perc.change),
+									placeNm: placeNm,
+									regionNm: regionNm,
+									countryNm: countryNm,
+									subTitles: subTitles
+								}}
+							/>
+						</div>
 
-					{:else}
-					<img src="/map_images/{place_new.code}.png" alt={ placeNm }/>
+						{:else}
+						<img src="/map_images/{place_new.code}.png" alt={ placeNm }/>
+						{/if}
 					{/if}
 				{/if}
 			{/each}
