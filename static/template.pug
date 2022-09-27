@@ -594,7 +594,7 @@ mixin sent3Perc(i)
                 | here than in 
             | #[+nearbyname]
             if (pcnoprint(near_2021) == pcnoprint(near_2021))
-                | (which remained close #[+pc(near_2021)])
+                | (which remained at #[+pc(near_2021)])
             else
                 | (from #[+pc((near_2011))] in 2011 to 
                 | #[+pc(near_2021)] in 2021)
@@ -826,7 +826,7 @@ mixin rankGen(i)
     | The percentage
     | #[+value(topic(i, other_1).verb)] 
     if (pcnoprint(data[s[i][0]][s[i][1]][2011][other_1]) == pcnoprint(data[s[i][0]][s[i][1]][2021][other_1]))
-        | remained close 
+        | remained at 
     else
         if (data[s[i][0]][s[i][1]][2011][other_1]>data[s[i][0]][s[i][1]][2021][other_1])
             | decreased 
@@ -1277,7 +1277,7 @@ mixin welsh(i)
     p
         | The proportion of Welsh speakers #[+value(place.preposition)] #[+value(place.name)] 
         if (pcnoprint(local_2011) == pcnoprint(local_2021))
-            | remained close
+            | remained at
         else
             | #[+value(ud(local_change, 'increased', 'fell'))] 
             | from #[+pc((local_2011))]
@@ -1335,11 +1335,11 @@ mixin welsh(i)
             | #[+small_disclaimer(near.name)]
         | Across Wales, the proportion 
         if (pcnoprint(regional_2011) == pcnoprint(regional_2021))
-            | remained close
+            | remained at
         else
             | #[+value(ud(regional_change, 'increased by', 'fell'))] from
-            | #[+pc((regional_2011))] 
-        | to #[+pc((regional_2021))].
+            | #[+pc((regional_2011))] to
+        | #[+pc((regional_2021))].
     if (Math.abs(place.data[s[i][0]][s[i][1]+'_rank_local'][2021][s[i][3]])>3) & (Math.abs(place.data[s[i][0]][s[i][1]+'_rank_local']['change'][s[i][3]])>3)
         p
             | !{data.welsh.perc_rank_local.top_bottom['Can speak Welsh'][1].name} 
