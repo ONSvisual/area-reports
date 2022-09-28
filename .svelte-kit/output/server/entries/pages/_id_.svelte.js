@@ -621,7 +621,6 @@ const U5Bidu5D = create_ssr_component(($$result, $$props, $$bindings, slots) => 
     ;
   else if (place_new.data.health.perc.change.good < 0)
     ;
-  console.log("region", region["care"].perc);
   if ($$props.options === void 0 && $$bindings.options && options !== void 0)
     $$bindings.options(options);
   if ($$props.topics === void 0 && $$bindings.topics && topics !== void 0)
@@ -675,6 +674,12 @@ const U5Bidu5D = create_ssr_component(($$result, $$props, $$bindings, slots) => 
   }
   {
     console.log("National data", cou);
+  }
+  {
+    console.log("Nearby data", place_new.near);
+  }
+  {
+    console.log("Similar area data", place_new.similar);
   }
   return `${$$result.head += `${$$result.title = `<title>${escape(place_new.name)}</title>`, ""}<meta property="${"og:title"}"${add_attribute("content", place_new.name, 0)} data-svelte="svelte-1c2kqju"><meta property="${"og:description"}" content="${"This is a description of the page."}" data-svelte="svelte-1c2kqju"><meta name="${"description"}" content="${"This is a description of the page."}" data-svelte="svelte-1c2kqju"><script src="${"https://unpkg.com/rosaenlg@3.0.1/dist/rollup/rosaenlg_tiny_en_US_3.0.1_comp.js"}" data-svelte="svelte-1c2kqju"><\/script>`, ""}
 

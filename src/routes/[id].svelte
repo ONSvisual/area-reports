@@ -339,6 +339,8 @@
 	$: console.log('Local authority area data', place_new)
 	$: console.log('Regional data', rgn_new)
 	$: console.log('National data', cou)
+	$: console.log('Nearby data', place_new.near)
+	$: console.log('Similar area data', place_new.similar)
   
 	var health, expand, props;
 
@@ -509,8 +511,6 @@
 		"ageband":['Proportion of residents of','of different age groups'],
 		"cob":['The top five countries of birth of residents of',''],
 	};
-
-	console.log('region', region['care'].perc)
 
 	// TIM
 
