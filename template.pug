@@ -1706,7 +1706,11 @@ mixin cob(i)
             | (#[+value(  place.data.cob.perc['2021'][cob_list_change[0][0]] , {'FORMAT': '0.0%'}  )]).
 
 mixin cobChartHead(i)
-    h4 Most non-UK born residents of !{place.name} were born in #[+value(topics['cob'][cob_list_change[0][0]])]
+    - var nonuk = cob_list_21[0][0]
+    if (nonuk == "Europe: United Kingdom")
+        - nonuk = cob_list_21[1][0]
+    - console.log('non-uk', nonuk)
+    h4 #[+value(topics['cob'][nonuk])] was the most common non-UK country of birth among Cardiff residents
     h5 Percentage of usual residents by country of birth #[+value(place.preposition)] #[+value(place.name)] and !{parent}, March 2011 and March 2021
 
 //- Deals with all percentage based variables
@@ -1793,8 +1797,8 @@ mixin ageChartHead(i)
 
 mixin popChartHead(i)
     h4 
-        | Population density #[+value(place.preposition)] !{place.name} was
-        | #[+value(uds(data.density.value[2021].all-rgn.data.density.value[2021].all, "higher than", "lower than", "similar to"))]
+        | Population growth #[+value(place.preposition)] !{place.name} was
+        | #[+value(uds((100*(data.population.value['change'].Population/data.population.value[2011].Population)) - 100*((data.population.value['change'].Population/rgn.data.population.value[2011].Population)), "higher than", "lower than", "similar to"))]
         | the average across #[+value(parent)]
     //- h5 
     //-     | Population density (usual residents per football pitch-sized piece of land) across #[+value(place.name)], 
