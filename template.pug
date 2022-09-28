@@ -1306,8 +1306,8 @@ mixin welsh(i)
     p 
         - let v11speak = place.data[s[i][0]]['value'][2021][s[i][3]]
         - let v01speak = place.data[s[i][0]]['value'][2011][s[i][3]]
-        - let v11nosp = place.data[s[i][0]]['value'][2021]['NoWelsh']
-        - let v01nosp = place.data[s[i][0]]['value'][2011]['NoWelsh']
+        - let v11nosp = place.data[s[i][0]]['value'][2021]['Cannot speak Welsh']
+        - let v01nosp = place.data[s[i][0]]['value'][2011]['Cannot speak Welsh']
         - let difnosp = v11nosp - v01nosp
         - let difspeak = v11speak - v01speak
         | There are 
